@@ -1,1 +1,1 @@
-# Pneumonia classification using CheXNet Deep Learning Model in Keras
+# Pneumonia classification using CheXNet model in Keras
