@@ -1,0 +1,1147 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Architectures &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Classification Algorithms" href="classification_algos.html" />
+    <link rel="prev" title="Regularization" href="regularization.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="calculus.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forwardpropagation.html">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="layers.html">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimizers.html">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regularization.html">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification_algos.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="libraries.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_content.html">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/architectures.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autoencoder">
+   Autoencoder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cnn">
+   CNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gan">
+   GAN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mlp">
+   MLP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rnn">
+   RNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vae">
+   VAE
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Architectures</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#autoencoder">
+   Autoencoder
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cnn">
+   CNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gan">
+   GAN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#mlp">
+   MLP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rnn">
+   RNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#vae">
+   VAE
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="architectures">
+<span id="id1"></span><h1>Architectures<a class="headerlink" href="#architectures" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#autoencoder" id="id23">Autoencoder</a></p></li>
+<li><p><a class="reference internal" href="#cnn" id="id24">CNN</a></p></li>
+<li><p><a class="reference internal" href="#gan" id="id25">GAN</a></p></li>
+<li><p><a class="reference internal" href="#mlp" id="id26">MLP</a></p></li>
+<li><p><a class="reference internal" href="#rnn" id="id27">RNN</a></p></li>
+<li><p><a class="reference internal" href="#vae" id="id28">VAE</a></p></li>
+</ul>
+</div>
+<section id="autoencoder">
+<h2><a class="toc-backref" href="#id23">Autoencoder</a><a class="headerlink" href="#autoencoder" title="Permalink to this headline">#</a></h2>
+<p>An autoencoder is a type of feedforward neural network that attempts to copy
+its input to its output. Internally, it has a hidden layer, <strong>h</strong>, that
+describes a <strong>code</strong>, used to represent the input. The network consists of
+two parts:</p>
+<ul class="simple">
+<li><p>An <em>encoder</em> function: <span class="math notranslate nohighlight">\(h = f(x)\)</span>.</p></li>
+<li><p>A <em>decoder</em> function, that produces a reconstruction: <span class="math notranslate nohighlight">\(r = g(h)\)</span>.</p></li>
+</ul>
+<p>The figure below shows the presented architecture.</p>
+<figure class="align-center" id="id20">
+<a class="reference internal image-reference" href="_images/autoencoder_architecture.png"><img alt="_images/autoencoder_architecture.png" src="_images/autoencoder_architecture.png" style="width: 200px;" /></a>
+<figcaption>
+<p><span class="caption-text">Source <a class="footnote-reference brackets" href="#autoenc" id="id2">6</a></span><a class="headerlink" href="#id20" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The autoencoder compresses the input into a lower-dimensional code, and then
+it reconstructs the output from this representation. The code is a compact
+“summary”, or “compression”, of the input, and it is also called the
+<em>latent-space
+representation</em>.</p>
+<p>If an autoencoder simply learned to set <span class="math notranslate nohighlight">\(g(f(x))=x\)</span> everywhere, then it would
+not be very
+useful; instead, autoencoders are designed to be unable to learn to copy
+perfectly. They are restricted in ways that allow them to copy only
+approximately, and to copy only input that resembles the training data.
+Because the model is forced to prioritize which aspects of the input to copy,
+it learns useful properties of the data.</p>
+<p>In order to build an autoencoder, three things are needed: an encoding
+method, a decoding method, and a loss function to compare the output with the
+target.</p>
+<p>Both the encoder and the decoder are fully-connected feedforward neural
+networks. The code is a single layer of an artificial neural network, with
+the dimensionality of our choice. The number of nodes in the code layer (the
+<em>code size</em>) is a <em>hyperparameter</em> to be set before training the autoencoder.</p>
+<p>The figure below shows the autoencoder architecture. First, the input passes
+through the encoder, which is a fully-connected neural network, in order to
+produce the code. The decoder, which has the similar neural network
+structure, then produces the output by using the code only. The aim is to
+get an output identical to the input.</p>
+<figure class="align-center" id="id21">
+<a class="reference internal image-reference" href="_images/autoencoder_2.png"><img alt="_images/autoencoder_2.png" src="_images/autoencoder_2.png" style="width: 500px;" /></a>
+<figcaption>
+<p><span class="caption-text">Source <a class="footnote-reference brackets" href="#a" id="id3">5</a></span><a class="headerlink" href="#id21" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Traditionally, autoencoders were used for dimensionality reduction or feature
+learning. More recently, theoretical connections between autoencoders and
+latent variable models have brought autoencoders to the forefront of
+generative modeling.
+As a compression method, autoencoders do not perform better than their
+alternatives. And the fact that autoencoders are data-specific makes them
+impractical as a general technique.</p>
+<p>In general, autoencoders have three common use cases:</p>
+<ul class="simple">
+<li><p><strong>Data denoising:</strong> It should be noted that denoising autoencoders are not
+meant to automatically denoise an image, instead they were invented to help
+the hidden layers of the autoencoder learn more robust filters, and reduce
+the the risk of overfitting.</p></li>
+<li><p><strong>Dimensionality reduction:</strong> Visualizing high-dimensional data is
+challenging. t-SNE <a class="footnote-reference brackets" href="#tsne" id="id4">7</a> is the most commonly used method, but struggles
+with large number of dimensions (typically above 32).
+Therefore, autoencoders can be used as a preprocessing step to reduce the
+dimensionality, and this compressed representation is used by t-SNE to
+visualize the data in 2D space.</p></li>
+<li><p><strong>Variational Autoencoders (VAE):</strong> this is a more modern and complex
+use-case of autoencoders. VAE learns the parameters of the probability
+distribution modeling the input data, instead of learning an arbitrary
+function in the case of vanilla autoencoders. By sampling points from this
+distribution we can also use the VAE as a generative model <a class="footnote-reference brackets" href="#id19" id="id5">8</a>.</p></li>
+</ul>
+<p class="rubric">Model</p>
+<p>An example implementation in PyTorch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">Autoencoder</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_shape</span><span class="p">):</span>
+<span class="linenos"> 3</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos"> 4</span>        <span class="n">c</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">w</span> <span class="o">=</span> <span class="n">in_shape</span>
+<span class="linenos"> 5</span>        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+<span class="linenos"> 6</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">c</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">w</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span>
+<span class="linenos"> 7</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+<span class="linenos"> 8</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+<span class="linenos"> 9</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+<span class="linenos">10</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">12</span><span class="p">),</span>
+<span class="linenos">11</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">()</span>
+<span class="linenos">12</span>        <span class="p">)</span>
+<span class="linenos">13</span>        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+<span class="linenos">14</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">64</span><span class="p">),</span>
+<span class="linenos">15</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+<span class="linenos">16</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">),</span>
+<span class="linenos">17</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+<span class="linenos">18</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">c</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">w</span><span class="p">),</span>
+<span class="linenos">19</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+<span class="linenos">20</span>        <span class="p">)</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="linenos">23</span>        <span class="n">bs</span><span class="p">,</span><span class="n">c</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">w</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+<span class="linenos">24</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">25</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">26</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">27</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">bs</span><span class="p">,</span> <span class="n">c</span><span class="p">,</span> <span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">)</span>
+<span class="linenos">28</span>        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p class="rubric">Training</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">net</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="linenos"> 3</span>    <span class="k">for</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+<span class="linenos"> 4</span>        <span class="n">inputs</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>        <span class="n">output</span> <span class="o">=</span> <span class="n">net</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">inputs</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="linenos">10</span>        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="linenos">11</span>        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pgaleone.eu/neural-networks/2016/11/24/convolutional-autoencoders/">Convolutional Autoencoders</a></p></li>
+<li><p><a class="reference external" href="http://www.deeplearningbook.org/contents/autoencoders.html">Deep Learning Book</a></p></li>
+</ul>
+</section>
+<section id="cnn">
+<h2><a class="toc-backref" href="#id24">CNN</a><a class="headerlink" href="#cnn" title="Permalink to this headline">#</a></h2>
+<p>The <em>convolutional neural network</em>, or <em>CNN</em>, is a feed-forward neural network
+which has at least one convolutional layer. This type of deep neural network
+is used for processing structured arrays of data. It is distinguished from other
+neural networks by its superior performance with speech, audio, and
+especially, image data. For the latter data type, CNNs are commonly employed
+in computer vision tasks, like image classification, since they are
+especially good at finding out patterns from the input images, such as lines,
+circles, or more complex objects, e.g., human faces.</p>
+<p>Convolutional neural networks comprise many convolutional layers, stacked one
+on top of the other, in a sequence. The sequential architecture of CNNs
+allows them to learn hierarchical features. Every layer can recognize shapes,
+and the deeper the network goes, the more complex are the shapes which can be
+recognized. The design of convolutional layers in a CNN reflects the
+structure of the human visual cortex. In fact, our visual cortex is similarly
+made of different layers, which process an image in our sight by sequentially identifying more and more complex features.</p>
+<p>The CNN architecture is made up of three main distinct layers:</p>
+<ol class="arabic simple">
+<li><p>Convolutional layer</p></li>
+<li><p>Pooling layer</p></li>
+<li><p>Fully-connected (FC) layer</p></li>
+</ol>
+<figure class="align-center" id="id22">
+<a class="reference internal image-reference" href="_images/cnn.jpg"><img alt="_images/cnn.jpg" src="_images/cnn.jpg" style="width: 600px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Overview of CNN architecture.</strong> The architecture of CNNs follows this
+structure, but with a greater number of layers for each layer’s type. The
+convolutional and pooling layers are layers peculiar to CNNs, while the
+fully-connected layer, activation function and output layer, are also
+present in regular feed-forward neural networks. Source: [2]</span><a class="headerlink" href="#id22" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>When working with image data, the CNN architecture accepts as input a 3D
+volume, or a 1D vector depending if the image data is in RGB format, for the
+first case, or in grayscale format, for the latter. Then it transforms the input
+through different equations, and it outputs a class. The convolutional layer
+is the first layer of the convolutional neural network. While this first
+layer can be followed by more convolutional layers, or pooling layers, the
+fully-connected layer remains the last layer of the network, which outputs
+the result. At every subsequent convolutional layer, the CNN increases its
+complexity, and it can identify greater portions in the image. In the first
+layers, the algorithm can recognize simpler features such as color or edges.
+Deeper in the network, it becomes able to identify both larger objects in the
+image and more complex ones. In the last layers, before the image reaches the
+final FC layer, the CNN identifies the full object in the image.</p>
+<p class="rubric">Model</p>
+<p>An example implementation of a CNN in PyTorch.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">CNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_shape</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">):</span>
+<span class="linenos"> 3</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos"> 4</span>        <span class="n">c</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">in_shape</span>
+<span class="linenos"> 5</span>        <span class="n">pool_layers</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 6</span>        <span class="n">fc_h</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">h</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="n">pool_layers</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="n">fc_w</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">w</span> <span class="o">/</span> <span class="mi">2</span><span class="o">**</span><span class="n">pool_layers</span><span class="p">)</span>
+<span class="linenos"> 8</span>        <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+<span class="linenos"> 9</span>            <span class="o">*</span><span class="n">conv_bn_relu</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="linenos">10</span>            <span class="o">*</span><span class="n">conv_bn_relu</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+<span class="linenos">11</span>            <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="c1">#size/2</span>
+<span class="linenos">12</span>            <span class="o">*</span><span class="n">conv_bn_relu</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+<span class="linenos">13</span>            <span class="n">nn</span><span class="o">.</span><span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">),</span> <span class="c1">#size/2</span>
+<span class="linenos">14</span>        <span class="p">)</span>
+<span class="linenos">15</span>        <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+<span class="linenos">16</span>            <span class="o">*</span><span class="n">linear_bn_relu_drop</span><span class="p">(</span><span class="mi">64</span> <span class="o">*</span> <span class="n">fc_h</span> <span class="o">*</span> <span class="n">fc_w</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.5</span><span class="p">),</span>
+<span class="linenos">17</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">),</span>
+<span class="linenos">18</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Softmax</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">19</span>        <span class="p">)</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="linenos">22</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">23</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">24</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">classifier</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">25</span>        <span class="k">return</span> <span class="n">x</span>
+</pre></div>
+</div>
+<p class="rubric">Training</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">net</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="linenos"> 3</span>    <span class="n">n_batches</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">loader</span><span class="p">)</span>
+<span class="linenos"> 4</span>    <span class="k">for</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+<span class="linenos"> 5</span>        <span class="n">inputs</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="linenos"> 6</span>        <span class="n">targets</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">targets</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>        <span class="n">output</span> <span class="o">=</span> <span class="n">net</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="linenos"> 9</span>        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="linenos">12</span>        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="linenos">13</span>        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://cs231n.github.io/convolutional-networks">CS231 Convolutional Networks</a></p></li>
+<li><p><a class="reference external" href="http://www.deeplearningbook.org/contents/convnets.html">Deep Learning Book</a></p></li>
+</ul>
+</section>
+<section id="gan">
+<h2><a class="toc-backref" href="#id25">GAN</a><a class="headerlink" href="#gan" title="Permalink to this headline">#</a></h2>
+<p>A Generative Adversarial Network (GAN) is a type of network which creates novel tensors (often images, voices, etc.). The generative portion of the architecture competes with the discriminator part of the architecture in a zero-sum game. The goal of the generative network is to create novel tensors which the adversarial network attempts to classify as real or fake. The goal of the generative network is generate tensors where the discriminator network determines that the tensor has a 50% chance of being fake and a 50% chance of being real.</p>
+<p>Figure from [3].</p>
+<img alt="_images/gan.png" class="align-center" src="_images/gan.png" />
+<p class="rubric">Model</p>
+<p>An example implementation in PyTorch.</p>
+<p class="rubric">Generator</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">Generator</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 3</span>        <span class="nb">super</span><span class="p">()</span>
+<span class="linenos"> 4</span>        <span class="bp">self</span><span class="o">.</span><span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+<span class="linenos"> 5</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos"> 6</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">8</span><span class="p">),</span>
+<span class="linenos"> 7</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+<span class="linenos"> 8</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos"> 9</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">4</span><span class="p">),</span>
+<span class="linenos">10</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+<span class="linenos">11</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">12</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span>
+<span class="linenos">13</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+<span class="linenos">14</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">15</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
+<span class="linenos">16</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+<span class="linenos">17</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">18</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Tanh</span><span class="p">()</span>
+<span class="linenos">19</span>        <span class="p">)</span>
+<span class="linenos">20</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tens</span><span class="p">):</span>
+<span class="linenos">21</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="p">(</span><span class="n">tens</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Discriminator</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">Discriminator</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 3</span>        <span class="nb">super</span><span class="p">()</span>
+<span class="linenos"> 4</span>        <span class="bp">self</span><span class="o">.</span><span class="n">net</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+<span class="linenos"> 5</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos"> 6</span>            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+<span class="linenos"> 7</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos"> 8</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span>
+<span class="linenos"> 9</span>            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+<span class="linenos">10</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">11</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">4</span><span class="p">),</span>
+<span class="linenos">12</span>            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+<span class="linenos">13</span>            <span class="c1"># state size. (32*4) x 8 x 8</span>
+<span class="linenos">14</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">32</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">15</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">8</span><span class="p">),</span>
+<span class="linenos">16</span>            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(</span><span class="mf">0.2</span><span class="p">),</span>
+<span class="linenos">17</span>            <span class="c1"># state size. (32*8) x 4 x 4</span>
+<span class="linenos">18</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="kc">False</span><span class="p">),</span>
+<span class="linenos">19</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+<span class="linenos">20</span>        <span class="p">)</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tens</span><span class="p">):</span>
+<span class="linenos">23</span>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">net</span><span class="p">(</span><span class="n">tens</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Training</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">netD</span><span class="p">,</span> <span class="n">netG</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">,</span> <span class="n">optimizerD</span><span class="p">,</span> <span class="n">optimizerG</span><span class="p">,</span> <span class="n">num_epochs</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">netD</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="linenos"> 3</span>    <span class="n">netG</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="linenos"> 4</span>    <span class="n">device</span> <span class="o">=</span> <span class="s2">&quot;cuda:0&quot;</span> <span class="k">if</span> <span class="n">torch</span><span class="o">.</span><span class="n">cuda</span><span class="o">.</span><span class="n">is_available</span><span class="p">()</span> <span class="k">else</span> <span class="s2">&quot;cpu&quot;</span>
+<span class="linenos"> 5</span>    <span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_epochs</span><span class="p">):</span>
+<span class="linenos"> 6</span>        <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">loader</span><span class="p">,</span> <span class="mi">0</span><span class="p">):</span>
+<span class="linenos"> 7</span>            <span class="n">netD</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="linenos"> 8</span>            <span class="n">realtens</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos"> 9</span>            <span class="n">b_size</span> <span class="o">=</span> <span class="n">realtens</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">10</span>            <span class="n">label</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="n">b_size</span><span class="p">,),</span> <span class="mi">1</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">torch</span><span class="o">.</span><span class="n">float</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span> <span class="c1"># gen labels</span>
+<span class="linenos">11</span>            <span class="n">output</span> <span class="o">=</span> <span class="n">netD</span><span class="p">(</span><span class="n">realtens</span><span class="p">)</span>
+<span class="linenos">12</span>            <span class="n">errD_real</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+<span class="linenos">13</span>            <span class="n">errD_real</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span> <span class="c1"># backprop discriminator fake and real based on label</span>
+<span class="linenos">14</span>            <span class="n">noise</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">b_size</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">device</span><span class="o">=</span><span class="n">device</span><span class="p">)</span>
+<span class="linenos">15</span>            <span class="n">fake</span> <span class="o">=</span> <span class="n">netG</span><span class="p">(</span><span class="n">noise</span><span class="p">)</span>
+<span class="linenos">16</span>            <span class="n">label</span><span class="o">.</span><span class="n">fill_</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">17</span>            <span class="n">output</span> <span class="o">=</span> <span class="n">netD</span><span class="p">(</span><span class="n">fake</span><span class="o">.</span><span class="n">detach</span><span class="p">())</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">18</span>            <span class="n">errD_fake</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+<span class="linenos">19</span>            <span class="n">errD_fake</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span> <span class="c1"># backprop discriminator fake and real based on label</span>
+<span class="linenos">20</span>            <span class="n">errD</span> <span class="o">=</span> <span class="n">errD_real</span> <span class="o">+</span> <span class="n">errD_fake</span> <span class="c1"># discriminator error</span>
+<span class="linenos">21</span>            <span class="n">optimizerD</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<span class="linenos">22</span>            <span class="n">netG</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="linenos">23</span>            <span class="n">label</span><span class="o">.</span><span class="n">fill_</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>  
+<span class="linenos">24</span>            <span class="n">output</span> <span class="o">=</span> <span class="n">netD</span><span class="p">(</span><span class="n">fake</span><span class="p">)</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">25</span>            <span class="n">errG</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span> <span class="c1"># generator error</span>
+<span class="linenos">26</span>            <span class="n">errG</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="linenos">27</span>            <span class="n">optimizerG</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://guertl.me/post/162759264070/generative-adversarial-networks">Generative Adversarial Networks</a></p></li>
+<li><p><a class="reference external" href="http://www.deeplearningbook.org/contents/generative_models.html">Deep Learning Book</a></p></li>
+<li><p><a class="reference external" href="https://pytorch.org/tutorials/beginner/dcgan_faces_tutorial.html">PyTorch DCGAN Example</a></p></li>
+<li><p><a class="reference external" href="https://papers.nips.cc/paper/2014/file/5ca3e9b122f61f8f06494c97b1afccf3-Paper.pdf">Original Paper</a></p></li>
+</ul>
+</section>
+<section id="mlp">
+<h2><a class="toc-backref" href="#id26">MLP</a><a class="headerlink" href="#mlp" title="Permalink to this headline">#</a></h2>
+<p>A Multi Layer Perceptron (MLP) is a neural network with only fully connected layers. Figure from [5].</p>
+<img alt="_images/mlp.jpg" class="align-center" src="_images/mlp.jpg" />
+<p class="rubric">Model</p>
+<p>An example implementation on FMNIST dataset in PyTorch. <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/mlp.py">Full Code</a></p>
+<ol class="arabic simple">
+<li><p>The input to the network is a vector of size 28*28 i.e.(image from FashionMNIST dataset of dimension 28*28 pixels flattened to sigle dimension vector).</p></li>
+<li><p>2 fully connected hidden layers.</p></li>
+<li><p>Output layer with 10 outputs.(10 classes)</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">MLP</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 3</span>        <span class="nb">super</span><span class="p">(</span><span class="n">MLP</span><span class="p">,</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos"> 4</span>        <span class="c1"># define layers</span>
+<span class="linenos"> 5</span>        <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">500</span><span class="p">)</span>
+<span class="linenos"> 6</span>        <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">200</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="bp">self</span><span class="o">.</span><span class="n">fc3</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">200</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos"> 8</span>        <span class="bp">self</span><span class="o">.</span><span class="n">out</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">t</span><span class="p">):</span>
+<span class="linenos">12</span>        <span class="c1"># fc1  make input 1 dimentional</span>
+<span class="linenos">13</span>        <span class="n">t</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">28</span><span class="o">*</span><span class="mi">28</span><span class="p">)</span>
+<span class="linenos">14</span>        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc1</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">15</span>        <span class="n">t</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">16</span>        <span class="c1"># fc2</span>
+<span class="linenos">17</span>        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc2</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">18</span>        <span class="n">t</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">19</span>        <span class="c1"># fc3</span>
+<span class="linenos">20</span>        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc3</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">21</span>        <span class="n">t</span> <span class="o">=</span> <span class="n">F</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">22</span>        <span class="c1"># output</span>
+<span class="linenos">23</span>        <span class="n">t</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">out</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="linenos">24</span>        <span class="k">return</span> <span class="n">t</span>
+</pre></div>
+</div>
+<p class="rubric">Training</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">net</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">net</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="linenos"> 3</span>    <span class="n">n_batches</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">loader</span><span class="p">)</span>
+<span class="linenos"> 4</span>    <span class="k">for</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+<span class="linenos"> 5</span>        <span class="n">inputs</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="linenos"> 6</span>        <span class="n">targets</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">targets</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>        <span class="n">output</span> <span class="o">=</span> <span class="n">net</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="linenos"> 9</span>        <span class="n">loss</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">targets</span><span class="p">)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="linenos">12</span>        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="linenos">13</span>        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+<span class="linenos">14</span>         <span class="c1"># print statistics</span>
+<span class="linenos">15</span>    <span class="n">running_loss</span> <span class="o">=</span> <span class="n">loss</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+<span class="linenos">16</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Training loss: </span><span class="si">%.3f</span><span class="s1">&#39;</span> <span class="o">%</span><span class="p">(</span> <span class="n">running_loss</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="rubric">Evaluating</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="linenos"> 2</span>    <span class="n">train_set</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
+<span class="linenos"> 3</span>        <span class="n">root</span> <span class="o">=</span> <span class="s1">&#39;./FMNIST&#39;</span><span class="p">,</span>
+<span class="linenos"> 4</span>        <span class="n">train</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+<span class="linenos"> 5</span>        <span class="n">download</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="linenos"> 6</span>        <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+<span class="linenos"> 7</span>            <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()</span>
+<span class="linenos"> 8</span>        <span class="p">])</span>
+<span class="linenos"> 9</span>    <span class="p">)</span>
+<span class="linenos">10</span>    <span class="n">mlp</span> <span class="o">=</span> <span class="n">MLP</span><span class="p">()</span>
+<span class="linenos">11</span>    <span class="n">loader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">train_set</span><span class="p">,</span> <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="n">optimizer</span> <span class="o">=</span> <span class="n">optim</span><span class="o">.</span><span class="n">Adam</span><span class="p">(</span><span class="n">mlp</span><span class="o">.</span><span class="n">parameters</span><span class="p">(),</span> <span class="n">lr</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="linenos">13</span>    <span class="n">loss_func</span><span class="o">=</span><span class="n">nn</span><span class="o">.</span><span class="n">CrossEntropyLoss</span><span class="p">()</span>
+<span class="linenos">14</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">15</span><span class="p">):</span>
+<span class="linenos">15</span>        <span class="n">train</span><span class="p">(</span><span class="n">mlp</span><span class="p">,</span><span class="n">loader</span><span class="p">,</span><span class="n">loss_func</span><span class="p">,</span><span class="n">optimizer</span><span class="p">)</span>
+<span class="linenos">16</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Finished Training&quot;</span><span class="p">)</span>
+<span class="linenos">17</span>    <span class="n">torch</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">mlp</span><span class="o">.</span><span class="n">state_dict</span><span class="p">(),</span> <span class="s2">&quot;./mlpmodel.pt&quot;</span><span class="p">)</span>
+<span class="linenos">18</span>    <span class="n">test_set</span> <span class="o">=</span> <span class="n">torchvision</span><span class="o">.</span><span class="n">datasets</span><span class="o">.</span><span class="n">FashionMNIST</span><span class="p">(</span>
+<span class="linenos">19</span>        <span class="n">root</span> <span class="o">=</span> <span class="s1">&#39;./FMNIST&#39;</span><span class="p">,</span>
+<span class="linenos">20</span>        <span class="n">train</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="linenos">21</span>        <span class="n">download</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+<span class="linenos">22</span>        <span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="o">.</span><span class="n">Compose</span><span class="p">([</span>
+<span class="linenos">23</span>            <span class="n">transforms</span><span class="o">.</span><span class="n">ToTensor</span><span class="p">()</span>
+<span class="linenos">24</span>        <span class="p">])</span>
+<span class="linenos">25</span>    <span class="p">)</span>
+<span class="linenos">26</span>    <span class="n">testloader</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">DataLoader</span><span class="p">(</span><span class="n">test_set</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="linenos">27</span>    <span class="n">correct</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">28</span>    <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">29</span>    <span class="k">with</span> <span class="n">torch</span><span class="o">.</span><span class="n">no_grad</span><span class="p">():</span>
+<span class="linenos">30</span>        <span class="k">for</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">testloader</span><span class="p">:</span>
+<span class="linenos">31</span>            <span class="n">images</span><span class="p">,</span> <span class="n">labels</span> <span class="o">=</span> <span class="n">data</span>
+<span class="linenos">32</span>            <span class="n">outputs</span> <span class="o">=</span> <span class="n">mlp</span><span class="p">(</span><span class="n">images</span><span class="p">)</span>
+<span class="linenos">33</span>            <span class="n">_</span><span class="p">,</span> <span class="n">predicted</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">outputs</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">34</span>            <span class="n">total</span> <span class="o">+=</span> <span class="n">labels</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">35</span>            <span class="n">correct</span> <span class="o">+=</span> <span class="p">(</span><span class="n">predicted</span> <span class="o">==</span> <span class="n">labels</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">item</span><span class="p">()</span>
+<span class="linenos">36</span>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Accuracy of the network on the 10000 test images: </span><span class="si">%d</span><span class="s1"> </span><span class="si">%%</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span>
+<span class="linenos">37</span>        <span class="mi">100</span> <span class="o">*</span> <span class="n">correct</span> <span class="o">/</span> <span class="n">total</span><span class="p">))</span>
+</pre></div>
+</div>
+<p class="rubric">Further reading</p>
+<p>TODO</p>
+</section>
+<section id="rnn">
+<h2><a class="toc-backref" href="#id27">RNN</a><a class="headerlink" href="#rnn" title="Permalink to this headline">#</a></h2>
+<p>Description of RNN use case and basic architecture.</p>
+<img alt="_images/rnn.png" class="align-center" src="_images/rnn.png" />
+<p class="rubric">Model</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">RNN</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">):</span>
+<span class="linenos"> 3</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos"> 4</span>        <span class="bp">self</span><span class="o">.</span><span class="n">hid_fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">185</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
+<span class="linenos"> 5</span>        <span class="bp">self</span><span class="o">.</span><span class="n">out_fc</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">185</span><span class="p">,</span> <span class="n">n_classes</span><span class="p">)</span>
+<span class="linenos"> 6</span>        <span class="bp">self</span><span class="o">.</span><span class="n">softmax</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">LogSoftmax</span><span class="p">()</span>
+<span class="linenos"> 7</span>    
+<span class="linenos"> 8</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">hidden</span><span class="p">):</span>
+<span class="linenos"> 9</span>        <span class="n">inputs</span> <span class="o">=</span> <span class="n">inputs</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">10</span>        <span class="n">combined</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">cat</span><span class="p">([</span><span class="n">inputs</span><span class="p">,</span> <span class="n">hidden</span><span class="p">],</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">11</span>        <span class="n">hid_out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">hid_fc</span><span class="p">(</span><span class="n">combined</span><span class="p">)</span>
+<span class="linenos">12</span>        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">out_fc</span><span class="p">(</span><span class="n">combined</span><span class="p">)</span>
+<span class="linenos">13</span>        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">softmax</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="linenos">14</span>        <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="n">hid_out</span>
+</pre></div>
+</div>
+<p class="rubric">Training</p>
+<p>In this example, our input is a list of last names, where each name is
+a variable length array of one-hot encoded characters. Our target is is a list of
+indices representing the class (language) of the name.</p>
+<ol class="arabic simple">
+<li><p>For each input name..</p></li>
+<li><p>Initialize the hidden vector</p></li>
+<li><p>Loop through the characters and predict the class</p></li>
+<li><p>Pass the final character’s prediction to the loss function</p></li>
+<li><p>Backprop and update the weights</p></li>
+</ol>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">targets</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">inputs</span><span class="p">)):</span>
+<span class="linenos"> 3</span>        <span class="n">target</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">targets</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="linenos"> 4</span>        <span class="n">name</span> <span class="o">=</span> <span class="n">inputs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+<span class="linenos"> 5</span>        <span class="n">hidden</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">128</span><span class="p">))</span>
+<span class="linenos"> 6</span>        <span class="n">model</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="linenos"> 7</span>        
+<span class="linenos"> 8</span>        <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">name</span><span class="p">:</span>
+<span class="linenos"> 9</span>            <span class="n">input_</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">FloatTensor</span><span class="p">(</span><span class="n">char</span><span class="p">))</span>
+<span class="linenos">10</span>            <span class="n">pred</span><span class="p">,</span> <span class="n">hidden</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">input_</span><span class="p">,</span> <span class="n">hidden</span><span class="p">)</span>
+<span class="linenos">11</span>        
+<span class="linenos">12</span>        <span class="n">loss</span> <span class="o">=</span> <span class="n">criterion</span><span class="p">(</span><span class="n">pred</span><span class="p">,</span> <span class="n">target</span><span class="p">)</span>
+<span class="linenos">13</span>        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="linenos">14</span>        
+<span class="linenos">15</span>        <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">model</span><span class="o">.</span><span class="n">parameters</span><span class="p">():</span>
+<span class="linenos">16</span>            <span class="n">p</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">add_</span><span class="p">(</span><span class="o">-</span><span class="mf">.001</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">grad</span><span class="o">.</span><span class="n">data</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/notebooks/rnn.ipynb">Jupyter notebook</a></p></li>
+<li><p><a class="reference external" href="http://www.deeplearningbook.org/contents/rnn.html">Deep Learning Book</a></p></li>
+</ul>
+</section>
+<section id="vae">
+<h2><a class="toc-backref" href="#id28">VAE</a><a class="headerlink" href="#vae" title="Permalink to this headline">#</a></h2>
+<p>Autoencoders can encode an input image to a latent vector and decode it, but they can’t generate novel images.
+Variational Autoencoders (VAE) solve this problem by adding a constraint: the latent vector representation should model a unit gaussian distribution.
+The Encoder returns the mean and variance of the learned gaussian. To generate a new image, we pass a new mean and variance to the Decoder.
+In other words, we “sample a latent vector” from the gaussian and pass it to the Decoder.
+It also improves network generalization and avoids memorization. Figure from [4].</p>
+<img alt="_images/vae.png" class="align-center" src="_images/vae.png" />
+<p class="rubric">Loss Function</p>
+<p>The VAE loss function combines reconstruction loss (e.g. Cross Entropy, MSE) with KL divergence.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">vae_loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="nb">input</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">logvar</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="n">recon_loss</span> <span class="o">=</span> <span class="n">loss_func</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="nb">input</span><span class="p">)</span>
+<span class="linenos">3</span>    <span class="n">kl_loss</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">torch</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span>
+<span class="linenos">4</span>        <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">logvar</span><span class="p">)</span> <span class="o">+</span> <span class="n">mean</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">1.</span> <span class="o">-</span> <span class="n">logvar</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="linenos">5</span>    <span class="k">return</span> <span class="n">recon_loss</span> <span class="o">+</span> <span class="n">kl_loss</span>
+</pre></div>
+</div>
+<p class="rubric">Model</p>
+<p>An example implementation in PyTorch of a Convolutional Variational Autoencoder.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">VAE</span><span class="p">(</span><span class="n">nn</span><span class="o">.</span><span class="n">Module</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">in_shape</span><span class="p">,</span> <span class="n">n_latent</span><span class="p">):</span>
+<span class="linenos"> 3</span>        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<span class="linenos"> 4</span>        <span class="bp">self</span><span class="o">.</span><span class="n">in_shape</span> <span class="o">=</span> <span class="n">in_shape</span>
+<span class="linenos"> 5</span>        <span class="bp">self</span><span class="o">.</span><span class="n">n_latent</span> <span class="o">=</span> <span class="n">n_latent</span>
+<span class="linenos"> 6</span>        <span class="n">c</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">w</span> <span class="o">=</span> <span class="n">in_shape</span>
+<span class="linenos"> 7</span>        <span class="bp">self</span><span class="o">.</span><span class="n">z_dim</span> <span class="o">=</span> <span class="n">h</span><span class="o">//</span><span class="mi">2</span><span class="o">**</span><span class="mi">2</span> <span class="c1"># receptive field downsampled 2 times</span>
+<span class="linenos"> 8</span>        <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+<span class="linenos"> 9</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="n">c</span><span class="p">),</span>
+<span class="linenos">10</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>  <span class="c1"># 32, 16, 16</span>
+<span class="linenos">11</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
+<span class="linenos">12</span>            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(),</span>
+<span class="linenos">13</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Conv2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>  <span class="c1"># 32, 8, 8</span>
+<span class="linenos">14</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">64</span><span class="p">),</span>
+<span class="linenos">15</span>            <span class="n">nn</span><span class="o">.</span><span class="n">LeakyReLU</span><span class="p">(),</span>
+<span class="linenos">16</span>        <span class="p">)</span>
+<span class="linenos">17</span>        <span class="bp">self</span><span class="o">.</span><span class="n">z_mean</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">z_dim</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_latent</span><span class="p">)</span>
+<span class="linenos">18</span>        <span class="bp">self</span><span class="o">.</span><span class="n">z_var</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="mi">64</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">z_dim</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_latent</span><span class="p">)</span>
+<span class="linenos">19</span>        <span class="bp">self</span><span class="o">.</span><span class="n">z_develop</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Linear</span><span class="p">(</span><span class="n">n_latent</span><span class="p">,</span> <span class="mi">64</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">z_dim</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+<span class="linenos">20</span>        <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span> <span class="o">=</span> <span class="n">nn</span><span class="o">.</span><span class="n">Sequential</span><span class="p">(</span>
+<span class="linenos">21</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">),</span>
+<span class="linenos">22</span>            <span class="n">nn</span><span class="o">.</span><span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
+<span class="linenos">23</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ReLU</span><span class="p">(),</span>
+<span class="linenos">24</span>            <span class="n">nn</span><span class="o">.</span><span class="n">ConvTranspose2d</span><span class="p">(</span><span class="mi">32</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">1</span><span class="p">),</span>
+<span class="linenos">25</span>            <span class="n">CenterCrop</span><span class="p">(</span><span class="n">h</span><span class="p">,</span><span class="n">w</span><span class="p">),</span>
+<span class="linenos">26</span>            <span class="n">nn</span><span class="o">.</span><span class="n">Sigmoid</span><span class="p">()</span>
+<span class="linenos">27</span>        <span class="p">)</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span>    <span class="k">def</span> <span class="nf">sample_z</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">logvar</span><span class="p">):</span>
+<span class="linenos">30</span>        <span class="n">stddev</span> <span class="o">=</span> <span class="n">torch</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mf">0.5</span> <span class="o">*</span> <span class="n">logvar</span><span class="p">)</span>
+<span class="linenos">31</span>        <span class="n">noise</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">torch</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">stddev</span><span class="o">.</span><span class="n">size</span><span class="p">()))</span>
+<span class="linenos">32</span>        <span class="k">return</span> <span class="p">(</span><span class="n">noise</span> <span class="o">*</span> <span class="n">stddev</span><span class="p">)</span> <span class="o">+</span> <span class="n">mean</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span>    <span class="k">def</span> <span class="nf">encode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="linenos">35</span>        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encoder</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">36</span>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">37</span>        <span class="n">mean</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z_mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">38</span>        <span class="n">var</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z_var</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">39</span>        <span class="k">return</span> <span class="n">mean</span><span class="p">,</span> <span class="n">var</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span>    <span class="k">def</span> <span class="nf">decode</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+<span class="linenos">42</span>        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">z_develop</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="linenos">43</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">out</span><span class="o">.</span><span class="n">view</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">size</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="mi">64</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z_dim</span><span class="p">)</span>
+<span class="linenos">44</span>        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decoder</span><span class="p">(</span><span class="n">out</span><span class="p">)</span>
+<span class="linenos">45</span>        <span class="k">return</span> <span class="n">out</span>
+<span class="linenos">46</span>
+<span class="linenos">47</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="linenos">48</span>        <span class="n">mean</span><span class="p">,</span> <span class="n">logvar</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">49</span>        <span class="n">z</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sample_z</span><span class="p">(</span><span class="n">mean</span><span class="p">,</span> <span class="n">logvar</span><span class="p">)</span>
+<span class="linenos">50</span>        <span class="n">out</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="linenos">51</span>        <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">logvar</span>
+</pre></div>
+</div>
+<p class="rubric">Training</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">loader</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">,</span> <span class="n">optimizer</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">model</span><span class="o">.</span><span class="n">train</span><span class="p">()</span>
+<span class="linenos"> 3</span>    <span class="k">for</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">loader</span><span class="p">:</span>
+<span class="linenos"> 4</span>        <span class="n">inputs</span> <span class="o">=</span> <span class="n">Variable</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>        <span class="n">output</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">logvar</span> <span class="o">=</span> <span class="n">model</span><span class="p">(</span><span class="n">inputs</span><span class="p">)</span>
+<span class="linenos"> 7</span>        <span class="n">loss</span> <span class="o">=</span> <span class="n">vae_loss</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">inputs</span><span class="p">,</span> <span class="n">mean</span><span class="p">,</span> <span class="n">logvar</span><span class="p">,</span> <span class="n">loss_func</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>        <span class="n">optimizer</span><span class="o">.</span><span class="n">zero_grad</span><span class="p">()</span>
+<span class="linenos">10</span>        <span class="n">loss</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
+<span class="linenos">11</span>        <span class="n">optimizer</span><span class="o">.</span><span class="n">step</span><span class="p">()</span>
+</pre></div>
+</div>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1312.6114">Original Paper</a></p></li>
+<li><p><a class="reference external" href="http://kvfrans.com/variational-autoencoders-explained">VAE Explained</a></p></li>
+<li><p><a class="reference external" href="http://www.deeplearningbook.org/contents/autoencoders.html">Deep Learning Book</a></p></li>
+</ul>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id11"><span class="brackets">1</span></dt>
+<dd><p><a class="reference external" href="https://hackernoon.com/autoencoders-deep-learning-bits-1-11731e200694">https://hackernoon.com/autoencoders-deep-learning-bits-1-11731e200694</a></p>
+</dd>
+<dt class="label" id="id12"><span class="brackets">2</span></dt>
+<dd><p><a class="reference external" href="https://iq.opengenus.org/basics-of-machine-learning-image-classification-techniques/">https://iq.opengenus.org/basics-of-machine-learning-image-classification-techniques/</a></p>
+</dd>
+<dt class="label" id="id13"><span class="brackets">3</span></dt>
+<dd><p><a class="reference external" href="http://guertl.me/post/162759264070/generative-adversarial-networks">http://guertl.me/post/162759264070/generative-adversarial-networks</a></p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">4</span></dt>
+<dd><p><a class="reference external" href="http://kvfrans.com/variational-autoencoders-explained">http://kvfrans.com/variational-autoencoders-explained</a></p>
+</dd>
+<dt class="label" id="a"><span class="brackets"><a class="fn-backref" href="#id3">5</a></span></dt>
+<dd><p><a href="#id15"><span class="problematic" id="id16">`</span></a>Applied Deep Learning - Part 3: Autoencoders</p>
+</dd>
+</dl>
+<p>&lt;<a class="reference external" href="https://towardsdatascience">https://towardsdatascience</a>
+.com/applied-deep-learning-part-3-autoencoders-1c083af4d798/&gt;`__</p>
+<dl class="footnote brackets">
+<dt class="label" id="autoenc"><span class="brackets"><a class="fn-backref" href="#id2">6</a></span></dt>
+<dd><p><a href="#id17"><span class="problematic" id="id18">`</span></a>Deep Learning Book - Autoencoders &lt;<a class="reference external" href="https://www.deeplearningbook">https://www.deeplearningbook</a></p>
+</dd>
+</dl>
+<p>.org/contents/autoencoders.html/&gt;`__</p>
+<dl class="footnote brackets">
+<dt class="label" id="tsne"><span class="brackets"><a class="fn-backref" href="#id4">7</a></span></dt>
+<dd><p><a class="reference external" href="https://distill.pub/2016/misread-tsne/">t-SNE</a></p>
+</dd>
+<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id5">8</a></span></dt>
+<dd><p><a class="reference external" href="https://kvfrans.com/variational-autoencoders-explained/">VAE</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="regularization.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Regularization</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="classification_algos.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Classification Algorithms</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,1006 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Layers &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Loss Functions" href="loss_functions.html" />
+    <link rel="prev" title="Activation Functions" href="activation_functions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="calculus.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forwardpropagation.html">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimizers.html">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regularization.html">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architectures.html">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification_algos.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="libraries.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_content.html">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/layers.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#batchnorm">
+   BatchNorm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolution">
+   Convolution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dropout">
+   Dropout
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pooling">
+   Pooling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fully-connected-linear">
+   Fully-connected/Linear
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rnn">
+   RNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gru">
+   GRU
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lstm">
+   LSTM
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Layers</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#batchnorm">
+   BatchNorm
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#convolution">
+   Convolution
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dropout">
+   Dropout
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#pooling">
+   Pooling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#fully-connected-linear">
+   Fully-connected/Linear
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rnn">
+   RNN
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gru">
+   GRU
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lstm">
+   LSTM
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="layers">
+<span id="id1"></span><h1>Layers<a class="headerlink" href="#layers" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#batchnorm" id="id10">BatchNorm</a></p></li>
+<li><p><a class="reference internal" href="#convolution" id="id11">Convolution</a></p></li>
+<li><p><a class="reference internal" href="#dropout" id="id12">Dropout</a></p></li>
+<li><p><a class="reference internal" href="#pooling" id="id13">Pooling</a></p></li>
+<li><p><a class="reference internal" href="#fully-connected-linear" id="id14">Fully-connected/Linear</a></p></li>
+<li><p><a class="reference internal" href="#rnn" id="id15">RNN</a></p></li>
+<li><p><a class="reference internal" href="#gru" id="id16">GRU</a></p></li>
+<li><p><a class="reference internal" href="#lstm" id="id17">LSTM</a></p></li>
+</ul>
+</div>
+<section id="batchnorm">
+<h2><a class="toc-backref" href="#id10">BatchNorm</a><a class="headerlink" href="#batchnorm" title="Permalink to this headline">#</a></h2>
+<p>BatchNorm accelerates convergence by reducing internal covariate shift inside each batch.
+If the individual observations in the batch are widely different, the gradient
+updates will be choppy and take longer to converge.</p>
+<p>The batch norm layer normalizes the incoming activations and outputs a new batch
+where the mean equals 0 and standard deviation equals 1. It subtracts the mean
+and divides by the standard deviation of the batch.</p>
+<p class="rubric">Code</p>
+<p>Code example from <a class="reference external" href="https://wiseodd.github.io/techblog/2016/07/04/batchnorm/">Agustinus Kristiadi</a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">BatchNorm</span><span class="p">():</span>
+<span class="linenos"> 2</span>    <span class="c1"># From https://wiseodd.github.io/techblog/2016/07/04/batchnorm/</span>
+<span class="linenos"> 3</span>    <span class="c1"># TODO: Add doctring for variable names. Add momentum to init.</span>
+<span class="linenos"> 4</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="linenos"> 5</span>        <span class="k">pass</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">beta</span><span class="p">):</span>
+<span class="linenos"> 8</span>        <span class="n">mu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos"> 9</span>        <span class="n">var</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">var</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>        <span class="n">X_norm</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span> <span class="o">-</span> <span class="n">mu</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+<span class="linenos">12</span>        <span class="n">out</span> <span class="o">=</span> <span class="n">gamma</span> <span class="o">*</span> <span class="n">X_norm</span> <span class="o">+</span> <span class="n">beta</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span>        <span class="n">cache</span> <span class="o">=</span> <span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">X_norm</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">beta</span><span class="p">)</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>        <span class="k">return</span> <span class="n">out</span><span class="p">,</span> <span class="n">cache</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">var</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span>    <span class="k">def</span> <span class="nf">backward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dout</span><span class="p">,</span> <span class="n">cache</span><span class="p">):</span>
+<span class="linenos">19</span>        <span class="n">X</span><span class="p">,</span> <span class="n">X_norm</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">gamma</span><span class="p">,</span> <span class="n">beta</span> <span class="o">=</span> <span class="n">cache</span>
+<span class="linenos">20</span>
+<span class="linenos">21</span>        <span class="n">N</span><span class="p">,</span> <span class="n">D</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>        <span class="n">X_mu</span> <span class="o">=</span> <span class="n">X</span> <span class="o">-</span> <span class="n">mu</span>
+<span class="linenos">24</span>        <span class="n">std_inv</span> <span class="o">=</span> <span class="mf">1.</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">var</span> <span class="o">+</span> <span class="mf">1e-8</span><span class="p">)</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>        <span class="n">dX_norm</span> <span class="o">=</span> <span class="n">dout</span> <span class="o">*</span> <span class="n">gamma</span>
+<span class="linenos">27</span>        <span class="n">dvar</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dX_norm</span> <span class="o">*</span> <span class="n">X_mu</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="o">-</span><span class="mf">.5</span> <span class="o">*</span> <span class="n">std_inv</span><span class="o">**</span><span class="mi">3</span>
+<span class="linenos">28</span>        <span class="n">dmu</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dX_norm</span> <span class="o">*</span> <span class="o">-</span><span class="n">std_inv</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> <span class="o">+</span> <span class="n">dvar</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span> <span class="o">*</span> <span class="n">X_mu</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span>        <span class="n">dX</span> <span class="o">=</span> <span class="p">(</span><span class="n">dX_norm</span> <span class="o">*</span> <span class="n">std_inv</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">dvar</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">X_mu</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">dmu</span> <span class="o">/</span> <span class="n">N</span><span class="p">)</span>
+<span class="linenos">31</span>        <span class="n">dgamma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dout</span> <span class="o">*</span> <span class="n">X_norm</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">32</span>        <span class="n">dbeta</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">dout</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">33</span>
+<span class="linenos">34</span>        <span class="k">return</span> <span class="n">dX</span><span class="p">,</span> <span class="n">dgamma</span><span class="p">,</span> <span class="n">dbeta</span>
+</pre></div>
+</div>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1502.03167">Original Paper</a></p></li>
+<li><p><a class="reference external" href="https://wiseodd.github.io/techblog/2016/07/04/batchnorm/">Implementing BatchNorm in Neural Net</a></p></li>
+<li><p><a class="reference external" href="https://kratzert.github.io/2016/02/12/understanding-the-gradient-flow-through-the-batch-normalization-layer.html">Understanding the backward pass through Batch Norm</a></p></li>
+</ul>
+</section>
+<section id="convolution">
+<h2><a class="toc-backref" href="#id11">Convolution</a><a class="headerlink" href="#convolution" title="Permalink to this headline">#</a></h2>
+<p>In CNN, a convolution is a linear operation that involves multiplication of weight (kernel/filter) with the input and it does most of the heavy lifting job.</p>
+<p>Convolution layer consists of 2 major component 1. Kernel(Filter) 2. Stride</p>
+<ol class="arabic simple">
+<li><p>Kernel (Filter): A convolution layer can have more than one filter. The size of the filter should be smaller than the size of input dimension. It is intentional as it allows filter to be applied multiple times at difference point (position) on the input.Filters are helpful in understanding and identifying important features from given input. By applying different filters (more than one filter) on the same input helps in extracting different features from given input. Output from multiplying filter with the input gives Two dimensional array. As such, the output array from this operation is called “Feature Map”.</p></li>
+<li><p>Stride: This property controls the movement of filter over input. when the value is set to 1, then filter moves 1 column at a time over input. When the value is set to 2 then the filer jump 2 columns at a time as filter moves over the input.</p></li>
+</ol>
+<p class="rubric">Code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>  <span class="c1"># this code demonstate on how Convolution works</span>
+<span class="linenos"> 2</span>  <span class="c1"># Assume we have a image of 4 X 4 and a filter fo 2 X 2 and Stride = 1</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>  <span class="k">def</span> <span class="nf">conv_filter_ouput</span><span class="p">(</span><span class="n">input_img_section</span><span class="p">,</span><span class="n">filter_value</span><span class="p">):</span>
+<span class="linenos"> 5</span>        <span class="c1"># this method perfromas the multiplication of input and filter</span>
+<span class="linenos"> 6</span>        <span class="c1"># returns singular value</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span>        <span class="n">value</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 9</span>        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">filter_value</span><span class="p">)):</span>
+<span class="linenos">10</span>              <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">filter_value</span><span class="p">[</span><span class="mi">0</span><span class="p">])):</span>
+<span class="linenos">11</span>                    <span class="n">value</span> <span class="o">=</span> <span class="n">value</span> <span class="o">+</span> <span class="p">(</span><span class="n">input_img_section</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">filter_value</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">])</span>
+<span class="linenos">12</span>        <span class="k">return</span> <span class="n">value</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span>  <span class="n">img_input</span> <span class="o">=</span> <span class="p">[[</span><span class="mf">260.745</span><span class="p">,</span> <span class="mf">261.332</span><span class="p">,</span> <span class="mf">112.27</span> <span class="p">,</span> <span class="mf">262.351</span><span class="p">],</span>
+<span class="linenos">15</span>   <span class="p">[</span><span class="mf">260.302</span><span class="p">,</span> <span class="mf">208.802</span><span class="p">,</span> <span class="mf">139.05</span> <span class="p">,</span> <span class="mf">230.709</span><span class="p">],</span>
+<span class="linenos">16</span>   <span class="p">[</span><span class="mf">261.775</span><span class="p">,</span>  <span class="mf">93.73</span> <span class="p">,</span> <span class="mf">166.118</span><span class="p">,</span> <span class="mf">122.847</span><span class="p">],</span>
+<span class="linenos">17</span>   <span class="p">[</span><span class="mf">259.56</span> <span class="p">,</span> <span class="mf">232.038</span><span class="p">,</span> <span class="mf">262.351</span><span class="p">,</span> <span class="mf">228.937</span><span class="p">]]</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>  <span class="nb">filter</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],</span>
+<span class="linenos">20</span>     <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>  <span class="n">filterX</span><span class="p">,</span><span class="n">filterY</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">filter</span><span class="p">),</span><span class="nb">len</span><span class="p">(</span><span class="nb">filter</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos">23</span>  <span class="n">filtered_result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">24</span>  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">img_mx</span><span class="p">)</span><span class="o">-</span><span class="n">filterX</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<span class="linenos">25</span>  <span class="n">clm</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">26</span>  <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">img_mx</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">-</span><span class="n">filterY</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+<span class="linenos">27</span>        <span class="n">clm</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">conv_filter_ouput</span><span class="p">(</span><span class="n">img_mx</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span><span class="o">+</span><span class="n">filterX</span><span class="p">,</span><span class="n">j</span><span class="p">:</span><span class="n">j</span><span class="o">+</span><span class="n">filterY</span><span class="p">],</span><span class="nb">filter</span><span class="p">))</span>
+<span class="linenos">28</span>  <span class="n">filtered_result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clm</span><span class="p">)</span>
+<span class="linenos">29</span>
+<span class="linenos">30</span>  <span class="nb">print</span><span class="p">(</span><span class="n">filtered_result</span><span class="p">)</span>
+</pre></div>
+</div>
+<img alt="_images/cnn_filter_output.png" class="align-center" src="_images/cnn_filter_output.png" />
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://cs231n.github.io/convolutional-networks/">cs231n reference</a></p></li>
+</ul>
+</section>
+<section id="dropout">
+<h2><a class="toc-backref" href="#id12">Dropout</a><a class="headerlink" href="#dropout" title="Permalink to this headline">#</a></h2>
+<p>A dropout layer takes the output of the previous layer’s activations and randomly sets a certain fraction (dropout rate) of the activatons to 0, cancelling or ‘dropping’ them out.</p>
+<p>It is a common regularization technique used to prevent overfitting in Neural Networks.</p>
+<img alt="_images/dropout_net.png" class="align-center" src="_images/dropout_net.png" />
+<p>The dropout rate is the tunable hyperparameter that is adjusted to measure performance with different values. It is typically set between 0.2 and 0.5 (but may be arbitrarily set).</p>
+<p>Dropout is only used during training; At test time, no activations are dropped, but scaled down by a factor of dropout rate. This is to account for more units being active during test time than training time.</p>
+<p>For example:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>A layer in a neural net outputs a tensor (matrix) A of shape (batch_size, num_features).</p></li>
+<li><p>The dropout rate of the layer is set to 0.5 (50%).</p></li>
+<li><p>A random 50% of the values in A will be set to 0.</p></li>
+<li><p>These will then be multiplied with the weight matrix to form the inputs to the next layer.</p></li>
+</ul>
+</div></blockquote>
+<p>The premise behind dropout is to introduce noise into a layer in order to disrupt any interdependent learning or coincidental patterns that may occur between units in the layer, that aren’t significant.</p>
+<p class="rubric">Code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>  <span class="c1"># layer_output is a 2D numpy matrix of activations</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span>  <span class="n">layer_output</span> <span class="o">*=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">high</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="n">layer_output</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="c1"># dropping out values</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span>  <span class="c1"># scaling up by dropout rate during TRAINING time, so no scaling needs to be done at test time</span>
+<span class="linenos">6</span>  <span class="n">layer_output</span> <span class="o">/=</span> <span class="mf">0.5</span>
+<span class="linenos">7</span>  <span class="c1"># OR</span>
+<span class="linenos">8</span>  <span class="n">layer_output</span> <span class="o">*=</span> <span class="mf">0.5</span> <span class="c1"># Scaling down during TEST time.</span>
+</pre></div>
+</div>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets">2</span></dt>
+<dd></dd>
+</dl>
+<p>This results in the following operation.</p>
+<img alt="_images/dropout.png" class="align-center" src="_images/dropout.png" />
+<p>All reference, images and code examples, unless mentioned otherwise, are from section 4.4.3 of <a class="reference external" href="https://www.manning.com/books/deep-learning-with-python">Deep Learning for Python</a> by François Chollet.</p>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets">2</span></dt>
+<dd></dd>
+</dl>
+</section>
+<section id="pooling">
+<h2><a class="toc-backref" href="#id13">Pooling</a><a class="headerlink" href="#pooling" title="Permalink to this headline">#</a></h2>
+<p>Pooling layers often take convolution layers as input. A complicated dataset with many object will require a large number of filters, each responsible finding pattern in an image so the dimensionally of convolutional layer can get large. It will cause an increase of parameters, which can lead to over-fitting. Pooling layers are methods for reducing this high dimensionally. Just like the convolution layer, there is kernel size and stride. The size of the kernel is smaller than the feature map. For most of the cases the size of the kernel will be 2X2 and the stride of 2. There are mainly two types of pooling layers.</p>
+<p>The first type is max pooling layer.
+Max pooling layer will take a stack of feature maps (convolution layer) as input. The value of the node in the max pooling layer is calculated by just the maximum of the pixels contained in the window.</p>
+<p>The other type of pooling layer is the Average Pooling layer.
+Average pooling layer calculates the average of pixels contained in the window. Its not used often but you may see this used in applications for which smoothing an image is preferable.</p>
+<p class="rubric">Code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">max_pooling</span><span class="p">(</span><span class="n">feature_map</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 3</span><span class="sd">    :param feature_map: Feature matrix of shape (height, width, layers)</span>
+<span class="linenos"> 4</span><span class="sd">    :param size: size of kernal</span>
+<span class="linenos"> 5</span><span class="sd">    :param stride: movement speed of kernal</span>
+<span class="linenos"> 6</span><span class="sd">    :return: max-pooled feature vector</span>
+<span class="linenos"> 7</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 8</span>    <span class="n">pool_shape</span> <span class="o">=</span> <span class="p">(</span><span class="n">feature_map</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">//</span><span class="n">stride</span><span class="p">,</span> <span class="n">feature_map</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">//</span><span class="n">stride</span><span class="p">,</span> <span class="n">feature_map</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#shape of output</span>
+<span class="linenos"> 9</span>    <span class="n">pool_out</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">pool_shape</span><span class="p">)</span>
+<span class="linenos">10</span>    <span class="k">for</span> <span class="n">layer</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">feature_map</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+<span class="linenos">11</span>            <span class="c1">#for each layer</span>
+<span class="linenos">12</span>            <span class="n">row</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">13</span>            <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">feature_map</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">stride</span><span class="p">):</span>
+<span class="linenos">14</span>                <span class="n">col</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">15</span>                <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">numpy</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">feature_map</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">stride</span><span class="p">):</span>
+<span class="linenos">16</span>                    <span class="n">pool_out</span><span class="p">[</span><span class="n">row</span><span class="p">,</span> <span class="n">col</span><span class="p">,</span> <span class="n">layer</span><span class="p">]</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">([</span><span class="n">feature_map</span><span class="p">[</span><span class="n">c</span><span class="p">:</span><span class="n">c</span><span class="o">+</span><span class="n">size</span><span class="p">,</span>  <span class="n">r</span><span class="p">:</span><span class="n">r</span><span class="o">+</span><span class="n">size</span><span class="p">,</span> <span class="n">layer</span><span class="p">]])</span>
+<span class="linenos">17</span>                    <span class="n">col</span> <span class="o">=</span> <span class="n">col</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">18</span>                <span class="n">row</span> <span class="o">=</span> <span class="n">row</span> <span class="o">+</span><span class="mi">1</span>
+<span class="linenos">19</span>    <span class="k">return</span> <span class="n">pool_out</span>
+</pre></div>
+</div>
+<a class="reference internal image-reference" href="_images/maxpool.png"><img alt="_images/maxpool.png" class="align-center" src="_images/maxpool.png" style="width: 512px;" /></a>
+</section>
+<section id="fully-connected-linear">
+<h2><a class="toc-backref" href="#id14">Fully-connected/Linear</a><a class="headerlink" href="#fully-connected-linear" title="Permalink to this headline">#</a></h2>
+<p>In a neural network, a <em>fully-connected layer</em>, also known as <em>linear</em> layer,
+is a type of layer where all the inputs from one layer are connected to every
+activation unit of the next layer.
+In most popular machine learning models, the last few layers in the network are
+fully-connected ones. Indeed, this type of layer performs the task of
+outputting a class prediction, based on the features learned in the previous
+layers.</p>
+<figure class="align-center" id="id9">
+<a class="reference internal image-reference" href="_images/fc_layer.png"><img alt="_images/fc_layer.png" src="_images/fc_layer.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text">Example of a fully-connected layer, with four input nodes and eight
+output nodes. Source [4].</span><a class="headerlink" href="#id9" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>The fully-connected layer receives in input a vector of nodes, activated in
+the previous convolutional layers. This vector passes through one or more
+dense layers, before being sent to the output layer.
+Before it reaches the output layer, an activation function is used for
+making a prediction. While the convolutional and pooling layers generally use
+a ReLU function, the fully-connected layer can use <em>two types</em> of activation
+functions, based on the type of the classification problem:</p>
+<ul class="simple">
+<li><p><strong>Sigmoid:</strong> A logistic function, used for binary classification problems.</p></li>
+<li><p><strong>Softmax:</strong> A more generalized logistic activation function, it ensures that
+the values in the output layer sum up to 1. Commonly used for multi-class
+classification.</p></li>
+</ul>
+<p>The activation function outputs a vector whose dimension is equal to the number
+of classes to be predicted. The output vector yields a probability from 1
+to 0 for each class.</p>
+</section>
+<section id="rnn">
+<h2><a class="toc-backref" href="#id15">RNN</a><a class="headerlink" href="#rnn" title="Permalink to this headline">#</a></h2>
+<p>RNN (Recurrent Neural Network) is the neural network with hidden state, which captures the historical information up to current timestep. Because the hidden state of current state uses the same definition as that in previous timestep, which means the computation is recurrent, hence it is called recurrent neural network.(Ref 2)</p>
+<p>The structure is as follows:</p>
+<a class="reference internal image-reference" href="_images/rnn_layer.png"><img alt="_images/rnn_layer.png" class="align-center" src="_images/rnn_layer.png" style="width: 512px;" /></a>
+<p class="rubric">Code</p>
+<p>For detail code, refer to <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/layers.py">layers.py</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">RNN</span><span class="p">:</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 3</span>        <span class="bp">self</span><span class="o">.</span><span class="n">input_dim</span> <span class="o">=</span> <span class="n">input_dim</span>
+<span class="linenos"> 4</span>        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span> <span class="o">=</span> <span class="n">hidden_dim</span>
+<span class="linenos"> 5</span>        <span class="bp">self</span><span class="o">.</span><span class="n">out_dim</span> <span class="o">=</span> <span class="n">output_dim</span>
+<span class="linenos"> 6</span>        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+<span class="linenos"> 7</span>        <span class="c1"># initialization</span>
+<span class="linenos"> 8</span>        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_params</span><span class="p">()</span>
+<span class="linenos"> 9</span>        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_hidden_state</span><span class="p">()</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>    <span class="k">def</span> <span class="nf">_init_params</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">]:</span>
+<span class="linenos">12</span>        <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="linenos">13</span>        <span class="n">Waa</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">])</span>
+<span class="linenos">14</span>        <span class="n">Wax</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">input_dim</span><span class="p">])</span>
+<span class="linenos">15</span>        <span class="n">Wy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">])</span>
+<span class="linenos">16</span>        <span class="n">ba</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="linenos">17</span>        <span class="n">by</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="linenos">18</span>        <span class="k">return</span> <span class="p">[</span><span class="n">Waa</span><span class="p">,</span> <span class="n">Wax</span><span class="p">,</span> <span class="n">Wy</span><span class="p">,</span> <span class="n">ba</span><span class="p">,</span> <span class="n">by</span><span class="p">]</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>    <span class="k">def</span> <span class="nf">_init_hidden_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+<span class="linenos">21</span>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">])</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_vector</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+<span class="linenos">24</span>        <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">25</span><span class="sd">        input_vector:</span>
+<span class="linenos">26</span><span class="sd">            dimension: [num_steps, self.input_dim, self.batch_size]</span>
+<span class="linenos">27</span><span class="sd">        out_vector:</span>
+<span class="linenos">28</span><span class="sd">            dimension: [num_steps, self.output_dim, self.batch_size]</span>
+<span class="linenos">29</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">30</span>        <span class="n">Waa</span><span class="p">,</span> <span class="n">Wax</span><span class="p">,</span> <span class="n">Wy</span><span class="p">,</span> <span class="n">ba</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+<span class="linenos">31</span>        <span class="n">output_vector</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">32</span>        <span class="k">for</span> <span class="n">vector</span> <span class="ow">in</span> <span class="n">input_vector</span><span class="p">:</span>
+<span class="linenos">33</span>            <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span>
+<span class="linenos">34</span>                <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Waa</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wax</span><span class="p">,</span> <span class="n">vector</span><span class="p">)</span> <span class="o">+</span> <span class="n">ba</span>
+<span class="linenos">35</span>            <span class="p">)</span>
+<span class="linenos">36</span>            <span class="n">y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span>
+<span class="linenos">37</span>                <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span><span class="p">)</span> <span class="o">+</span> <span class="n">by</span>
+<span class="linenos">38</span>            <span class="p">)</span>
+<span class="linenos">39</span>            <span class="n">output_vector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="linenos">40</span>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">output_vector</span><span class="p">)</span>
+<span class="linenos">41</span>
+<span class="linenos">42</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+<span class="linenos">43</span>    <span class="n">input_data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="linenos">44</span>        <span class="p">[</span>
+<span class="linenos">45</span>            <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="linenos">46</span>            <span class="p">,</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="linenos">47</span>            <span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="linenos">48</span>        <span class="p">]</span>
+<span class="linenos">49</span>        <span class="p">,</span> <span class="p">[</span>
+<span class="linenos">50</span>            <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="linenos">51</span>            <span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<span class="linenos">52</span>            <span class="p">,</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="linenos">53</span>        <span class="p">]</span>
+<span class="linenos">54</span>    <span class="p">])</span>
+<span class="linenos">55</span>    <span class="n">batch_size</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">56</span>    <span class="n">input_dim</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="linenos">57</span>    <span class="n">output_dim</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="linenos">58</span>    <span class="n">hidden_dim</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">59</span>    <span class="n">time_step</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">60</span>    <span class="n">rnn</span> <span class="o">=</span> <span class="n">RNN</span><span class="p">(</span><span class="n">input_dim</span><span class="o">=</span><span class="n">input_dim</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="n">batch_size</span><span class="p">,</span> <span class="n">output_dim</span><span class="o">=</span><span class="n">output_dim</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="o">=</span><span class="n">hidden_dim</span><span class="p">)</span>
+<span class="linenos">61</span>    <span class="n">output_vector</span> <span class="o">=</span> <span class="n">rnn</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="n">input_vector</span><span class="o">=</span><span class="n">input_data</span><span class="p">)</span>
+<span class="linenos">62</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;RNN:&quot;</span><span class="p">)</span>
+<span class="linenos">63</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Input data dimensions: </span><span class="si">{</span><span class="n">input_data</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">64</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Output data dimensions </span><span class="si">{</span><span class="n">output_vector</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">65</span>    <span class="c1">## We will get the following output:</span>
+<span class="linenos">66</span>    <span class="c1">##  RNN:</span>
+<span class="linenos">67</span>    <span class="c1">## Input data dimensions: (2, 3, 2)</span>
+<span class="linenos">68</span>    <span class="c1">## Output data dimensions (2, 4, 2)</span>
+</pre></div>
+</div>
+</section>
+<section id="gru">
+<h2><a class="toc-backref" href="#id16">GRU</a><a class="headerlink" href="#gru" title="Permalink to this headline">#</a></h2>
+<p>GRU (Gated Recurrent Unit) supports the gating of hidden state:</p>
+<ol class="arabic simple">
+<li><p>Reset gate controls how much of previous hidden state we might still want to remember</p></li>
+<li><p>Update gate controls how much of current hidden state is just a copy of previous state</p></li>
+</ol>
+<p>The structure and math are as follow:</p>
+<a class="reference internal image-reference" href="_images/gru_structure.png"><img alt="_images/gru_structure.png" class="align-center" src="_images/gru_structure.png" style="width: 512px;" /></a>
+<p class="rubric">Code</p>
+<p>For detail code, refer to <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/layers.py">layers.py</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">GRU</span><span class="p">:</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 3</span>        <span class="bp">self</span><span class="o">.</span><span class="n">input_dim</span> <span class="o">=</span> <span class="n">input_dim</span>
+<span class="linenos"> 4</span>        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span> <span class="o">=</span> <span class="n">hidden_dim</span>
+<span class="linenos"> 5</span>        <span class="bp">self</span><span class="o">.</span><span class="n">out_dim</span> <span class="o">=</span> <span class="n">output_dim</span>
+<span class="linenos"> 6</span>        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+<span class="linenos"> 7</span>        <span class="c1"># initialization</span>
+<span class="linenos"> 8</span>        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_params</span><span class="p">()</span>
+<span class="linenos"> 9</span>        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_hidden_state</span><span class="p">()</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>    <span class="k">def</span> <span class="nf">_init_params</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">]:</span>
+<span class="linenos">12</span>        <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="linenos">13</span>        <span class="k">def</span> <span class="nf">param_single_layer</span><span class="p">():</span>
+<span class="linenos">14</span>            <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="o">+</span><span class="n">input_dim</span><span class="p">))</span>
+<span class="linenos">15</span>            <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="linenos">16</span>            <span class="k">return</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span>        <span class="c1"># reset, update gate</span>
+<span class="linenos">19</span>        <span class="n">Wr</span><span class="p">,</span> <span class="n">br</span> <span class="o">=</span> <span class="n">param_single_layer</span><span class="p">()</span>
+<span class="linenos">20</span>        <span class="n">Wu</span><span class="p">,</span> <span class="n">bu</span> <span class="o">=</span> <span class="n">param_single_layer</span><span class="p">()</span>
+<span class="linenos">21</span>        <span class="c1"># output layer</span>
+<span class="linenos">22</span>        <span class="n">Wy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">])</span>
+<span class="linenos">23</span>        <span class="n">by</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="linenos">24</span>        <span class="k">return</span> <span class="p">[</span><span class="n">Wr</span><span class="p">,</span> <span class="n">br</span><span class="p">,</span> <span class="n">Wu</span><span class="p">,</span> <span class="n">bu</span><span class="p">,</span> <span class="n">Wy</span><span class="p">,</span> <span class="n">by</span><span class="p">]</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>    <span class="k">def</span> <span class="nf">_init_hidden_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+<span class="linenos">27</span>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">])</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_vector</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+<span class="linenos">30</span>        <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">31</span><span class="sd">        input_vector:</span>
+<span class="linenos">32</span><span class="sd">            dimension: [num_steps, self.input_dim, self.batch_size]</span>
+<span class="linenos">33</span><span class="sd">        out_vector:</span>
+<span class="linenos">34</span><span class="sd">            dimension: [num_steps, self.output_dim, self.batch_size]</span>
+<span class="linenos">35</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">36</span>        <span class="n">Wr</span><span class="p">,</span> <span class="n">br</span><span class="p">,</span> <span class="n">Wu</span><span class="p">,</span> <span class="n">bu</span><span class="p">,</span> <span class="n">Wy</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+<span class="linenos">37</span>        <span class="n">output_vector</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">38</span>        <span class="k">for</span> <span class="n">vector</span> <span class="ow">in</span> <span class="n">input_vector</span><span class="p">:</span>
+<span class="linenos">39</span>            <span class="c1"># expit in scipy is sigmoid function</span>
+<span class="linenos">40</span>            <span class="n">reset_gate</span> <span class="o">=</span> <span class="n">expit</span><span class="p">(</span>
+<span class="linenos">41</span>                <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wr</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span><span class="p">,</span> <span class="n">vector</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="n">br</span>
+<span class="linenos">42</span>            <span class="p">)</span>
+<span class="linenos">43</span>            <span class="n">update_gate</span> <span class="o">=</span> <span class="n">expit</span><span class="p">(</span>
+<span class="linenos">44</span>                <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wu</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span><span class="p">,</span> <span class="n">vector</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="n">bu</span>
+<span class="linenos">45</span>            <span class="p">)</span>
+<span class="linenos">46</span>            <span class="n">candidate_hidden</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span>
+<span class="linenos">47</span>                <span class="n">reset_gate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span>
+<span class="linenos">48</span>            <span class="p">)</span>
+<span class="linenos">49</span>            <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span> <span class="o">=</span> <span class="n">update_gate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">update_gate</span><span class="p">)</span> <span class="o">*</span> <span class="n">candidate_hidden</span>
+<span class="linenos">50</span>            <span class="n">y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span>
+<span class="linenos">51</span>                <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span><span class="p">)</span> <span class="o">+</span> <span class="n">by</span>
+<span class="linenos">52</span>            <span class="p">)</span>
+<span class="linenos">53</span>            <span class="n">output_vector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="linenos">54</span>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">output_vector</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="lstm">
+<h2><a class="toc-backref" href="#id17">LSTM</a><a class="headerlink" href="#lstm" title="Permalink to this headline">#</a></h2>
+<p>In order to address the <strong>long-term information preservation</strong> and <strong>shor-term skipping</strong> in latent variable model, we introduced LSTM. In LSTM, we introduce the memory cell that has the same shape as the hidden state, which is actually a fancy version of a hidden state, engineered to record additional information.</p>
+<p>The structure and math are as follow:</p>
+<a class="reference internal image-reference" href="_images/lstm_structure.png"><img alt="_images/lstm_structure.png" class="align-center" src="_images/lstm_structure.png" style="width: 512px;" /></a>
+<p class="rubric">Code</p>
+<p>For detail code, refer to <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/layers.py">layers.py</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">LSTM</span><span class="p">:</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">hidden_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">output_dim</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos"> 3</span>        <span class="bp">self</span><span class="o">.</span><span class="n">input_dim</span> <span class="o">=</span> <span class="n">input_dim</span>
+<span class="linenos"> 4</span>        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span> <span class="o">=</span> <span class="n">hidden_dim</span>
+<span class="linenos"> 5</span>        <span class="bp">self</span><span class="o">.</span><span class="n">out_dim</span> <span class="o">=</span> <span class="n">output_dim</span>
+<span class="linenos"> 6</span>        <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span> <span class="o">=</span> <span class="n">batch_size</span>
+<span class="linenos"> 7</span>        <span class="c1"># initialization</span>
+<span class="linenos"> 8</span>        <span class="bp">self</span><span class="o">.</span><span class="n">params</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_params</span><span class="p">()</span>
+<span class="linenos"> 9</span>        <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_hidden_state</span><span class="p">()</span>
+<span class="linenos">10</span>        <span class="bp">self</span><span class="o">.</span><span class="n">memory_state</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_init_hidden_state</span><span class="p">()</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span>    <span class="k">def</span> <span class="nf">_init_params</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">]:</span>
+<span class="linenos">13</span>        <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="linenos">14</span>        <span class="k">def</span> <span class="nf">param_single_layer</span><span class="p">():</span>
+<span class="linenos">15</span>            <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="o">+</span><span class="n">input_dim</span><span class="p">))</span>
+<span class="linenos">16</span>            <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="linenos">17</span>            <span class="k">return</span> <span class="n">w</span><span class="p">,</span> <span class="n">b</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>        <span class="c1"># forget, input, output gate + candidate memory state</span>
+<span class="linenos">20</span>        <span class="n">Wf</span><span class="p">,</span> <span class="n">bf</span> <span class="o">=</span> <span class="n">param_single_layer</span><span class="p">()</span>
+<span class="linenos">21</span>        <span class="n">Wi</span><span class="p">,</span> <span class="n">bi</span> <span class="o">=</span> <span class="n">param_single_layer</span><span class="p">()</span>
+<span class="linenos">22</span>        <span class="n">Wo</span><span class="p">,</span> <span class="n">bo</span> <span class="o">=</span> <span class="n">param_single_layer</span><span class="p">()</span>
+<span class="linenos">23</span>        <span class="n">Wc</span><span class="p">,</span> <span class="n">bc</span> <span class="o">=</span> <span class="n">param_single_layer</span><span class="p">()</span>
+<span class="linenos">24</span>        <span class="c1"># output layer</span>
+<span class="linenos">25</span>        <span class="n">Wy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="n">scale</span><span class="o">=</span><span class="n">scale</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">])</span>
+<span class="linenos">26</span>        <span class="n">by</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">out_dim</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="linenos">27</span>        <span class="k">return</span> <span class="p">[</span><span class="n">Wf</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">Wi</span><span class="p">,</span> <span class="n">bi</span><span class="p">,</span> <span class="n">Wo</span><span class="p">,</span> <span class="n">bo</span><span class="p">,</span> <span class="n">Wc</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">Wy</span><span class="p">,</span> <span class="n">by</span><span class="p">]</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span>    <span class="k">def</span> <span class="nf">_init_hidden_state</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+<span class="linenos">30</span>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_dim</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">batch_size</span><span class="p">])</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span>    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">input_vector</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+<span class="linenos">33</span>        <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">34</span><span class="sd">        input_vector:</span>
+<span class="linenos">35</span><span class="sd">            dimension: [num_steps, self.input_dim, self.batch_size]</span>
+<span class="linenos">36</span><span class="sd">        out_vector:</span>
+<span class="linenos">37</span><span class="sd">            dimension: [num_steps, self.output_dim, self.batch_size]</span>
+<span class="linenos">38</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos">39</span>        <span class="n">Wf</span><span class="p">,</span> <span class="n">bf</span><span class="p">,</span> <span class="n">Wi</span><span class="p">,</span> <span class="n">bi</span><span class="p">,</span> <span class="n">Wo</span><span class="p">,</span> <span class="n">bo</span><span class="p">,</span> <span class="n">Wc</span><span class="p">,</span> <span class="n">bc</span><span class="p">,</span> <span class="n">Wy</span><span class="p">,</span> <span class="n">by</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">params</span>
+<span class="linenos">40</span>        <span class="n">output_vector</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">41</span>        <span class="k">for</span> <span class="n">vector</span> <span class="ow">in</span> <span class="n">input_vector</span><span class="p">:</span>
+<span class="linenos">42</span>            <span class="c1"># expit in scipy is sigmoid function</span>
+<span class="linenos">43</span>            <span class="n">foget_gate</span> <span class="o">=</span> <span class="n">expit</span><span class="p">(</span>
+<span class="linenos">44</span>                <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wf</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span><span class="p">,</span> <span class="n">vector</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="n">bf</span>
+<span class="linenos">45</span>            <span class="p">)</span>
+<span class="linenos">46</span>            <span class="n">input_gate</span> <span class="o">=</span> <span class="n">expit</span><span class="p">(</span>
+<span class="linenos">47</span>                <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span><span class="p">,</span> <span class="n">vector</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="n">bi</span>
+<span class="linenos">48</span>            <span class="p">)</span>
+<span class="linenos">49</span>            <span class="n">output_gate</span> <span class="o">=</span> <span class="n">expit</span><span class="p">(</span>
+<span class="linenos">50</span>                <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wo</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span><span class="p">,</span> <span class="n">vector</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="n">bo</span>
+<span class="linenos">51</span>            <span class="p">)</span>
+<span class="linenos">52</span>            <span class="n">candidate_memory</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span>
+<span class="linenos">53</span>                <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wc</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span><span class="p">,</span> <span class="n">vector</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span> <span class="o">+</span> <span class="n">bc</span>
+<span class="linenos">54</span>            <span class="p">)</span>
+<span class="linenos">55</span>            <span class="bp">self</span><span class="o">.</span><span class="n">memory_state</span> <span class="o">=</span> <span class="n">foget_gate</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">memory_state</span> <span class="o">+</span> <span class="n">input_gate</span> <span class="o">*</span> <span class="n">candidate_memory</span>
+<span class="linenos">56</span>            <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span> <span class="o">=</span> <span class="n">output_gate</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">memory_state</span><span class="p">)</span>
+<span class="linenos">57</span>            <span class="n">y</span> <span class="o">=</span> <span class="n">softmax</span><span class="p">(</span>
+<span class="linenos">58</span>                <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">Wy</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">hidden_state</span><span class="p">)</span> <span class="o">+</span> <span class="n">by</span>
+<span class="linenos">59</span>            <span class="p">)</span>
+<span class="linenos">60</span>            <span class="n">output_vector</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="linenos">61</span>        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">output_vector</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets">1</span></dt>
+<dd><p><a class="reference external" href="http://www.deeplearningbook.org/contents/convnets.html">http://www.deeplearningbook.org/contents/convnets.html</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">2</span></dt>
+<dd><p>“4.4.3, Fundamentals of Machine Learning: Adding Dropout.” <a class="reference external" href="https://www.manning.com/books/deep-learning-with-python">Deep Learning for Python</a>, by Chollet, François. Manning Publications Co., 2018, pp. 109–110.</p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">3</span></dt>
+<dd><p><a href="#id18"><span class="problematic" id="id19">`Dive into Deep Learning https://d2l.ai/index.html`_</span></a>, by Zhang, Aston and Lipton, Zachary C. and Li, Mu and Smola, Alexander J.</p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">4</span></dt>
+<dd><p><a class="reference external" href="https://docs.nvidia.com/deeplearning/performance/dl-performance-fully-connected/index.html#fullyconnected-layer">https://docs.nvidia.com/deeplearning/performance/dl-performance-fully-connected/index.html#fullyconnected-layer</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="activation_functions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Activation Functions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="loss_functions.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Loss Functions</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

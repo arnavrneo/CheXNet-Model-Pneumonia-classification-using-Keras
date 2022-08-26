@@ -1,0 +1,736 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Optimizers &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Regularization" href="regularization.html" />
+    <link rel="prev" title="Loss Functions" href="loss_functions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="calculus.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forwardpropagation.html">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="layers.html">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regularization.html">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architectures.html">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification_algos.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="libraries.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_content.html">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/optimizers.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adagrad">
+   Adagrad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adadelta">
+   Adadelta
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adam">
+   Adam
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conjugate-gradients">
+   Conjugate Gradients
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bfgs">
+   BFGS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#momentum">
+   Momentum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nesterov-momentum">
+   Nesterov Momentum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newton-s-method">
+   Newton’s Method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rmsprop">
+   RMSProp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sgd">
+   SGD
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Optimizers</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adagrad">
+   Adagrad
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adadelta">
+   Adadelta
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adam">
+   Adam
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conjugate-gradients">
+   Conjugate Gradients
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bfgs">
+   BFGS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#momentum">
+   Momentum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nesterov-momentum">
+   Nesterov Momentum
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#newton-s-method">
+   Newton’s Method
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rmsprop">
+   RMSProp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sgd">
+   SGD
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="optimizers">
+<span id="id1"></span><h1>Optimizers<a class="headerlink" href="#optimizers" title="Permalink to this headline">#</a></h1>
+<p class="rubric">What is Optimizer ?</p>
+<p>It is very important to tweak the weights of the model during the training process, to make our predictions as correct and optimized as possible. But how exactly do you do that? How do you change the parameters of your model, by how much, and when?</p>
+<p>Best answer to all above question is <em>optimizers</em>. They tie together the loss function and model parameters by updating the model in response to the output of the loss function. In simpler terms, optimizers shape and mold your model into its most accurate possible form by futzing with the weights. The loss function is the guide to the terrain, telling the optimizer when it’s moving in the right or wrong direction.</p>
+<p>Below are list of example optimizers</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#adagrad" id="id7">Adagrad</a></p></li>
+<li><p><a class="reference internal" href="#adadelta" id="id8">Adadelta</a></p></li>
+<li><p><a class="reference internal" href="#adam" id="id9">Adam</a></p></li>
+<li><p><a class="reference internal" href="#conjugate-gradients" id="id10">Conjugate Gradients</a></p></li>
+<li><p><a class="reference internal" href="#bfgs" id="id11">BFGS</a></p></li>
+<li><p><a class="reference internal" href="#momentum" id="id12">Momentum</a></p></li>
+<li><p><a class="reference internal" href="#nesterov-momentum" id="id13">Nesterov Momentum</a></p></li>
+<li><p><a class="reference internal" href="#newton-s-method" id="id14">Newton’s Method</a></p></li>
+<li><p><a class="reference internal" href="#rmsprop" id="id15">RMSProp</a></p></li>
+<li><p><a class="reference internal" href="#sgd" id="id16">SGD</a></p></li>
+</ul>
+</div>
+<img alt="_images/optimizers.gif" class="align-center" src="_images/optimizers.gif" />
+<p>Image Credit: <a class="reference external" href="https://cs231n.github.io/neural-networks-3/">CS231n</a></p>
+<section id="adagrad">
+<h2><a class="toc-backref" href="#id7">Adagrad</a><a class="headerlink" href="#adagrad" title="Permalink to this headline">#</a></h2>
+<p>Adagrad (short for adaptive gradient) adaptively sets the learning rate according to a parameter.</p>
+<ul class="simple">
+<li><p>Parameters that have higher gradients or frequent updates should have slower learning rate so that we do not overshoot the minimum value.</p></li>
+<li><p>Parameters that have low gradients or infrequent updates should faster learning rate so that they get trained quickly.</p></li>
+<li><p>It divides the learning rate by the sum of squares of all previous gradients of the parameter.</p></li>
+<li><p>When the sum of the squared past gradients has a high value, it basically divides the learning rate by a high value, so the learning rate will become less.</p></li>
+<li><p>Similarly, if the sum of the squared past gradients has a low value, it divides the learning rate by a lower value, so the learning rate value will become high.</p></li>
+<li><p>This implies that the learning rate is inversely proportional to the sum of the squares of all the previous gradients of the parameter.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}g_{t}^{i} = \frac{\partial \mathcal{J}(w_{t}^{i})}{\partial W} \\
+W = W - \alpha \frac{\partial \mathcal{J}(w_{t}^{i})}{\sqrt{\sum_{r=1}^{t}\left ( g_{r}^{i} \right )^{2} + \varepsilon }}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(g_{t}^{i}\)</span> - the gradient of a parameter, :math: <a href="#id2"><span class="problematic" id="id3">`</span></a>Theta `  at an iteration t.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> - the learning rate</p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> - very small value to avoid dividing by zero</p></li>
+</ul>
+</div>
+</section>
+<section id="adadelta">
+<h2><a class="toc-backref" href="#id8">Adadelta</a><a class="headerlink" href="#adadelta" title="Permalink to this headline">#</a></h2>
+<p>AdaDelta belongs to the family of stochastic gradient descent algorithms, that provide adaptive techniques for hyperparameter tuning. Adadelta is probably short for ‘adaptive delta’, where delta here refers to the difference between the current weight and the newly updated weight.</p>
+<p>The main disadvantage in Adagrad is its accumulation of the squared gradients. During the training process, the accumulated sum keeps growing. From the above formala we can see that, As the accumulated sum increases learning rate to shrink and eventually become infinitesimally small, at which point the algorithm is no longer able to acquire additional knowledge.</p>
+<p>Adadelta is a more robust extension of Adagrad that adapts learning rates based on a moving window of gradient updates, instead of accumulating all past gradients. This way, Adadelta continues learning even when many updates have been done.</p>
+<p>With Adadelta, we do not even need to set a default learning rate, as it has been eliminated from the update rule.</p>
+<p>Implementation is something like this,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}v_t = \rho v_{t-1} + (1-\rho) \nabla_\theta^2 J( \theta) \\
+\Delta\theta &amp;= \dfrac{\sqrt{w_t + \epsilon}}{\sqrt{v_t + \epsilon}} \nabla_\theta J( \theta) \\
+\theta &amp;= \theta - \eta \Delta\theta \\
+w_t = \rho w_{t-1} + (1-\rho) \Delta\theta^2\end{split}\]</div>
+</section>
+<section id="adam">
+<h2><a class="toc-backref" href="#id9">Adam</a><a class="headerlink" href="#adam" title="Permalink to this headline">#</a></h2>
+<p>Adaptive Moment Estimation (Adam) combines ideas from both RMSProp and Momentum. It computes adaptive learning rates for each parameter and works as follows.</p>
+<ul class="simple">
+<li><p>First, it computes the exponentially weighted average of past gradients (<span class="math notranslate nohighlight">\(v_{dW}\)</span>).</p></li>
+<li><p>Second, it computes the exponentially weighted average of the squares of past gradients (<span class="math notranslate nohighlight">\(s_{dW}\)</span>).</p></li>
+<li><p>Third, these averages have a bias towards zero and to counteract this a bias correction is applied (<span class="math notranslate nohighlight">\(v_{dW}^{corrected}\)</span>, <span class="math notranslate nohighlight">\(s_{dW}^{corrected}\)</span>).</p></li>
+<li><p>Lastly, the parameters are updated using the information from the calculated averages.</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[\begin{split}v_{dW} = \beta_1 v_{dW} + (1 - \beta_1) \frac{\partial \mathcal{J} }{ \partial W } \\
+s_{dW} = \beta_2 s_{dW} + (1 - \beta_2) (\frac{\partial \mathcal{J} }{\partial W })^2 \\
+v^{corrected}_{dW} = \frac{v_{dW}}{1 - (\beta_1)^t} \\
+s^{corrected}_{dW} = \frac{s_{dW}}{1 - (\beta_1)^t} \\
+W = W - \alpha \frac{v^{corrected}_{dW}}{\sqrt{s^{corrected}_{dW}} + \varepsilon}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v_{dW}\)</span> - the exponentially weighted average of past gradients</p></li>
+<li><p><span class="math notranslate nohighlight">\(s_{dW}\)</span> - the exponentially weighted average of past squares of gradients</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_1\)</span> - hyperparameter to be tuned</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_2\)</span> - hyperparameter to be tuned</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \mathcal{J} }{ \partial W }\)</span> - cost gradient with respect to current layer</p></li>
+<li><p><span class="math notranslate nohighlight">\(W\)</span> - the weight matrix (parameter to be updated)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> - the learning rate</p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> - very small value to avoid dividing by zero</p></li>
+</ul>
+</div>
+</section>
+<section id="conjugate-gradients">
+<h2><a class="toc-backref" href="#id10">Conjugate Gradients</a><a class="headerlink" href="#conjugate-gradients" title="Permalink to this headline">#</a></h2>
+<p>Be the first to <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet">contribute!</a></p>
+</section>
+<section id="bfgs">
+<span id="optimizers-lbfgs"></span><h2><a class="toc-backref" href="#id11">BFGS</a><a class="headerlink" href="#bfgs" title="Permalink to this headline">#</a></h2>
+<p>Be the first to <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet">contribute!</a></p>
+</section>
+<section id="momentum">
+<h2><a class="toc-backref" href="#id12">Momentum</a><a class="headerlink" href="#momentum" title="Permalink to this headline">#</a></h2>
+<p>Used in conjunction Stochastic Gradient Descent (sgd) or Mini-Batch Gradient Descent, Momentum takes into account
+past gradients to smooth out the update. This is seen in variable <span class="math notranslate nohighlight">\(v\)</span> which is an exponentially weighted average
+of the gradient on previous steps. This results in minimizing oscillations and faster convergence.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}v_{dW} = \beta v_{dW} + (1 - \beta) \frac{\partial \mathcal{J} }{ \partial W } \\
+W = W - \alpha v_{dW}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(v\)</span> - the exponentially weighted average of past gradients</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \mathcal{J} }{ \partial W }\)</span> - cost gradient with respect to current layer weight tensor</p></li>
+<li><p><span class="math notranslate nohighlight">\(W\)</span> - weight tensor</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> - hyperparameter to be tuned</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> - the learning rate</p></li>
+</ul>
+</div>
+</section>
+<section id="nesterov-momentum">
+<h2><a class="toc-backref" href="#id13">Nesterov Momentum</a><a class="headerlink" href="#nesterov-momentum" title="Permalink to this headline">#</a></h2>
+<p>Be the first to <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet">contribute!</a></p>
+</section>
+<section id="newton-s-method">
+<h2><a class="toc-backref" href="#id14">Newton’s Method</a><a class="headerlink" href="#newton-s-method" title="Permalink to this headline">#</a></h2>
+<p>Be the first to <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet">contribute!</a></p>
+</section>
+<section id="rmsprop">
+<h2><a class="toc-backref" href="#id15">RMSProp</a><a class="headerlink" href="#rmsprop" title="Permalink to this headline">#</a></h2>
+<p>Another adaptive learning rate optimization algorithm, Root Mean Square Prop (RMSProp) works by keeping an exponentially weighted average of the squares of past gradients.
+RMSProp then divides the learning rate by this average to speed up convergence.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}s_{dW} = \beta s_{dW} + (1 - \beta) (\frac{\partial \mathcal{J} }{\partial W })^2 \\
+W = W - \alpha \frac{\frac{\partial \mathcal{J} }{\partial W }}{\sqrt{s^{corrected}_{dW}} + \varepsilon}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(s\)</span> - the exponentially weighted average of past squares of gradients</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{\partial \mathcal{J} }{\partial W }\)</span> - cost gradient with respect to current layer weight tensor</p></li>
+<li><p><span class="math notranslate nohighlight">\(W\)</span> - weight tensor</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta\)</span> - hyperparameter to be tuned</p></li>
+<li><p><span class="math notranslate nohighlight">\(\alpha\)</span> - the learning rate</p></li>
+<li><p><span class="math notranslate nohighlight">\(\epsilon\)</span> - very small value to avoid dividing by zero</p></li>
+</ul>
+</div>
+</section>
+<section id="sgd">
+<h2><a class="toc-backref" href="#id16">SGD</a><a class="headerlink" href="#sgd" title="Permalink to this headline">#</a></h2>
+<p>SGD stands for Stochastic Gradient Descent.In Stochastic Gradient Descent, a few samples are selected randomly instead of the whole data set for each iteration. In Gradient Descent, there is a term called “batch” which denotes the total number of samples from a dataset that is used for calculating the gradient for each iteration. In typical Gradient Descent optimization, like Batch Gradient Descent, the batch is taken to be the whole dataset. Although, using the whole dataset is really useful for getting to the minima in a less noisy or less random manner, but the problem arises when our datasets get really huge.</p>
+<p>This problem is solved by Stochastic Gradient Descent. In SGD, it uses only a single sample to perform each iteration. The sample is randomly shuffled and selected for performing the iteration.</p>
+<p>Since only one sample from the dataset is chosen at random for each iteration, the path taken by the algorithm to reach the minima is usually noisier than your typical Gradient Descent algorithm. But that doesn’t matter all that much because the path taken by the algorithm does not matter, as long as we reach the minima and with significantly shorter training time.</p>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id4"><span class="brackets">1</span></dt>
+<dd><p><a class="reference external" href="https://ruder.io/optimizing-gradient-descent/">https://ruder.io/optimizing-gradient-descent/</a></p>
+</dd>
+<dt class="label" id="id5"><span class="brackets">2</span></dt>
+<dd><p><a class="reference external" href="http://www.deeplearningbook.org/contents/optimization.html">http://www.deeplearningbook.org/contents/optimization.html</a></p>
+</dd>
+<dt class="label" id="id6"><span class="brackets">3</span></dt>
+<dd><p><a class="reference external" href="https://arxiv.org/pdf/1502.03167.pdf">https://arxiv.org/pdf/1502.03167.pdf</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="loss_functions.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Loss Functions</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="regularization.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Regularization</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

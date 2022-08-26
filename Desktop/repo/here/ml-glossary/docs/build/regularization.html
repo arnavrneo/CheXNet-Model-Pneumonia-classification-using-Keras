@@ -1,0 +1,907 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Regularization &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Architectures" href="architectures.html" />
+    <link rel="prev" title="Optimizers" href="optimizers.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="calculus.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forwardpropagation.html">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="layers.html">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimizers.html">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architectures.html">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification_algos.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="libraries.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_content.html">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/regularization.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-augmentation">
+   Data Augmentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dropout">
+   Dropout
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#early-stopping">
+   Early Stopping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensembling">
+   Ensembling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#injecting-noise">
+   Injecting Noise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l1-regularization">
+   L1 Regularization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l2-regularization">
+   L2 Regularization
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Regularization</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-augmentation">
+   Data Augmentation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dropout">
+   Dropout
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#early-stopping">
+   Early Stopping
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ensembling">
+   Ensembling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#injecting-noise">
+   Injecting Noise
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l1-regularization">
+   L1 Regularization
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#l2-regularization">
+   L2 Regularization
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="regularization">
+<span id="id1"></span><h1>Regularization<a class="headerlink" href="#regularization" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#data-augmentation" id="id7">Data Augmentation</a></p></li>
+<li><p><a class="reference internal" href="#dropout" id="id8">Dropout</a></p></li>
+<li><p><a class="reference internal" href="#early-stopping" id="id9">Early Stopping</a></p></li>
+<li><p><a class="reference internal" href="#ensembling" id="id10">Ensembling</a></p></li>
+<li><p><a class="reference internal" href="#injecting-noise" id="id11">Injecting Noise</a></p></li>
+<li><p><a class="reference internal" href="#l1-regularization" id="id12">L1 Regularization</a></p></li>
+<li><p><a class="reference internal" href="#l2-regularization" id="id13">L2 Regularization</a></p></li>
+</ul>
+</div>
+<p class="rubric">What is overfitting?</p>
+<p>From Wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/Overfitting">overfitting</a> is,</p>
+<p>The production of an analysis that corresponds too closely or exactly to a particular set
+of data, and may therefore fail to fit additional data or predict future observations
+reliably</p>
+<p class="rubric">What is Regularization?</p>
+<p>It is a Techniques for combating overfitting and improving training.</p>
+<section id="data-augmentation">
+<h2><a class="toc-backref" href="#id7">Data Augmentation</a><a class="headerlink" href="#data-augmentation" title="Permalink to this headline">#</a></h2>
+<p>Having more data is the surest way to get better consistent estimators (ML model). Unfortunately, in the real world getting a large volume of useful data for training a model is cumbersome and labelling is an extremely tedious (or expensive) task.</p>
+<p>‘Gold standard’ labelling requires more manual annotation. For example, in order to develop a better image classifier we can use Mturk and involve more man power to generate dataset, or we could crowdsource by posting on social media and asking people to contribute.
+The above process can yield good datasets; however, those are difficult to carry and expensive. On the other hand, having a small dataset will lead to the well-known problem of overfitting.</p>
+<p>Data Augmentation is one interesting regularization technique to resolve the above problem. The concept is very simple, this technique generates new training data from given original dataset. Dataset Augmentation provides a cheap and easy way to increase the volume of training data.</p>
+<p>This technique can be used for both NLP and CV.</p>
+<p>In CV we can use the techniques like Jitter, PCA and Flipping. Similarly in NLP we can use the techniques like Synonym Replacement,Random Insertion, Random Deletion and Word Embeddings.</p>
+<p>Many software libraries contain tools for data augmentation. For example, Keras provides the ImageDataGenerator for augmenting image datasets.</p>
+<p>Sample code for random deletion</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>      <span class="k">def</span> <span class="nf">random_deletion</span><span class="p">(</span><span class="n">words</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+<span class="linenos"> 2</span>              <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 3</span><span class="sd">              Randomly delete words from the sentence with probability p</span>
+<span class="linenos"> 4</span><span class="sd">              &quot;&quot;&quot;</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>              <span class="c1">#obviously, if there&#39;s only one word, don&#39;t delete it</span>
+<span class="linenos"> 7</span>              <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+<span class="linenos"> 8</span>                      <span class="k">return</span> <span class="n">words</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>              <span class="c1">#randomly delete words with probability p</span>
+<span class="linenos">11</span>              <span class="n">new_words</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">12</span>              <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">words</span><span class="p">:</span>
+<span class="linenos">13</span>                      <span class="n">r</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="linenos">14</span>                      <span class="k">if</span> <span class="n">r</span> <span class="o">&gt;</span> <span class="n">p</span><span class="p">:</span>
+<span class="linenos">15</span>                              <span class="n">new_words</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>              <span class="c1">#if you end up deleting all words, just return a random word</span>
+<span class="linenos">18</span>              <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">new_words</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">19</span>                      <span class="n">rand_int</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">words</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">20</span>                      <span class="k">return</span> <span class="p">[</span><span class="n">words</span><span class="p">[</span><span class="n">rand_int</span><span class="p">]]</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>              <span class="k">return</span> <span class="n">new_words</span>
+</pre></div>
+</div>
+<p>Furthermore, when comparing two machine learning algorithms, it is important to train both with either augmented or non-augmented dataset. Otherwise, no subjective decision can be made on which algorithm performed better</p>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://arxiv.org/abs/1901.11196">NLP Data Augmentation</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/abs/1904.12848">CV Data Augmentation</a></p></li>
+<li><p><a class="reference external" href="http://wavelab.uwaterloo.ca/wp-content/uploads/2017/04/Lecture_3.pdf">Regularization</a></p></li>
+</ul>
+</section>
+<section id="dropout">
+<h2><a class="toc-backref" href="#id8">Dropout</a><a class="headerlink" href="#dropout" title="Permalink to this headline">#</a></h2>
+<p class="rubric">What is Dropout?</p>
+<p>Dropout is a regularization technique for reducing overfitting in neural networks by preventing complex co-adaptations on training data.</p>
+<p>Dropout is a technique where randomly selected neurons are ignored during training. They are “dropped-out” randomly. This means that their contribution to the activation of downstream neurons is temporally removed on the forward pass and any weight updates are not applied to the neuron on the backward pass.</p>
+<p>Simply put, It is the process of ignoring some of the neurons in particular forward or backward pass.</p>
+<p>Dropout can be easily implemented by randomly selecting nodes to be dropped-out with a given probability (e.g. .1%) each weight update cycle.</p>
+<p>Most importantly Dropout is only used during the training of a model and is not used when evaluating the model.</p>
+<img alt="_images/regularization-dropout.PNG" class="align-center" src="_images/regularization-dropout.PNG" />
+<p>image from <a class="reference external" href="https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf">https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="linenos"> 2</span><span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Given input: &quot;</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="k">def</span> <span class="nf">dropout</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">drop_probability</span><span class="p">):</span>
+<span class="linenos"> 8</span>    <span class="n">keep_probability</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">drop_probability</span>
+<span class="linenos"> 9</span>    <span class="n">mask</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">keep_probability</span>
+<span class="linenos">10</span>    <span class="k">if</span> <span class="n">keep_probability</span> <span class="o">&gt;</span> <span class="mf">0.0</span><span class="p">:</span>
+<span class="linenos">11</span>        <span class="n">scale</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="n">keep_probability</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos">13</span>        <span class="n">scale</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos">14</span>    <span class="k">return</span> <span class="n">mask</span> <span class="o">*</span> <span class="n">X</span> <span class="o">*</span> <span class="n">scale</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"> After Dropout: &quot;</span><span class="p">)</span>
+<span class="linenos">17</span><span class="nb">print</span><span class="p">(</span><span class="n">dropout</span><span class="p">(</span><span class="n">A</span><span class="p">,</span><span class="mf">0.5</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>output from above code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Given</span> <span class="nb">input</span><span class="p">:</span>
+<span class="p">[[</span> <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span><span class="p">]</span>
+<span class="p">[</span> <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span><span class="p">]</span>
+<span class="p">[</span> <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span> <span class="mi">11</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span><span class="p">]</span>
+<span class="p">[</span><span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span> <span class="mi">19</span><span class="p">]]</span>
+
+<span class="n">After</span> <span class="n">Dropout</span><span class="p">:</span>
+<span class="p">[[</span> <span class="mf">0.</span>  <span class="mf">2.</span>  <span class="mf">0.</span>  <span class="mf">0.</span><span class="p">]</span>
+<span class="p">[</span> <span class="mf">8.</span>  <span class="mf">0.</span>  <span class="mf">0.</span> <span class="mf">14.</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">16.</span> <span class="mf">18.</span>  <span class="mf">0.</span> <span class="mf">22.</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">24.</span>  <span class="mf">0.</span>  <span class="mf">0.</span>  <span class="mf">0.</span><span class="p">]</span>
+<span class="p">[</span><span class="mf">32.</span> <span class="mf">34.</span> <span class="mf">36.</span>  <span class="mf">0.</span><span class="p">]]</span>
+</pre></div>
+</div>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p>Dropout <a class="reference external" href="https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf">https://www.cs.toronto.edu/~hinton/absps/JMLRdropout.pdf</a></p></li>
+</ul>
+</section>
+<section id="early-stopping">
+<h2><a class="toc-backref" href="#id9">Early Stopping</a><a class="headerlink" href="#early-stopping" title="Permalink to this headline">#</a></h2>
+<p>One of the biggest problem in training neural network is how long to train the model.</p>
+<p>Training too little will lead to underfit in train and test sets. Traning too much will have the overfit in training set and poor result in test sets.</p>
+<p>Here the challenge is to train the network long enough that it is capable of learning the mapping from inputs to outputs, but not training the model so long that it overfits the training data.</p>
+<p>One possible solution to solve this problem is to treat the number of training epochs as a hyperparameter and train the model multiple times with different values, then select the number of epochs that result in the best accuracy on the train or a holdout test dataset, But the problem is it requires multiple models to be trained and discarded.</p>
+<img alt="_images/earlystopping.png" class="align-center" src="_images/earlystopping.png" />
+<p>Clearly, after ‘t’ epochs, the model starts overfitting. This is clear by the increasing gap between the train and the validation error in the above plot.</p>
+<p>One alternative technique to prevent overfitting is use validation error to decide when to stop. This approach is called Early Stopping.</p>
+<p>While building the model, it is evaluated on the holdout validation dataset after each epoch. If the accuracy of the model on the validation dataset starts to degrade (e.g. loss begins to increase or accuracy begins to decrease), then the training process is stopped. This process is called Early stopping.</p>
+<p>Python implementation for Early stopping,</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">early_stopping</span><span class="p">(</span><span class="n">theta0</span><span class="p">,</span> <span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">),</span> <span class="p">(</span><span class="n">x_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">),</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">100</span><span class="p">):</span>
+<span class="linenos"> 2</span>  <span class="sd">&quot;&quot;&quot; The early stopping meta-algorithm for determining the best amount of time to train.</span>
+<span class="linenos"> 3</span><span class="sd">      REF: Algorithm 7.1 in deep learning book.</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="sd">      Parameters:</span>
+<span class="linenos"> 6</span><span class="sd">      n: int; Number of steps between evaluations.</span>
+<span class="linenos"> 7</span><span class="sd">      p: int; &quot;patience&quot;, the number of evaluations to observe worsening validataion set.</span>
+<span class="linenos"> 8</span><span class="sd">      theta0: Network; initial network.</span>
+<span class="linenos"> 9</span><span class="sd">      x_train: iterable; The training input set.</span>
+<span class="linenos">10</span><span class="sd">      y_train: iterable; The training output set.</span>
+<span class="linenos">11</span><span class="sd">      x_valid: iterable; The validation input set.</span>
+<span class="linenos">12</span><span class="sd">      y_valid: iterable; The validation output set.</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="sd">      Returns:</span>
+<span class="linenos">15</span><span class="sd">      theta_prime: Network object; The output network.</span>
+<span class="linenos">16</span><span class="sd">      i_prime: int; The number of iterations for the output network.</span>
+<span class="linenos">17</span><span class="sd">      v: float; The validation error for the output network.</span>
+<span class="linenos">18</span><span class="sd">  &quot;&quot;&quot;</span>
+<span class="linenos">19</span>  <span class="c1"># Initialize variables</span>
+<span class="linenos">20</span>  <span class="n">theta</span> <span class="o">=</span> <span class="n">theta0</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>       <span class="c1"># The active network</span>
+<span class="linenos">21</span>  <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>                        <span class="c1"># The number of training steps taken</span>
+<span class="linenos">22</span>  <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>                        <span class="c1"># The number of evaluations steps since last update of theta_prime</span>
+<span class="linenos">23</span>  <span class="n">v</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span>                   <span class="c1"># The best evaluation error observed thusfar</span>
+<span class="linenos">24</span>  <span class="n">theta_prime</span> <span class="o">=</span> <span class="n">theta</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>  <span class="c1"># The best network found thusfar</span>
+<span class="linenos">25</span>  <span class="n">i_prime</span> <span class="o">=</span> <span class="n">i</span>                  <span class="c1"># The index of theta_prime</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span>  <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">p</span><span class="p">:</span>
+<span class="linenos">28</span>      <span class="c1"># Update theta by running the training algorithm for n steps</span>
+<span class="linenos">29</span>      <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+<span class="linenos">30</span>          <span class="n">theta</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">x_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span>      <span class="c1"># Update Values</span>
+<span class="linenos">33</span>      <span class="n">i</span> <span class="o">+=</span> <span class="n">n</span>
+<span class="linenos">34</span>      <span class="n">v_new</span> <span class="o">=</span> <span class="n">theta</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">x_valid</span><span class="p">,</span> <span class="n">y_valid</span><span class="p">)</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span>      <span class="c1"># If better validation error, then reset waiting time, save the network, and update the best error value</span>
+<span class="linenos">37</span>      <span class="k">if</span> <span class="n">v_new</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">:</span>
+<span class="linenos">38</span>          <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">39</span>          <span class="n">theta_prime</span> <span class="o">=</span> <span class="n">theta</span><span class="o">.</span><span class="n">clone</span><span class="p">()</span>
+<span class="linenos">40</span>          <span class="n">i_prime</span> <span class="o">=</span> <span class="n">i</span>
+<span class="linenos">41</span>          <span class="n">v</span> <span class="o">=</span> <span class="n">v_new</span>
+<span class="linenos">42</span>
+<span class="linenos">43</span>      <span class="c1"># Otherwise, update the waiting time</span>
+<span class="linenos">44</span>      <span class="k">else</span><span class="p">:</span>
+<span class="linenos">45</span>          <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="linenos">46</span>
+<span class="linenos">47</span>  <span class="k">return</span> <span class="n">theta_prime</span><span class="p">,</span> <span class="n">i_prime</span><span class="p">,</span> <span class="n">v</span>
+</pre></div>
+</div>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://wavelab.uwaterloo.ca/wp-content/uploads/2017/04/Lecture_3.pdf">Regularization</a></p></li>
+</ul>
+</section>
+<section id="ensembling">
+<h2><a class="toc-backref" href="#id10">Ensembling</a><a class="headerlink" href="#ensembling" title="Permalink to this headline">#</a></h2>
+<p>Ensemble methods combine several machine learning techniques into one predictive model. There are a few different methods for ensembling, but the two most common are:</p>
+<p class="rubric">Bagging</p>
+<ul class="simple">
+<li><p>Bagging stands for bootstrap aggregation. One way to reduce the variance of an estimate is to average together multiple estimates.</p></li>
+<li><p>It trains a large number of “strong” learners in parallel.</p></li>
+<li><p>A strong learner is a model that’s relatively unconstrained.</p></li>
+<li><p>Bagging then combines all the strong learners together in order to “smooth out” their predictions.</p></li>
+</ul>
+<p class="rubric">Boosting</p>
+<ul class="simple">
+<li><p>Boosting refers to a family of algorithms that are able to convert weak learners to strong learners.</p></li>
+<li><p>Each one in the sequence focuses on learning from the mistakes of the one before it.</p></li>
+<li><p>Boosting then combines all the weak learners into a single strong learner.</p></li>
+</ul>
+<p>Bagging uses complex base models and tries to “smooth out” their predictions, while boosting uses simple base models and tries to “boost” their aggregate complexity.</p>
+</section>
+<section id="injecting-noise">
+<h2><a class="toc-backref" href="#id11">Injecting Noise</a><a class="headerlink" href="#injecting-noise" title="Permalink to this headline">#</a></h2>
+<p>Noise is often introduced to the inputs as a dataset augmentation strategy. When we have a small dataset the network may effectively memorize the training dataset. Instead of learning a general mapping from inputs to outputs, the model may learn the specific input examples and their associated outputs. One approach for improving generalization error and improving the structure of the mapping problem is to add random noise.</p>
+<p>Adding noise means that the network is less able to memorize training samples because they are changing all of the time, resulting in smaller network weights and a more robust network that has lower generalization error.</p>
+<p>Noise is only added during training. No noise is added during the evaluation of the model or when the model is used to make predictions on new data.</p>
+<p>Random noise can be added to other parts of the network during training. Some examples include:</p>
+<p class="rubric">Noise Injection on Weights</p>
+<ul class="simple">
+<li><p>Noise added to weights can be interpreted as a more traditional form of regularization.</p></li>
+<li><p>In other words, it pushes the model to be relatively insensitive to small variations in the weights, finding points that are not merely minima, but minima surrounded by flat regions.</p></li>
+</ul>
+<p class="rubric">Noise Injection on Outputs</p>
+<ul class="simple">
+<li><p>In the real world dataset, We can expect some amount of mistakes in the output labels.  One way to remedy this is to explicitly model the noise on labels.</p></li>
+<li><p>An example for Noise Injection on Outputs is <strong>label smoothing</strong></p></li>
+</ul>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://wavelab.uwaterloo.ca/wp-content/uploads/2017/04/Lecture_3.pdf">Regularization</a></p></li>
+</ul>
+</section>
+<section id="l1-regularization">
+<h2><a class="toc-backref" href="#id12">L1 Regularization</a><a class="headerlink" href="#l1-regularization" title="Permalink to this headline">#</a></h2>
+<p>A regression model that uses L1 regularization technique is called <em>Lasso Regression</em>.</p>
+<p class="rubric">Mathematical formula for L1 Regularization.</p>
+<p>Let’s define a model to see how L1 Regularization works. For simplicity, We define a simple linear regression model Y with one independent variable.</p>
+<p>In this model, W represent Weight, b represent Bias.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}W = w_1, w_2 . . . w_n\\X = x_1, x_2 . . . x_n\end{aligned}\end{align} \]</div>
+<p>and the predicted result is <span class="math notranslate nohighlight">\(\widehat{Y}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\widehat{Y} =  w_1x_1 +  w_2x_2 + . . . w_nx_n + b\]</div>
+<p>Following formula calculates the error without Regularization function</p>
+<div class="math notranslate nohighlight">
+\[Loss = Error(Y , \widehat{Y})\]</div>
+<p>Following formula calculates the error With L1 Regularization function</p>
+<div class="math notranslate nohighlight">
+\[Loss = Error(Y - \widehat{Y}) + \lambda \sum_1^n |w_i|\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here, If the value of lambda is Zero then above Loss function becomes Ordinary Least Square whereas very large value makes the coefficients (weights) zero hence it under-fits.</p>
+</div>
+<p>One thing to note is that <span class="math notranslate nohighlight">\(|w|\)</span> is differentiable when w!=0 as shown below,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\text{d}|w|}{\text{d}w} = \begin{cases}1 &amp; w &gt; 0\\-1 &amp; w &lt; 0\end{cases}\end{split}\]</div>
+<p>To understand the Note above,</p>
+<p>Let’s substitute the formula in finding new weights using Gradient Descent optimizer.</p>
+<div class="math notranslate nohighlight">
+\[w_{new} = w - \eta\frac{\partial L1}{\partial w}\]</div>
+<p>When we apply the L1 in above formula it becomes,</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}w_{new} = w - \eta. (Error(Y , \widehat{Y}) + \lambda\frac{\text{d}|w|}{\text{d}w})\\\begin{split}        = \begin{cases}w - \eta . (Error(Y , \widehat{Y}) +\lambda) &amp; w &gt; 0\\w - \eta . (Error(Y , \widehat{Y}) -\lambda) &amp; w &lt; 0\end{cases}\end{split}\end{aligned}\end{align} \]</div>
+<p>From the above formula,</p>
+<ul class="simple">
+<li><p>If w is positive, the regularization parameter <span class="math notranslate nohighlight">\(\lambda\)</span> &gt; 0 will push w to be less positive, by subtracting <span class="math notranslate nohighlight">\(\lambda\)</span> from w.</p></li>
+<li><p>If w is negative, the regularization parameter <span class="math notranslate nohighlight">\(\lambda\)</span> &lt; 0 will push w to be less negative, by adding <span class="math notranslate nohighlight">\(\lambda\)</span> to w.  hence this has the effect of pushing w towards 0.</p></li>
+</ul>
+<p>Simple python implementation</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="k">def</span> <span class="nf">update_weights_with_l1_regularization</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span><span class="k">lambda</span><span class="p">):</span>
+<span class="linenos"> 2</span>      <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 3</span><span class="sd">      Features:(200, 3)</span>
+<span class="linenos"> 4</span><span class="sd">      Targets: (200, 1)</span>
+<span class="linenos"> 5</span><span class="sd">      Weights:(3, 1)</span>
+<span class="linenos"> 6</span><span class="sd">      &#39;&#39;&#39;</span>
+<span class="linenos"> 7</span>      <span class="n">predictions</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>      <span class="c1">#Extract our features</span>
+<span class="linenos">10</span>      <span class="n">x1</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">11</span>      <span class="n">x2</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">12</span>      <span class="n">x3</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span>      <span class="c1"># Use matrix cross product (*) to simultaneously</span>
+<span class="linenos">15</span>      <span class="c1"># calculate the derivative for each weight</span>
+<span class="linenos">16</span>      <span class="n">d_w1</span> <span class="o">=</span> <span class="o">-</span><span class="n">x1</span><span class="o">*</span><span class="p">(</span><span class="n">targets</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="linenos">17</span>      <span class="n">d_w2</span> <span class="o">=</span> <span class="o">-</span><span class="n">x2</span><span class="o">*</span><span class="p">(</span><span class="n">targets</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="linenos">18</span>      <span class="n">d_w3</span> <span class="o">=</span> <span class="o">-</span><span class="n">x3</span><span class="o">*</span><span class="p">(</span><span class="n">targets</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>      <span class="c1"># Multiply the mean derivative by the learning rate</span>
+<span class="linenos">21</span>      <span class="c1"># and subtract from our weights (remember gradient points in direction of steepest ASCENT)</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>      <span class="n">weights</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w1</span><span class="p">)</span> <span class="o">-</span> <span class="k">lambda</span><span class="p">)</span> <span class="k">if</span> <span class="n">weights</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w1</span><span class="p">)</span> <span class="o">+</span> <span class="k">lambda</span><span class="p">)</span>
+<span class="linenos">24</span>      <span class="n">weights</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w2</span><span class="p">)</span> <span class="o">-</span> <span class="k">lambda</span><span class="p">)</span> <span class="k">if</span> <span class="n">weights</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w2</span><span class="p">)</span> <span class="o">+</span> <span class="k">lambda</span><span class="p">)</span>
+<span class="linenos">25</span>      <span class="n">weights</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w3</span><span class="p">)</span> <span class="o">-</span> <span class="k">lambda</span><span class="p">)</span> <span class="k">if</span> <span class="n">weights</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="p">(</span><span class="n">weights</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w3</span><span class="p">)</span> <span class="o">+</span> <span class="k">lambda</span><span class="p">)</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span>      <span class="k">return</span> <span class="n">weights</span>
+</pre></div>
+</div>
+<p class="rubric">Use Case</p>
+<p>L1 Regularization (or varient of this concept) is a model of choice when the number of features are high, Since it provides sparse solutions. We can get computational advantage as the features with zero coefficients can simply be ignored.</p>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://ml-cheatsheet.readthedocs.io/en/latest/linear_regression.html">Linear Regression</a></p></li>
+</ul>
+</section>
+<section id="l2-regularization">
+<h2><a class="toc-backref" href="#id13">L2 Regularization</a><a class="headerlink" href="#l2-regularization" title="Permalink to this headline">#</a></h2>
+<p>A regression model that uses L2 regularization technique is called <em>Ridge Regression</em>. Main difference between L1 and L2 regularization is, L2 regularization uses “squared magnitude” of coefficient as penalty term to the loss function.</p>
+<p class="rubric">Mathematical formula for L2 Regularization.</p>
+<p>Let’s define a model to see how L2 Regularization works. For simplicity, We define a simple linear regression model Y with one independent variable.</p>
+<p>In this model, W represent Weight, b represent Bias.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}W = w_1, w_2 . . . w_n\\X = x_1, x_2 . . . x_n\end{aligned}\end{align} \]</div>
+<p>and the predicted result is <span class="math notranslate nohighlight">\(\widehat{Y}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\widehat{Y} =  w_1x_1 +  w_2x_2 + . . . w_nx_n + b\]</div>
+<p>Following formula calculates the error without Regularization function</p>
+<div class="math notranslate nohighlight">
+\[Loss = Error(Y , \widehat{Y})\]</div>
+<p>Following formula calculates the error With L2 Regularization function</p>
+<div class="math notranslate nohighlight">
+\[Loss = Error(Y - \widehat{Y}) +  \lambda \sum_1^n w_i^{2}\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Here, if lambda is zero then you can imagine we get back OLS. However, if lambda is very large then it will add too much weight and it leads to under-fitting.</p>
+</div>
+<p>To understand the Note above,</p>
+<p>Let’s substitute the formula in finding new weights using Gradient Descent optimizer.</p>
+<div class="math notranslate nohighlight">
+\[w_{new} = w - \eta\frac{\partial L2}{\partial w}\]</div>
+<p>When we apply the L2 in above formula it becomes,</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}w_{new} = w - \eta. (Error(Y , \widehat{Y}) + \lambda\frac{\partial L2}{\partial w})\\        = w - \eta . (Error(Y , \widehat{Y}) +2\lambda w)\end{aligned}\end{align} \]</div>
+<p>Simple python implementation</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="k">def</span> <span class="nf">update_weights_with_l2_regularization</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">lr</span><span class="p">,</span><span class="k">lambda</span><span class="p">):</span>
+<span class="linenos"> 2</span>      <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 3</span><span class="sd">      Features:(200, 3)</span>
+<span class="linenos"> 4</span><span class="sd">      Targets: (200, 1)</span>
+<span class="linenos"> 5</span><span class="sd">      Weights:(3, 1)</span>
+<span class="linenos"> 6</span><span class="sd">      &#39;&#39;&#39;</span>
+<span class="linenos"> 7</span>      <span class="n">predictions</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>      <span class="c1">#Extract our features</span>
+<span class="linenos">10</span>      <span class="n">x1</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">11</span>      <span class="n">x2</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">12</span>      <span class="n">x3</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span>      <span class="c1"># Use matrix cross product (*) to simultaneously</span>
+<span class="linenos">15</span>      <span class="c1"># calculate the derivative for each weight</span>
+<span class="linenos">16</span>      <span class="n">d_w1</span> <span class="o">=</span> <span class="o">-</span><span class="n">x1</span><span class="o">*</span><span class="p">(</span><span class="n">targets</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="linenos">17</span>      <span class="n">d_w2</span> <span class="o">=</span> <span class="o">-</span><span class="n">x2</span><span class="o">*</span><span class="p">(</span><span class="n">targets</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="linenos">18</span>      <span class="n">d_w3</span> <span class="o">=</span> <span class="o">-</span><span class="n">x3</span><span class="o">*</span><span class="p">(</span><span class="n">targets</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>      <span class="c1"># Multiply the mean derivative by the learning rate</span>
+<span class="linenos">21</span>      <span class="c1"># and subtract from our weights (remember gradient points in direction of steepest ASCENT)</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>      <span class="n">weights</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="k">lambda</span> <span class="o">*</span> <span class="n">weights</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">24</span>      <span class="n">weights</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="k">lambda</span> <span class="o">*</span> <span class="n">weights</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">25</span>      <span class="n">weights</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">weights</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w3</span><span class="p">)</span> <span class="o">-</span> <span class="mi">2</span> <span class="o">*</span> <span class="k">lambda</span> <span class="o">*</span> <span class="n">weights</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span>      <span class="k">return</span> <span class="n">weights</span>
+</pre></div>
+</div>
+<p class="rubric">Use Case</p>
+<p>L2 regularization can address the multicollinearity problem by constraining the coefficient norm and keeping all the variables. L2 regression can be used to estimate the predictor importance and penalize predictors that are not important. One issue with co-linearity is that the variance of the parameter estimate is huge. In cases where the number of features are greater than the number of observations, the matrix used in the OLS may not be invertible but Ridge Regression enables this matrix to be inverted.</p>
+<p class="rubric">Further reading</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://en.wikipedia.org/wiki/Tikhonov_regularization">Ridge Regression</a></p></li>
+</ul>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets">1</span></dt>
+<dd><p><a class="reference external" href="http://www.deeplearningbook.org/contents/regularization.html">http://www.deeplearningbook.org/contents/regularization.html</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="optimizers.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Optimizers</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="architectures.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Architectures</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

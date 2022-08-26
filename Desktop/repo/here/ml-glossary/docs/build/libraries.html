@@ -1,0 +1,1720 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Libraries &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Papers" href="papers.html" />
+    <link rel="prev" title="Datasets" href="datasets.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="calculus.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forwardpropagation.html">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="layers.html">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimizers.html">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regularization.html">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architectures.html">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification_algos.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_content.html">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/libraries.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apl">
+   APL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c">
+   C
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   C++
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-lisp">
+   Common Lisp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clojure">
+   Clojure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elixir">
+   Elixir
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erlang">
+   Erlang
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#go">
+   Go
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#haskell">
+   Haskell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#java">
+   Java
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#javascript">
+   Javascript
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#julia">
+   Julia
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lua">
+   Lua
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matlab">
+   Matlab
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#net">
+   .NET
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objective-c">
+   Objective C
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ocaml">
+   OCaml
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#php">
+   PHP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ruby">
+   Ruby
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rust">
+   Rust
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r">
+   R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sas">
+   SAS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scala">
+   Scala
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#swift">
+   Swift
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Libraries</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apl">
+   APL
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#c">
+   C
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   C++
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-lisp">
+   Common Lisp
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clojure">
+   Clojure
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#elixir">
+   Elixir
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#erlang">
+   Erlang
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#go">
+   Go
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#haskell">
+   Haskell
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#java">
+   Java
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#javascript">
+   Javascript
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#julia">
+   Julia
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#lua">
+   Lua
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matlab">
+   Matlab
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#net">
+   .NET
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#objective-c">
+   Objective C
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ocaml">
+   OCaml
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#php">
+   PHP
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#python">
+   Python
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ruby">
+   Ruby
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#rust">
+   Rust
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#r">
+   R
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sas">
+   SAS
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#scala">
+   Scala
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#swift">
+   Swift
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="libraries">
+<span id="id1"></span><h1>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">#</a></h1>
+<p>Machine learning libraries and frameworks forked from josephmisti’s <a class="reference external" href="https://github.com/josephmisiti/awesome-machine-learning">awesome machine learning</a>.</p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#apl" id="id5">APL</a></p></li>
+<li><p><a class="reference internal" href="#c" id="id6">C</a></p></li>
+<li><p><a class="reference internal" href="#id2" id="id7">C++</a></p></li>
+<li><p><a class="reference internal" href="#common-lisp" id="id8">Common Lisp</a></p></li>
+<li><p><a class="reference internal" href="#clojure" id="id9">Clojure</a></p></li>
+<li><p><a class="reference internal" href="#elixir" id="id10">Elixir</a></p></li>
+<li><p><a class="reference internal" href="#erlang" id="id11">Erlang</a></p></li>
+<li><p><a class="reference internal" href="#go" id="id12">Go</a></p></li>
+<li><p><a class="reference internal" href="#haskell" id="id13">Haskell</a></p></li>
+<li><p><a class="reference internal" href="#java" id="id14">Java</a></p></li>
+<li><p><a class="reference internal" href="#javascript" id="id15">Javascript</a></p></li>
+<li><p><a class="reference internal" href="#julia" id="id16">Julia</a></p></li>
+<li><p><a class="reference internal" href="#lua" id="id17">Lua</a></p></li>
+<li><p><a class="reference internal" href="#matlab" id="id18">Matlab</a></p></li>
+<li><p><a class="reference internal" href="#net" id="id19">.NET</a></p></li>
+<li><p><a class="reference internal" href="#objective-c" id="id20">Objective C</a></p></li>
+<li><p><a class="reference internal" href="#ocaml" id="id21">OCaml</a></p></li>
+<li><p><a class="reference internal" href="#php" id="id22">PHP</a></p></li>
+<li><p><a class="reference internal" href="#python" id="id23">Python</a></p></li>
+<li><p><a class="reference internal" href="#ruby" id="id24">Ruby</a></p></li>
+<li><p><a class="reference internal" href="#rust" id="id25">Rust</a></p></li>
+<li><p><a class="reference internal" href="#r" id="id26">R</a></p></li>
+<li><p><a class="reference internal" href="#sas" id="id27">SAS</a></p></li>
+<li><p><a class="reference internal" href="#scala" id="id28">Scala</a></p></li>
+<li><p><a class="reference internal" href="#swift" id="id29">Swift</a></p></li>
+</ul>
+</div>
+<section id="apl">
+<h2><a class="toc-backref" href="#id5">APL</a><a class="headerlink" href="#apl" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/mattcunningham/naive-apl">naive-apl</a> - Naive Bayesian Classifier implementation in APL</p></li>
+</ul>
+</section>
+<section id="c">
+<h2><a class="toc-backref" href="#id6">C</a><a class="headerlink" href="#c" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/pjreddie/darknet">Darknet</a> - Darknet is an open source neural network framework written in C and CUDA. It is fast, easy to install, and supports CPU and GPU computation.</p></li>
+<li><p><a class="reference external" href="https://github.com/GHamrouni/Recommender">Recommender</a> - A C library for product recommendations/suggestions using collaborative filtering (CF).</p></li>
+<li><p><a class="reference external" href="https://github.com/SeniorSA/hybrid-rs-trainner">Hybrid Recommender System</a> - A hybrid recomender system based upon scikit-learn algorithms.</p></li>
+</ul>
+<p class="rubric">Computer Vision</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/liuliu/ccv">CCV</a> - C-based/Cached/Core Computer Vision Library, A Modern Computer Vision Library</p></li>
+<li><p><a class="reference external" href="http://www.vlfeat.org/">VLFeat</a> - VLFeat is an open and portable library of computer vision algorithms, which has Matlab toolbox</p></li>
+</ul>
+<p class="rubric">Speech Recognition</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://htk.eng.cam.ac.uk/">HTK</a> -The Hidden Markov Model Toolkit. HTK is a portable toolkit for building and manipulating hidden Markov models.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2><a class="toc-backref" href="#id7">C++</a><a class="headerlink" href="#id2" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Computer Vision</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://dlib.net/imaging.html">DLib</a> - DLib has C++ and Python interfaces for face detection and training general object detectors.</p></li>
+<li><p><a class="reference external" href="http://eblearn.sourceforge.net/">EBLearn</a> - Eblearn is an object-oriented C++ library that implements various machine learning models</p></li>
+<li><p><a class="reference external" href="http://opencv.org">OpenCV</a> - OpenCV has C++, C, Python, Java and MATLAB interfaces and supports Windows, Linux, Android and Mac OS.</p></li>
+<li><p><a class="reference external" href="https://github.com/ukoethe/vigra">VIGRA</a> - VIGRA is a generic cross-platform C++ computer vision and machine learning library for volumes of arbitrary dimensionality with Python bindings.</p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/jkomiyama/banditlib">BanditLib</a> - A simple Multi-armed Bandit library.</p></li>
+<li><p><a class="reference external" href="http://caffe.berkeleyvision.org">Caffe</a>  - A deep learning framework developed with cleanliness, readability, and speed in mind. [DEEP LEARNING]</p></li>
+<li><p><a class="reference external" href="https://github.com/Microsoft/CNTK)-TheComputationalNetworkToolkit(CNTK">CNTK</a> by Microsoft Research, is a unified deep-learning toolkit that describes neural networks as a series of computational steps via a directed graph.</p></li>
+<li><p><a class="reference external" href="https://code.google.com/p/cuda-convnet/">CUDA</a> - This is a fast C++/CUDA implementation of convolutional [DEEP LEARNING]</p></li>
+<li><p><a class="reference external" href="https://github.com/antinucleon/cxxnet">CXXNET</a> - Yet another deep learning framework with less than 1000 lines core code [DEEP LEARNING]</p></li>
+<li><p><a class="reference external" href="https://github.com/beniz/deepdetect">DeepDetect</a> - A machine learning API and server written in C++11. It makes state of the art machine learning easy to work with and integrate into existing applications.</p></li>
+<li><p><a class="reference external" href="http://www.dmtk.io/)-Adistributedmachinelearning(parameterserver)frameworkbyMicrosoft.Enablestrainingmodelsonlargedatasetsacrossmultiplemachines.Currenttoolsbundledwithitinclude:LightLDAandDistributed(Multisense">Disrtibuted Machine learning Tool Kit (DMTK)</a> Word Embedding.</p></li>
+<li><p><a class="reference external" href="http://dlib.net/ml.html">DLib</a> - A suite of ML tools designed to be easy to imbed in other applications</p></li>
+<li><p><a class="reference external" href="https://github.com/amznlabs/amazon-dsstne">DSSTNE</a> - A software library created by Amazon for training and deploying deep neural networks using GPUs which emphasizes speed and scale over experimental flexibility.</p></li>
+<li><p><a class="reference external" href="https://github.com/clab/dynet">DyNet</a> - A dynamic neural network library working well with networks that have dynamic structures that change for every training instance. Written in C++ with bindings in Python.</p></li>
+<li><p><a class="reference external" href="https://code.google.com/archive/p/encog-cpp">encog-cpp</a></p></li>
+<li><p><a class="reference external" href="https://github.com/FidoProject/Fido">Fido</a> - A highly-modular C++ machine learning library for embedded electronics and robotics.</p></li>
+<li><p><a class="reference external" href="http://igraph.org/c/">igraph</a> - General purpose graph library</p></li>
+<li><p><a class="reference external" href="https://github.com/01org/daal">Intel(R) DAAL</a> - A high performance software library developed by Intel and optimized for Intel’s architectures. Library provides algorithmic building blocks for all stages of data analytics and allows to process data in batch, online and distributed modes.</p></li>
+<li><p><a class="reference external" href="https://github.com/Microsoft/LightGBM)-Microsoft'sfast,distributed,highperformancegradientboosting(GBDT,GBRT,GBMorMART">LightGBM</a> framework based on decision tree algorithms, used for ranking, classification and many other machine learning tasks.</p></li>
+<li><p><a class="reference external" href="https://mldb.ai">MLDB</a> - The Machine Learning Database is a database designed for machine learning. Send it commands over a RESTful API to store data, explore it using SQL, then train machine learning models and expose them as APIs.</p></li>
+<li><p><a class="reference external" href="http://www.mlpack.org/">mlpack</a> - A scalable C++ machine learning library</p></li>
+<li><p><a class="reference external" href="https://root.cern.ch">ROOT</a> - A modular scientific software framework. It provides all the functionalities needed to deal with big data processing, statistical analysis, visualization and storage.</p></li>
+<li><p><a class="reference external" href="http://image.diku.dk/shark/sphinx_pages/build/html/index.html">shark</a> - A fast, modular, feature-rich open-source C++ machine learning library.</p></li>
+<li><p><a class="reference external" href="https://github.com/shogun-toolbox/shogun">Shogun</a> - The Shogun Machine Learning Toolbox</p></li>
+<li><p><a class="reference external" href="https://code.google.com/archive/p/sofia-ml">sofia-ml</a> - Suite of fast incremental algorithms.</p></li>
+<li><p><a class="reference external" href="http://mc-stan.org/">Stan</a> - A probabilistic programming language implementing full Bayesian statistical inference with Hamiltonian Monte Carlo sampling</p></li>
+<li><p><a class="reference external" href="https://languagemachines.github.io/timbl/">Timbl</a> - A software package/C++ library implementing several memory-based learning algorithms, among which IB1-IG, an implementation of k-nearest neighbor classification, and IGTree, a decision-tree approximation of IB1-IG. Commonly used for NLP.</p></li>
+<li><p><a class="reference external" href="https://github.com/JohnLangford/vowpal_wabbit/wiki">Vowpal Wabbit (VW)</a> - A fast out-of-core learning system.</p></li>
+<li><p><a class="reference external" href="https://github.com/baidu-research/warp-ctc)-AfastparallelimplementationofConnectionistTemporalClassification(CTC">Warp-CTC</a>, on both CPU and GPU.</p></li>
+<li><p><a class="reference external" href="https://github.com/dmlc/xgboost">XGBoost</a> - A parallelized optimized general purpose gradient boosting library.</p></li>
+</ul>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/BLLIP/bllip-parser)-BLLIPNaturalLanguageParser(alsoknownastheCharniak-Johnsonparser">BLLIP Parser</a></p></li>
+<li><p><a class="reference external" href="https://github.com/proycon/colibri-core">colibri-core</a> - C++ library, command line tools, and Python binding for extracting and working with basic linguistic constructions such as n-grams and skipgrams in a quick and memory-efficient way.</p></li>
+<li><p><a class="reference external" href="https://taku910.github.io/crfpp/)-OpensourceimplementationofConditionalRandomFields(CRFs">CRF++</a> for segmenting/labeling sequential data &amp; other Natural Language Processing tasks.</p></li>
+<li><p><a class="reference external" href="http://www.chokkan.org/software/crfsuite/)-CRFsuiteisanimplementationofConditionalRandomFields(CRFs">CRFsuite</a> for labeling sequential data.</p></li>
+<li><p><a class="reference external" href="https://github.com/LanguageMachines/frog">frog</a> - Memory-based NLP suite developed for Dutch: PoS tagger, lemmatiser, dependency parser, NER, shallow parser, morphological analyzer.</p></li>
+<li><p><a class="reference external" href="http://proycon.github.io/folia/">libfolia](https://github.com/LanguageMachines/libfolia) - C++ library for the [FoLiA format</a></p></li>
+<li><p><a class="reference external" href="https://meta-toolkit.org/">MeTA](https://github.com/meta-toolkit/meta) - [MeTA : ModErn Text Analysis</a> is a C++ Data Sciences Toolkit that facilitates mining big text data.</p></li>
+<li><p><a class="reference external" href="https://github.com/mit-nlp/MITIE">MIT Information Extraction Toolkit</a> - C, C++, and Python tools for named entity recognition and relation extraction</p></li>
+<li><p><a class="reference external" href="https://github.com/LanguageMachines/ucto">ucto</a> - Unicode-aware regular-expression based tokenizer for various languages. Tool and C++ library. Supports FoLiA format.</p></li>
+</ul>
+<p class="rubric">Speech Recognition</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/kaldi-asr/kaldi">Kaldi</a> - Kaldi is a toolkit for speech recognition written in C++ and licensed under the Apache License v2.0. Kaldi is intended for use by speech recognition researchers.</p></li>
+</ul>
+<p class="rubric">Sequence Analysis</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ayoshiaki/tops">ToPS</a> - This is an objected-oriented framework that facilitates the integration of probabilistic models for sequences over a user defined alphabet.</p></li>
+</ul>
+<p class="rubric">Gesture Detection</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/nickgillian/grt">grt</a> - The Gesture Recognition Toolkit. GRT is a cross-platform, open-source, C++ machine learning library designed for real-time gesture recognition.</p></li>
+</ul>
+</section>
+<section id="common-lisp">
+<h2><a class="toc-backref" href="#id8">Common Lisp</a><a class="headerlink" href="#common-lisp" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/melisgl/mgl/)-Neuralnetworks(boltzmannmachines,feed-forwardandrecurrentnets">mgl</a>, Gaussian Processes</p></li>
+<li><p><a class="reference external" href="https://github.com/melisgl/mgl-gpr/">mgl-gpr</a> - Evolutionary algorithms</p></li>
+<li><p><a class="reference external" href="https://github.com/melisgl/cl-libsvm/">cl-libsvm</a> - Wrapper for the libsvm support vector machine library</p></li>
+</ul>
+</section>
+<section id="clojure">
+<h2><a class="toc-backref" href="#id9">Clojure</a><a class="headerlink" href="#clojure" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/dakrone/clojure-opennlp">Clojure-openNLP</a> - Natural Language Processing in Clojure (opennlp)</p></li>
+<li><p><a class="reference external" href="https://github.com/r0man/inflections-clj">Infections-clj</a> - Rails-like inflection library for Clojure and ClojureScript</p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ptaoussanis/touchstone">Touchstone</a> - Clojure A/B testing library</p></li>
+<li><p><a class="reference external" href="https://github.com/lspector/Clojush">Clojush</a> -  The Push programming language and the PushGP genetic programming system implemented in Clojure</p></li>
+<li><p><a class="reference external" href="https://github.com/aria42/infer">Infer</a> - Inference and machine learning in clojure</p></li>
+<li><p><a class="reference external" href="https://github.com/antoniogarrote/clj-ml">Clj-ML</a> - A machine learning library for Clojure built on top of Weka and friends</p></li>
+<li><p><a class="reference external" href="https://github.com/engagor/dl4clj/">DL4CLJ</a> - Clojure wrapper for Deeplearning4j</p></li>
+<li><p><a class="reference external" href="https://github.com/jimpil/enclog)-ClojurewrapperforEncog(v3)(Machine-Learningframeworkthatspecializesinneural-nets">Encog</a></p></li>
+<li><p><a class="reference external" href="https://github.com/vollmerm/fungp">Fungp</a> - A genetic programming library for Clojure</p></li>
+<li><p><a class="reference external" href="https://github.com/clojurewerkz/statistiker">Statistiker</a> - Basic Machine Learning algorithms in Clojure.</p></li>
+<li><p><a class="reference external" href="https://github.com/htm-community/clortex">clortex</a> - General Machine Learning library using Numenta’s Cortical Learning Algorithm</p></li>
+<li><p><a class="reference external" href="https://github.com/htm-community/comportex">comportex</a> - Functionally composable Machine Learning library using Numenta’s Cortical Learning Algorithm</p></li>
+<li><p><a class="reference external" href="https://github.com/thinktopic/cortex">cortex</a> - Neural networks, regression and feature learning in Clojure.</p></li>
+<li><p><a class="reference external" href="https://github.com/cloudkj/lambda-ml">lambda-ml</a> - Simple, concise implementations of machine learning techniques and utilities in Clojure.</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://incanter.org/">Incanter</a> - Incanter is a Clojure-based, R-like platform for statistical computing and graphics.</p></li>
+<li><p><a class="reference external" href="https://github.com/Netflix/PigPen">PigPen</a> - Map-Reduce for Clojure.</p></li>
+<li><p><a class="reference external" href="https://github.com/clojurewerkz/envision">Envision</a> - Clojure Data Visualisation library, based on Statistiker and D3</p></li>
+</ul>
+</section>
+<section id="elixir">
+<h2><a class="toc-backref" href="#id10">Elixir</a><a class="headerlink" href="#elixir" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/fredwu/simple_bayes">Simple Bayes</a> - A Simple Bayes / Naive Bayes implementation in Elixir.</p></li>
+</ul>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/fredwu/stemmer)-AnEnglish(Porter2">Stemmer</a> stemming implementation in Elixir.</p></li>
+</ul>
+</section>
+<section id="erlang">
+<h2><a class="toc-backref" href="#id11">Erlang</a><a class="headerlink" href="#erlang" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/discoproject/disco/">Disco</a> - Map Reduce in Erlang</p></li>
+</ul>
+</section>
+<section id="go">
+<h2><a class="toc-backref" href="#id12">Go</a><a class="headerlink" href="#go" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/reiver/go-porterstemmer">go-porterstemmer</a> - A native Go clean room implementation of the Porter Stemming algorithm.</p></li>
+<li><p><a class="reference external" href="https://github.com/Rookii/paicehusk">paicehusk</a> - Golang implementation of the Paice/Husk Stemming Algorithm.</p></li>
+<li><p><a class="reference external" href="https://github.com/tebeka/snowball">snowball</a> - Snowball Stemmer for Go.</p></li>
+<li><p><a class="reference external" href="https://github.com/Lazin/go-ngram">go-ngram</a> - In-memory n-gram index with compression.</p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/MaxHalford/gago">gago</a> - Multi-population, flexible, parallel genetic algorithm.</p></li>
+<li><p><a class="reference external" href="https://github.com/sjwhitworth/golearn">Go Learn</a> - Machine Learning for Go</p></li>
+<li><p><a class="reference external" href="https://github.com/daviddengcn/go-pr">go-pr</a> - Pattern recognition package in Go lang.</p></li>
+<li><p><a class="reference external" href="https://github.com/alonsovidales/go_ml">go-ml</a> - Linear / Logistic regression, Neural Networks, Collaborative Filtering and Gaussian Multivariate Distribution</p></li>
+<li><p><a class="reference external" href="https://github.com/jbrukh/bayesian">bayesian</a> - Naive Bayesian Classification for Golang.</p></li>
+<li><p><a class="reference external" href="https://github.com/thoj/go-galib">go-galib</a> - Genetic Algorithms library written in Go / golang</p></li>
+<li><p><a class="reference external" href="https://github.com/ryanbressler/CloudForest">Cloudforest</a> - Ensembles of decision trees in go/golang.</p></li>
+<li><p><a class="reference external" href="https://github.com/goml/gobrain">gobrain</a> - Neural Networks written in go</p></li>
+<li><p><a class="reference external" href="https://github.com/fxsjy/gonn">GoNN</a> - GoNN is an implementation of Neural Network in Go Language, which includes BPNN, RBF, PCN</p></li>
+<li><p><a class="reference external" href="https://github.com/dmlc/mxnet">MXNet</a> - Lightweight, Portable, Flexible Distributed/Mobile Deep Learning with Dynamic, Mutation-aware Dataflow Dep Scheduler; for Python, R, Julia, Go, Javascript and more.</p></li>
+<li><p><a class="reference external" href="https://github.com/songtianyi/go-mxnet-predictor">go-mxnet-predictor</a> - Go binding for MXNet c_predict_api to do inference with pre-trained model</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/StepLg/go-graph">go-graph</a> - Graph library for Go/golang language.</p></li>
+<li><p><a class="reference external" href="http://www.svgopen.org/2011/papers/34-SVGo_a_Go_Library_for_SVG_generation/">SVGo</a> - The Go Language library for SVG generation</p></li>
+<li><p><a class="reference external" href="https://github.com/fxsjy/RF.go">RF</a> - Random forests implementation in Go</p></li>
+</ul>
+</section>
+<section id="haskell">
+<h2><a class="toc-backref" href="#id13">Haskell</a><a class="headerlink" href="#haskell" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ajtulloch/haskell-ml">haskell-ml</a> - Haskell implementations of various ML algorithms.</p></li>
+<li><p><a class="reference external" href="https://github.com/mikeizbicki/HLearn">HLearn</a> - a suite of libraries for interpreting machine learning models according to their algebraic structure.</p></li>
+<li><p><a class="reference external" href="https://wiki.haskell.org/HNN">hnn</a> - Haskell Neural Network library.</p></li>
+<li><p><a class="reference external" href="https://github.com/ajtulloch/hopfield-networks">hopfield-networks</a> - Hopfield Networks for unsupervised learning in Haskell.</p></li>
+<li><p><a class="reference external" href="https://github.com/ajtulloch/dnngraph">caffegraph</a> - A DSL for deep neural networks</p></li>
+<li><p><a class="reference external" href="https://github.com/jbarrow/LambdaNet">LambdaNet</a> - Configurable Neural Networks in Haskell</p></li>
+</ul>
+</section>
+<section id="java">
+<h2><a class="toc-backref" href="#id14">Java</a><a class="headerlink" href="#java" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.cortical.io/)-Retina:anAPIperformingcomplexNLPoperations(disambiguation,classification,streamingtextfiltering,etc...">Cortical.io</a> as quickly and intuitively as the brain.</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/corenlp.shtml">CoreNLP</a> - Stanford CoreNLP provides a set of natural language analysis tools which can take raw English language text input and give the base forms of words</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/lex-parser.shtml">Stanford Parser</a> - A natural language parser is a program that works out the grammatical structure of sentences</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/tagger.shtml">Stanford POS Tagger</a> - A Part-Of-Speech Tagger (POS Tagger</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/CRF-NER.shtml">Stanford Name Entity Recognizer</a> - Stanford NER is a Java implementation of a Named Entity Recognizer.</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/segmenter.shtml">Stanford Word Segmenter</a> - Tokenization of raw text is a standard pre-processing step for many NLP tasks.</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/tregex.shtml)-Tregexisautilityformatchingpatternsintrees,basedontreerelationshipsandregularexpressionmatchesonnodes(thenameisshortfor&quot;treeregularexpressions&quot;">Tregex, Tsurgeon and Semgrex</a>.</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/phrasal/">Stanford Phrasal: A Phrase-Based Translation System</a></p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/tokenizer.shtml">Stanford English Tokenizer</a> - Stanford Phrasal is a state-of-the-art statistical phrase-based machine translation system, written in Java.</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/tokensregex.shtml">Stanford Tokens Regex</a> - A tokenizer divides text into a sequence of tokens, which roughly correspond to “words”</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/sutime.shtml">Stanford Temporal Tagger</a> - SUTime is a library for recognizing and normalizing time expressions.</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/patternslearning.shtml">Stanford SPIED</a> - Learning entities from unlabeled text starting with seed sets using patterns in an iterative fashion</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/tmt/tmt-0.4/">Stanford Topic Modeling Toolbox</a> - Topic modeling tools to social scientists and others who wish to perform analysis on datasets</p></li>
+<li><p><a class="reference external" href="https://github.com/twitter/twitter-text-java">Twitter Text Java</a> - A Java implementation of Twitter’s text processing library</p></li>
+<li><p><a class="reference external" href="http://mallet.cs.umass.edu/">MALLET</a> - A Java-based package for statistical natural language processing, document classification, clustering, topic modeling, information extraction, and other machine learning applications to text.</p></li>
+<li><p><a class="reference external" href="https://opennlp.apache.org/">OpenNLP</a> - a machine learning based toolkit for the processing of natural language text.</p></li>
+<li><p><a class="reference external" href="http://alias-i.com/lingpipe/index.html">LingPipe</a> - A tool kit for processing text using computational linguistics.</p></li>
+<li><p><a class="reference external" href="https://code.google.com/archive/p/cleartk)-ClearTKprovidesaframeworkfordevelopingstatisticalnaturallanguageprocessing(NLP">ClearTK</a> components in Java and is built on top of Apache UIMA.</p></li>
+<li><p><a class="reference external" href="http://ctakes.apache.org/)-ApacheclinicalTextAnalysisandKnowledgeExtractionSystem(cTAKES">Apache cTAKES</a> is an open-source natural language processing system for information extraction from electronic medical record clinical free-text.</p></li>
+<li><p><a class="reference external" href="https://github.com/clir/clearnlp">ClearNLP</a> - The ClearNLP project provides software and resources for natural language processing. The project started at the Center for Computational Language and EducAtion Research, and is currently developed by the Center for Language and Information Research at Emory University. This project is under the Apache 2 license.</p></li>
+<li><p><a class="reference external" href="https://github.com/IllinoisCogComp/illinois-cogcomp-nlp)-ThisprojectcollectsanumberofcorelibrariesforNaturalLanguageProcessing(NLP">CogcompNLP</a> developed in the University of Illinois’ Cognitive Computation Group, for example <cite>illinois-core-utilities</cite> which provides a set of NLP-friendly data structures and a number of NLP-related utilities that support writing NLP applications, running experiments, etc, <cite>illinois-edison</cite> a library for feature extraction from illinois-core-utilities data structures and many other packages.</p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/airbnb/aerosolve">aerosolve</a> - A machine learning library by Airbnb designed from the ground up to be human friendly.</p></li>
+<li><p><a class="reference external" href="https://github.com/datumbox/datumbox-framework">Datumbox</a> - Machine Learning framework for rapid development of Machine Learning and Statistical applications</p></li>
+<li><p><a class="reference external" href="https://elki-project.github.io/)-Javatoolkitfordatamining.(unsupervised:clustering,outlierdetectionetc.">ELKI</a></p></li>
+<li><p><a class="reference external" href="https://github.com/encog/encog-java-core">Encog</a> - An advanced neural network and machine learning framework. Encog contains classes to create a wide variety of networks, as well as support classes to normalize and process data for these neural networks. Encog trains using multithreaded resilient propagation. Encog can also make use of a GPU to further speed processing time. A GUI based workbench is also provided to help model and train neural networks.</p></li>
+<li><p><a class="reference external" href="https://ci.apache.org/projects/flink/flink-docs-master/apis/batch/libs/ml/index.html">FlinkML in Apache Flink</a> - Distributed machine learning library in Flink</p></li>
+<li><p><a class="reference external" href="https://github.com/h2oai/h2o-3">H2O</a> - ML engine that supports distributed learning on Hadoop, Spark or your laptop via APIs in R, Python, Scala, REST/JSON.</p></li>
+<li><p><a class="reference external" href="https://github.com/numenta/htm.java">htm.java</a> - General Machine Learning library using Numenta’s Cortical Learning Algorithm</p></li>
+<li><p><a class="reference external" href="https://github.com/deeplearning4j/deeplearning4j">java-deeplearning</a> - Distributed Deep Learning Platform for Java, Clojure,Scala</p></li>
+<li><p><a class="reference external" href="https://github.com/apache/mahout">Mahout</a> - Distributed machine learning</p></li>
+<li><p><a class="reference external" href="http://meka.sourceforge.net/)-Anopensourceimplementationofmethodsformulti-labelclassificationandevaluation(extensiontoWeka">Meka</a>.</p></li>
+<li><p><a class="reference external" href="http://spark.apache.org/docs/latest/mllib-guide.html">MLlib in Apache Spark</a> - Distributed machine learning library in Spark</p></li>
+<li><p><a class="reference external" href="https://github.com/Hydrospheredata/mist">Hydrosphere Mist</a> - a service for deployment Apache Spark MLLib machine learning models as realtime, batch or reactive web services.</p></li>
+<li><p><a class="reference external" href="http://neuroph.sourceforge.net/">Neuroph</a> - Neuroph is lightweight Java neural network framework</p></li>
+<li><p><a class="reference external" href="https://github.com/oryxproject/oryx">ORYX</a> - Lambda Architecture Framework using Apache Spark and Apache Kafka with a specialization for real-time large-scale machine learning.</p></li>
+<li><p><a class="reference external" href="https://samoa.incubator.apache.org/">Samoa</a> SAMOA is a framework that includes distributed machine learning for data streams with an interface to plug-in different stream processing platforms.</p></li>
+<li><p><a class="reference external" href="https://sourceforge.net/p/lemur/wiki/RankLib/">RankLib</a> - RankLib is a library of learning to rank algorithms</p></li>
+<li><p><a class="reference external" href="https://github.com/padreati/rapaio">rapaio</a> - statistics, data mining and machine learning toolbox in Java</p></li>
+<li><p><a class="reference external" href="https://rapidminer.com">RapidMiner</a> - RapidMiner integration into Java code</p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/software/classifier.shtml">Stanford Classifier</a> - A classifier is a machine learning tool that will take data items and place them into one of k classes.</p></li>
+<li><p><a class="reference external" href="https://github.com/haifengl/smile">SmileMiner</a> - Statistical Machine Intelligence &amp; Learning Engine</p></li>
+<li><p><a class="reference external" href="https://github.com/apache/incubator-systemml)-flexible,scalablemachinelearning(ML">SystemML</a> language.</p></li>
+<li><p><a class="reference external" href="https://github.com/WalnutiQ/wAlnut">WalnutiQ</a> - object oriented model of the human brain</p></li>
+<li><p><a class="reference external" href="http://www.cs.waikato.ac.nz/ml/weka/">Weka</a> - Weka is a collection of machine learning algorithms for data mining tasks</p></li>
+<li><p><a class="reference external" href="https://github.com/IllinoisCogComp/lbjava/">LBJava</a> - Learning Based Java is a modeling language for the rapid development of software systems, offers a convenient, declarative syntax for classifier and constraint definition directly in terms of the objects in the programmer’s application.</p></li>
+</ul>
+<p class="rubric">Speech Recognition</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://cmusphinx.sourceforge.net/">CMU Sphinx</a> - Open Source Toolkit For Speech Recognition purely based on Java speech recognition library.</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://flink.apache.org/">Flink</a> - Open source platform for distributed stream and batch data processing.</p></li>
+<li><p><a class="reference external" href="https://github.com/apache/hadoop-mapreduce">Hadoop</a> - Hadoop/HDFS</p></li>
+<li><p><a class="reference external" href="https://github.com/apache/spark">Spark</a> - Spark is a fast and general engine for large-scale data processing.</p></li>
+<li><p><a class="reference external" href="http://storm.apache.org/">Storm</a> - Storm is a distributed realtime computation system.</p></li>
+<li><p><a class="reference external" href="https://github.com/cloudera/impala">Impala</a> - Real-time Query for Hadoop</p></li>
+<li><p><a class="reference external" href="http://jwork.org/dmelt/">DataMelt</a> - Mathematics software for numeric computation, statistics, symbolic calculations, data analysis and data visualization.</p></li>
+<li><p><a class="reference external" href="http://www.ee.ucl.ac.uk/~mflanaga/java/">Dr. Michael Thomas Flanagan’s Java Scientific Library</a></p></li>
+</ul>
+<p class="rubric">Deep Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/deeplearning4j/deeplearning4j">Deeplearning4j</a> - Scalable deep learning for industry with parallel GPUs</p></li>
+</ul>
+</section>
+<section id="javascript">
+<h2><a class="toc-backref" href="#id15">Javascript</a><a class="headerlink" href="#javascript" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/twitter/twitter-text">Twitter-text</a> - A JavaScript implementation of Twitter’s text processing library</p></li>
+<li><p><a class="reference external" href="https://github.com/nicktesla/nlpjs">NLP.js</a> - NLP utilities in javascript and coffeescript</p></li>
+<li><p><a class="reference external" href="https://github.com/NaturalNode/natural">natural</a> - General natural language facilities for node</p></li>
+<li><p><a class="reference external" href="https://github.com/loadfive/Knwl.js">Knwl.js</a> - A Natural Language Processor in JS</p></li>
+<li><p><a class="reference external" href="https://github.com/wooorm/retext">Retext</a> - Extensible system for analyzing and manipulating natural language</p></li>
+<li><p><a class="reference external" href="https://market.mashape.com/japerk/text-processing/support">TextProcessing</a> - Sentiment analysis, stemming and lemmatization, part-of-speech tagging and chunking, phrase extraction and named entity recognition.</p></li>
+<li><p><a class="reference external" href="https://github.com/nlp-compromise/compromise">NLP Compromise</a> - Natural Language processing in the browser</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://d3js.org/">D3.js</a></p></li>
+<li><p><a class="reference external" href="http://www.highcharts.com/">High Charts</a></p></li>
+<li><p><a class="reference external" href="http://nvd3.org/">NVD3.js</a></p></li>
+<li><p><a class="reference external" href="http://dc-js.github.io/dc.js/">dc.js</a></p></li>
+<li><p><a class="reference external" href="http://www.chartjs.org/">chartjs</a></p></li>
+<li><p><a class="reference external" href="http://dimplejs.org/">dimple</a></p></li>
+<li><p><a class="reference external" href="https://www.amcharts.com/">amCharts</a></p></li>
+<li><p><a class="reference external" href="https://github.com/NathanEpstein/D3xter">D3xter</a> - Straight forward plotting built on D3</p></li>
+<li><p><a class="reference external" href="https://github.com/rigtorp/statkit">statkit</a> - Statistics kit for JavaScript</p></li>
+<li><p><a class="reference external" href="https://github.com/nathanepstein/datakit">datakit</a> - A lightweight framework for data analysis in JavaScript</p></li>
+<li><p><a class="reference external" href="https://github.com/jasondavies/science.js/">science.js</a> - Scientific and statistical computing in JavaScript.</p></li>
+<li><p><a class="reference external" href="https://github.com/NathanEpstein/Z3d">Z3d</a> - Easily make interactive 3d plots built on Three.js</p></li>
+<li><p><a class="reference external" href="http://sigmajs.org/">Sigma.js</a> - JavaScript library dedicated to graph drawing.</p></li>
+<li><p><a class="reference external" href="http://c3js.org/">C3.js</a>- customizable library based on D3.js for easy chart drawing.</p></li>
+<li><p><a class="reference external" href="http://datamaps.github.io/">Datamaps</a>- Customizable SVG map/geo visualizations using D3.js.</p></li>
+<li><p><a class="reference external" href="https://www.zingchart.com/">ZingChart</a>- library written on Vanilla JS for big data visualization.</p></li>
+<li><p><a class="reference external" href="http://www.cheminfo.org/">cheminfo</a> - Platform for data visualization and analysis, using the <a class="reference external" href="https://github.com/npellet/visualizer">visualizer</a> project.</p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://cs.stanford.edu/people/karpathy/convnetjs/">Convnet.js</a> - ConvNetJS is a Javascript library for training Deep Learning models[DEEP LEARNING]</p></li>
+<li><p><a class="reference external" href="http://harthur.github.io/clusterfck/">Clusterfck</a> - Agglomerative hierarchical clustering implemented in Javascript for Node.js and the browser</p></li>
+<li><p><a class="reference external" href="https://github.com/emilbayes/clustering.js">Clustering.js</a> - Clustering algorithms implemented in Javascript for Node.js and the browser</p></li>
+<li><p><a class="reference external" href="https://github.com/serendipious/nodejs-decision-tree-id3">Decision Trees</a> - NodeJS Implementation of Decision Tree using ID3 Algorithm</p></li>
+<li><p><a class="reference external" href="https://github.com/dn2a/dn2a-javascript">DN2A</a> - Digital Neural Networks Architecture</p></li>
+<li><p><a class="reference external" href="https://code.google.com/archive/p/figue">figue</a> - K-means, fuzzy c-means and agglomerative clustering</p></li>
+<li><p><a class="reference external" href="https://github.com/rlidwka/node-fann)-FANN(FastArtificialNeuralNetworkLibrary">Node-fann</a> bindings for Node.js</p></li>
+<li><p><a class="reference external" href="https://github.com/emilbayes/kMeans.js">Kmeans.js</a> - Simple Javascript implementation of the k-means algorithm, for node.js and the browser</p></li>
+<li><p><a class="reference external" href="https://github.com/primaryobjects/lda">LDA.js</a> - LDA topic modeling for node.js</p></li>
+<li><p><a class="reference external" href="https://github.com/yandongliu/learningjs">Learning.js</a> - Javascript implementation of logistic regression/c4.5 decision tree</p></li>
+<li><p><a class="reference external" href="http://joonku.com/project/machine_learning">Machine Learning</a> - Machine learning library for Node.js</p></li>
+<li><p><a class="reference external" href="https://github.com/ClimbsRocks/machineJS">machineJS</a> - Automated machine learning, data formatting, ensembling, and hyperparameter optimization for competitions and exploration- just give it a .csv file!</p></li>
+<li><p><a class="reference external" href="https://github.com/mil-tokyo">mil-tokyo</a> - List of several machine learning libraries</p></li>
+<li><p><a class="reference external" href="https://github.com/nicolaspanel/node-svm">Node-SVM</a> - Support Vector Machine for nodejs</p></li>
+<li><p><a class="reference external" href="https://github.com/harthur/brain">Brain</a> - Neural networks in JavaScript <strong>[Deprecated]</strong></p></li>
+<li><p><a class="reference external" href="https://github.com/omphalos/bayesian-bandit.js">Bayesian-Bandit</a> - Bayesian bandit implementation for Node and the browser.</p></li>
+<li><p><a class="reference external" href="https://github.com/cazala/synaptic">Synaptic</a> - Architecture-free neural network library for node.js and the browser</p></li>
+<li><p><a class="reference external" href="https://github.com/NathanEpstein/kNear">kNear</a> - JavaScript implementation of the k nearest neighbors algorithm for supervised learning</p></li>
+<li><p><a class="reference external" href="https://github.com/totemstech/neuraln">NeuralN</a> - C++ Neural Network library for Node.js. It has advantage on large dataset and multi-threaded training.</p></li>
+<li><p><a class="reference external" href="https://github.com/itamarwe/kalman">kalman</a> - Kalman filter for Javascript.</p></li>
+<li><p><a class="reference external" href="https://github.com/luccastera/shaman">shaman</a> - node.js library with support for both simple and multiple linear regression.</p></li>
+<li><p><a class="reference external" href="https://github.com/mljs/ml">ml.js</a> - Machine learning and numerical analysis tools for Node.js and the Browser!</p></li>
+<li><p><a class="reference external" href="https://github.com/NathanEpstein/Pavlov.js">Pavlov.js</a> - Reinforcement learning using Markov Decision Processes</p></li>
+<li><p><a class="reference external" href="https://github.com/dmlc/mxnet">MXNet</a> - Lightweight, Portable, Flexible Distributed/Mobile Deep Learning with Dynamic, Mutation-aware Dataflow Dep Scheduler; for Python, R, Julia, Go, Javascript and more.</p></li>
+</ul>
+<p class="rubric">Misc</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/jcoglan/sylvester">sylvester</a> - Vector and Matrix math for JavaScript.</p></li>
+<li><p><a class="reference external" href="https://github.com/simple-statistics/simple-statistics)-AJavaScriptimplementationofdescriptive,regression,andinferencestatistics.ImplementedinliterateJavaScriptwithnodependencies,designedtoworkinallmodernbrowsers(includingIE">simple-statistics</a> as well as in node.js.</p></li>
+<li><p><a class="reference external" href="https://github.com/Tom-Alexander/regression-js">regression-js</a> - A javascript library containing a collection of least squares fitting methods for finding a trend in a set of data.</p></li>
+<li><p><a class="reference external" href="https://github.com/flurry/Lyric">Lyric</a> - Linear Regression library.</p></li>
+<li><p><a class="reference external" href="https://github.com/mwgg/GreatCircle">GreatCircle</a> - Library for calculating great circle distance.</p></li>
+</ul>
+</section>
+<section id="julia">
+<h2><a class="toc-backref" href="#id16">Julia</a><a class="headerlink" href="#julia" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/benhamner/MachineLearning.jl">MachineLearning</a> - Julia Machine Learning library</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/MLBase.jl">MLBase</a> - A set of functions to support the development of machine learning algorithms</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/PGM.jl">PGM</a> - A Julia framework for probabilistic graphical models.</p></li>
+<li><p><a class="reference external" href="https://github.com/trthatcher/DiscriminantAnalysis.jl">DA</a> - Julia package for Regularized Discriminant Analysis</p></li>
+<li><p><a class="reference external" href="https://github.com/lindahua/Regression.jl)-Algorithmsforregressionanalysis(e.g.linearregressionandlogisticregression">Regression</a></p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/Loess.jl">Local Regression</a> - Local regression, so smooooth!</p></li>
+<li><p><a class="reference external" href="https://github.com/nutsiepully/NaiveBayes.jl">Naive Bayes</a> - Simple Naive Bayes implementation in Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/dmbates/MixedModels.jl)-AJuliapackageforfitting(statistical">Mixed Models</a> mixed-effects models</p></li>
+<li><p><a class="reference external" href="https://github.com/fredo-dedup/SimpleMCMC.jl">Simple MCMC</a> - basic mcmc sampler implemented in Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/Distance.jl">Distance</a> - Julia module for Distance evaluation</p></li>
+<li><p><a class="reference external" href="https://github.com/bensadeghi/DecisionTree.jl">Decision Tree</a> - Decision Tree Classifier and Regressor</p></li>
+<li><p><a class="reference external" href="https://github.com/compressed/BackpropNeuralNet.jl">Neural</a> - A neural network in Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/doobwa/MCMC.jl">MCMC</a> - MCMC tools for Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/brian-j-smith/Mamba.jl)-MarkovchainMonteCarlo(MCMC">Mamba</a> for Bayesian analysis in Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/GLM.jl">GLM</a> - Generalized linear models in Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/lendle/OnlineLearning.jl">Online Learning</a></p></li>
+<li><p><a class="reference external" href="https://github.com/simonster/GLMNet.jl">GLMNet</a> - Julia wrapper for fitting Lasso/ElasticNet GLM models using glmnet</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/Clustering.jl">Clustering</a> - Basic functions for clustering data: k-means, dp-means, etc.</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/SVM.jl">SVM</a> - SVM’s for Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/KernelDensity.jl">Kernal Density</a> - Kernel density estimators for julia</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/DimensionalityReduction.jl">Dimensionality Reduction</a> - Methods for dimensionality reduction</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/NMF.jl">NMF</a> - A Julia package for non-negative matrix factorization</p></li>
+<li><p><a class="reference external" href="https://github.com/EricChiang/ANN.jl">ANN</a> - Julia artificial neural networks</p></li>
+<li><p><a class="reference external" href="https://github.com/pluskid/Mocha.jl">Mocha</a> - Deep Learning framework for Julia inspired by Caffe</p></li>
+<li><p><a class="reference external" href="https://github.com/dmlc/XGBoost.jl">XGBoost</a> - eXtreme Gradient Boosting Package in Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/wildart/ManifoldLearning.jl">ManifoldLearning</a> - A Julia package for manifold learning and nonlinear dimensionality reduction</p></li>
+<li><p><a class="reference external" href="https://github.com/dmlc/mxnet">MXNet</a> - Lightweight, Portable, Flexible Distributed/Mobile Deep Learning with Dynamic, Mutation-aware Dataflow Dep Scheduler; for Python, R, Julia, Go, Javascript and more.</p></li>
+<li><p><a class="reference external" href="https://github.com/hshindo/Merlin.jl">Merlin</a> - Flexible Deep Learning Framework in Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/davidavdav/ROCAnalysis.jl">ROCAnalysis</a> - Receiver Operating Characteristics and functions for evaluation probabilistic binary classifiers</p></li>
+<li><p><a class="reference external" href="https://github.com/davidavdav/GaussianMixtures.jl">GaussianMixtures</a> - Large scale Gaussian Mixture Models</p></li>
+<li><p><a class="reference external" href="https://github.com/cstjean/ScikitLearn.jl">ScikitLearn</a> - Julia implementation of the scikit-learn API</p></li>
+<li><p><a class="reference external" href="https://github.com/denizyuret/Knet.jl">Knet</a> - Koç University Deep Learning Framework</p></li>
+</ul>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/slycoder/TopicModels.jl">Topic Models</a> - TopicModels for Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/johnmyleswhite/TextAnalysis.jl">Text Analysis</a> - Julia package for text analysis</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/IainNZ/GraphLayout.jl">Graph Layout</a> - Graph layout algorithms in pure Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/DataFramesMeta.jl">Data Frames Meta</a> - Metaprogramming tools for DataFrames</p></li>
+<li><p><a class="reference external" href="https://github.com/nfoti/JuliaData">Julia Data</a> - library for working with tabular data in Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/WizardMac/ReadStat.jl">Data Read</a> - Read files from Stata, SAS, and SPSS</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/HypothesisTests.jl">Hypothesis Tests</a> - Hypothesis tests for Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/GiovineItalia/Gadfly.jl">Gadfly</a> - Crafty statistical graphics for Julia.</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/Stats.jl">Stats</a> - Statistical tests for Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/johnmyleswhite/RDatasets.jl">RDataSets</a> - Julia package for loading many of the data sets available in R</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/DataFrames.jl">DataFrames</a> - library for working with tabular data in Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/Distributions.jl">Distributions</a> - A Julia package for probability distributions and associated functions.</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/DataArrays.jl">Data Arrays</a> - Data structures that allow missing values</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaStats/TimeSeries.jl">Time Series</a> - Time series toolkit for Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/lindahua/Sampling.jl">Sampling</a> - Basic sampling algorithms for Julia</p></li>
+</ul>
+<p class="rubric">Misc Stuff / Presentations</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/JuliaDSP/DSP.jl)-DigitalSignalProcessing(filtering,periodograms,spectrograms,windowfunctions">DSP</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaCon/presentations">JuliaCon Presentations</a> - Presentations for JuliaCon</p></li>
+<li><p><a class="reference external" href="https://github.com/davidavdav/SignalProcessing.jl">SignalProcessing</a> - Signal Processing tools for Julia</p></li>
+<li><p><a class="reference external" href="https://github.com/JuliaImages/Images.jl">Images</a> - An image library for Julia</p></li>
+</ul>
+</section>
+<section id="lua">
+<h2><a class="toc-backref" href="#id17">Lua</a><a class="headerlink" href="#lua" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://torch.ch/">Torch7</a></p></li>
+<li><p><a class="reference external" href="https://github.com/deepmind/torch-cephes">cephes</a> - Cephes mathematical functions library, wrapped for Torch. Provides and wraps the 180+ special mathematical functions from the Cephes mathematical library, developed by Stephen L. Moshier. It is used, among many other places, at the heart of SciPy.</p></li>
+<li><p><a class="reference external" href="https://github.com/twitter/torch-autograd">autograd</a> - Autograd automatically differentiates native Torch code. Inspired by the original Python version.</p></li>
+<li><p><a class="reference external" href="https://github.com/torch/graph">graph</a> - Graph package for Torch</p></li>
+<li><p><a class="reference external" href="https://github.com/deepmind/torch-randomkit">randomkit</a> - Numpy’s randomkit, wrapped for Torch</p></li>
+<li><p><a class="reference external" href="http://soumith.ch/torch-signal/signal/">signal</a> - A signal processing toolbox for Torch-7. FFT, DCT, Hilbert, cepstrums, stft</p></li>
+<li><p><a class="reference external" href="https://github.com/torch/nn">nn</a> - Neural Network package for Torch</p></li>
+<li><p><a class="reference external" href="https://github.com/torchnet/torchnet">torchnet</a> - framework for torch which provides a set of abstractions aiming at encouraging code re-use as well as encouraging modular programming</p></li>
+<li><p><a class="reference external" href="https://github.com/torch/nngraph">nngraph</a> - This package provides graphical computation for nn library in Torch7.</p></li>
+<li><p><a class="reference external" href="https://github.com/clementfarabet/lua---nnx">nnx</a> - A completely unstable and experimental package that extends Torch’s builtin nn library</p></li>
+<li><p><a class="reference external" href="https://github.com/Element-Research/rnn">rnn</a> - A Recurrent Neural Network library that extends Torch’s nn. RNNs, LSTMs, GRUs, BRNNs, BLSTMs, etc.</p></li>
+<li><p><a class="reference external" href="https://github.com/Element-Research/dpnn">dpnn</a> - Many useful features that aren’t part of the main nn package.</p></li>
+<li><p><a class="reference external" href="https://github.com/nicholas-leonard/dp">dp</a> - A deep learning library designed for streamlining research and development using the Torch7 distribution. It emphasizes flexibility through the elegant use of object-oriented design patterns.</p></li>
+<li><p><a class="reference external" href="https://github.com/torch/optim">optim</a> - An optimization library for Torch. SGD, Adagrad, Conjugate-Gradient, LBFGS, RProp and more.</p></li>
+<li><p><a class="reference external" href="https://github.com/koraykv/unsup)-ApackageforunsupervisedlearninginTorch.Providesmodulesthatarecompatiblewithnn(LinearPsd,ConvPsd,AutoEncoder,...),andself-containedalgorithms(k-means,PCA">unsup</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/clementfarabet/manifold">manifold</a> - A package to manipulate manifolds</p></li>
+<li><p><a class="reference external" href="https://github.com/koraykv/torch-svm">svm</a> - Torch-SVM library</p></li>
+<li><p><a class="reference external" href="https://github.com/clementfarabet/lbfgs">lbfgs</a> - FFI Wrapper for liblbfgs</p></li>
+<li><p><a class="reference external" href="https://github.com/clementfarabet/vowpal_wabbit">vowpalwabbit</a> - An old vowpalwabbit interface to torch.</p></li>
+<li><p><a class="reference external" href="https://github.com/clementfarabet/lua---opengm">OpenGM</a> - OpenGM is a C++ library for graphical modeling, and inference. The Lua bindings provide a simple way of describing graphs, from Lua, and then optimizing them with OpenGM.</p></li>
+<li><p><a class="reference external" href="https://github.com/MichaelMathieu/lua---spaghetti)-Spaghetti(sparselinear">sphagetti</a> module for torch7 by &#64;MichaelMathieu</p></li>
+<li><p><a class="reference external" href="https://github.com/ocallaco/LuaSHkit">LuaSHKit</a> - A lua wrapper around the Locality sensitive hashing library SHKit</p></li>
+<li><p><a class="reference external" href="https://github.com/rlowrance/kernel-smoothers">kernel smoothing</a> - KNN, kernel-weighted average, local linear regression smoothers</p></li>
+<li><p><a class="reference external" href="https://github.com/torch/cutorch">cutorch</a> - Torch CUDA Implementation</p></li>
+<li><p><a class="reference external" href="https://github.com/torch/cunn">cunn</a> - Torch CUDA Neural Network Implementation</p></li>
+<li><p><a class="reference external" href="https://github.com/clementfarabet/lua---imgraph">imgraph</a> - An image/graph library for Torch. This package provides routines to construct graphs on images, segment them, build trees out of them, and convert them back to images.</p></li>
+<li><p><a class="reference external" href="https://github.com/clementfarabet/videograph">videograph</a> - A video/graph library for Torch. This package provides routines to construct graphs on videos, segment them, build trees out of them, and convert them back to videos.</p></li>
+<li><p><a class="reference external" href="https://github.com/marcoscoffier/torch-saliency">saliency</a> - code and tools around integral images. A library for finding interest points based on fast integral histograms.</p></li>
+<li><p><a class="reference external" href="https://github.com/marcoscoffier/lua---stitch">stitch</a> - allows us to use hugin to stitch images and apply same stitching to a video sequence</p></li>
+<li><p><a class="reference external" href="https://github.com/marcoscoffier/lua---sfm">sfm</a> - A bundle adjustment/structure from motion package</p></li>
+<li><p><a class="reference external" href="https://github.com/koraykv/fex">fex</a> - A package for feature extraction in Torch. Provides SIFT and dSIFT modules.</p></li>
+<li><p><a class="reference external" href="https://github.com/sermanet/OverFeat">OverFeat</a> - A state-of-the-art generic dense feature extractor</p></li>
+<li><p><a class="reference external" href="http://numlua.luaforge.net/">Numeric Lua</a></p></li>
+<li><p><a class="reference external" href="http://labix.org/lunatic-python">Lunatic Python</a></p></li>
+<li><p><a class="reference external" href="http://scilua.org/">SciLua</a></p></li>
+<li><p><a class="reference external" href="https://bitbucket.org/lucashnegri/lna">Lua - Numerical Algorithms</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jzrake/lunum">Lunum</a></p></li>
+</ul>
+<p class="rubric">Demos and Scripts</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/e-lab/torch7-demos">Core torch7 demos repository</a>.
+* linear-regression, logistic-regression
+* face detector (training and detection as separate demos)
+* mst-based-segmenter
+* train-a-digit-classifier
+* train-autoencoder
+* optical flow demo
+* train-on-housenumbers
+* train-on-cifar
+* tracking with deep nets
+* kinect demo
+* filter-bank visualization
+* saliency-networks</p></li>
+<li><p><a class="reference external" href="https://github.com/soumith/galaxyzoo">Training a Convnet for the Galaxy-Zoo Kaggle challenge(CUDA demo)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/mbhenaff/MusicTagging">Music Tagging</a> - Music Tagging scripts for torch7</p></li>
+<li><p><a class="reference external" href="https://github.com/rosejn/torch-datasets">torch-datasets</a> - Scripts to load several popular datasets including:
+* BSR 500
+* CIFAR-10
+* COIL
+* Street View House Numbers
+* MNIST
+* NORB</p></li>
+<li><p><a class="reference external" href="https://github.com/fidlej/aledataset">Atari2600</a> - Scripts to generate a dataset with static frames from the Arcade Learning Environment</p></li>
+</ul>
+</section>
+<section id="matlab">
+<h2><a class="toc-backref" href="#id18">Matlab</a><a class="headerlink" href="#matlab" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Computer Vision</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.ifp.illinois.edu/~minhdo/software/contourlet_toolbox.tar">Contourlets</a> - MATLAB source code that implements the contourlet transform and its utility functions.</p></li>
+<li><p><a class="reference external" href="http://www.shearlab.org/software">Shearlets</a> - MATLAB code for shearlet transform</p></li>
+<li><p><a class="reference external" href="http://www.curvelet.org/software.html">Curvelets</a> - The Curvelet transform is a higher dimensional generalization of the Wavelet transform designed to represent images at different scales and different angles.</p></li>
+<li><p><a class="reference external" href="http://www.cmap.polytechnique.fr/~peyre/download/">Bandlets</a> - MATLAB code for bandlet transform</p></li>
+<li><p><a class="reference external" href="http://kyamagu.github.io/mexopencv/">mexopencv</a> - Collection and a development kit of MATLAB mex functions for OpenCV library</p></li>
+</ul>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://amplab.cs.berkeley.edu/an-nlp-library-for-matlab/">NLP</a> - An NLP library for Matlab</p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.cs.toronto.edu/~hinton/MatlabForSciencePaper.html">Training a deep autoencoder or a classifier on MNIST</a></p></li>
+<li><p><a class="reference external" href="http://www.socher.org/index.php/Main/Convolutional-RecursiveDeepLearningFor3DObjectClassification">Convolutional-Recursive Deep Learning for 3D Object Classification</a> - Convolutional-Recursive Deep Learning for 3D Object Classification[DEEP LEARNING]</p></li>
+<li><p><a class="reference external" href="http://homepage.tudelft.nl/19j49/t-SNE.html)-t-DistributedStochasticNeighborEmbedding(t-SNE)isa(prize-winning">t-Distributed Stochastic Neighbor Embedding</a> technique for dimensionality reduction that is particularly well suited for the visualization of high-dimensional datasets.</p></li>
+<li><p><a class="reference external" href="http://people.kyb.tuebingen.mpg.de/spider/">Spider</a> - The spider is intended to be a complete object orientated environment for machine learning in Matlab.</p></li>
+<li><p><a class="reference external" href="http://www.csie.ntu.edu.tw/~cjlin/libsvm/#matlab">LibSVM</a> - A Library for Support Vector Machines</p></li>
+<li><p><a class="reference external" href="http://www.csie.ntu.edu.tw/~cjlin/liblinear/#download">LibLinear</a> - A Library for Large Linear Classification</p></li>
+<li><p><a class="reference external" href="https://github.com/josephmisiti/machine-learning-module">Machine Learning Module</a> - Class on machine w/ PDF,lectures,code</p></li>
+<li><p><a class="reference external" href="http://caffe.berkeleyvision.org">Caffe</a>  - A deep learning framework developed with cleanliness, readability, and speed in mind.</p></li>
+<li><p><a class="reference external" href="https://github.com/covartech/PRT">Pattern Recognition Toolbox</a>  - A complete object-oriented environment for machine learning in Matlab.</p></li>
+<li><p><a class="reference external" href="https://github.com/PRML/PRMLT">Pattern Recognition and Machine Learning</a> - This package contains the matlab implementation of the algorithms described in the book Pattern Recognition and Machine Learning by C. Bishop.</p></li>
+<li><p><a class="reference external" href="http://optunity.readthedocs.io/en/latest/">Optunity</a> - A library dedicated to automated hyperparameter optimization with a simple, lightweight API to facilitate drop-in replacement of grid search. Optunity is written in Python but interfaces seamlessly with MATLAB.</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.cs.purdue.edu/homes/dgleich/packages/matlab_bgl/">matlab_gbl</a> - MatlabBGL is a Matlab package for working with graphs.</p></li>
+<li><p><a class="reference external" href="http://www.mathworks.com/matlabcentral/fileexchange/24134-gaimc---graph-algorithms-in-matlab-code">gamic</a> - Efficient pure-Matlab implementations of graph algorithms to complement MatlabBGL’s mex functions.</p></li>
+</ul>
+</section>
+<section id="net">
+<h2><a class="toc-backref" href="#id19">.NET</a><a class="headerlink" href="#net" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Computer Vision</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://code.google.com/archive/p/opencvdotnet">OpenCVDotNet</a> - A wrapper for the OpenCV project to be used with .NET applications.</p></li>
+<li><p><a class="reference external" href="http://www.emgu.com/wiki/index.php/Main_Page">Emgu CV</a> - Cross platform wrapper of OpenCV which can be compiled in Mono to e run on Windows, Linus, Mac OS X, iOS, and Android.</p></li>
+<li><p><a class="reference external" href="http://www.aforgenet.com/framework/">AForge.NET</a> - Open source C# framework for developers and researchers in the fields of Computer Vision and Artificial Intelligence. Development has now shifted to GitHub.</p></li>
+<li><p><a class="reference external" href="http://accord-framework.net">Accord.NET</a> - Together with AForge.NET, this library can provide image processing and computer vision algorithms to Windows, Windows RT and Windows Phone. Some components are also available for Java and Android.</p></li>
+</ul>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sergey-tihon/Stanford.NLP.NET/">Stanford.NLP for .NET</a> - A full port of Stanford NLP packages to .NET and also available precompiled as a NuGet package.</p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://accord-framework.net/">Accord-Framework</a> -The Accord.NET Framework is a complete framework for building machine learning, computer vision, computer audition, signal processing and statistical applications.</p></li>
+<li><p><a class="reference external" href="http://www.nuget.org/packages/Accord.MachineLearning/">Accord.MachineLearning</a> - Support Vector Machines, Decision Trees, Naive Bayesian models, K-means, Gaussian Mixture models and general algorithms such as Ransac, Cross-validation and Grid-Search for machine-learning applications. This package is part of the Accord.NET Framework.</p></li>
+<li><p><a class="reference external" href="http://diffsharp.github.io/DiffSharp/)-Anautomaticdifferentiation(AD)libraryprovidingexactandefficientderivatives(gradients,Hessians,Jacobians,directionalderivatives,andmatrix-freeHessian-andJacobian-vectorproducts">DiffSharp</a> for machine learning and optimization applications. Operations can be nested to any level, meaning that you can compute exact higher-order derivatives and differentiate functions that are internally making use of differentiation, for applications such as hyperparameter optimization.</p></li>
+<li><p><a class="reference external" href="https://github.com/fsprojects/Vulpes">Vulpes</a> - Deep belief and deep learning implementation written in F# and leverages CUDA GPU execution with Alea.cuBase.</p></li>
+<li><p><a class="reference external" href="http://www.nuget.org/packages/encog-dotnet-core/">Encog</a> -  An advanced neural network and machine learning framework. Encog contains classes to create a wide variety of networks, as well as support classes to normalize and process data for these neural networks. Encog trains using multithreaded resilient propagation. Encog can also make use of a GPU to further speed processing time. A GUI based workbench is also provided to help model and train neural networks.</p></li>
+<li><p><a class="reference external" href="http://bragisoft.com/">Neural Network Designer</a> - DBMS management system and designer for neural networks. The designer application is developed using WPF, and is a user interface which allows you to design your neural network, query the network, create and configure chat bots that are capable of asking questions and learning from your feed back.  The chat bots can even scrape the internet for information to return in their output as well as to use for learning.</p></li>
+<li><p><a class="reference external" href="http://infernet.azurewebsites.net/">Infer.NET</a> - Infer.NET is a framework for running Bayesian inference in graphical models. One can use Infer.NET to solve many different kinds of machine learning problems, from standard problems like classification, recommendation or clustering through to customised solutions to domain-specific problems. Infer.NET has been used in a wide variety of domains including information retrieval, bioinformatics, epidemiology, vision, and many others.</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.nuget.org/packages/numl/">numl</a> - numl is a machine learning library intended to ease the use of using standard modeling techniques for both prediction and clustering.</p></li>
+<li><p><a class="reference external" href="http://www.nuget.org/packages/MathNet.Numerics/">Math.NET Numerics</a> - Numerical foundation of the Math.NET project, aiming to provide methods and algorithms for numerical computations in science, engineering and every day use. Supports .Net 4.0, .Net 3.5 and Mono on Windows, Linux and Mac; Silverlight 5, WindowsPhone/SL 8, WindowsPhone 8.1 and Windows 8 with PCL Portable Profiles 47 and 344; Android/iOS with Xamarin.</p></li>
+<li><p><a class="reference external" href="https://www.microsoft.com/en-us/research/project/sho-the-net-playground-for-data/?from=http%3A%2F%2Fresearch.microsoft.com%2Fen-us%2Fprojects%2Fsho%2F)-Shoisaninteractiveenvironmentfordataanalysisandscientificcomputingthatletsyouseamlesslyconnectscripts(inIronPython)withcompiledcode(in.NET">Sho</a> to enable fast and flexible prototyping. The environment includes powerful and efficient libraries for linear algebra as well as data visualization that can be used from any .NET language, as well as a feature-rich interactive shell for rapid development.</p></li>
+</ul>
+</section>
+<section id="objective-c">
+<h2><a class="toc-backref" href="#id20">Objective C</a><a class="headerlink" href="#objective-c" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/yconst/YCML)-AMachineLearningframeworkforObjective-CandSwift(OSX/iOS">YCML</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/nikolaypavlov/MLPNeuralNet">MLPNeuralNet</a> - Fast multilayer perceptron neural network library for iOS and Mac OS X. MLPNeuralNet predicts new examples by trained neural network. It is built on top of the Apple’s Accelerate Framework, using vectorized operations and hardware acceleration if available.</p></li>
+<li><p><a class="reference external" href="https://github.com/gianlucabertani/MAChineLearning">MAChineLearning</a> - An Objective-C multilayer perceptron library, with full support for training through backpropagation. Implemented using vDSP and vecLib, it’s 20 times faster than its Java equivalent. Includes sample code for use from Swift.</p></li>
+<li><p><a class="reference external" href="https://github.com/Kalvar/ios-BPN-NeuralNetwork)-Itimplemented3layersneuralnetwork(InputLayer,HiddenLayerandOutputLayer)anditnamedBackPropagationNeuralNetwork(BPN">BPN-NeuralNetwork</a>. This network can be used in products recommendation, user behavior analysis, data mining and data analysis.</p></li>
+<li><p><a class="reference external" href="https://github.com/Kalvar/ios-Multi-Perceptron-NeuralNetwork)-itimplementedmulti-perceptronsneuralnetwork(ニューラルネットワーク)basedonBackPropagationNeuralNetwork(BPN">Multi-Perceptron-NeuralNetwork</a> and designed unlimited-hidden-layers.</p></li>
+<li><p><a class="reference external" href="https://github.com/Kalvar/ios-KRHebbian-Algorithm)-Itisanon-supervisorandself-learningalgorithm(adjusttheweights">KRHebbian-Algorithm</a> in neural network of Machine Learning.</p></li>
+<li><p><a class="reference external" href="https://github.com/Kalvar/ios-KRKmeans-Algorithm">KRKmeans-Algorithm</a> - It implemented K-Means the clustering and classification algorithm. It could be used in data mining and image compression.</p></li>
+<li><p><a class="reference external" href="https://github.com/Kalvar/ios-KRFuzzyCMeans-Algorithm)-ItimplementedFuzzyC-Means(FCM">KRFuzzyCMeans-Algorithm</a> the fuzzy clustering / classification algorithm on Machine Learning. It could be used in data mining and image compression.</p></li>
+</ul>
+</section>
+<section id="ocaml">
+<h2><a class="toc-backref" href="#id21">OCaml</a><a class="headerlink" href="#ocaml" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/hammerlab/oml/">Oml</a> - A general statistics and machine learning library.</p></li>
+<li><p><a class="reference external" href="http://mmottl.github.io/gpr/">GPR</a> - Efficient Gaussian Process Regression in OCaml.</p></li>
+<li><p><a class="reference external" href="http://libra.cs.uoregon.edu">Libra-Tk</a> - Algorithms for learning and inference with discrete probabilistic models.</p></li>
+<li><p><a class="reference external" href="https://github.com/LaurentMazare/tensorflow-ocaml">TensorFlow</a> - OCaml bindings for TensorFlow.</p></li>
+</ul>
+</section>
+<section id="php">
+<h2><a class="toc-backref" href="#id22">PHP</a><a class="headerlink" href="#php" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/fukuball/jieba-php">jieba-php</a> - Chinese Words Segmentation Utilities.</p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/php-ai/php-ml">PHP-ML</a> - Machine Learning library for PHP. Algorithms, Cross Validation, Neural Network, Preprocessing, Feature Extraction and much more in one library.</p></li>
+<li><p><a class="reference external" href="https://github.com/denissimon/prediction-builder">PredictionBuilder</a> - A library for machine learning that builds predictions using a linear regression.</p></li>
+<li><p><a class="reference external" href="https://github.com/RubixML/RubixML">Rubix ML</a> - A high-level machine learning and deep learning library for the PHP language.</p></li>
+</ul>
+</section>
+<section id="python">
+<h2><a class="toc-backref" href="#id23">Python</a><a class="headerlink" href="#python" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Computer Vision</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/scikit-image/scikit-image">Scikit-Image</a> - A collection of algorithms for image processing in Python.</p></li>
+<li><p><a class="reference external" href="http://simplecv.org/">SimpleCV</a> - An open source computer vision framework that gives access to several high-powered computer vision libraries, such as OpenCV. Written on Python and runs on Mac, Windows, and Ubuntu Linux.</p></li>
+<li><p><a class="reference external" href="https://github.com/ukoethe/vigra">Vigranumpy</a> - Python bindings for the VIGRA C++ computer vision library.</p></li>
+<li><p><a class="reference external" href="https://cmusatyalab.github.io/openface/">OpenFace</a> - Free and open source face recognition with deep neural networks.</p></li>
+<li><p><a class="reference external" href="https://github.com/jesolem/PCV">PCV</a> - Open source Python module for computer vision</p></li>
+</ul>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.nltk.org/">NLTK</a> - A leading platform for building Python programs to work with human language data.</p></li>
+<li><p><a class="reference external" href="http://www.clips.ua.ac.be/pattern">Pattern</a> - A web mining module for the Python programming language. It has tools for natural language processing, machine learning, among others.</p></li>
+<li><p><a class="reference external" href="https://github.com/machinalis/quepy">Quepy</a> - A python framework to transform natural language questions to queries in a database query language</p></li>
+<li><p><a class="reference external" href="http://textblob.readthedocs.io/en/dev/)-ProvidingaconsistentAPIfordivingintocommonnaturallanguageprocessing(NLP">TextBlob</a> tasks. Stands on the giant shoulders of NLTK and Pattern, and plays nicely with both.</p></li>
+<li><p><a class="reference external" href="https://github.com/machinalis/yalign">YAlign</a> - A sentence aligner, a friendly tool for extracting parallel sentences from comparable corpora.</p></li>
+<li><p><a class="reference external" href="https://github.com/fxsjy/jieba#jieba-1">jieba</a> - Chinese Words Segmentation Utilities.</p></li>
+<li><p><a class="reference external" href="https://github.com/isnowfy/snownlp">SnowNLP</a> - A library for processing Chinese text.</p></li>
+<li><p><a class="reference external" href="https://github.com/prodicus/spammy">spammy</a> - A library for email Spam filtering built on top of nltk</p></li>
+<li><p><a class="reference external" href="https://github.com/victorlin/loso">loso</a> - Another Chinese segmentation library.</p></li>
+<li><p><a class="reference external" href="https://github.com/duanhongyi/genius">genius</a> - A Chinese segment base on Conditional Random Field.</p></li>
+<li><p><a class="reference external" href="http://konlpy.org">KoNLPy</a> - A Python package for Korean natural language processing.</p></li>
+<li><p><a class="reference external" href="https://github.com/pprett/nut">nut</a> - Natural language Understanding Toolkit</p></li>
+<li><p><a class="reference external" href="https://github.com/columbia-applied-data-science/rosetta)-Textprocessingtoolsandwrappers(e.g.VowpalWabbit">Rosetta</a></p></li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/bllipparser/)-PythonbindingsfortheBLLIPNaturalLanguageParser(alsoknownastheCharniak-Johnsonparser">BLLIP Parser</a></p></li>
+<li><p><a class="reference external" href="http://proycon.github.io/folia/">PyNLPl](https://github.com/proycon/pynlpl) - Python Natural Language Processing Library. General purpose NLP library for Python. Also contains some specific modules for parsing common NLP formats, most notably for [FoLiA</a>, but also ARPA language models, Moses phrasetables, GIZA++ alignments.</p></li>
+<li><p><a class="reference external" href="https://github.com/proycon/python-ucto)-Pythonbindingtoucto(aunicode-awarerule-basedtokenizerforvariouslanguages">python-ucto</a></p></li>
+<li><p><a class="reference external" href="https://github.com/proycon/python-frog)-PythonbindingtoFrog,anNLPsuiteforDutch.(postagging,lemmatisation,dependencyparsing,NER">python-frog</a></p></li>
+<li><p><a class="reference external" href="https://github.com/frcchang/zpar">python-zpar](https://github.com/EducationalTestingService/python-zpar) - Python bindings for [ZPar</a>, a statistical part-of-speech-tagger, constiuency parser, and dependency parser for English.</p></li>
+<li><p><a class="reference external" href="https://github.com/proycon/colibri-core">colibri-core</a> - Python binding to C++ library for extracting and working with with basic linguistic constructions such as n-grams and skipgrams in a quick and memory-efficient way.</p></li>
+<li><p><a class="reference external" href="https://github.com/honnibal/spaCy/">spaCy</a> - Industrial strength NLP with Python and Cython.</p></li>
+<li><p><a class="reference external" href="https://github.com/dmcc/PyStanfordDependencies">PyStanfordDependencies</a> - Python interface for converting Penn Treebank trees to Stanford Dependencies.</p></li>
+<li><p><a class="reference external" href="https://github.com/doukremt/distance">Distance</a> - Levenshtein and Hamming distance computation</p></li>
+<li><p><a class="reference external" href="https://github.com/seatgeek/fuzzywuzzy">Fuzzy Wuzzy</a> - Fuzzy String Matching in Python</p></li>
+<li><p><a class="reference external" href="https://github.com/jamesturk/jellyfish">jellyfish</a> - a python library for doing approximate and phonetic matching of strings.</p></li>
+<li><p><a class="reference external" href="https://pypi.python.org/pypi/editdistance">editdistance</a> - fast implementation of edit distance</p></li>
+<li><p><a class="reference external" href="https://github.com/chartbeat-labs/textacy">textacy</a> - higher-level NLP built on Spacy</p></li>
+<li><p><a class="reference external" href="https://github.com/stanfordnlp/CoreNLP">stanford-corenlp-python](https://github.com/dasmith/stanford-corenlp-python) - Python wrapper for [Stanford CoreNLP</a></p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/ClimbsRocks/auto_ml">auto_ml</a> - Automated machine learning for production and analytics. Lets you focus on the fun parts of ML, while outputting production-ready code, and detailed analytics of your dataset and results. Includes support for NLP, XGBoost, LightGBM, and soon, deep learning.</p></li>
+<li><p><a class="reference external" href="https://github.com/jeff1evesque/machine-learning#programmatic-interface)API,forsupportvectormachines.Correspondingdataset(s)arestoredintoaSQLdatabase,thengeneratedmodel(s)usedforprediction(s">machine learning](https://github.com/jeff1evesque/machine-learning) - automated build consisting of a [web-interface](https://github.com/jeff1evesque/machine-learning#web-interface), and set of [programmatic-interface</a>, are stored into a NoSQL datastore.</p></li>
+<li><p><a class="reference external" href="https://github.com/dmlc/xgboost)-PythonbindingsforeXtremeGradientBoosting(Tree">XGBoost</a> Library</p></li>
+<li><p><a class="reference external" href="https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers">Bayesian Methods for Hackers</a> - Book/iPython notebooks on Probabilistic Programming in Python</p></li>
+<li><p><a class="reference external" href="https://github.com/machinalis/featureforge">Featureforge</a> A set of tools for creating and testing machine learning features, with a scikit-learn compatible API</p></li>
+<li><p><a class="reference external" href="http://spark.apache.org/docs/latest/mllib-guide.html">MLlib in Apache Spark</a> - Distributed machine learning library in Spark</p></li>
+<li><p><a class="reference external" href="https://github.com/Hydrospheredata/mist">Hydrosphere Mist</a> - a service for deployment Apache Spark MLLib machine learning models as realtime, batch or reactive web services.</p></li>
+<li><p><a class="reference external" href="http://scikit-learn.org/">scikit-learn</a> - A Python module for machine learning built on top of SciPy.</p></li>
+<li><p><a class="reference external" href="https://github.com/all-umass/metric-learn">metric-learn</a> - A Python module for metric learning.</p></li>
+<li><p><a class="reference external" href="https://github.com/simpleai-team/simpleai">SimpleAI</a> Python implementation of many of the artificial intelligence algorithms described on the book “Artificial Intelligence, a Modern Approach”. It focuses on providing an easy to use, well documented and tested library.</p></li>
+<li><p><a class="reference external" href="http://www.astroml.org/">astroML</a> - Machine Learning and Data Mining for Astronomy.</p></li>
+<li><p><a class="reference external" href="https://turi.com/products/create/docs/)-Alibrarywithvariousmachinelearningmodels(regression,clustering,recommendersystems,graphanalytics,etc.">graphlab-create</a> implemented on top of a disk-backed DataFrame.</p></li>
+<li><p><a class="reference external" href="https://bigml.com">BigML</a> - A library that contacts external servers.</p></li>
+<li><p><a class="reference external" href="https://github.com/clips/pattern">pattern</a> - Web mining module for Python.</p></li>
+<li><p><a class="reference external" href="https://github.com/numenta/nupic">NuPIC</a> - Numenta Platform for Intelligent Computing.</p></li>
+<li><p><a class="reference external" href="https://github.com/Theano/Theano">Pylearn2](https://github.com/lisa-lab/pylearn2) - A Machine Learning library based on [Theano</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/Theano/Theano">keras](https://github.com/fchollet/keras) - Modular neural network library based on [Theano</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/Lasagne/Lasagne">Lasagne</a> - Lightweight library to build and train neural networks in Theano.</p></li>
+<li><p><a class="reference external" href="https://github.com/hannes-brt/hebel">hebel</a> - GPU-Accelerated Deep Learning Library in Python.</p></li>
+<li><p><a class="reference external" href="https://github.com/pfnet/chainer">Chainer</a> - Flexible neural network framework</p></li>
+<li><p><a class="reference external" href="https://facebookincubator.github.io/prophet">prohpet</a> - Fast and automated time series forecasting framework by Facebook.</p></li>
+<li><p><a class="reference external" href="https://github.com/RaRe-Technologies/gensim">gensim</a> - Topic Modelling for Humans.</p></li>
+<li><p><a class="reference external" href="https://github.com/ContinuumIO/topik">topik</a> - Topic modelling toolkit</p></li>
+<li><p><a class="reference external" href="https://github.com/pybrain/pybrain">PyBrain</a> - Another Python Machine Learning Library.</p></li>
+<li><p><a class="reference external" href="https://github.com/IDSIA/brainstorm">Brainstorm</a> - Fast, flexible and fun neural networks. This is the successor of PyBrain.</p></li>
+<li><p><a class="reference external" href="https://github.com/muricoca/crab">Crab</a> - A ﬂexible, fast recommender engine.</p></li>
+<li><p><a class="reference external" href="https://github.com/ocelma/python-recsys">python-recsys</a> - A Python library for implementing a Recommender System.</p></li>
+<li><p><a class="reference external" href="https://github.com/AllenDowney/ThinkBayes">thinking bayes</a> - Book on Bayesian Analysis</p></li>
+<li><p><a class="reference external" href="https://arxiv.org/pdf/1611.07004.pdf">Image-to-Image Translation with Conditional Adversarial Networks](https://github.com/williamFalcon/pix2pix-keras) - Implementation of image to image (pix2pix) translation from the paper by [isola et al</a>.[DEEP LEARNING]</p></li>
+<li><p><a class="reference external" href="https://github.com/echen/restricted-boltzmann-machines">Restricted Boltzmann Machines</a> -Restricted Boltzmann Machines in Python. [DEEP LEARNING]</p></li>
+<li><p><a class="reference external" href="https://github.com/pprett/bolt">Bolt</a> - Bolt Online Learning Toolbox</p></li>
+<li><p><a class="reference external" href="https://github.com/patvarilly/CoverTree">CoverTree</a> - Python implementation of cover trees, near-drop-in replacement for scipy.spatial.kdtree</p></li>
+<li><p><a class="reference external" href="https://github.com/nilearn/nilearn">nilearn</a> - Machine learning for NeuroImaging in Python</p></li>
+<li><p><a class="reference external" href="http://contrib.scikit-learn.org/imbalanced-learn/">imbalanced-learn</a> - Python module to perform under sampling and over sampling with various techniques.</p></li>
+<li><p><a class="reference external" href="https://github.com/shogun-toolbox/shogun">Shogun</a> - The Shogun Machine Learning Toolbox</p></li>
+<li><p><a class="reference external" href="https://github.com/perone/Pyevolve">Pyevolve</a> - Genetic algorithm framework.</p></li>
+<li><p><a class="reference external" href="http://caffe.berkeleyvision.org">Caffe</a>  - A deep learning framework developed with cleanliness, readability, and speed in mind.</p></li>
+<li><p><a class="reference external" href="https://github.com/breze-no-salt/breze">breze</a> - Theano based library for deep and recurrent neural networks</p></li>
+<li><p><a class="reference external" href="https://github.com/mattjj/pyhsmm)-libraryforapproximateunsupervisedinferenceinBayesianHiddenMarkovModels(HMMs)andexplicit-durationHiddensemi-MarkovModels(HSMMs">pyhsmm</a>, focusing on the Bayesian Nonparametric extensions, the HDP-HMM and HDP-HSMM, mostly with weak-limit approximations.</p></li>
+<li><p><a class="reference external" href="https://pythonhosted.org/mrjob/">mrjob</a> - A library to let Python program run on Hadoop.</p></li>
+<li><p><a class="reference external" href="https://github.com/EducationalTestingService/skll">SKLL</a> - A wrapper around scikit-learn that makes it simpler to conduct experiments.</p></li>
+<li><p><a class="reference external" href="https://github.com/zueve/neurolab">neurolab</a> - <a class="reference external" href="https://github.com/zueve/neurolab">https://github.com/zueve/neurolab</a></p></li>
+<li><p><a class="reference external" href="https://github.com/JasperSnoek/spearmint">Spearmint</a> - Spearmint is a package to perform Bayesian optimization according to the algorithms outlined in the paper: Practical Bayesian Optimization of Machine Learning Algorithms. Jasper Snoek, Hugo Larochelle and Ryan P. Adams. Advances in Neural Information Processing Systems, 2012.</p></li>
+<li><p><a class="reference external" href="https://github.com/abhik/pebl/">Pebl</a> - Python Environment for Bayesian Learning</p></li>
+<li><p><a class="reference external" href="https://github.com/Theano/Theano/">Theano</a> - Optimizing GPU-meta-programming code generating array oriented optimizing math compiler in Python</p></li>
+<li><p><a class="reference external" href="https://github.com/tensorflow/tensorflow/">TensorFlow</a> - Open source software library for numerical computation using data flow graphs</p></li>
+<li><p><a class="reference external" href="https://github.com/jmschrei/yahmm/">yahmm</a> - Hidden Markov Models for Python, implemented in Cython for speed and efficiency.</p></li>
+<li><p><a class="reference external" href="https://github.com/proycon/python-timbl">python-timbl</a> - A Python extension module wrapping the full TiMBL C++ programming interface. Timbl is an elaborate k-Nearest Neighbours machine learning toolkit.</p></li>
+<li><p><a class="reference external" href="https://github.com/deap/deap">deap</a> - Evolutionary algorithm framework.</p></li>
+<li><p><a class="reference external" href="https://github.com/andersbll/deeppy">pydeep</a> - Deep Learning In Python</p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/mlxtend">mlxtend</a> - A library consisting of useful tools for data science and machine learning tasks.</p></li>
+<li><p><a class="reference external" href="https://github.com/soumith/convnet-benchmarks">neon](https://github.com/NervanaSystems/neon) - Nervana’s [high-performance</a> Python-based Deep Learning framework [DEEP LEARNING]</p></li>
+<li><p><a class="reference external" href="http://optunity.readthedocs.io/en/latest/">Optunity</a> - A library dedicated to automated hyperparameter optimization with a simple, lightweight API to facilitate drop-in replacement of grid search.</p></li>
+<li><p><a class="reference external" href="https://github.com/mnielsen/neural-networks-and-deep-learning">Neural Networks and Deep Learning</a> - Code samples for my book “Neural Networks and Deep Learning” [DEEP LEARNING]</p></li>
+<li><p><a class="reference external" href="https://github.com/spotify/annoy">Annoy</a> - Approximate nearest neighbours implementation</p></li>
+<li><p><a class="reference external" href="https://github.com/tensorflow/skflow">skflow</a> - Simplified interface for TensorFlow, mimicking Scikit Learn.</p></li>
+<li><p><a class="reference external" href="https://github.com/rhiever/tpot">TPOT</a> - Tool that automatically creates and optimizes machine learning pipelines using genetic programming. Consider it your personal data science assistant, automating a tedious part of machine learning.</p></li>
+<li><p><a class="reference external" href="https://github.com/pgmpy/pgmpy">pgmpy</a> A python library for working with Probabilistic Graphical Models.</p></li>
+<li><p><a class="reference external" href="https://github.com/NVIDIA/DIGITS)-TheDeepLearningGPUTrainingSystem(DIGITS">DIGITS</a> is a web application for training deep learning models.</p></li>
+<li><p><a class="reference external" href="http://orange.biolab.si/">Orange</a> - Open source data visualization and data analysis for novices and experts.</p></li>
+<li><p><a class="reference external" href="https://github.com/dmlc/mxnet">MXNet</a> - Lightweight, Portable, Flexible Distributed/Mobile Deep Learning with Dynamic, Mutation-aware Dataflow Dep Scheduler; for Python, R, Julia, Go, Javascript and more.</p></li>
+<li><p><a class="reference external" href="https://github.com/luispedro/milk">milk</a> - Machine learning toolkit focused on supervised classification.</p></li>
+<li><p><a class="reference external" href="https://github.com/tflearn/tflearn">TFLearn</a> - Deep learning library featuring a higher-level API for TensorFlow.</p></li>
+<li><p><a class="reference external" href="https://github.com/yandex/rep">REP</a> - an IPython-based environment for conducting data-driven research in a consistent and reproducible way. REP is not trying to substitute scikit-learn, but extends it and provides better user experience.</p></li>
+<li><p><a class="reference external" href="https://github.com/fukatani/rgf_python)-PythonbindingsforRegularizedGreedyForest(Tree">rgf_python</a> Library.</p></li>
+<li><p><a class="reference external" href="https://github.com/openai/gym">gym</a> - OpenAI Gym is a toolkit for developing and comparing reinforcement learning algorithms.</p></li>
+<li><p><a class="reference external" href="https://github.com/AmazaspShumik/sklearn-bayes">skbayes</a> - Python package for Bayesian Machine Learning with scikit-learn API</p></li>
+<li><p><a class="reference external" href="https://github.com/fukuball/fuku-ml">fuku-ml</a> - Simple machine learning library, including Perceptron, Regression, Support Vector Machine, Decision Tree and more, it’s easy to use and easy to learn for beginners.</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.scipy.org/">SciPy</a> - A Python-based ecosystem of open-source software for mathematics, science, and engineering.</p></li>
+<li><p><a class="reference external" href="http://www.numpy.org/">NumPy</a> - A fundamental package for scientific computing with Python.</p></li>
+<li><p><a class="reference external" href="http://numba.pydata.org/)-PythonJIT(justintime">Numba</a> complier to LLVM aimed at scientific Python by the developers of Cython and NumPy.</p></li>
+<li><p><a class="reference external" href="https://networkx.github.io/">NetworkX</a> - A high-productivity software for complex networks.</p></li>
+<li><p><a class="reference external" href="http://igraph.org/python/">igraph</a> - binding to igraph library - General purpose graph library</p></li>
+<li><p><a class="reference external" href="http://pandas.pydata.org/">Pandas</a> - A library providing high-performance, easy-to-use data structures and data analysis tools.</p></li>
+<li><p><a class="reference external" href="https://github.com/mining/mining)-BusinessIntelligence(BI)inPython(Pandaswebinterface">Open Mining</a></p></li>
+<li><p><a class="reference external" href="https://github.com/pymc-devs/pymc">PyMC</a> - Markov Chain Monte Carlo sampling toolkit.</p></li>
+<li><p><a class="reference external" href="https://github.com/quantopian/zipline">zipline</a> - A Pythonic algorithmic trading library.</p></li>
+<li><p><a class="reference external" href="http://www.pydy.org/">PyDy</a> - Short for Python Dynamics, used to assist with workflow in the modeling of dynamic motion based around NumPy, SciPy, IPython, and matplotlib.</p></li>
+<li><p><a class="reference external" href="https://github.com/sympy/sympy">SymPy</a> - A Python library for symbolic mathematics.</p></li>
+<li><p><a class="reference external" href="https://github.com/statsmodels/statsmodels">statsmodels</a> - Statistical modeling and econometrics in Python.</p></li>
+<li><p><a class="reference external" href="http://www.astropy.org/">astropy</a> - A community Python library for Astronomy.</p></li>
+<li><p><a class="reference external" href="http://matplotlib.org/">matplotlib</a> - A Python 2D plotting library.</p></li>
+<li><p><a class="reference external" href="https://github.com/bokeh/bokeh">bokeh</a> - Interactive Web Plotting for Python.</p></li>
+<li><p><a class="reference external" href="https://plot.ly/python/">plotly</a> - Collaborative web plotting for Python and matplotlib.</p></li>
+<li><p><a class="reference external" href="https://github.com/wrobstory/vincent">vincent</a> - A Python to Vega translator.</p></li>
+<li><p><a class="reference external" href="https://d3js.org/">d3py](https://github.com/mikedewar/d3py) - A plotting library for Python, based on [D3.js</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/D3xterjs/pydexter">PyDexter</a> - Simple plotting for Python. Wrapper for D3xterjs; easily render charts in-browser.</p></li>
+<li><p><a class="reference external" href="https://github.com/yhat/ggpy">ggplot</a> - Same API as ggplot2 for R.</p></li>
+<li><p><a class="reference external" href="https://github.com/sinhrks/ggfortify">ggfortify</a> - Unified interface to ggplot2 popular R packages.</p></li>
+<li><p><a class="reference external" href="https://github.com/kartograph/kartograph.py">Kartograph.py</a> - Rendering beautiful SVG maps in Python.</p></li>
+<li><p><a class="reference external" href="http://pygal.org/en/stable/">pygal</a> - A Python SVG Charts Creator.</p></li>
+<li><p><a class="reference external" href="https://github.com/pyqtgraph/pyqtgraph">PyQtGraph</a> - A pure-python graphics and GUI library built on PyQt4 / PySide and NumPy.</p></li>
+<li><p><a class="reference external" href="https://github.com/twitter/pycascading">pycascading</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AirSage/Petrel">Petrel</a> - Tools for writing, submitting, debugging, and monitoring Storm topologies in pure Python.</p></li>
+<li><p><a class="reference external" href="https://github.com/blaze/blaze">Blaze</a> - NumPy and Pandas interface to Big Data.</p></li>
+<li><p><a class="reference external" href="https://github.com/dfm/emcee">emcee</a> - The Python ensemble sampling toolkit for affine-invariant MCMC.</p></li>
+<li><p><a class="reference external" href="http://www.windml.org">windML</a> - A Python Framework for Wind Energy Analysis and Prediction</p></li>
+<li><p><a class="reference external" href="https://github.com/vispy/vispy">vispy</a> - GPU-based high-performance interactive OpenGL 2D/3D data visualization library</p></li>
+<li><p><a class="reference external" href="https://github.com/numenta/nupic.cerebro2">cerebro2</a> A web-based visualization and debugging platform for NuPIC.</p></li>
+<li><p><a class="reference external" href="https://github.com/htm-community/nupic.studio">NuPIC Studio</a> An all-in-one NuPIC Hierarchical Temporal Memory visualization and debugging super-tool!</p></li>
+<li><p><a class="reference external" href="https://github.com/sparklingpandas/sparklingpandas)PandasonPySpark(POPS">SparklingPandas</a></p></li>
+<li><p><a class="reference external" href="http://seaborn.pydata.org/">Seaborn</a> - A python visualization library based on matplotlib</p></li>
+<li><p><a class="reference external" href="https://github.com/bloomberg/bqplot)-AnAPIforplottinginJupyter(IPython">bqplot</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rewonc/pastalog">pastalog</a> - Simple, realtime visualization of neural network training performance.</p></li>
+<li><p><a class="reference external" href="https://github.com/airbnb/superset">caravel</a> - A data exploration platform designed to be visual, intuitive, and interactive.</p></li>
+<li><p><a class="reference external" href="https://github.com/nathanepstein/dora">Dora</a> - Tools for exploratory data analysis in Python.</p></li>
+<li><p><a class="reference external" href="http://www.ruffus.org.uk">Ruffus</a> - Computation Pipeline library for python.</p></li>
+<li><p><a class="reference external" href="https://github.com/sevamoo/SOMPY)-SelfOrganizingMapwritteninPython(Usesneuralnetworksfordataanalysis">SOMPY</a>.</p></li>
+<li><p><a class="reference external" href="https://github.com/peterwittek/somoclu">somoclu</a> Massively parallel self-organizing maps: accelerate training on multicore CPUs, GPUs, and clusters, has python API.</p></li>
+<li><p><a class="reference external" href="https://github.com/lmcinnes/hdbscan">HDBScan</a> - implementation of the hdbscan algorithm in Python - used for clustering</p></li>
+<li><p><a class="reference external" href="https://github.com/ayush1997/visualize_ML">visualize_ML</a> - A python package for data exploration and data analysis.</p></li>
+<li><p><a class="reference external" href="https://github.com/reiinakano/scikit-plot">scikit-plot</a> - A visualization library for quick and easy generation of common plots in data analysis and machine learning.</p></li>
+</ul>
+<p class="rubric">Neural networks</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/karpathy/neuraltalk">Neural networks</a> - NeuralTalk is a Python+numpy project for learning Multimodal Recurrent Neural Networks that describe images with sentences.</p></li>
+<li><p><a class="reference external" href="https://github.com/molcik/python-neuron)-Neuronissimpleclassfortimeseriespredictions.It'sutilizeLNU(LinearNeuralUnit),QNU(QuadraticNeuralUnit),RBF(RadialBasisFunction),MLP(MultiLayerPerceptron),MLP-ELM(MultiLayerPerceptron-ExtremeLearningMachine">Neuron</a> neural networks learned with Gradient descent or LeLevenberg–Marquardt algorithm.</p></li>
+<li><p><a class="reference external" href="https://github.com/atmb4u/data-driven-code">Data Driven Code</a> - Very simple implementation of neural networks for dummies in python without using any libraries, with detailed comments.</p></li>
+</ul>
+</section>
+<section id="ruby">
+<h2><a class="toc-backref" href="#id24">Ruby</a><a class="headerlink" href="#ruby" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/louismullie/treat">Treat</a> -  Text REtrieval and Annotation Toolkit, definitely the most comprehensive toolkit I’ve encountered so far for Ruby</p></li>
+<li><p><a class="reference external" href="https://deveiate.org/projects/Linguistics">Ruby Linguistics</a> -  Linguistics is a framework for building linguistic utilities for Ruby objects in any language. It includes a generic language-independent front end, a module for mapping language codes into language names, and a module which contains various English-language utilities.</p></li>
+<li><p><a class="reference external" href="https://github.com/aurelian/ruby-stemmer">Stemmer</a> - Expose libstemmer_c to Ruby</p></li>
+<li><p><a class="reference external" href="https://deveiate.org/projects/Ruby-WordNet/">Ruby Wordnet</a> - This library is a Ruby interface to WordNet</p></li>
+<li><p><a class="reference external" href="https://sourceforge.net/projects/raspell/">Raspel</a> - raspell is an interface binding for ruby</p></li>
+<li><p><a class="reference external" href="https://github.com/ealdent/uea-stemmer">UEA Stemmer</a> - Ruby port of UEALite Stemmer - a conservative stemmer for search and indexing</p></li>
+<li><p><a class="reference external" href="https://github.com/twitter/twitter-text-rb">Twitter-text-rb</a> - A library that does auto linking and extraction of usernames, lists and hashtags in tweets</p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tsycho/ruby-machine-learning">Ruby Machine Learning</a> - Some Machine Learning algorithms, implemented in Ruby</p></li>
+<li><p><a class="reference external" href="https://github.com/mizoR/machine-learning-ruby">Machine Learning Ruby</a></p></li>
+<li><p><a class="reference external" href="https://github.com/vasinov/jruby_mahout">jRuby Mahout</a> - JRuby Mahout is a gem that unleashes the power of Apache Mahout in the world of JRuby.</p></li>
+<li><p><a class="reference external" href="https://github.com/cardmagic/classifier">CardMagic-Classifier</a> - A general classifier module to allow Bayesian and other types of classifications.</p></li>
+<li><p><a class="reference external" href="https://github.com/febeling/rb-libsvm">rb-libsvm</a> - Ruby language bindings for LIBSVM which is a Library for Support Vector Machines</p></li>
+<li><p><a class="reference external" href="https://github.com/asafschers/random_forester">Random Forester</a> - Creates Random Forest classifiers from PMML files</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/alexgutteridge/rsruby">rsruby</a> - Ruby - R bridge</p></li>
+<li><p><a class="reference external" href="https://github.com/chrislo/data_visualisation_ruby">data-visualization-ruby</a> - Source code and supporting content for my Ruby Manor presentation on Data Visualisation with Ruby</p></li>
+<li><p><a class="reference external" href="https://www.ruby-toolbox.com/projects/ruby-plot">ruby-plot</a> - gnuplot wrapper for ruby, especially for plotting roc curves into svg files</p></li>
+<li><p><a class="reference external" href="https://github.com/zuhao/plotrb">plot-rb</a> - A plotting library in Ruby built on top of Vega and D3.</p></li>
+<li><p><a class="reference external" href="http://www.rubyinside.com/scruffy-a-beautiful-graphing-toolkit-for-ruby-194.html">scruffy</a> - A beautiful graphing toolkit for Ruby</p></li>
+<li><p><a class="reference external" href="http://sciruby.com/">SciRuby</a></p></li>
+<li><p><a class="reference external" href="https://github.com/glean/glean">Glean</a> - A data management tool for humans</p></li>
+<li><p><a class="reference external" href="https://github.com/bioruby/bioruby">Bioruby</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nkallen/arel">Arel</a></p></li>
+</ul>
+<p class="rubric">Misc</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/infochimps-labs/big_data_for_chimps">Big Data For Chimps</a></p></li>
+<li><p><a class="reference external" href="http://kevincobain2000.github.io/listof/">Listof](https://github.com/kevincobain2000/listof) - Community based data collection, packed in gem. Get list of pretty much anything (stop words, countries, non words) in txt, json or hash. [Demo/Search for a list</a></p></li>
+</ul>
+</section>
+<section id="rust">
+<h2><a class="toc-backref" href="#id25">Rust</a><a class="headerlink" href="#rust" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/tedsta/deeplearn-rs">deeplearn-rs</a> - deeplearn-rs provides simple networks that use matrix multiplication, addition, and ReLU under the MIT license.</p></li>
+<li><p><a class="reference external" href="https://github.com/maciejkula/rustlearn">rustlearn</a> - a machine learning framework featuring logistic regression, support vector machines, decision trees and random forests.</p></li>
+<li><p><a class="reference external" href="https://github.com/AtheMathmo/rusty-machine">rusty-machine</a> - a pure-rust machine learning library.</p></li>
+<li><p><a class="reference external" href="https://medium.com/&#64;mjhirn/tensorflow-wins-89b78b29aafb#.s0a3uy4cc">leaf](https://github.com/autumnai/leaf) - open source framework for machine intelligence, sharing concepts from TensorFlow and Caffe.  Available under the MIT license. [**[Deprecated]**</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jackm321/RustNN">RustNN</a> - RustNN is a feedforward neural network library.</p></li>
+</ul>
+</section>
+<section id="r">
+<h2><a class="toc-backref" href="#id26">R</a><a class="headerlink" href="#r" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/ahaz/index.html">ahaz</a> - ahaz: Regularization for semiparametric additive hazards regression</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/arules/index.html">arules</a> - arules: Mining Association Rules and Frequent Itemsets</p></li>
+<li><p><a class="reference external" href="https://cran.r-project.org/web/packages/biglasso/index.html">biglasso</a> - biglasso: Extending Lasso Model Fitting to Big Data in R</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/bigrf/index.html">bigrf</a> - bigrf: Big Random Forests: Classification and Regression Forests for Large Data Sets</p></li>
+<li><p><a href="#id3"><span class="problematic" id="id4">`bigRR &lt;http://cran.r-project.org/web/packages/bigRR/index.html) - bigRR: Generalized Ridge Regression (with special advantage for p &gt;&gt; n cases&gt;`__</span></a></p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/bmrm/index.html">bmrm</a> - bmrm: Bundle Methods for Regularized Risk Minimization Package</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/Boruta/index.html">Boruta</a> - Boruta: A wrapper algorithm for all-relevant feature selection</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/bst/index.html">bst</a> - bst: Gradient Boosting</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/C50/index.html">C50</a> - C50: C5.0 Decision Trees and Rule-Based Models</p></li>
+<li><p><a class="reference external" href="http://caret.r-forge.r-project.org/">caret</a> - Classification and Regression Training: Unified interface to ~150 ML algorithms in R.</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/caretEnsemble/index.html">caretEnsemble</a> - caretEnsemble: Framework for fitting multiple caret models as well as creating ensembles of such models.</p></li>
+<li><p><a class="reference external" href="https://github.com/jbrownlee/CleverAlgorithmsMachineLearning">Clever Algorithms For Machine Learning</a></p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/CORElearn/index.html">CORElearn</a> - CORElearn: Classification, regression, feature evaluation and ordinal evaluation</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/CoxBoost/index.html">CoxBoost</a> - CoxBoost: Cox models by likelihood based boosting for a single survival endpoint or competing risks</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/Cubist/index.html">Cubist</a> - Cubist: Rule- and Instance-Based Regression Modeling</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/e1071/index.html)-e1071:MiscFunctionsoftheDepartmentofStatistics(e1071">e1071</a>, TU Wien</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/earth/index.html">earth</a> - earth: Multivariate Adaptive Regression Spline Models</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/elasticnet/index.html">elasticnet</a> - elasticnet: Elastic-Net for Sparse Estimation and Sparse PCA</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/ElemStatLearn/index.html">ElemStatLearn</a> - ElemStatLearn: Data sets, functions and examples from the book: “The Elements of Statistical Learning, Data Mining, Inference, and Prediction” by Trevor Hastie, Robert Tibshirani and Jerome Friedman Prediction” by Trevor Hastie, Robert Tibshirani and Jerome Friedman</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/evtree/index.html">evtree</a> - evtree: Evolutionary Learning of Globally Optimal Trees</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/forecast/index.html">forecast</a> - forecast: Timeseries forecasting using ARIMA, ETS, STLM, TBATS, and neural network models</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/forecastHybrid/index.html">forecastHybrid</a> - forecastHybrid: Automatic ensemble and cross validation of ARIMA, ETS, STLM, TBATS, and neural network models from the “forecast” package</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/fpc/index.html">fpc</a> - fpc: Flexible procedures for clustering</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/frbs/index.html">frbs</a> - frbs: Fuzzy Rule-based Systems for Classification and Regression Tasks</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/GAMBoost/index.html">GAMBoost</a> - GAMBoost: Generalized linear and additive models by likelihood based boosting</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/gamboostLSS/index.html">gamboostLSS</a> - gamboostLSS: Boosting Methods for GAMLSS</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/gbm/index.html">gbm</a> - gbm: Generalized Boosted Regression Models</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/glmnet/index.html">glmnet</a> - glmnet: Lasso and elastic-net regularized generalized linear models</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/glmpath/index.html">glmpath</a> - glmpath: L1 Regularization Path for Generalized Linear Models and Cox Proportional Hazards Model</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/GMMBoost/index.html">GMMBoost</a> - GMMBoost: Likelihood-based Boosting for Generalized mixed models</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/grplasso/index.html">grplasso</a> - grplasso: Fitting user specified models with Group Lasso penalty</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/grpreg/index.html">grpreg</a> - grpreg: Regularization paths for regression models with grouped covariates</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/h2o/index.html">h2o</a> - A framework for fast, parallel, and distributed machine learning algorithms at scale – Deeplearning, Random forests, GBM, KMeans, PCA, GLM</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/hda/index.html">hda</a> - hda: Heteroscedastic Discriminant Analysis</p></li>
+<li><p><a class="reference external" href="http://www-bcf.usc.edu/~gareth/ISL/">Introduction to Statistical Learning</a></p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/ipred/index.html">ipred</a> - ipred: Improved Predictors</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/kernlab/index.html">kernlab</a> - kernlab: Kernel-based Machine Learning Lab</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/klaR/index.html">klaR</a> - klaR: Classification and visualization</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/lars/index.html">lars</a> - lars: Least Angle Regression, Lasso and Forward Stagewise</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/lasso2/index.html">lasso2</a> - lasso2: L1 constrained estimation aka ‘lasso’</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/LiblineaR/index.html">LiblineaR</a> - LiblineaR: Linear Predictive Models Based On The Liblinear C/C++ Library</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/LogicReg/index.html">LogicReg</a> - LogicReg: Logic Regression</p></li>
+<li><p><a class="reference external" href="https://github.com/johnmyleswhite/ML_for_Hackers">Machine Learning For Hackers</a></p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/maptree/index.html">maptree</a> - maptree: Mapping, pruning, and graphing tree models</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/mboost/index.html">mboost</a> - mboost: Model-Based Boosting</p></li>
+<li><p><a class="reference external" href="https://www.kaggle.com/forums/f/15/kaggle-forum/t/3661/medley-a-new-r-package-for-blending-regression-models?forumMessageId=21278">medley</a> - medley: Blending regression models, using a greedy stepwise approach</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/mlr/index.html">mlr</a> - mlr: Machine Learning in R</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/mvpart/index.html">mvpart</a> - mvpart: Multivariate partitioning</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/ncvreg/index.html">ncvreg</a> - ncvreg: Regularization paths for SCAD- and MCP-penalized regression models</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/nnet/index.html">nnet</a> - nnet: Feed-forward Neural Networks and Multinomial Log-Linear Models</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/oblique.tree/index.html">oblique.tree</a> - oblique.tree: Oblique Trees for Classification Data</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/pamr/index.html">pamr</a> - pamr: Pam: prediction analysis for microarrays</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/party/index.html">party</a> - party: A Laboratory for Recursive Partytioning</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/partykit/index.html">partykit</a> - partykit: A Toolkit for Recursive Partytioning</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/penalized/index.html)-penalized:L1(lassoandfusedlasso)andL2(ridge">penalized</a> penalized estimation in GLMs and in the Cox model</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/penalizedLDA/index.html">penalizedLDA</a> - penalizedLDA: Penalized classification using Fisher’s linear discriminant</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/penalizedSVM/index.html">penalizedSVM</a> - penalizedSVM: Feature Selection SVM using penalty functions</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/quantregForest/index.html">quantregForest</a> - quantregForest: Quantile Regression Forests</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/randomForest/index.html">randomForest</a> - randomForest: Breiman and Cutler’s random forests for classification and regression</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/randomForestSRC/index.html)-randomForestSRC:RandomForestsforSurvival,RegressionandClassification(RF-SRC">randomForestSRC</a></p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/rattle/index.html">rattle</a> - rattle: Graphical user interface for data mining in R</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/rda/index.html">rda</a> - rda: Shrunken Centroids Regularized Discriminant Analysis</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/rdetools/index.html)-rdetools:RelevantDimensionEstimation(RDE">rdetools</a> in Feature Spaces</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/REEMtree/index.html)-REEMtree:RegressionTreeswithRandomEffectsforLongitudinal(Panel">REEMtree</a> Data</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/relaxo/index.html">relaxo</a> - relaxo: Relaxed Lasso</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/rgenoud/index.html">rgenoud</a> - rgenoud: R version of GENetic Optimization Using Derivatives</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/rgp/index.html">rgp</a> - rgp: R genetic programming framework</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/Rmalschains/index.html)-Rmalschains:ContinuousOptimizationusingMemeticAlgorithmswithLocalSearchChains(MA-LS-Chains">Rmalschains</a> in R</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/rminer/index.html)-rminer:Simpleruseofdataminingmethods(e.g.NNandSVM">rminer</a> in classification and regression</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/ROCR/index.html">ROCR</a> - ROCR: Visualizing the performance of scoring classifiers</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/RoughSets/index.html">RoughSets</a> - RoughSets: Data Analysis Using Rough Set and Fuzzy Rough Set Theories</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/rpart/index.html">rpart</a> - rpart: Recursive Partitioning and Regression Trees</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/RPMM/index.html">RPMM</a> - RPMM: Recursively Partitioned Mixture Model</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/RSNNS/index.html)-RSNNS:NeuralNetworksinRusingtheStuttgartNeuralNetworkSimulator(SNNS">RSNNS</a></p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/RWeka/index.html">RWeka</a> - RWeka: R/Weka interface</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/RXshrink/index.html">RXshrink</a> - RXshrink: Maximum Likelihood Shrinkage via Generalized Ridge or Least Angle Regression</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/sda/index.html">sda</a> - sda: Shrinkage Discriminant Analysis and CAT Score Variable Selection</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/SDDA/index.html">SDDA</a> - SDDA: Stepwise Diagonal Discriminant Analysis</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/subsemble/index.html">SuperLearner](https://github.com/ecpolley/SuperLearner) and [subsemble</a> - Multi-algorithm ensemble learning packages.</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/svmpath/index.html">svmpath</a> - svmpath: svmpath: the SVM Path algorithm</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/tgp/index.html">tgp</a> - tgp: Bayesian treed Gaussian process models</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/tree/index.html">tree</a> - tree: Classification and regression trees</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/web/packages/varSelRF/index.html">varSelRF</a> - varSelRF: Variable selection using random forests</p></li>
+<li><p><a class="reference external" href="https://github.com/tqchen/xgboost/tree/master/R-package)-RbindingforeXtremeGradientBoosting(Tree">XGBoost.R</a> Library</p></li>
+<li><p><a class="reference external" href="http://optunity.readthedocs.io/en/latest/">Optunity</a> - A library dedicated to automated hyperparameter optimization with a simple, lightweight API to facilitate drop-in replacement of grid search. Optunity is written in Python but interfaces seamlessly to R.</p></li>
+<li><p><a class="reference external" href="http://igraph.org/r/">igraph</a> - binding to igraph library - General purpose graph library</p></li>
+<li><p><a class="reference external" href="https://github.com/dmlc/mxnet">MXNet</a> - Lightweight, Portable, Flexible Distributed/Mobile Deep Learning with Dynamic, Mutation-aware Dataflow Dep Scheduler; for Python, R, Julia, Go, Javascript and more.</p></li>
+<li><p><a class="reference external" href="https://github.com/Azure/Azure-TDSP-Utilities)-TwodatascienceutilitiesinRfromMicrosoft:1)InteractiveDataExploration,Analysis,andReporting(IDEAR);2)AutomatedModelingandReporting(AMR">TDSP-Utilities</a>.</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://ggplot2.org/">ggplot2</a> - A data visualization package based on the grammar of graphics.</p></li>
+</ul>
+</section>
+<section id="sas">
+<h2><a class="toc-backref" href="#id27">SAS</a><a class="headerlink" href="#sas" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sas.com/en_us/software/enterprise-miner.html">Enterprise Miner</a> - Data mining and machine learning that creates deployable models using a GUI or code.</p></li>
+<li><p><a class="reference external" href="https://www.sas.com/en_us/software/factory-miner.html">Factory Miner</a> - Automatically creates deployable machine learning models across numerous market or customer segments using a GUI.</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sas.com/en_us/software/analytics/stat.html">SAS/STAT</a> - For conducting advanced statistical analysis.</p></li>
+<li><p><a class="reference external" href="https://www.sas.com/en_us/software/university-edition.html">University Edition</a> - FREE! Includes all SAS packages necessary for data analysis and visualization, and includes online SAS courses.</p></li>
+</ul>
+<p class="rubric">High Performance Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sas.com/en_us/software/analytics/high-performance-data-mining.html">High Performance Data Mining</a> - Data mining and machine learning that creates deployable models using a GUI or code in an MPP environment, including Hadoop.</p></li>
+<li><p><a class="reference external" href="https://www.sas.com/en_us/software/analytics/high-performance-text-mining.html">High Performance Text Mining</a> - Text mining using a GUI or code in an MPP environment, including Hadoop.</p></li>
+</ul>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sas.com/en_us/software/analytics/contextual-analysis.html">Contextual Analysis</a> - Add structure to unstructured text using a GUI.</p></li>
+<li><p><a class="reference external" href="https://www.sas.com/en_us/software/analytics/sentiment-analysis.html">Sentiment Analysis</a> - Extract sentiment from text using a GUI.</p></li>
+<li><p><a class="reference external" href="https://www.sas.com/en_us/software/analytics/text-miner.html">Text Miner</a> - Text mining using a GUI or code.</p></li>
+</ul>
+<p class="rubric">Demos and Scripts</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/sassoftware/enlighten-apply/tree/master/ML_tables">ML_Tables</a> - Concise cheat sheets containing machine learning best practices.</p></li>
+<li><p><a class="reference external" href="https://github.com/sassoftware/enlighten-apply">enlighten-apply</a> - Example code and materials that illustrate applications of SAS machine learning techniques.</p></li>
+<li><p><a class="reference external" href="https://github.com/sassoftware/enlighten-integration">enlighten-integration</a> - Example code and materials that illustrate techniques for integrating SAS with other analytics technologies in Java, PMML, Python and R.</p></li>
+<li><p><a class="reference external" href="https://github.com/sassoftware/enlighten-deep">enlighten-deep</a> - Example code and materials that illustrate using neural networks with several hidden layers in SAS.</p></li>
+<li><p><a class="reference external" href="https://github.com/sassoftware/dm-flow">dm-flow</a> - Library of SAS Enterprise Miner process flow diagrams to help you learn by example about specific data mining topics.</p></li>
+</ul>
+</section>
+<section id="scala">
+<h2><a class="toc-backref" href="#id28">Scala</a><a class="headerlink" href="#scala" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Natural Language Processing</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.scalanlp.org/">ScalaNLP</a> - ScalaNLP is a suite of machine learning and numerical computing libraries.</p></li>
+<li><p><a class="reference external" href="https://github.com/scalanlp/breeze">Breeze</a> - Breeze is a numerical processing library for Scala.</p></li>
+<li><p><a class="reference external" href="https://github.com/scalanlp/chalk">Chalk</a> - Chalk is a natural language processing library.</p></li>
+<li><p><a class="reference external" href="https://github.com/factorie/factorie">FACTORIE</a> - FACTORIE is a toolkit for deployable probabilistic modeling, implemented as a software library in Scala. It provides its users with a succinct language for creating relational factor graphs, estimating parameters and performing inference.</p></li>
+</ul>
+<p class="rubric">Data Analysis / Data Visualization</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://spark.apache.org/docs/latest/mllib-guide.html">MLlib in Apache Spark</a> - Distributed machine learning library in Spark</p></li>
+<li><p><a class="reference external" href="https://github.com/Hydrospheredata/mist">Hydrosphere Mist</a> - a service for deployment Apache Spark MLLib machine learning models as realtime, batch or reactive web services.</p></li>
+<li><p><a class="reference external" href="https://github.com/twitter/scalding">Scalding</a> - A Scala API for Cascading</p></li>
+<li><p><a class="reference external" href="https://github.com/twitter/summingbird">Summing Bird</a> - Streaming MapReduce with Scalding and Storm</p></li>
+<li><p><a class="reference external" href="https://github.com/twitter/algebird">Algebird</a> - Abstract Algebra for Scala</p></li>
+<li><p><a class="reference external" href="https://github.com/xerial/xerial">xerial</a> - Data management utilities for Scala</p></li>
+<li><p><a class="reference external" href="https://github.com/avibryant/simmer">simmer</a> - Reduce your data. A unix filter for algebird-powered aggregation.</p></li>
+<li><p><a class="reference external" href="https://github.com/apache/incubator-predictionio">PredictionIO</a> - PredictionIO, a machine learning server for software developers and data engineers.</p></li>
+<li><p><a class="reference external" href="https://github.com/BIDData/BIDMat">BIDMat</a> - CPU and GPU-accelerated matrix library intended to support large-scale exploratory data analysis.</p></li>
+<li><p><a class="reference external" href="http://www.wolfe.ml/">Wolfe</a> Declarative Machine Learning</p></li>
+<li><p><a class="reference external" href="http://flink.apache.org/">Flink</a> - Open source platform for distributed stream and batch data processing.</p></li>
+<li><p><a class="reference external" href="http://spark-notebook.io">Spark Notebook</a> - Interactive and Reactive Data Science using Scala and Spark.</p></li>
+</ul>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/etsy/Conjecture">Conjecture</a> - Scalable Machine Learning in Scalding</p></li>
+<li><p><a class="reference external" href="https://github.com/stripe/brushfire">brushfire</a> - Distributed decision tree ensemble learning in Scala</p></li>
+<li><p><a class="reference external" href="https://github.com/tresata/ganitha">ganitha</a> - scalding powered machine learning</p></li>
+<li><p><a class="reference external" href="https://github.com/bigdatagenomics/adam">adam</a> - A genomics processing engine and specialized file format built using Apache Avro, Apache Spark and Parquet. Apache 2 licensed.</p></li>
+<li><p><a class="reference external" href="https://github.com/bioscala/bioscala">bioscala</a> - Bioinformatics for the Scala programming language</p></li>
+<li><p><a class="reference external" href="https://github.com/BIDData/BIDMach">BIDMach</a> - CPU and GPU-accelerated Machine Learning Library.</p></li>
+<li><p><a class="reference external" href="https://github.com/p2t2/figaro">Figaro</a> - a Scala library for constructing probabilistic models.</p></li>
+<li><p><a class="reference external" href="https://github.com/h2oai/sparkling-water">H2O Sparkling Water</a> - H2O and Spark interoperability.</p></li>
+<li><p><a class="reference external" href="https://ci.apache.org/projects/flink/flink-docs-master/apis/batch/libs/ml/index.html">FlinkML in Apache Flink</a> - Distributed machine learning library in Flink</p></li>
+<li><p><a class="reference external" href="https://github.com/transcendent-ai-labs/DynaML">DynaML</a> - Scala Library/REPL for Machine Learning Research</p></li>
+<li><p><a class="reference external" href="https://github.com/IllinoisCogComp/saul/">Saul</a> - Flexible Declarative Learning-Based Programming.</p></li>
+<li><p><a class="reference external" href="https://github.com/valdanylchuk/swiftlearner/">SwiftLearner</a> - Simply written algorithms to help study ML or write your own implementations.</p></li>
+</ul>
+</section>
+<section id="swift">
+<h2><a class="toc-backref" href="#id29">Swift</a><a class="headerlink" href="#swift" title="Permalink to this headline">#</a></h2>
+<p class="rubric">General-Purpose Machine Learning</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/collinhundley/Swift-AI">Swift AI</a> - Highly optimized artificial intelligence and machine learning library written in Swift.</p></li>
+<li><p><a class="reference external" href="https://github.com/aleph7/BrainCore">BrainCore</a> - The iOS and OS X neural network framework</p></li>
+<li><p><a class="reference external" href="https://github.com/stsievert/swix">swix</a> - A bare bones library that
+includes a general matrix language and wraps some OpenCV for iOS development.</p></li>
+<li><p><a class="reference external" href="http://deeplearningkit.org/">DeepLearningKit</a> an Open Source Deep Learning Framework for Apple’s iOS, OS X and tvOS.
+It currently allows using deep convolutional neural network models trained in Caffe on Apple operating systems.</p></li>
+<li><p><a class="reference external" href="https://github.com/KevinCoble/AIToolbox">AIToolbox</a> - A toolbox framework of AI modules written in Swift:  Graphs/Trees, Linear Regression, Support Vector Machines, Neural Networks, PCA, KMeans, Genetic Algorithms, MDP, Mixture of Gaussians.</p></li>
+<li><p><a class="reference external" href="https://github.com/Somnibyte/MLKit">MLKit</a> - A simple Machine Learning Framework written in Swift. Currently features Simple Linear Regression, Polynomial Regression, and Ridge Regression.</p></li>
+<li><p><a class="reference external" href="https://github.com/vlall/Swift-Brain">Swift Brain</a> - The first neural network / machine learning library written in Swift. This is a project for AI algorithms in Swift for iOS and OS X development. This project includes algorithms focused on Bayes theorem, neural networks, SVMs, Matrices, etc..</p></li>
+</ul>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="datasets.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Datasets</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="papers.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Papers</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

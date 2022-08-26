@@ -1,0 +1,808 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Other Content &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Contribute" href="contribute.html" />
+    <link rel="prev" title="Papers" href="papers.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="calculus.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forwardpropagation.html">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="layers.html">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimizers.html">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regularization.html">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architectures.html">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification_algos.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="libraries.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/other_content.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blogs">
+   Blogs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-science">
+     Data Science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning">
+     Machine learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#math">
+     Math
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#books">
+   Books
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Machine learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-learning">
+     Deep learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability-statistics">
+     Probability &amp; Statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-algebra">
+     Linear Algebra
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#courses">
+   Courses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#podcasts">
+   Podcasts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorials">
+   Tutorials
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Other Content</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#blogs">
+   Blogs
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-science">
+     Data Science
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning">
+     Machine learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#math">
+     Math
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#books">
+   Books
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Machine learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#deep-learning">
+     Deep learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#probability-statistics">
+     Probability &amp; Statistics
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-algebra">
+     Linear Algebra
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#courses">
+   Courses
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#podcasts">
+   Podcasts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#tutorials">
+   Tutorials
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="other-content">
+<span id="content"></span><h1>Other Content<a class="headerlink" href="#other-content" title="Permalink to this headline">#</a></h1>
+<p>Books, blogs, courses and more forked from josephmisiti’s <a class="reference external" href="https://github.com/josephmisiti/awesome-machine-learning">awesome machine learning</a></p>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#blogs" id="id4">Blogs</a></p>
+<ul>
+<li><p><a class="reference internal" href="#data-science" id="id5">Data Science</a></p></li>
+<li><p><a class="reference internal" href="#machine-learning" id="id6">Machine learning</a></p></li>
+<li><p><a class="reference internal" href="#math" id="id7">Math</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#books" id="id8">Books</a></p>
+<ul>
+<li><p><a class="reference internal" href="#id1" id="id9">Machine learning</a></p></li>
+<li><p><a class="reference internal" href="#deep-learning" id="id10">Deep learning</a></p></li>
+<li><p><a class="reference internal" href="#probability-statistics" id="id11">Probability &amp; Statistics</a></p></li>
+<li><p><a class="reference internal" href="#linear-algebra" id="id12">Linear Algebra</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#courses" id="id13">Courses</a></p></li>
+<li><p><a class="reference internal" href="#podcasts" id="id14">Podcasts</a></p></li>
+<li><p><a class="reference internal" href="#tutorials" id="id15">Tutorials</a></p></li>
+</ul>
+</div>
+<section id="blogs">
+<h2><a class="toc-backref" href="#id4">Blogs</a><a class="headerlink" href="#blogs" title="Permalink to this headline">#</a></h2>
+<section id="data-science">
+<h3><a class="toc-backref" href="#id5">Data Science</a><a class="headerlink" href="#data-science" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jeremykun.com/">https://jeremykun.com/</a></p></li>
+<li><p><a class="reference external" href="http://iamtrask.github.io/">http://iamtrask.github.io/</a></p></li>
+<li><p><a class="reference external" href="http://blog.explainmydata.com/">http://blog.explainmydata.com/</a></p></li>
+<li><p><a class="reference external" href="http://andrewgelman.com/">http://andrewgelman.com/</a></p></li>
+<li><p><a class="reference external" href="http://simplystatistics.org/">http://simplystatistics.org/</a></p></li>
+<li><p><a class="reference external" href="http://www.evanmiller.org/">http://www.evanmiller.org/</a></p></li>
+<li><p><a class="reference external" href="http://jakevdp.github.io/">http://jakevdp.github.io/</a></p></li>
+<li><p><a class="reference external" href="http://blog.yhat.com/">http://blog.yhat.com/</a></p></li>
+<li><p><a class="reference external" href="http://wesmckinney.com">http://wesmckinney.com</a></p></li>
+<li><p><a class="reference external" href="http://www.overkillanalytics.net/">http://www.overkillanalytics.net/</a></p></li>
+<li><p><a class="reference external" href="http://newton.cx/~peter/">http://newton.cx/~peter/</a></p></li>
+<li><p><a class="reference external" href="http://mbakker7.github.io/exploratory_computing_with_python/">http://mbakker7.github.io/exploratory_computing_with_python/</a></p></li>
+<li><p><a class="reference external" href="https://sebastianraschka.com/blog/index.html">https://sebastianraschka.com/blog/index.html</a></p></li>
+<li><p><a class="reference external" href="http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/">http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/</a></p></li>
+<li><p><a class="reference external" href="http://colah.github.io/">http://colah.github.io/</a></p></li>
+<li><p><a class="reference external" href="http://www.thomasdimson.com/">http://www.thomasdimson.com/</a></p></li>
+<li><p><a class="reference external" href="http://blog.smellthedata.com/">http://blog.smellthedata.com/</a></p></li>
+<li><p><a class="reference external" href="https://sebastianraschka.com/">https://sebastianraschka.com/</a></p></li>
+<li><p><a class="reference external" href="http://dogdogfish.com/">http://dogdogfish.com/</a></p></li>
+<li><p><a class="reference external" href="http://www.johnmyleswhite.com/">http://www.johnmyleswhite.com/</a></p></li>
+<li><p><a class="reference external" href="http://drewconway.com/zia/">http://drewconway.com/zia/</a></p></li>
+<li><p><a class="reference external" href="http://bugra.github.io/">http://bugra.github.io/</a></p></li>
+<li><p><a class="reference external" href="http://opendata.cern.ch/">http://opendata.cern.ch/</a></p></li>
+<li><p><a class="reference external" href="https://alexanderetz.com/">https://alexanderetz.com/</a></p></li>
+<li><p><a class="reference external" href="http://www.sumsar.net/">http://www.sumsar.net/</a></p></li>
+<li><p><a class="reference external" href="https://www.countbayesie.com">https://www.countbayesie.com</a></p></li>
+<li><p><a class="reference external" href="http://blog.kaggle.com/">http://blog.kaggle.com/</a></p></li>
+<li><p><a class="reference external" href="http://www.danvk.org/">http://www.danvk.org/</a></p></li>
+<li><p><a class="reference external" href="http://hunch.net/">http://hunch.net/</a></p></li>
+<li><p><a class="reference external" href="http://www.randalolson.com/blog/">http://www.randalolson.com/blog/</a></p></li>
+<li><p><a class="reference external" href="https://www.johndcook.com/blog/r_language_for_programmers/">https://www.johndcook.com/blog/r_language_for_programmers/</a></p></li>
+<li><p><a class="reference external" href="http://www.dataschool.io/">http://www.dataschool.io/</a></p></li>
+</ul>
+</section>
+<section id="machine-learning">
+<h3><a class="toc-backref" href="#id6">Machine learning</a><a class="headerlink" href="#machine-learning" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.openai.com/">OpenAI</a></p></li>
+<li><p><a class="reference external" href="http://distill.pub/">Distill</a></p></li>
+<li><p><a class="reference external" href="http://karpathy.github.io/">Andrej Karpathy Blog</a></p></li>
+<li><p><a class="reference external" href="http://colah.github.io/">Colah’s Blog</a></p></li>
+<li><p><a class="reference external" href="http://www.wildml.com/">WildML</a></p></li>
+<li><p><a class="reference external" href="http://www.fastml.com/">FastML</a></p></li>
+<li><p><a class="reference external" href="https://blog.acolyer.org">TheMorningPaper</a></p></li>
+</ul>
+</section>
+<section id="math">
+<h3><a class="toc-backref" href="#id7">Math</a><a class="headerlink" href="#math" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.sumsar.net/">http://www.sumsar.net/</a></p></li>
+<li><p><a class="reference external" href="http://allendowney.blogspot.ca/">http://allendowney.blogspot.ca/</a></p></li>
+<li><p><a class="reference external" href="https://healthyalgorithms.com/">https://healthyalgorithms.com/</a></p></li>
+<li><p><a class="reference external" href="https://petewarden.com/">https://petewarden.com/</a></p></li>
+<li><p><a class="reference external" href="http://mrtz.org/blog/">http://mrtz.org/blog/</a></p></li>
+</ul>
+</section>
+</section>
+<section id="books">
+<h2><a class="toc-backref" href="#id8">Books</a><a class="headerlink" href="#books" title="Permalink to this headline">#</a></h2>
+<section id="id1">
+<h3><a class="toc-backref" href="#id9">Machine learning</a><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.manning.com/books/real-world-machine-learning">Real World Machine Learning</a> [Free Chapters]</p></li>
+<li><p><a class="reference external" href="http://www-bcf.usc.edu/~gareth/ISL/">An Introduction To Statistical Learning</a> - Book + R Code</p></li>
+<li><p><a class="reference external" href="http://statweb.stanford.edu/~tibs/ElemStatLearn/">Elements of Statistical Learning</a> - Book</p></li>
+<li><p><a class="reference external" href="http://camdavidsonpilon.github.io/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers/">Probabilistic Programming &amp; Bayesian Methods for Hackers</a> - Book + IPython Notebooks</p></li>
+<li><p><a class="reference external" href="http://greenteapress.com/wp/think-bayes/">Think Bayes</a> - Book + Python Code</p></li>
+<li><p><a class="reference external" href="http://www.inference.phy.cam.ac.uk/mackay/itila/book.html">Information Theory, Inference, and Learning Algorithms</a></p></li>
+<li><p><a class="reference external" href="http://www.gaussianprocess.org/gpml/chapters/">Gaussian Processes for Machine Learning</a></p></li>
+<li><p><a class="reference external" href="http://lintool.github.io/MapReduceAlgorithms/">Data Intensive Text Processing w/ MapReduce</a></p></li>
+<li><p><a class="reference external" href="http://webdocs.cs.ualberta.ca/~sutton/book/ebook/the-book.html">Reinforcement Learning: - An Introduction</a></p></li>
+<li><p><a class="reference external" href="http://infolab.stanford.edu/~ullman/mmds/book.pdf">Mining Massive Datasets</a></p></li>
+<li><p><a class="reference external" href="https://www.ics.uci.edu/~welling/teaching/273ASpring10/IntroMLBook.pdf">A First Encounter with Machine Learning</a></p></li>
+<li><p><a class="reference external" href="http://users.isr.ist.utl.pt/~wurmd/Livros/school/Bishop%20-%20Pattern%20Recognition%20And%20Machine%20Learning%20-%20Springer%20%202006.pdf">Pattern Recognition and Machine Learning</a></p></li>
+<li><p><a class="reference external" href="http://web4.cs.ucl.ac.uk/staff/D.Barber/textbook/090310.pdf">Machine Learning &amp; Bayesian Reasoning</a></p></li>
+<li><p><a class="reference external" href="http://alex.smola.org/drafts/thebook.pdf">Introduction to Machine Learning</a> - Alex Smola and S.V.N. Vishwanathan</p></li>
+<li><p><a class="reference external" href="http://www.szit.bme.hu/~gyorfi/pbook.pdf">A Probabilistic Theory of Pattern Recognition</a></p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/IR-book/pdf/irbookprint.pdf">Introduction to Information Retrieval</a></p></li>
+<li><p><a class="reference external" href="https://www.otexts.org/fpp/">Forecasting: principles and practice</a></p></li>
+<li><p><a class="reference external" href="http://www.markwatson.com/opencontent_data/JavaAI3rd.pdf">Practical Artificial Intelligence Programming in Java</a></p></li>
+<li><p><a class="reference external" href="https://arxiv.org/pdf/0904.3664v1.pdf">Introduction to Machine Learning</a> - Amnon Shashua</p></li>
+<li><p><a class="reference external" href="http://www.intechopen.com/books/reinforcement_learning">Reinforcement Learning</a></p></li>
+<li><p><a class="reference external" href="http://www.intechopen.com/books/machine_learning">Machine Learning</a></p></li>
+<li><p><a class="reference external" href="http://ai.stanford.edu/~nilsson/QAI/qai.pdf">A Quest for AI</a></p></li>
+<li><p><a class="reference external" href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.177.857&amp;rep=rep1&amp;type=pdf">Introduction to Applied Bayesian Statistics and Estimation for Social Scientists</a> - Scott M. Lynch</p></li>
+<li><p><a class="reference external" href="https://users.soe.ucsc.edu/~draper/draper-BMIP-dec2005.pdf">Bayesian Modeling, Inference and Prediction</a></p></li>
+<li><p><a class="reference external" href="http://ciml.info/">A Course in Machine Learning</a></p></li>
+<li><p><a class="reference external" href="http://www1.maths.leeds.ac.uk/~charles/statlog/">Machine Learning, Neural and Statistical Classification</a></p></li>
+<li><p><a class="reference external" href="http://web4.cs.ucl.ac.uk/staff/D.Barber/pmwiki/pmwiki.php?n=Brml.HomePage">Bayesian Reasoning and Machine Learning</a> Book+MatlabToolBox</p></li>
+<li><p><a class="reference external" href="https://leanpub.com/rprogramming">R Programming for Data Science</a></p></li>
+<li><p><a class="reference external" href="http://cs.du.edu/~mitchell/mario_books/Data_Mining:_Practical_Machine_Learning_Tools_and_Techniques_-_2e_-_Witten_&amp;_Frank.pdf">Data Mining - Practical Machine Learning Tools and Techniques</a> Book</p></li>
+</ul>
+</section>
+<section id="deep-learning">
+<h3><a class="toc-backref" href="#id10">Deep learning</a><a class="headerlink" href="#deep-learning" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.deeplearningbook.org/">Deep Learning - An MIT Press book</a></p></li>
+<li><p><a class="reference external" href="http://www.cs.columbia.edu/~mcollins/notes-spring2013.html">Coursera Course Book on NLP</a></p></li>
+<li><p><a class="reference external" href="http://www.nltk.org/book/">NLTK</a></p></li>
+<li><p><a class="reference external" href="http://victoria.lviv.ua/html/fl5/NaturalLanguageProcessingWithPython.pdf">NLP w/ Python</a></p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/fsnlp/promo/">Foundations of Statistical Natural Language Processing</a></p></li>
+<li><p><a class="reference external" href="http://nlp.stanford.edu/IR-book/pdf/irbookonlinereading.pdf">An Introduction to Information Retrieval</a></p></li>
+<li><p><a class="reference external" href="http://www.dkriesel.com/_media/science/neuronalenetze-en-zeta2-2col-dkrieselcom.pdf">A Brief Introduction to Neural Networks</a></p></li>
+<li><p><a class="reference external" href="http://neuralnetworksanddeeplearning.com/">Neural Networks and Deep Learning</a></p></li>
+</ul>
+</section>
+<section id="probability-statistics">
+<h3><a class="toc-backref" href="#id11">Probability &amp; Statistics</a><a class="headerlink" href="#probability-statistics" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.greenteapress.com/thinkstats/">Think Stats</a> - Book + Python Code</p></li>
+<li><p><a class="reference external" href="http://heather.cs.ucdavis.edu/probstatbook">From Algorithms to Z-Scores</a> - Book</p></li>
+<li><p><a class="reference external" href="http://heather.cs.ucdavis.edu/~matloff/132/NSPpart.pdf)-Book(NotFinished">The Art of R Programming</a></p></li>
+<li><p><a class="reference external" href="http://people.math.umass.edu/~lavine/Book/book.pdf">Introduction to statistical thought</a></p></li>
+<li><p><a class="reference external" href="http://www.math.uiuc.edu/~r-ash/BPT/BPT.pdf">Basic Probability Theory</a></p></li>
+<li><p><a class="reference external" href="https://math.dartmouth.edu/~prob/prob/prob.pdf">Introduction to probability</a> - By Dartmouth College</p></li>
+<li><p><a class="reference external" href="http://uncertainty.stat.cmu.edu/wp-content/uploads/2011/05/principles-of-uncertainty.pdf">Principle of Uncertainty</a></p></li>
+<li><p><a class="reference external" href="http://statistics.zone/">Probability &amp; Statistics Cookbook</a></p></li>
+<li><p><a class="reference external" href="http://www.stat.cmu.edu/~cshalizi/ADAfaEPoV/ADAfaEPoV.pdf">Advanced Data Analysis From An Elementary Point of View</a></p></li>
+<li><p><a class="reference external" href="http://athenasc.com/probbook.html">Introduction to Probability</a> -  Book and course by MIT</p></li>
+<li><p><a class="reference external" href="http://statweb.stanford.edu/~tibs/ElemStatLearn/">The Elements of Statistical Learning: Data Mining, Inference, and Prediction.</a> -Book</p></li>
+<li><p><a class="reference external" href="http://www-bcf.usc.edu/~gareth/ISL/">An Introduction to Statistical Learning with Applications in R</a> - Book</p></li>
+<li><p><a class="reference external" href="http://health.adelaide.edu.au/psychology/ccs/teaching/lsr/">Learning Statistics Using R</a></p></li>
+<li><p><a class="reference external" href="https://cran.r-project.org/web/packages/IPSUR/vignettes/IPSUR.pdf">Introduction to Probability and Statistics Using R</a> - Book</p></li>
+<li><p><a class="reference external" href="http://adv-r.had.co.nz">Advanced R Programming</a> - Book</p></li>
+<li><p><a class="reference external" href="http://cran.r-project.org/doc/contrib/Faraway-PRA.pdf">Practical Regression and Anova using R</a> - Book</p></li>
+<li><p><a class="reference external" href="http://www.columbia.edu/~cjd11/charles_dimaggio/DIRE/resources/R/practicalsBookNoAns.pdf">R practicals</a> - Book</p></li>
+<li><p><a class="reference external" href="http://www.burns-stat.com/pages/Tutor/R_inferno.pdf">The R Inferno</a> - Book</p></li>
+</ul>
+</section>
+<section id="linear-algebra">
+<h3><a class="toc-backref" href="#id12">Linear Algebra</a><a class="headerlink" href="#linear-algebra" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="http://www.math.brown.edu/~treil/papers/LADW/book.pdf">Linear Algebra Done Wrong</a></p></li>
+<li><p><a class="reference external" href="https://math.byu.edu/~klkuttle/Linearalgebra.pdf">Linear Algebra, Theory, and Applications</a></p></li>
+<li><p><a class="reference external" href="http://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf">Convex Optimization</a></p></li>
+<li><p><a class="reference external" href="http://www.seas.ucla.edu/~vandenbe/103/reader.pdf">Applied Numerical Computing</a></p></li>
+<li><p><a class="reference external" href="http://egrcc.github.io/docs/math/applied-numerical-linear-algebra.pdf">Applied Numerical Linear Algebra</a></p></li>
+</ul>
+</section>
+</section>
+<section id="courses">
+<h2><a class="toc-backref" href="#id13">Courses</a><a class="headerlink" href="#courses" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://cs231n.stanford.edu/">CS231n, Convolutional Neural Networks for Visual Recognition, Stanford University</a></p></li>
+<li><p><a class="reference external" href="http://cs224d.stanford.edu/">CS224d, Deep Learning for Natural Language Processing, Stanford University</a></p></li>
+<li><p><a class="reference external" href="https://github.com/oxford-cs-deepnlp-2017/lectures">Oxford Deep NLP 2017, Deep Learning for Natural Language Processing, University of Oxford</a></p></li>
+<li><p><a class="reference external" href="https://www.edx.org/course/artificial-intelligence-ai-columbiax-csmm-101x">Artificial Intelligence (Columbia University)</a> - free</p></li>
+<li><p><a class="reference external" href="https://www.edx.org/course/machine-learning-columbiax-csmm-102x">Machine Learning (Columbia University)</a> - free</p></li>
+<li><p><a class="reference external" href="https://www.coursera.org/learn/machine-learning">Machine Learning (Stanford University)</a> - free</p></li>
+<li><p><a class="reference external" href="https://www.coursera.org/learn/neural-networks">Neural Networks for Machine Learning (University of Toronto)</a> - free</p></li>
+<li><p><a class="reference external" href="https://www.coursera.org/specializations/machine-learning">Machine Learning Specialization (University of Washington)</a> - Courses: Machine Learning Foundations: A Case Study Approach, Machine Learning: Regression, Machine Learning: Classification, Machine Learning: Clustering &amp; Retrieval, Machine Learning: Recommender Systems &amp; Dimensionality Reduction,Machine Learning Capstone: An Intelligent Application with Deep Learning; free</p></li>
+<li><p><a class="reference external" href="https://www.cs.ox.ac.uk/people/nando.defreitas/machinelearning/">Machine Learning Course (2014-15 session) (by Nando de Freitas, University of Oxford)</a> - Lecture slides and video recordings.</p></li>
+<li><p><a class="reference external" href="http://www.work.caltech.edu/telecourse.html">Learning from Data (by Yaser S. Abu-Mostafa, Caltech)</a> - Lecture videos available</p></li>
+</ul>
+</section>
+<section id="podcasts">
+<h2><a class="toc-backref" href="#id14">Podcasts</a><a class="headerlink" href="#podcasts" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="http://radar.oreilly.com/tag/oreilly-data-show-podcast">The O’Reilly Data Show</a></p></li>
+<li><p><a class="reference external" href="http://partiallyderivative.com/">Partially Derivative</a></p></li>
+<li><p><a class="reference external" href="http://www.thetalkingmachines.com/">The Talking Machines</a></p></li>
+<li><p><a class="reference external" href="https://dataskeptic.com/">The Data Skeptic</a></p></li>
+<li><p><a class="reference external" href="http://benjaffe.github.io/linear-digressions-site/">Linear Digressions</a></p></li>
+<li><p><a class="reference external" href="http://datastori.es/">Data Stories</a></p></li>
+<li><p><a class="reference external" href="http://www.learningmachines101.com/">Learning Machines 101</a></p></li>
+<li><p><a class="reference external" href="http://simplystatistics.org/2015/09/17/not-so-standard-deviations-the-podcast/">Not So Standard Deviations</a></p></li>
+<li><p><a class="reference external" href="https://twimlai.com/shows/">TWIMLAI</a></p></li>
+</ul>
+<p>-<a href="#id2"><span class="problematic" id="id3">_`</span></a>Machine Learning Guide &lt;<a class="reference external" href="http://ocdevel.com/mlg">http://ocdevel.com/mlg</a>&gt;`_</p>
+</section>
+<section id="tutorials">
+<h2><a class="toc-backref" href="#id15">Tutorials</a><a class="headerlink" href="#tutorials" title="Permalink to this headline">#</a></h2>
+<p>Be the first to <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet">contribute!</a></p>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="papers.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Papers</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="contribute.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Contribute</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

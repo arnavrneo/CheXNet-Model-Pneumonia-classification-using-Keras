@@ -1,0 +1,738 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Glossary &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Calculus" href="calculus.html" />
+    <link rel="prev" title="Logistic Regression" href="logistic_regression.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="calculus.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forwardpropagation.html">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="layers.html">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimizers.html">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regularization.html">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architectures.html">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification_algos.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="libraries.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_content.html">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/glossary.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Glossary</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="glossary">
+<span id="id1"></span><h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">#</a></h1>
+<p>Definitions of common machine learning terms.</p>
+<dl class="simple" id="glossary-accuracy">
+<dt>Accuracy</dt><dd><p>Percentage of correct predictions made by the model.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-algorithm">
+<dt>Algorithm</dt><dd><p>A method, function, or series of instructions used to generate a machine learning <a class="reference internal" href="#glossary-model"><span class="std std-ref">model</span></a>. Examples include linear regression, decision trees, support vector machines, and neural networks.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-attribute">
+<dt>Attribute</dt><dd><p>A quality describing an observation (e.g. color, size, weight). In Excel terms, these are column headers.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-bias-metric">
+<dt>Bias metric</dt><dd><p>What is the average difference between your predictions and the correct value for that observation?</p>
+<ul class="simple">
+<li><p><strong>Low bias</strong> could mean every prediction is correct. It could also mean half of your predictions are above their actual values and half are below, in equal proportion, resulting in low average difference.</p></li>
+<li><p><strong>High bias</strong> (with low variance) suggests your model may be underfitting and you’re using the wrong architecture for the job.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="glossary-bias-term">
+<dt>Bias term</dt><dd><p>Allow models to represent patterns that do not pass through the origin. For example, if all my features were 0, would my output also be zero? Is it possible there is some base value upon which my features have an effect? Bias terms typically accompany weights and are attached to neurons or filters.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-categorical-variables">
+<dt>Categorical Variables</dt><dd><p>Variables with a discrete set of possible values. Can be ordinal (order matters) or nominal (order doesn’t matter).</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-classification">
+<dt>Classification</dt><dd><p>Predicting a categorical output.</p>
+<ul class="simple">
+<li><p><strong>Binary classification</strong> predicts one of two possible outcomes (e.g. is the email spam or not spam?)</p></li>
+<li><p><strong>Multi-class classification</strong> predicts one of multiple possible outcomes (e.g. is this a photo of a cat, dog, horse or human?)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="glossary-classification-threshold">
+<dt>Classification Threshold</dt><dd><p>The lowest probability value at which we’re comfortable asserting a positive classification. For example, if the predicted probability of being diabetic is &gt; 50%, return True, otherwise return False.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-clustering">
+<dt>Clustering</dt><dd><p>Unsupervised grouping of data into buckets.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-confusion-matrix">
+<dt>Confusion Matrix</dt><dd><p>Table that describes the performance of a classification model by grouping predictions into 4 categories.</p>
+<ul class="simple">
+<li><p><strong>True Positives</strong>: we <em>correctly</em> predicted they do have diabetes</p></li>
+<li><p><strong>True Negatives</strong>: we <em>correctly</em> predicted they don’t have diabetes</p></li>
+<li><p><strong>False Positives</strong>: we <em>incorrectly</em> predicted they do have diabetes (Type I error)</p></li>
+<li><p><strong>False Negatives</strong>: we <em>incorrectly</em> predicted they don’t have diabetes (Type II error)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="glossary-continuous-variables">
+<dt>Continuous Variables</dt><dd><p>Variables with a range of possible values defined by a number scale (e.g. sales, lifespan).</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-convergence">
+<dt>Convergence</dt><dd><p>A state reached during the training of a model when the <a class="reference internal" href="#glossary-loss"><span class="std std-ref">loss</span></a> changes very little between each iteration.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-deduction">
+<dt>Deduction</dt><dd><p>A top-down approach to answering questions or solving problems. A logic technique that starts with a theory and tests that theory with observations to derive a conclusion. E.g. We suspect X, but we need to test our hypothesis before coming to any conclusions.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-deep-learning">
+<dt>Deep Learning</dt><dd><p>Deep Learning is derived from a machine learning algorithm called perceptron or multi layer perceptron that is gaining more and more attention nowadays because of its success in different fields like, computer vision to signal processing and medical diagnosis to self-driving cars. Like other AI algorithms, deep learning is based on decades of research. Nowadays, we have more and more data and cheap computing power that makes this algorithm really powerful in achieving state of the art accuracy. In modern world this algorithm is known as artificial neural network. Deep learning is much more accurate and robust compared to traditional artificial neural networks. But it is highly influenced by machine learning’s neural network and perceptron networks.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-dimension">
+<dt>Dimension</dt><dd><p>Dimension for machine learning and data scientist is different from physics. Here, dimension of data means how many features you have in your data ocean(data-set). e.g in case of object detection application, flatten image size and color channel(e.g 28*28*3) is a feature of the input set. In case of house price prediction (maybe) house size is the data-set so we call it 1 dimentional data.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-epoch">
+<dt>Epoch</dt><dd><p>An epoch describes the number of times the algorithm sees the entire data set.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-extrapolation">
+<dt>Extrapolation</dt><dd><p>Making predictions outside the range of a dataset. E.g. My dog barks, so all dogs must bark. In machine learning we often run into trouble when we extrapolate outside the range of our training data.</p>
+</dd>
+</dl>
+<dl id="glossary-false-positive-rate">
+<dt>False Positive Rate</dt><dd><p>Defined as</p>
+<div class="math notranslate nohighlight">
+\[FPR = 1 - Specificity = \frac{False Positives}{False Positives + True Negatives}\]</div>
+<p>The False Positive Rate forms the x-axis of the <a class="reference internal" href="#glossary-roc-curve"><span class="std std-ref">ROC curve</span></a>.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-feature">
+<dt>Feature</dt><dd><p>With respect to a dataset, a feature represents an <a class="reference internal" href="#glossary-attribute"><span class="std std-ref">attribute</span></a> and value combination. Color is an attribute. “Color is blue” is a feature. In Excel terms, features are similar to cells. The term feature has other definitions in different contexts.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-feature-selection">
+<dt>Feature Selection</dt><dd><p>Feature selection is the process of selecting relevant features from a data-set for creating a Machine Learning model.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-feature-vector">
+<dt>Feature Vector</dt><dd><p>A list of features describing an observation with multiple attributes. In Excel we call this a row.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-gradient-accumulation">
+<dt>Gradient Accumulation</dt><dd><p>A mechanism to split the batch of samples—used for training a neural network—into several mini-batches of samples that will be run sequentially. This is used to enable using large batch sizes that require more GPU memory than available.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-hyperparameters">
+<dt>Hyperparameters</dt><dd><p>Hyperparameters are higher-level properties of a model such as how fast it can learn (learning rate) or complexity of a model. The depth of trees in a Decision Tree or number of hidden layers in a Neural Networks are examples of hyper parameters.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-induction">
+<dt>Induction</dt><dd><p>A bottoms-up approach to answering questions or solving problems. A logic technique that goes from observations to theory. E.g. We keep observing X, so we infer that Y must be True.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-instance">
+<dt>Instance</dt><dd><p>A data point, row, or sample in a dataset. Another term for <a class="reference internal" href="#glossary-observation"><span class="std std-ref">observation</span></a>.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-label">
+<dt>Label</dt><dd><p>The “answer” portion of an <a class="reference internal" href="#glossary-observation"><span class="std std-ref">observation</span></a> in <a class="reference internal" href="#glossary-supervised-learning"><span class="std std-ref">supervised learning</span></a>. For example, in a dataset used to classify flowers into different species, the features might include the petal length and petal width, while the label would be the flower’s species.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-learning-rate">
+<dt>Learning Rate</dt><dd><p>The size of the update steps to take during optimization loops like <a class="reference internal" href="gradient_descent.html"><span class="doc">Gradient Descent</span></a>. With a high learning rate we can cover more ground each step, but we risk overshooting the lowest point since the slope of the hill is constantly changing. With a very low learning rate, we can confidently move in the direction of the negative gradient since we are recalculating it so frequently. A low learning rate is more precise, but calculating the gradient is time-consuming, so it will take us a very long time to get to the bottom.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-loss">
+<dt>Loss</dt><dd><p>Loss = true_value(from data-set)- predicted value(from ML-model)  The lower the loss, the better a model (unless the model has over-fitted to the training data). The loss is calculated on training and validation and its interpretation is how well the model is doing for these two sets. Unlike accuracy, loss is not a percentage. It is a summation of the errors made for each example in training or validation sets.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-machine-learning">
+<dt>Machine Learning</dt><dd><p>Mitchell (1997) provides a succinct definition: “A computer program is said to learn from experience E with respect to some class of tasks T and performance measure P, if its performance at tasks in T, as measured by P, improves with experience E.” In simple language machine learning is a field in which human made algorithms have an ability learn by itself or predict future for unseen data.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-model">
+<dt>Model</dt><dd><p>A data structure that stores a representation of a dataset (weights and biases). Models are created/learned when you train an algorithm on a dataset.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-neural-networks">
+<dt>Neural Networks</dt><dd><p>Neural Networks are mathematical algorithms modeled after the brain’s architecture, designed to recognize patterns and relationships in data.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-normalization">
+<dt>Normalization</dt><dd><p>Restriction of the values of weights in regression to avoid overfitting and improving computation speed.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-noise">
+<dt>Noise</dt><dd><p>Any irrelevant information or randomness in a dataset which obscures the underlying pattern.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-null-accuracy">
+<dt>Null Accuracy</dt><dd><p>Baseline accuracy that can be achieved by always predicting the most frequent class (“B has the highest frequency, so lets guess B every time”).</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-observation">
+<dt>Observation</dt><dd><p>A data point, row, or sample in a dataset. Another term for <a class="reference internal" href="#glossary-instance"><span class="std std-ref">instance</span></a>.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-outlier">
+<dt>Outlier</dt><dd><p>An observation that deviates significantly from other observations in the dataset.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-overfitting">
+<dt>Overfitting</dt><dd><p>Overfitting occurs when your model learns the training data too well and incorporates details and noise specific to your dataset. You can tell a model is overfitting when it performs great on your training/validation set, but poorly on your test set (or new real-world data).</p>
+</dd>
+</dl>
+<dl id="glossary-parameters">
+<dt>Parameters</dt><dd><p>Parameters are properties of training data learned by training a machine learning model or classifier. They are adjusted using optimization algorithms and unique to each experiment.</p>
+<p>Examples of parameters include:</p>
+<ul class="simple">
+<li><p>weights in an artificial neural network</p></li>
+<li><p>support vectors in a support vector machine</p></li>
+<li><p>coefficients in a linear or logistic regression</p></li>
+</ul>
+</dd>
+</dl>
+<dl id="glossary-precision">
+<dt>Precision</dt><dd><p>In the context of binary classification (Yes/No), precision measures the model’s performance at classifying positive observations (i.e. “Yes”). In other words, when a positive value is predicted, how often is the prediction correct? We could game this metric by only returning positive for the single observation we are most confident in.</p>
+<div class="math notranslate nohighlight">
+\[P = \frac{True Positives}{True Positives + False Positives}\]</div>
+</dd>
+</dl>
+<dl id="glossary-recall">
+<dt>Recall</dt><dd><p>Also called sensitivity. In the context of binary classification (Yes/No), recall measures how “sensitive” the classifier is at detecting positive instances. In other words, for all the true observations in our sample, how many did we “catch.” We could game this metric by always classifying observations as positive.</p>
+<div class="math notranslate nohighlight">
+\[R = \frac{True Positives}{True Positives + False Negatives}\]</div>
+</dd>
+</dl>
+<dl class="simple" id="glossary-recall-vs-precision">
+<dt>Recall vs Precision</dt><dd><p>Say we are analyzing Brain scans and trying to predict whether a person has a tumor (True) or not (False). We feed it into our model and our model starts guessing.</p>
+<ul class="simple">
+<li><p><strong>Precision</strong> is the % of True guesses that were actually correct! If we guess 1 image is True out of 100 images and that image is actually True, then our precision is 100%! Our results aren’t helpful however because we missed 10 brain tumors! We were super precise when we tried, but we didn’t try hard enough.</p></li>
+<li><p><strong>Recall</strong>, or Sensitivity, provides another lens which with to view how good our model is. Again let’s say there are 100 images, 10 with brain tumors, and we correctly guessed 1 had a brain tumor. Precision is 100%, but recall is 10%. Perfect recall requires that we catch all 10 tumors!</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple" id="glossary-regression">
+<dt>Regression</dt><dd><p>Predicting a continuous output (e.g. price, sales).</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-regularization">
+<dt>Regularization</dt><dd><p>Regularization is a technique utilized to combat the overfitting problem. This is achieved by adding a complexity term to the loss function that gives a bigger loss for more complex models</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-reinforcement-learning">
+<dt>Reinforcement Learning</dt><dd><p>Training a model to maximize a reward via iterative trial and error.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-roc-curve">
+<dt>ROC (Receiver Operating Characteristic) Curve</dt><dd><p>A plot of the <a class="reference internal" href="#glossary-true-positive-rate"><span class="std std-ref">true positive rate</span></a> against the <a class="reference internal" href="#glossary-false-positive-rate"><span class="std std-ref">false positive rate</span></a> at all <a class="reference internal" href="#glossary-classification-threshold"><span class="std std-ref">classification thresholds</span></a>. This is used to evaluate the performance of a classification model at different classification thresholds. The area under the ROC curve can be interpreted as the probability that the model correctly distinguishes between a randomly chosen positive observation (e.g. “spam”) and a randomly chosen negative observation (e.g. “not spam”).</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-segmentation">
+<dt>Segmentation</dt><dd><p>It is the process of partitioning a data set into multiple distinct sets. This separation is done such that the members of the same set are similar to each otherand different from the members of other sets.</p>
+</dd>
+</dl>
+<dl id="glossary-specificity">
+<dt>Specificity</dt><dd><p>In the context of binary classification (Yes/No), specificity measures the model’s performance at classifying negative observations (i.e. “No”). In other words, when the correct label is negative, how often is the prediction correct? We could game this metric if we predict everything as negative.</p>
+<div class="math notranslate nohighlight">
+\[S = \frac{True Negatives}{True Negatives + False Positives}\]</div>
+</dd>
+</dl>
+<dl class="simple" id="glossary-supervised-learning">
+<dt>Supervised Learning</dt><dd><p>Training a model using a labeled dataset.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-test-set">
+<dt>Test Set</dt><dd><p>A set of observations used at the end of model training and validation to assess the predictive power of your model. How generalizable is your model to unseen data?</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-training-set">
+<dt>Training Set</dt><dd><p>A set of observations used to generate machine learning models.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-transfer-learning">
+<dt>Transfer Learning</dt><dd><p>A machine learning method where a model developed for a task is reused as the starting point for a model on a second task. In transfer learning, we take the pre-trained weights of an already trained model (one that has been trained on millions of images belonging to 1000’s of classes, on several high power GPU’s for several days) and use these already learned features to predict new classes.</p>
+</dd>
+</dl>
+<dl id="glossary-true-positive-rate">
+<dt>True Positive Rate</dt><dd><p>Another term for <a class="reference internal" href="#glossary-recall"><span class="std std-ref">recall</span></a>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[TPR = \frac{True Positives}{True Positives + False Negatives}\]</div>
+<p>The True Positive Rate forms the y-axis of the <a class="reference internal" href="#glossary-roc-curve"><span class="std std-ref">ROC curve</span></a>.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-type-1-error">
+<dt>Type 1 Error</dt><dd><p>False Positives. Consider a company optimizing hiring practices to reduce false positives in job offers. A type 1 error occurs when candidate seems good and they hire him, but he is actually bad.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-type-2-error">
+<dt>Type 2 Error</dt><dd><p>False Negatives. The candidate was great but the company passed on him.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-underfitting">
+<dt>Underfitting</dt><dd><p>Underfitting occurs when your model over-generalizes and fails to incorporate relevant variations in your data that would give your model more predictive power. You can tell a model is underfitting when it performs poorly on both training and test sets.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-uat">
+<dt>Universal Approximation Theorem</dt><dd><p>A neural network with one hidden layer can approximate any continuous function but only for inputs in a specific range. If you train a network on inputs between -2 and 2, then it will work well for inputs in the same range, but you can’t expect it to generalize to other inputs without retraining the model or adding more hidden neurons.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-unsupervised-learning">
+<dt>Unsupervised Learning</dt><dd><p>Training a model to find patterns in an unlabeled dataset (e.g. clustering).</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-validation-set">
+<dt>Validation Set</dt><dd><p>A set of observations used during model training to provide feedback on how well the current parameters generalize beyond the training set. If training error decreases but validation error increases, your model is likely overfitting and you should pause training.</p>
+</dd>
+</dl>
+<dl class="simple" id="glossary-variance">
+<dt>Variance</dt><dd><p>How tightly packed are your predictions for a particular observation relative to each other?</p>
+<ul class="simple">
+<li><p><strong>Low variance</strong> suggests your model is internally consistent, with predictions varying little from each other after every iteration.</p></li>
+<li><p><strong>High variance</strong> (with low bias) suggests your model may be overfitting and reading too deeply into the noise found in every training set.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id2"><span class="brackets">1</span></dt>
+<dd><p><a class="reference external" href="http://robotics.stanford.edu/~ronnyk/glossary.html">http://robotics.stanford.edu/~ronnyk/glossary.html</a></p>
+</dd>
+<dt class="label" id="id3"><span class="brackets">2</span></dt>
+<dd><p><a class="reference external" href="https://developers.google.com/machine-learning/glossary">https://developers.google.com/machine-learning/glossary</a></p>
+</dd>
+</dl>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="logistic_regression.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Logistic Regression</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="calculus.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Calculus</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

@@ -1,0 +1,960 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Classification Algorithms &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Clustering Algorithms" href="clustering_algos.html" />
+    <link rel="prev" title="Architectures" href="architectures.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="calculus.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forwardpropagation.html">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="layers.html">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimizers.html">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regularization.html">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architectures.html">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="libraries.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_content.html">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/classification_algos.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian">
+   Bayesian
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-trees">
+   Decision Trees
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#k-nearest-neighbor">
+   K-Nearest Neighbor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logistic-regression">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forests">
+   Random Forests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boosting">
+   Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support-vector-machine">
+   Support Vector Machine
+  </a>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Classification Algorithms</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayesian">
+   Bayesian
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#decision-trees">
+   Decision Trees
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#k-nearest-neighbor">
+   K-Nearest Neighbor
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#logistic-regression">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#random-forests">
+   Random Forests
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#boosting">
+   Boosting
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#support-vector-machine">
+   Support Vector Machine
+  </a>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="classification-algorithms">
+<span id="classification-algos"></span><h1>Classification Algorithms<a class="headerlink" href="#classification-algorithms" title="Permalink to this headline">#</a></h1>
+<p>Classification problems is when our output Y is always in categories like positive vs negative in terms of sentiment analysis, dog vs cat in terms of image classification and disease vs no disease in terms of medical diagnosis.</p>
+<section id="bayesian">
+<h2>Bayesian<a class="headerlink" href="#bayesian" title="Permalink to this headline">#</a></h2>
+<p>Overlaps..</p>
+</section>
+<section id="decision-trees">
+<h2>Decision Trees<a class="headerlink" href="#decision-trees" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Intuitions</p>
+<p>Decision tree works by successively splitting the dataset into small segments until the target variable are the same or until the dataset can no longer be split. It’s a greedy algorithm which make the best decision at the given time without concern for the global optimality <a class="footnote-reference brackets" href="#mlinaction" id="id1">2</a>.</p>
+<p>The concept behind decision tree is straightforward. The following flowchart show a simple email classification system based on decision tree. If the address is “myEmployer.com”, it will classify it to “Email to read when bored”. Then if the email contains the word “hockey”, this email will be classified as “Email from friends”. Otherwise, it will be identified as “Spam: don’t read”. Image source <a class="footnote-reference brackets" href="#mlinaction" id="id2">2</a>.</p>
+<a class="reference internal image-reference" href="_images/decision_tree.png"><img alt="_images/decision_tree.png" class="align-center" src="_images/decision_tree.png" style="width: 358.8px; height: 286.2px;" /></a>
+<p class="rubric">Algorithm Explained</p>
+<p>There are various kinds of decision tree algorithms such as ID3 (Iterative Dichotomiser 3), C4.5 and CART (Classification and Regression Trees). The constructions of decision tree are similar <a class="footnote-reference brackets" href="#decisiontrees" id="id3">6</a>:</p>
+<ol class="arabic simple">
+<li><p>Assign all training instances to the root of the tree. Set current node to root node.</p></li>
+<li><p>Find the split feature and split value based on the split criterion such as information gain, information gain ratio or gini coefficient.</p></li>
+<li><p>Partition all data instances at the node based on the split feature and threshold value.</p></li>
+<li><p>Denote each partition as a child node of the current node.</p></li>
+<li><dl class="simple">
+<dt>For each child node:</dt><dd><ol class="arabic simple">
+<li><p>If the child node is “pure” (has instances from only one class), tag it as a leaf and return.</p></li>
+<li><p>Else, set the child node as the current node and recurse to step 2.</p></li>
+</ol>
+</dd>
+</dl>
+</li>
+</ol>
+<p>ID3 creates a multiway tree. For each node, it trys to find the categorical feature that will yield the largest information gain for the target variable.</p>
+<p>C4.5 is the successor of ID3 and remove the restriction that the feature must be categorical by dynamically define a discrete attribute that partitions the continuous attribute in the discrete set of intervals.</p>
+<p>CART is similar to C4.5. But it differs in that it constructs binary tree and support regression problem <a class="footnote-reference brackets" href="#sklearntree" id="id4">3</a>.</p>
+<p>The main differences are shown in the following table:</p>
+<table class="table">
+<colgroup>
+<col style="width: 14%" />
+<col style="width: 15%" />
+<col style="width: 39%" />
+<col style="width: 33%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Dimensions</p></td>
+<td><p>ID3</p></td>
+<td><p>C4.5</p></td>
+<td><p>CART</p></td>
+</tr>
+<tr class="row-even"><td><p>Split Criterion</p></td>
+<td><p>Information gain</p></td>
+<td><p>Information gain ratio (Normalized information gain)</p></td>
+<td><p>Gini coefficient for classification problems</p></td>
+</tr>
+<tr class="row-odd"><td><p>Types of Features</p></td>
+<td><p>Categorical feature</p></td>
+<td><p>Categorical &amp; numerical features</p></td>
+<td><p>Categorical &amp; numerical features</p></td>
+</tr>
+<tr class="row-even"><td><p>Type of Problem</p></td>
+<td><p>Classification</p></td>
+<td><p>Classification</p></td>
+<td><p>Classification &amp; regression</p></td>
+</tr>
+<tr class="row-odd"><td><p>Type of Tree</p></td>
+<td><p>Mltiway tree</p></td>
+<td><p>Mltiway tree</p></td>
+<td><p>Binary tree</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Code Implementation</p>
+<p>We used object-oriented patterns to create the code for <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/decision_tree.py#L87">ID3</a>, <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/decision_tree.py#L144">C4.5</a> and <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/decision_tree.py#L165">CART</a>. We will first introduce the base class for these three algorithms, then we explain the code of CART in details.</p>
+<p>First, we create the base class <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/decision_tree.py#L7">TreeNode class</a> and  <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/decision_tree.py#L24">DecisionTree</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">TreeNode</span><span class="p">:</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_idx</span><span class="p">,</span> <span class="n">depth</span><span class="p">,</span> <span class="n">child_lst</span><span class="o">=</span><span class="p">[]):</span>
+<span class="linenos"> 3</span>        <span class="bp">self</span><span class="o">.</span><span class="n">data_idx</span> <span class="o">=</span> <span class="n">data_idx</span>
+<span class="linenos"> 4</span>        <span class="bp">self</span><span class="o">.</span><span class="n">depth</span> <span class="o">=</span> <span class="n">depth</span>
+<span class="linenos"> 5</span>        <span class="bp">self</span><span class="o">.</span><span class="n">child</span> <span class="o">=</span> <span class="n">child_lst</span>
+<span class="linenos"> 6</span>        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 7</span>        <span class="bp">self</span><span class="o">.</span><span class="n">split_col</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 8</span>        <span class="bp">self</span><span class="o">.</span><span class="n">child_cate_order</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>    <span class="k">def</span> <span class="nf">set_attribute</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">split_col</span><span class="p">,</span> <span class="n">child_cate_order</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="linenos">11</span>        <span class="bp">self</span><span class="o">.</span><span class="n">split_col</span> <span class="o">=</span> <span class="n">split_col</span>
+<span class="linenos">12</span>        <span class="bp">self</span><span class="o">.</span><span class="n">child_cate_order</span> <span class="o">=</span> <span class="n">child_cate_order</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span>    <span class="k">def</span> <span class="nf">set_label</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">label</span><span class="p">):</span>
+<span class="linenos">15</span>        <span class="bp">self</span><span class="o">.</span><span class="n">label</span> <span class="o">=</span> <span class="n">label</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">DecisionTree</span><span class="p">()</span>
+<span class="linenos"> 2</span>    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos"> 3</span>        <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 4</span><span class="sd">        X: train data, dimensition [num_sample, num_feature]</span>
+<span class="linenos"> 5</span><span class="sd">        y: label, dimension [num_sample, ]</span>
+<span class="linenos"> 6</span><span class="sd">        &quot;&quot;&quot;</span>
+<span class="linenos"> 7</span>        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">X</span>
+<span class="linenos"> 8</span>        <span class="bp">self</span><span class="o">.</span><span class="n">labels</span> <span class="o">=</span> <span class="n">y</span>
+<span class="linenos"> 9</span>        <span class="n">num_sample</span><span class="p">,</span> <span class="n">num_feature</span> <span class="o">=</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span>
+<span class="linenos">10</span>        <span class="bp">self</span><span class="o">.</span><span class="n">feature_num</span> <span class="o">=</span> <span class="n">num_feature</span>
+<span class="linenos">11</span>        <span class="n">data_idx</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="n">num_sample</span><span class="p">))</span>
+<span class="linenos">12</span>        <span class="c1"># Set the root of the tree</span>
+<span class="linenos">13</span>        <span class="bp">self</span><span class="o">.</span><span class="n">root</span> <span class="o">=</span> <span class="n">TreeNode</span><span class="p">(</span><span class="n">data_idx</span><span class="o">=</span><span class="n">data_idx</span><span class="p">,</span> <span class="n">depth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">child_lst</span><span class="o">=</span><span class="p">[])</span>
+<span class="linenos">14</span>        <span class="n">queue</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">root</span><span class="p">]</span>
+<span class="linenos">15</span>        <span class="k">while</span> <span class="n">queue</span><span class="p">:</span>
+<span class="linenos">16</span>            <span class="n">node</span> <span class="o">=</span> <span class="n">queue</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="linenos">17</span>            <span class="c1"># Check if the terminate criterion has been met</span>
+<span class="linenos">18</span>            <span class="k">if</span> <span class="n">node</span><span class="o">.</span><span class="n">depth</span><span class="o">&gt;</span><span class="bp">self</span><span class="o">.</span><span class="n">max_depth</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">data_idx</span><span class="p">)</span><span class="o">==</span><span class="mi">1</span><span class="p">:</span>
+<span class="linenos">19</span>                <span class="c1"># Set the label for the leaf node</span>
+<span class="linenos">20</span>                <span class="bp">self</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<span class="linenos">21</span>            <span class="k">else</span><span class="p">:</span>
+<span class="linenos">22</span>                <span class="c1"># Split the node</span>
+<span class="linenos">23</span>                <span class="n">child_nodes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">split_node</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<span class="linenos">24</span>                <span class="k">if</span> <span class="ow">not</span> <span class="n">child_nodes</span><span class="p">:</span>
+<span class="linenos">25</span>                    <span class="bp">self</span><span class="o">.</span><span class="n">set_label</span><span class="p">(</span><span class="n">node</span><span class="p">)</span>
+<span class="linenos">26</span>                <span class="k">else</span><span class="p">:</span>
+<span class="linenos">27</span>                    <span class="n">queue</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">child_nodes</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The CART algorithm, when constructing the binary tree, will try searching for the feature and threshold that will yield the largest gain or the least impurity. The split criterion is a combination of the child nodes’ impurity. For the child nodes’ impurity, gini coefficient or information gain are adopted in classification. For regression problem, mean-square-error or mean-absolute-error are used. Example codes are showed below. For more details about the formulas, please refer to <a class="reference external" href="https://scikit-learn.org/stable/modules/tree.html#mathematical-formulation">Mathematical formulation for decision tree in scikit-learn documentation</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">class</span> <span class="nc">CART</span><span class="p">(</span><span class="n">DecisionTree</span><span class="p">):</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span>    <span class="k">def</span> <span class="nf">get_split_criterion</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">child_node_lst</span><span class="p">):</span>
+<span class="linenos"> 4</span>        <span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">data_idx</span><span class="p">)</span>
+<span class="linenos"> 5</span>        <span class="n">split_criterion</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 6</span>        <span class="k">for</span> <span class="n">child_node</span> <span class="ow">in</span> <span class="n">child_node_lst</span><span class="p">:</span>
+<span class="linenos"> 7</span>            <span class="n">impurity</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_impurity</span><span class="p">(</span><span class="n">child_node</span><span class="o">.</span><span class="n">data_idx</span><span class="p">)</span>
+<span class="linenos"> 8</span>            <span class="n">split_criterion</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">child_node</span><span class="o">.</span><span class="n">data_idx</span><span class="p">)</span> <span class="o">/</span> <span class="nb">float</span><span class="p">(</span><span class="n">total</span><span class="p">)</span> <span class="o">*</span> <span class="n">impurity</span>
+<span class="linenos"> 9</span>        <span class="k">return</span> <span class="n">split_criterion</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>    <span class="k">def</span> <span class="nf">get_impurity</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data_ids</span><span class="p">):</span>
+<span class="linenos">12</span>        <span class="n">target_y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">labels</span><span class="p">[</span><span class="n">data_ids</span><span class="p">]</span>
+<span class="linenos">13</span>        <span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">target_y</span><span class="p">)</span>
+<span class="linenos">14</span>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">tree_type</span> <span class="o">==</span> <span class="s2">&quot;regression&quot;</span><span class="p">:</span>
+<span class="linenos">15</span>            <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">16</span>            <span class="n">mean_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">target_y</span><span class="p">)</span>
+<span class="linenos">17</span>            <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">target_y</span><span class="p">:</span>
+<span class="linenos">18</span>                <span class="n">res</span> <span class="o">+=</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">mean_y</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">/</span> <span class="n">total</span>
+<span class="linenos">19</span>        <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">tree_type</span> <span class="o">==</span> <span class="s2">&quot;classification&quot;</span><span class="p">:</span>
+<span class="linenos">20</span>            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">split_criterion</span> <span class="o">==</span> <span class="s2">&quot;gini&quot;</span><span class="p">:</span>
+<span class="linenos">21</span>                <span class="n">res</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">22</span>                <span class="n">unique_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">target_y</span><span class="p">)</span>
+<span class="linenos">23</span>                <span class="k">for</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">unique_y</span><span class="p">:</span>
+<span class="linenos">24</span>                    <span class="n">num</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">target_y</span><span class="o">==</span><span class="n">y</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
+<span class="linenos">25</span>                    <span class="n">res</span> <span class="o">-=</span> <span class="p">(</span><span class="n">num</span><span class="o">/</span><span class="nb">float</span><span class="p">(</span><span class="n">total</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+<span class="linenos">26</span>            <span class="k">elif</span> <span class="bp">self</span><span class="o">.</span><span class="n">split_criterion</span> <span class="o">==</span> <span class="s2">&quot;entropy&quot;</span><span class="p">:</span>
+<span class="linenos">27</span>                <span class="n">unique</span><span class="p">,</span> <span class="n">count</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">target_y</span><span class="p">,</span> <span class="n">return_counts</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="linenos">28</span>                <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">29</span>                <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">count</span><span class="p">:</span>
+<span class="linenos">30</span>                    <span class="n">p</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="o">/</span> <span class="n">total</span>
+<span class="linenos">31</span>                    <span class="n">res</span> <span class="o">-=</span> <span class="n">p</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+<span class="linenos">32</span>        <span class="k">return</span> <span class="n">res</span>
+</pre></div>
+</div>
+</section>
+<section id="k-nearest-neighbor">
+<h2>K-Nearest Neighbor<a class="headerlink" href="#k-nearest-neighbor" title="Permalink to this headline">#</a></h2>
+<p class="rubric">Introduction</p>
+<p>K-Nearest Neighbor is a supervised learning algorithm both for classification and regression. The principle is to find the predefined number of training samples closest to the new point, and predict the label from these training samples <a class="footnote-reference brackets" href="#sklearnknn" id="id5">1</a>.</p>
+<p>For example, when a new point comes, the algorithm will follow these steps:</p>
+<ol class="arabic simple">
+<li><p>Calculate the Euclidean distance between the new point and all training data</p></li>
+<li><p>Pick the top-K closest training data</p></li>
+<li><p>For regression problem, take the average of the labels as the result; for classification problem, take the most common label of these labels as the result.</p></li>
+</ol>
+<p class="rubric">Code</p>
+<p>Below is the Numpy implementation of K-Nearest Neighbor function. Refer to <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/knn.py">code example</a> for details.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">KNN</span><span class="p">(</span><span class="n">training_data</span><span class="p">,</span> <span class="n">target</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">func</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 3</span><span class="sd">    training_data: all training data point</span>
+<span class="linenos"> 4</span><span class="sd">    target: new point</span>
+<span class="linenos"> 5</span><span class="sd">    k: user-defined constant, number of closest training data</span>
+<span class="linenos"> 6</span><span class="sd">    func: functions used to get the the target label</span>
+<span class="linenos"> 7</span><span class="sd">    &quot;&quot;&quot;</span>
+<span class="linenos"> 8</span>    <span class="c1"># Step one: calculate the Euclidean distance between the new point and all training data</span>
+<span class="linenos"> 9</span>    <span class="n">neighbors</span><span class="o">=</span> <span class="p">[]</span>
+<span class="linenos">10</span>    <span class="k">for</span> <span class="n">index</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">training_data</span><span class="p">):</span>
+<span class="linenos">11</span>        <span class="c1"># distance between the target data and the current example from the data.</span>
+<span class="linenos">12</span>        <span class="n">distance</span> <span class="o">=</span> <span class="n">euclidean_distance</span><span class="p">(</span><span class="n">data</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="n">target</span><span class="p">)</span>
+<span class="linenos">13</span>        <span class="n">neighbors</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">distance</span><span class="p">,</span> <span class="n">index</span><span class="p">))</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span>    <span class="c1"># Step two: pick the top-K closest training data</span>
+<span class="linenos">16</span>    <span class="n">sorted_neighbors</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">neighbors</span><span class="p">)</span>
+<span class="linenos">17</span>    <span class="n">k_nearest</span> <span class="o">=</span> <span class="n">sorted_neighbors</span><span class="p">[:</span><span class="n">k</span><span class="p">]</span>
+<span class="linenos">18</span>    <span class="n">k_nearest_labels</span> <span class="o">=</span> <span class="p">[</span><span class="n">training_data</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">distance</span><span class="p">,</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">k_nearest</span><span class="p">]</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>    <span class="c1"># Step three: For regression problem, take the average of the labels as the result;</span>
+<span class="linenos">21</span>    <span class="c1">#             for classification problem, take the most common label of these labels as the result.</span>
+<span class="linenos">22</span>    <span class="k">return</span> <span class="n">k_nearest</span><span class="p">,</span> <span class="n">func</span><span class="p">(</span><span class="n">k_nearest_labels</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="logistic-regression">
+<h2>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">#</a></h2>
+<p>please refer to  <a class="reference internal" href="logistic_regression.html#logistic-regression"><span class="std std-ref">logistic regresion</span></a></p>
+</section>
+<section id="random-forests">
+<h2>Random Forests<a class="headerlink" href="#random-forests" title="Permalink to this headline">#</a></h2>
+<p>Random Forest Classifier using ID3 Tree: <a class="reference external" href="https://github.com/bfortuner/ml-cheatsheet/blob/master/code/random_forest_classifier.py">code example</a></p>
+</section>
+<section id="boosting">
+<h2>Boosting<a class="headerlink" href="#boosting" title="Permalink to this headline">#</a></h2>
+<p>Boosting is a powerful approach to increase the predictive power
+of classification and regression models. However, the algorithm itself can not
+predict anything. It is built above other (weak) models to boost their accuracy.
+In this section we will explain it w.r.t. a classification problem.</p>
+<p>In order to gain an understanding about this topic, we will go briefly over ensembles and
+learning with weighted instances.</p>
+<p class="rubric">Excurse:</p>
+<ol class="arabic">
+<li><p><strong>Ensembles</strong></p>
+<blockquote>
+<div><p>Boosting belongs to the ensemble family which contains other techniques like
+bagging (e.i. Random Forest classifier) and Stacking (refer to <a class="reference external" href="http://rasbt.github.io/mlxtend/">mlxtend Documentations</a>).
+The idea of ensembles is to use the wisdom of the crowd:</p>
+<ul class="simple">
+<li><p>a single classifier will not know everything.</p></li>
+<li><p>multiple classifiers will know a lot.</p></li>
+</ul>
+<p>One example that uses the wisdom of the crowd is Wikipedia.</p>
+<p>The prerequisites for this technique are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>different classifiers have different knowledge.</p></li>
+<li><p>different classifiers make different mistake.</p></li>
+</ul>
+</div></blockquote>
+<p>we can fulfill the first prerequisite by using different  datasets that are collected
+form different resources and in different times. In practice, this is most of the time impossible.
+Normally, we have only one dataset. We can go around this by using cross validation (See Figure below) and
+use one fold to train a classifier at a time.
+The second prerequisite means that the classifiers may make different mistakes. Since we trained our
+classifiers on different datasets or using cross-validation, this condition is already fulfilled.</p>
+<figure class="align-center" id="id11">
+<a class="reference internal image-reference" href="_images/grid_search_cross_validation.png"><img alt="_images/grid_search_cross_validation.png" src="_images/grid_search_cross_validation.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text">Using cross-validation with ensembles.</span><a class="headerlink" href="#id11" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Now, we have multiple classifiers, we need a way to combine their results. This actually
+the reason we have multiple ensemble techniques, they are all based on the same concept. They may differ
+in some aspects, like whether to use weighted instances or not and how they combine the results for the
+different classifiers. In general, for classification we use voting and for regression we average the results
+of the classifiers. There are a lot of variations for voting and average methods, like weighted average.
+Some will go further and use the classifications or the results from all of the classifier(aka. base-classifiers)
+as features for an extra classifier (aka. meta classifier) to  predict the final result.</p>
+</div></blockquote>
+</li>
+<li><p><strong>learning with weighted instances</strong></p>
+<blockquote>
+<div><p>For classification algorithms such as KNN, we give the same weight to all instances,
+which means they are equally important. In practice, instances contribute differently,
+e.i., sensors that collect information have different quality and some are more
+reliable than others. We want to encode this in our algorithms by assigning weights to different
+instances and this can be done as follows:</p>
+<ul class="simple">
+<li><p>changing the classification algorithm (expensive)</p></li>
+<li><p>duplicate instances such that an instance with wight n is duplicated n times</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p>Coming back to the actual topic, we can implement boosting, if we train a set of classifiers (not parallel, as
+the case with Random forest) one after another. The first classifier is a created in a normal way. the  latter
+classifiers have to focus on the misclassified examples by previous ones. How we can achieve this? Well, we can assign
+weights to instances (learning with weighted instances). If a classifier misclassified an example, we assign higher
+weight to this example to get more focus from the next classifier(s). Correct examples stay un-touched. It was important
+to highlight that boosting is an ensemble technique, at the same time, something about boosting might be somehow
+confusing, in boosting we break the rule of using different datasets, since we want to focus on misclassified examples
+from previous models, we need to us all data we have to train all models. In this way, a misclassified instance from
+the first model, will be hopefully classified correctly from the second or the subsequent ones.</p>
+<figure class="align-center" id="id12">
+<a class="reference internal image-reference" href="_images/boosting_error_iteration.png"><img alt="_images/boosting_error_iteration.png" src="_images/boosting_error_iteration.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text">Error decreases with an increasing number of classifiers.</span><a class="headerlink" href="#id12" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>An implementation of the Adaboost (one of the boosting algorithms) from scratch can
+be found here (<a class="reference external" href="https://python-course.eu/machine-learning/boosting-algorithm-in-python.php/">python-course.eu</a>) with more details about the algorithm</p>
+</section>
+<section id="support-vector-machine">
+<h2>Support Vector Machine<a class="headerlink" href="#support-vector-machine" title="Permalink to this headline">#</a></h2>
+<p><em>Support Vector Machine</em>, or <em>SVM</em>, is one of the most popular supervised
+learning algorithms, and it can be used both for classification as well as
+regression problems. However, in machine learning, it is primarily used for
+classification problems.
+In the SVM algorithm, each data item is plotted as a point in <em>n-dimensional</em>
+space, where <em>n</em> is the number of features we have at hand, and the value of
+each feature is the value of a particular coordinate.</p>
+<p>The goal of the SVM algorithm is to create the best line, or decision
+boundary, that can segregate the n-dimensional space into distinct classes, so
+that we can easily put any new data point in the correct category, in the
+future. This best decision boundary is called a hyperplane.
+The best separation is achieved by the hyperplane that has the largest
+distance to the nearest training-data point of any class. Indeed, there are
+many hyperplanes that might classify the data. Aas reasonable choice for the
+best hyperplane is the one that represents the largest separation, or margin,
+between the two classes.</p>
+<p>The SVM algorithm chooses the extreme points that help in creating the
+hyperplane. These extreme cases are called support vectors, while the SVM
+classifier is the frontier, or hyperplane, that best segregates the distinct
+classes.</p>
+<p>The diagram below shows two distinct classes, denoted respectively with blue
+and green points. The <em>maximum-margin hyperplane</em> is the distance between
+the two parallel hyperplanes: <em>positive hyperplane</em> and <em>negative hyperplane</em>,
+shown by dashed lines. The maximum-margin hyperplane is chosen in a way that
+the distance between the two classes is maximised.</p>
+<figure class="align-center" id="id13">
+<a class="reference internal image-reference" href="_images/svm.png"><img alt="_images/svm.png" src="_images/svm.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text"><strong>Support Vector Machine:</strong> Two different categories classified
+using a decision boundary, or hyperplane. Source <a class="footnote-reference brackets" href="#svm" id="id6">7</a></span><a class="headerlink" href="#id13" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Support Vector Machine can be of two types:</p>
+<ul class="simple">
+<li><p><strong>Linear SVM:</strong> A linear SVM is used for linearly separable data, which is
+the case of a dataset that can be classified into two distinct classes by
+using a single straight line.</p></li>
+<li><p><strong>Non-linear SVM:</strong> A non-linear SVM is used for non-linearly separated data,
+which means that a dataset cannot be classified by using a straight line.</p></li>
+</ul>
+<p class="rubric">Linear SVM</p>
+<p>Let’s suppose we have a dataset that has two classes, stars and circles. The
+dataset has two features, <em>x1</em> and <em>x2</em>. We want a classifier that can
+classify the pair (<em>x1</em>, <em>x2</em>) of coordinates in either stars or circles.
+Consider the figure below.</p>
+<figure class="align-center" id="id14">
+<a class="reference internal image-reference" href="_images/svm_linear.png"><img alt="_images/svm_linear.png" src="_images/svm_linear.png" style="width: 400px;" /></a>
+<figcaption>
+<p><span class="caption-text">Source <a class="footnote-reference brackets" href="#svm2" id="id7">8</a></span><a class="headerlink" href="#id14" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Since it is a <em>2-dimensional</em> space, we can separate these two classes by
+using a straight line. The figure shows that we have three hyperplanes, A,
+B, and C, which are all segregating the classes well. How can we identify the
+right hyperplane?
+The SVM algorithm finds the closest point of the lines from both of the
+classes. These points are called support vectors.
+The distance between the support vectors and the hyperplane is referred as the
+<em>margin</em>. The goal of SVM is to maximize this margin. The hyperplane with
+maximum margin is called the optimal hyperplane.
+From the figure above, we see that the margin for hyperplane C is higher
+when compared to both A and B. Therefore, we name C as the (right)
+hyperplane.</p>
+<p class="rubric">Non-linear SVM</p>
+<p>When the data is linearly arranged, we can separate it by using a straight
+line. However, for non-linear data, we cannot draw a single straight line.
+Let’s consider the figure below.</p>
+<figure class="align-center" id="id15">
+<a class="reference internal image-reference" href="_images/svm_nonlinear_1.png"><img alt="_images/svm_nonlinear_1.png" src="_images/svm_nonlinear_1.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">Source <a class="footnote-reference brackets" href="#svm2" id="id8">8</a></span><a class="headerlink" href="#id15" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In order to separate the circles from the stars, we need to
+introduce an additional feature. In case of linear data, we would use
+the
+two features <em>x</em> and <em>y</em>. For this non-linear data, we will add a third
+dimension, <em>z</em>. <em>z</em> is defined as <span class="math notranslate nohighlight">\(z=x^2+y^2\)</span>. By adding the third
+feature, our space will become as below image.</p>
+<figure class="align-center" id="id16">
+<a class="reference internal image-reference" href="_images/svm_nonlinear_2.png"><img alt="_images/svm_nonlinear_2.png" src="_images/svm_nonlinear_2.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">Source <a class="footnote-reference brackets" href="#svm2" id="id9">8</a></span><a class="headerlink" href="#id16" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>In the above figure, all values for z will always be positive, because <em>z</em>
+is the squared sum of <em>x</em> and <em>y</em>. Now, the SVM classifier will divide the
+dataset into two distinct classes by finding a <em>linear</em> hyperplane between
+these two classes.</p>
+<p>Since now we are in a <em>3-dimensional</em> space, the hyperplane looks like a plane
+parallel to the x-axis. If we convert it in <em>2-dimensional</em> space with
+<span class="math notranslate nohighlight">\(z=1\)</span>, then it will become as the figure below.</p>
+<figure class="align-center" id="id17">
+<a class="reference internal image-reference" href="_images/svm_nonlinear_3.png"><img alt="_images/svm_nonlinear_3.png" src="_images/svm_nonlinear_3.png" style="width: 300px;" /></a>
+<figcaption>
+<p><span class="caption-text">Source <a class="footnote-reference brackets" href="#svm2" id="id10">8</a></span><a class="headerlink" href="#id17" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<p>(Hence, in case of non-linear data, we obtain a circumference of
+<span class="math notranslate nohighlight">\(radius=1\)</span>)</p>
+<p>In order to find the hyperplane with the SVM algorithm, we do not need to add
+this third dimension <em>z</em> manually: the SVM algorithm uses a technique called
+the “kernel trick”. The SVM kernel is a function which takes a low
+dimensional input, and it transforms it to a higher dimensional space, i.e.,
+it converts non-linearly separable data to linearly separable data.</p>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="sklearnknn"><span class="brackets"><a class="fn-backref" href="#id5">1</a></span></dt>
+<dd><p><a class="reference external" href="https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification">https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification</a></p>
+</dd>
+<dt class="label" id="mlinaction"><span class="brackets">2</span><span class="fn-backref">(<a href="#id1">1</a>,<a href="#id2">2</a>)</span></dt>
+<dd><p><a class="reference external" href="https://www.manning.com/books/machine-learning-in-action">Machine Learning in Action by Peter Harrington</a></p>
+</dd>
+<dt class="label" id="sklearntree"><span class="brackets"><a class="fn-backref" href="#id4">3</a></span></dt>
+<dd><p><a class="reference external" href="https://scikit-learn.org/stable/modules/tree.html#tree-algorithms-id3-c4-5-c5-0-and-cart">Scikit-learn Documentations: Tree algorithms: ID3, C4.5, C5.0 and CART</a></p>
+</dd>
+<dt class="label" id="sklearnensemble"><span class="brackets">4</span></dt>
+<dd><p><a class="reference external" href="https://scikit-learn.org/stable/modules/ensemble.html#">Scikit-learn Documentations: Ensemble Method</a></p>
+</dd>
+<dt class="label" id="boostingiteration"><span class="brackets">5</span></dt>
+<dd><p><a class="reference external" href="https://medium.com/analytics-vidhya/what-is-gradient-boosting-how-is-it-different-from-ada-boost-2d5ff5767cb2#">Medium-article: what is Gradient Boosting</a></p>
+</dd>
+<dt class="label" id="decisiontrees"><span class="brackets"><a class="fn-backref" href="#id3">6</a></span></dt>
+<dd><p><a class="reference external" href="https://www.cs.cmu.edu/~bhiksha/courses/10-601/decisiontrees/">Decision Trees</a></p>
+</dd>
+<dt class="label" id="svm"><span class="brackets"><a class="fn-backref" href="#id6">7</a></span></dt>
+<dd><p><a class="reference external" href="https://www.javatpoint.com/machine-learning-support-vector-machine-algorithm">Support Vector Machine</a></p>
+</dd>
+<dt class="label" id="svm2"><span class="brackets">8</span><span class="fn-backref">(<a href="#id7">1</a>,<a href="#id8">2</a>,<a href="#id9">3</a>,<a href="#id10">4</a>)</span></dt>
+<dd><p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2017/09/understaing-support-vector-machine-example-code/">Support Vector Machine</a></p>
+</dd>
+</dl>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="architectures.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Architectures</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="clustering_algos.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Clustering Algorithms</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

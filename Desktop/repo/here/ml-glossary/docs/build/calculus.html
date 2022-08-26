@@ -1,0 +1,1173 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Calculus &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Linear Algebra" href="linear_algebra.html" />
+    <link rel="prev" title="Glossary" href="glossary.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forwardpropagation.html">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="layers.html">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimizers.html">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regularization.html">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architectures.html">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification_algos.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="libraries.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_content.html">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/calculus.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivatives">
+   Derivatives
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geometric-definition">
+     Geometric definition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taking-the-derivative">
+     Taking the derivative
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-by-step">
+     Step-by-step
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-use-cases">
+     Machine learning use cases
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chain-rule">
+   Chain rule
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-it-works">
+     How It Works
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Step-by-step
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-functions">
+     Multiple functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradients">
+   Gradients
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#partial-derivatives">
+     Partial derivatives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Step-by-step
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#directional-derivatives">
+     Directional derivatives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-properties">
+     Useful properties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrals">
+   Integrals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-integrals">
+     Computing integrals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applications-of-integration">
+     Applications of integration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-probabilities">
+       Computing probabilities
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#expected-value">
+       Expected value
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variance">
+       Variance
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Calculus</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#derivatives">
+   Derivatives
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#geometric-definition">
+     Geometric definition
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#taking-the-derivative">
+     Taking the derivative
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#step-by-step">
+     Step-by-step
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#machine-learning-use-cases">
+     Machine learning use cases
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#chain-rule">
+   Chain rule
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#how-it-works">
+     How It Works
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Step-by-step
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-functions">
+     Multiple functions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gradients">
+   Gradients
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#partial-derivatives">
+     Partial derivatives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Step-by-step
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#directional-derivatives">
+     Directional derivatives
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#useful-properties">
+     Useful properties
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#integrals">
+   Integrals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#computing-integrals">
+     Computing integrals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applications-of-integration">
+     Applications of integration
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#computing-probabilities">
+       Computing probabilities
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#expected-value">
+       Expected value
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#variance">
+       Variance
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="calculus">
+<span id="id1"></span><h1>Calculus<a class="headerlink" href="#calculus" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id20">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#derivatives" id="id21">Derivatives</a></p>
+<ul>
+<li><p><a class="reference internal" href="#geometric-definition" id="id22">Geometric definition</a></p></li>
+<li><p><a class="reference internal" href="#taking-the-derivative" id="id23">Taking the derivative</a></p></li>
+<li><p><a class="reference internal" href="#step-by-step" id="id24">Step-by-step</a></p></li>
+<li><p><a class="reference internal" href="#machine-learning-use-cases" id="id25">Machine learning use cases</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#chain-rule" id="id26">Chain rule</a></p>
+<ul>
+<li><p><a class="reference internal" href="#how-it-works" id="id27">How It Works</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id28">Step-by-step</a></p></li>
+<li><p><a class="reference internal" href="#multiple-functions" id="id29">Multiple functions</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#gradients" id="id30">Gradients</a></p>
+<ul>
+<li><p><a class="reference internal" href="#partial-derivatives" id="id31">Partial derivatives</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id32">Step-by-step</a></p></li>
+<li><p><a class="reference internal" href="#directional-derivatives" id="id33">Directional derivatives</a></p></li>
+<li><p><a class="reference internal" href="#useful-properties" id="id34">Useful properties</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#integrals" id="id35">Integrals</a></p>
+<ul>
+<li><p><a class="reference internal" href="#computing-integrals" id="id36">Computing integrals</a></p></li>
+<li><p><a class="reference internal" href="#applications-of-integration" id="id37">Applications of integration</a></p>
+<ul>
+<li><p><a class="reference internal" href="#computing-probabilities" id="id38">Computing probabilities</a></p></li>
+<li><p><a class="reference internal" href="#expected-value" id="id39">Expected value</a></p></li>
+<li><p><a class="reference internal" href="#variance" id="id40">Variance</a></p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<span id="id2"></span><h2><a class="toc-backref" href="#id20">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>You need to know some basic calculus in order to understand how functions change over time (derivatives), and to calculate the total amount of a quantity that accumulates over a time period (integrals). The language of calculus will allow you to speak precisely about the properties of functions and better understand their behaviour.</p>
+<p>Normally taking a calculus course involves doing lots of tedious calculations by hand, but having the power of computers on your side can make the process much more fun. This section describes the key ideas of calculus which you’ll need to know to understand machine learning concepts.</p>
+</section>
+<section id="derivatives">
+<span id="derivative"></span><h2><a class="toc-backref" href="#id21">Derivatives</a><a class="headerlink" href="#derivatives" title="Permalink to this headline">#</a></h2>
+<p>A derivative can be defined in two ways:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Instantaneous rate of change (Physics)</p></li>
+<li><p>Slope of a line at a specific point (Geometry)</p></li>
+</ol>
+</div></blockquote>
+<p>Both represent the same principle, but for our purposes it’s easier to explain using the geometric definition.</p>
+<section id="geometric-definition">
+<h3><a class="toc-backref" href="#id22">Geometric definition</a><a class="headerlink" href="#geometric-definition" title="Permalink to this headline">#</a></h3>
+<p>In geometry slope represents the steepness of a line. It answers the question: how much does <span class="math notranslate nohighlight">\(y\)</span> or <span class="math notranslate nohighlight">\(f(x)\)</span> change given a specific change in <span class="math notranslate nohighlight">\(x\)</span>?</p>
+<img alt="_images/slope_formula.png" class="align-center" src="_images/slope_formula.png" />
+<p>Using this definition we can easily calculate the slope between two points. But what if I asked you, instead of the slope between two points, what is the slope at a single point on the line? In this case there isn’t any obvious “rise-over-run” to calculate. Derivatives help us answer this question.</p>
+<p>A derivative outputs an expression we can use to calculate the <em>instantaneous rate of change</em>, or slope, at a single point on a line. After solving for the derivative you can use it to calculate the slope at every other point on the line.</p>
+</section>
+<section id="taking-the-derivative">
+<h3><a class="toc-backref" href="#id23">Taking the derivative</a><a class="headerlink" href="#taking-the-derivative" title="Permalink to this headline">#</a></h3>
+<p>Consider the graph below, where <span class="math notranslate nohighlight">\(f(x) = x^2 + 3\)</span>.</p>
+<img alt="_images/calculus_slope_intro.png" class="align-center" src="_images/calculus_slope_intro.png" />
+<p>The slope between (1,4) and (3,12) would be:</p>
+<div class="math notranslate nohighlight">
+\[slope = \frac{y2-y1}{x2-x1} = \frac{12-4}{3-1} = 4\]</div>
+<p>But how do we calculate the slope at point (1,4) to reveal the change in slope at that specific point?</p>
+<p>One way would be to find the two nearest points, calculate their slopes relative to <span class="math notranslate nohighlight">\(x\)</span> and take the average. But calculus provides an easier, more precise way: compute the derivative. Computing the derivative of a function is essentially the same as our original proposal, but instead of finding the two closest points, we make up an imaginary point an infinitesimally small distance away from <span class="math notranslate nohighlight">\(x\)</span> and compute the slope between <span class="math notranslate nohighlight">\(x\)</span> and the new point.</p>
+<p>In this way, derivatives help us answer the question: how does <span class="math notranslate nohighlight">\(f(x)\)</span> change if we make a very very tiny increase to x? In other words, derivatives help <em>estimate</em> the slope between two points that are an infinitesimally small distance away from each other. A very, very, very small distance, but large enough to calculate the slope.</p>
+<p>In math language we represent this infinitesimally small increase using a limit. A limit is defined as the output value a function approaches as the input value approaches another value. In our case the target value is the specific point at which we want to calculate slope.</p>
+</section>
+<section id="step-by-step">
+<h3><a class="toc-backref" href="#id24">Step-by-step</a><a class="headerlink" href="#step-by-step" title="Permalink to this headline">#</a></h3>
+<p>Calculating the derivative is the same as calculating normal slope, however in this case we calculate the slope between our point and a point infinitesimally close to it. We use the variable <span class="math notranslate nohighlight">\(h\)</span> to represent this infinitesimally distance. Here are the steps:</p>
+<ol class="arabic simple">
+<li><p>Given the function:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(x) = x^2\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Increment <span class="math notranslate nohighlight">\(x\)</span> by a very small value <span class="math notranslate nohighlight">\(h (h = Δx)\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(x + h) = (x + h)^2\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Apply the slope formula</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{f(x + h) - f(x)}{h}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Simplify the equation</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}\frac{x^2 + 2xh + h^2 - x^2}{h} \\\end{split}\\\frac{2xh+h^2}{h} = 2x+h\end{aligned}\end{align} \]</div>
+<ol class="arabic simple" start="5">
+<li><p>Set <span class="math notranslate nohighlight">\(h\)</span> to 0 (the limit as <span class="math notranslate nohighlight">\(h\)</span> heads toward 0)</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[{2x + 0} = {2x}\]</div>
+<p>So what does this mean? It means for the function <span class="math notranslate nohighlight">\(f(x) = x^2\)</span>, the slope at any point equals <span class="math notranslate nohighlight">\(2x\)</span>. The formula is defined as:</p>
+<div class="math notranslate nohighlight">
+\[\lim_{h\to0}\frac{f(x+h) - f(x)}{h}\]</div>
+<p class="rubric">Code</p>
+<p>Let’s write code to calculate the derivative of any function <span class="math notranslate nohighlight">\(f(x)\)</span>. We test our function works as expected on the input <span class="math notranslate nohighlight">\(f(x)=x^2\)</span> producing a value close to the actual derivative <span class="math notranslate nohighlight">\(2x\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="k">def</span> <span class="nf">get_derivative</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+<span class="linenos"> 2</span>     <span class="sd">&quot;&quot;&quot;Compute the derivative of `func` at the location `x`.&quot;&quot;&quot;</span>
+<span class="linenos"> 3</span>     <span class="n">h</span> <span class="o">=</span> <span class="mf">0.0001</span>                          <span class="c1"># step size</span>
+<span class="linenos"> 4</span>     <span class="k">return</span> <span class="p">(</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="n">h</span><span class="p">)</span> <span class="o">-</span> <span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">))</span> <span class="o">/</span> <span class="n">h</span>    <span class="c1"># rise-over-run</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>                   <span class="c1"># some test function f(x)=x^2</span>
+<span class="linenos"> 7</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>                                   <span class="c1"># the location of interest</span>
+<span class="linenos"> 8</span> <span class="n">computed</span> <span class="o">=</span> <span class="n">get_derivative</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="linenos"> 9</span> <span class="n">actual</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span> <span class="n">computed</span><span class="p">,</span> <span class="n">actual</span>   <span class="c1"># = 6.0001, 6        # pretty close if you ask me...</span>
+</pre></div>
+</div>
+<p>In general it’s preferable to use the math to obtain exact <a class="reference external" href="https://www.teachoo.com/9722/1227/Differentiation-Formulas/category/Finding-derivative-of-a-function-by-chain-rule/">derivative formulas</a>, but keep in mind you can always compute derivatives numerically by computing the rise-over-run for a “small step” <span class="math notranslate nohighlight">\(h\)</span>.</p>
+</section>
+<section id="machine-learning-use-cases">
+<h3><a class="toc-backref" href="#id25">Machine learning use cases</a><a class="headerlink" href="#machine-learning-use-cases" title="Permalink to this headline">#</a></h3>
+<p>Machine learning uses derivatives in optimization problems. Optimization algorithms like <em>gradient descent</em> use derivatives to decide whether to increase or decrease weights in order to maximize or minimize some objective (e.g. a model’s accuracy or error functions). Derivatives also help us approximate nonlinear functions as linear functions (tangent lines), which have constant slopes. With a constant slope we can decide whether to move up or down the slope (increase or decrease our weights) to get closer to the target value (class label).</p>
+</section>
+</section>
+<section id="chain-rule">
+<span id="id3"></span><h2><a class="toc-backref" href="#id26">Chain rule</a><a class="headerlink" href="#chain-rule" title="Permalink to this headline">#</a></h2>
+<p>The chain rule is a formula for calculating the derivatives of composite functions. Composite functions are functions composed of functions inside other function(s).</p>
+<section id="how-it-works">
+<h3><a class="toc-backref" href="#id27">How It Works</a><a class="headerlink" href="#how-it-works" title="Permalink to this headline">#</a></h3>
+<p>Given a composite function <span class="math notranslate nohighlight">\(f(x) = A(B(x))\)</span>, the derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> equals the product of the derivative of <span class="math notranslate nohighlight">\(A\)</span> with respect to <span class="math notranslate nohighlight">\(B(x)\)</span> and the derivative of <span class="math notranslate nohighlight">\(B\)</span> with respect to <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\mbox{composite function derivative} = \mbox{outer function derivative} * \mbox{inner function derivative}\]</div>
+<p>For example, given a composite function <span class="math notranslate nohighlight">\(f(x)\)</span>, where:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = h(g(x))\]</div>
+<p>The chain rule tells us that the derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> equals:</p>
+<div class="math notranslate nohighlight">
+\[\frac{df}{dx} = \frac{dh}{dg} \cdot \frac{dg}{dx}\]</div>
+</section>
+<section id="id4">
+<h3><a class="toc-backref" href="#id28">Step-by-step</a><a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>Say <span class="math notranslate nohighlight">\(f(x)\)</span> is composed of two functions <span class="math notranslate nohighlight">\(h(x) = x^3\)</span> and <span class="math notranslate nohighlight">\(g(x) = x^2\)</span>. And that:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+f(x) &amp;= h(g(x)) \\
+     &amp;= (x^2)^3 \\
+\end{align}\end{split}\]</div>
+<p>The derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> would equal:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\frac{df}{dx} &amp;=  \frac{dh}{dg} \frac{dg}{dx} \\
+              &amp;=  \frac{dh}{d(x^2)} \frac{dg}{dx}
+\end{align}\end{split}\]</div>
+<p class="rubric">Steps</p>
+<ol class="arabic simple">
+<li><p>Solve for the inner derivative of <span class="math notranslate nohighlight">\(g(x) = x^2\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{dg}{dx} = 2x\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Solve for the outer derivative of <span class="math notranslate nohighlight">\(h(x) = x^3\)</span>, using a placeholder <span class="math notranslate nohighlight">\(b\)</span> to represent the inner function <span class="math notranslate nohighlight">\(x^2\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{dh}{db} = 3b^2\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Swap out the placeholder variable (b) for the inner function (g(x))</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{gathered}
+3(x^2)^2 \\
+3x^4
+\end{gathered}\end{split}\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Return the product of the two derivatives</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[3x^4 \cdot 2x = 6x^5\]</div>
+</section>
+<section id="multiple-functions">
+<h3><a class="toc-backref" href="#id29">Multiple functions</a><a class="headerlink" href="#multiple-functions" title="Permalink to this headline">#</a></h3>
+<p>In the above example we assumed a composite function containing a single inner function. But the chain rule can also be applied to higher-order functions like:</p>
+<div class="math notranslate nohighlight">
+\[f(x) = A(B(C(x)))\]</div>
+<p>The chain rule tells us that the derivative of this function equals:</p>
+<div class="math notranslate nohighlight">
+\[\frac{df}{dx} = \frac{dA}{dB} \frac{dB}{dC} \frac{dC}{dx}\]</div>
+<p>We can also write this derivative equation <span class="math notranslate nohighlight">\(f'\)</span> notation:</p>
+<div class="math notranslate nohighlight">
+\[f' = A'(B(C(x)) \cdot B'(C(x)) \cdot C'(x)\]</div>
+<p class="rubric">Steps</p>
+<p>Given the function <span class="math notranslate nohighlight">\(f(x) = A(B(C(x)))\)</span>, lets assume:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+A(x) &amp; = sin(x) \\
+B(x) &amp; = x^2 \\
+C(x) &amp; = 4x
+\end{align}\end{split}\]</div>
+<p>The derivatives of these functions would be:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+A'(x) &amp;= cos(x) \\
+B'(x) &amp;= 2x \\
+C'(x) &amp;= 4
+\end{align}\end{split}\]</div>
+<p>We can calculate the derivative of <span class="math notranslate nohighlight">\(f(x)\)</span> using the following formula:</p>
+<div class="math notranslate nohighlight">
+\[f'(x) = A'( (4x)^2) \cdot B'(4x) \cdot C'(x)\]</div>
+<p>We then input the derivatives and simplify the expression:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+f'(x) &amp;= cos((4x)^2) \cdot 2(4x) \cdot 4 \\
+      &amp;= cos(16x^2) \cdot 8x \cdot 4 \\
+      &amp;= cos(16x^2)32x
+\end{align}\end{split}\]</div>
+</section>
+</section>
+<section id="gradients">
+<span id="gradient"></span><h2><a class="toc-backref" href="#id30">Gradients</a><a class="headerlink" href="#gradients" title="Permalink to this headline">#</a></h2>
+<p>A gradient is a vector that stores the partial derivatives of multivariable functions. It helps us calculate the slope at a specific point on a curve for functions with multiple independent variables. In order to calculate this more complex slope, we need to isolate each variable to determine how it impacts the output on its own. To do this we iterate through each of the variables and calculate the derivative of the function after holding all other variables constant. Each iteration produces a partial derivative which we store in the gradient.</p>
+<section id="partial-derivatives">
+<h3><a class="toc-backref" href="#id31">Partial derivatives</a><a class="headerlink" href="#partial-derivatives" title="Permalink to this headline">#</a></h3>
+<p>In functions with 2 or more variables, the partial derivative is the derivative of one variable with respect to the others. If we change <span class="math notranslate nohighlight">\(x\)</span>, but hold all other variables constant, how does <span class="math notranslate nohighlight">\(f(x,z)\)</span> change? That’s one partial derivative. The next variable is <span class="math notranslate nohighlight">\(z\)</span>. If we change <span class="math notranslate nohighlight">\(z\)</span> but hold <span class="math notranslate nohighlight">\(x\)</span> constant, how does <span class="math notranslate nohighlight">\(f(x,z)\)</span> change? We store partial derivatives in a gradient, which represents the full derivative of the multivariable function.</p>
+</section>
+<section id="id5">
+<h3><a class="toc-backref" href="#id32">Step-by-step</a><a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>Here are the steps to calculate the gradient for a multivariable function:</p>
+<ol class="arabic simple">
+<li><p>Given a multivariable function</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(x,z) = 2z^3x^2\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Calculate the derivative with respect to <span class="math notranslate nohighlight">\(x\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{df}{dx}(x,z)\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Swap <span class="math notranslate nohighlight">\(2z^3\)</span> with a constant value <span class="math notranslate nohighlight">\(b\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[f(x,z) = bx^2\]</div>
+<ol class="arabic simple" start="4">
+<li><p>Calculate the derivative with <span class="math notranslate nohighlight">\(b\)</span> constant</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\frac{df}{dx} &amp; = \lim_{h\to0}\frac{f(x+h) - f(x)}{h} \\
+              &amp; = \lim_{h\to0}\frac{b(x+h)^2 - b(x^2)}{h} \\
+              &amp; = \lim_{h\to0}\frac{b((x+h)(x+h)) - bx^2}{h} \\
+              &amp; = \lim_{h\to0}\frac{b((x^2 + xh + hx + h^2)) - bx^2}{h} \\
+              &amp; = \lim_{h\to0}\frac{bx^2 + 2bxh + bh^2 - bx^2}{h} \\
+              &amp; = \lim_{h\to0}\frac{2bxh + bh^2}{h} \\
+              &amp; = \lim_{h\to0} 2bx + bh \\
+\end{align}\end{split}\]</div>
+<p>As <span class="math notranslate nohighlight">\(h —&gt; 0\)</span>…</p>
+<blockquote>
+<div><p>2bx + 0</p>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>Swap <span class="math notranslate nohighlight">\(2z^3\)</span> back into the equation, to find the derivative with respect to <span class="math notranslate nohighlight">\(x\)</span>.</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+\frac{df}{dx}(x,z) &amp;= 2(2z^3)x \\
+                   &amp;= 4z^3x
+\end{align}\end{split}\]</div>
+<ol class="arabic simple" start="6">
+<li><p>Repeat the above steps to calculate the derivative with respect to <span class="math notranslate nohighlight">\(z\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\frac{df}{dz}(x,z) = 6x^2z^2\]</div>
+<ol class="arabic simple" start="7">
+<li><p>Store the partial derivatives in a gradient</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[\begin{split}\nabla f(x,z)=\begin{bmatrix}
+    \frac{df}{dx} \\
+    \frac{df}{dz} \\
+   \end{bmatrix}
+=\begin{bmatrix}
+    4z^3x \\
+    6x^2z^2 \\
+   \end{bmatrix}\end{split}\]</div>
+</section>
+<section id="directional-derivatives">
+<h3><a class="toc-backref" href="#id33">Directional derivatives</a><a class="headerlink" href="#directional-derivatives" title="Permalink to this headline">#</a></h3>
+<p>Another important concept is directional derivatives. When calculating the partial derivatives of multivariable functions we use our old technique of analyzing the impact of infinitesimally small increases to each of our independent variables. By increasing each variable we alter the function output in the direction of the slope.</p>
+<p>But what if we want to change directions? For example, imagine we’re traveling north through mountainous terrain on a 3-dimensional plane. The gradient we calculated above tells us we’re traveling north at our current location. But what if we wanted to travel southwest? How can we determine the steepness of the hills in the southwest direction? Directional derivatives help us find the slope if we move in a direction different from the one specified by the gradient.</p>
+<p class="rubric">Math</p>
+<p>The directional derivative is computed by taking the dot product <a class="footnote-reference brackets" href="#id19" id="id6">11</a> of the gradient of <span class="math notranslate nohighlight">\(f\)</span> and a unit vector <span class="math notranslate nohighlight">\(\vec{v}\)</span> of “tiny nudges” representing the direction. The unit vector describes the proportions we want to move in each direction. The output of this calculation is a scalar number representing how much <span class="math notranslate nohighlight">\(f\)</span> will change if the current input moves with vector <span class="math notranslate nohighlight">\(\vec{v}\)</span>.</p>
+<p>Let’s say you have the function <span class="math notranslate nohighlight">\(f(x,y,z)\)</span> and you want to compute its directional derivative along the following vector <a class="footnote-reference brackets" href="#id10" id="id7">2</a>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\vec{v}=\begin{bmatrix}
+  2 \\
+  3 \\
+  -1  \\
+ \end{bmatrix}\end{split}\]</div>
+<p>As described above, we take the dot product of the gradient and the directional vector:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{bmatrix}
+  \frac{df}{dx} \\
+  \frac{df}{dy} \\
+  \frac{df}{dz} \\
+ \end{bmatrix}
+ \cdot
+ \begin{bmatrix}
+    2 \\
+    3 \\
+    -1  \\
+ \end{bmatrix}\end{split}\]</div>
+<p>We can rewrite the dot product as:</p>
+<div class="math notranslate nohighlight">
+\[\nabla_\vec{v} f = 2 \frac{df}{dx} + 3 \frac{df}{dy} - 1 \frac{df}{dz}\]</div>
+<p>This should make sense because a tiny nudge along <span class="math notranslate nohighlight">\(\vec{v}\)</span> can be broken down into two tiny nudges in the x-direction, three tiny nudges in the y-direction, and a tiny nudge backwards, by −1 in the z-direction.</p>
+</section>
+<section id="useful-properties">
+<h3><a class="toc-backref" href="#id34">Useful properties</a><a class="headerlink" href="#useful-properties" title="Permalink to this headline">#</a></h3>
+<p>There are two additional properties of gradients that are especially useful in deep learning. The gradient of a function:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Always points in the direction of greatest increase of a function (<a class="reference external" href="https://betterexplained.com/articles/understanding-pythagorean-distance-and-the-gradient">explained here</a>)</p></li>
+<li><p>Is zero at a local maximum or local minimum</p></li>
+</ol>
+</div></blockquote>
+</section>
+</section>
+<section id="integrals">
+<span id="id8"></span><h2><a class="toc-backref" href="#id35">Integrals</a><a class="headerlink" href="#integrals" title="Permalink to this headline">#</a></h2>
+<p>The integral of <span class="math notranslate nohighlight">\(f(x)\)</span> corresponds to the computation of the area under the graph of <span class="math notranslate nohighlight">\(f(x)\)</span>. The area under <span class="math notranslate nohighlight">\(f(x)\)</span> between the points <span class="math notranslate nohighlight">\(x=a\)</span> and <span class="math notranslate nohighlight">\(x=b\)</span> is denoted as follows:</p>
+<div class="math notranslate nohighlight">
+\[A(a,b) = \int_a^b f(x) \: dx.\]</div>
+<img alt="_images/integral_definition.png" class="align-center" src="_images/integral_definition.png" />
+<p>The area <span class="math notranslate nohighlight">\(A(a,b)\)</span> is bounded by the function <span class="math notranslate nohighlight">\(f(x)\)</span> from above, by the <span class="math notranslate nohighlight">\(x\)</span>-axis from below, and by two vertical lines at <span class="math notranslate nohighlight">\(x=a\)</span> and <span class="math notranslate nohighlight">\(x=b\)</span>. The points <span class="math notranslate nohighlight">\(x=a\)</span> and <span class="math notranslate nohighlight">\(x=b\)</span> are called the limits of integration. The <span class="math notranslate nohighlight">\(\int\)</span> sign comes from the Latin word summa. The integral is the “sum” of the values of <span class="math notranslate nohighlight">\(f(x)\)</span> between the two limits of integration.</p>
+<p>The <em>integral function</em> <span class="math notranslate nohighlight">\(F(c)\)</span> corresponds to the area calculation as a function of the upper limit of integration:</p>
+<div class="math notranslate nohighlight">
+\[F(c) \equiv \int_0^c \! f(x)\:dx\,.\]</div>
+<p>There are two variables and one constant in this formula. The input variable <span class="math notranslate nohighlight">\(c\)</span> describes the upper limit of integration. The <em>integration variable</em> <span class="math notranslate nohighlight">\(x\)</span> performs a sweep from <span class="math notranslate nohighlight">\(x=0\)</span> until <span class="math notranslate nohighlight">\(x=c\)</span>. The constant <span class="math notranslate nohighlight">\(0\)</span> describes the lower limit of integration. Note that choosing <span class="math notranslate nohighlight">\(x=0\)</span> for the starting point of the integral function was an arbitrary choice.</p>
+<p>The integral function <span class="math notranslate nohighlight">\(F(c)\)</span> contains the “precomputed” information about the area under the graph of <span class="math notranslate nohighlight">\(f(x)\)</span>.  The derivative function <span class="math notranslate nohighlight">\(f'(x)\)</span> tells us the “slope of the graph” property of the function <span class="math notranslate nohighlight">\(f(x)\)</span> for all values of <span class="math notranslate nohighlight">\(x\)</span>. Similarly, the integral function <span class="math notranslate nohighlight">\(F(c)\)</span> tells us the “area under the graph” property of the function <span class="math notranslate nohighlight">\(f(x)\)</span> for <em>all</em> possible limits of integration.</p>
+<p>The area under <span class="math notranslate nohighlight">\(f(x)\)</span> between <span class="math notranslate nohighlight">\(x=a\)</span> and <span class="math notranslate nohighlight">\(x=b\)</span> is obtained by calculating the <em>change</em> in the integral function as follows:</p>
+<div class="math notranslate nohighlight">
+\[A(a,b) = \int_a^b \! f(x)\:dx
+     =  F(b)-F(a).\]</div>
+<img alt="_images/integral_as_change_in_antriderivative.png" class="align-center" src="_images/integral_as_change_in_antriderivative.png" />
+<section id="computing-integrals">
+<h3><a class="toc-backref" href="#id36">Computing integrals</a><a class="headerlink" href="#computing-integrals" title="Permalink to this headline">#</a></h3>
+<p>We can approximate the total area under the function <span class="math notranslate nohighlight">\(f(x)\)</span> between <span class="math notranslate nohighlight">\(x=a\)</span> and <span class="math notranslate nohighlight">\(x=b\)</span> by splitting the region into tiny vertical strips of width <span class="math notranslate nohighlight">\(h\)</span>, then adding up the areas of the rectangular strips. The figure below shows how to compute the area under <span class="math notranslate nohighlight">\(f(x)=x^2\)</span> between <span class="math notranslate nohighlight">\(x=1\)</span> and <span class="math notranslate nohighlight">\(x=3\)</span> by approximating it as four rectangular strips of width <span class="math notranslate nohighlight">\(h=0.5\)</span>.</p>
+<img alt="_images/integral_as_rectangular_strips.png" class="align-center" src="_images/integral_as_rectangular_strips.png" />
+<p>Usually we want to choose <span class="math notranslate nohighlight">\(h\)</span> to be a small number so that the approximation is accurate. Here is some sample code that performs integration.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="k">def</span> <span class="nf">get_integral</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="linenos"> 2</span>     <span class="sd">&quot;&quot;&quot;Compute the area under `func` between x=a and x=b.&quot;&quot;&quot;</span>
+<span class="linenos"> 3</span>     <span class="n">h</span> <span class="o">=</span> <span class="mf">0.0001</span>               <span class="c1"># width of small rectangle</span>
+<span class="linenos"> 4</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">a</span>                    <span class="c1"># start at x=a</span>
+<span class="linenos"> 5</span>     <span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 6</span>     <span class="k">while</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="n">b</span><span class="p">:</span>            <span class="c1"># continue until x=b</span>
+<span class="linenos"> 7</span>         <span class="n">total</span> <span class="o">+=</span> <span class="n">h</span><span class="o">*</span><span class="n">func</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>   <span class="c1"># area of rect is base*height</span>
+<span class="linenos"> 8</span>         <span class="n">x</span> <span class="o">+=</span> <span class="n">h</span>
+<span class="linenos"> 9</span>     <span class="k">return</span> <span class="n">total</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span> <span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span>                    <span class="c1"># some test function f(x)=x^2</span>
+<span class="linenos">12</span> <span class="n">computed</span> <span class="o">=</span> <span class="n">get_integral</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="linenos">13</span> <span class="k">def</span> <span class="nf">actualF</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="mf">1.0</span><span class="o">/</span><span class="mf">3.0</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">3</span>
+<span class="linenos">14</span> <span class="n">actual</span> <span class="o">=</span> <span class="n">actualF</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">-</span> <span class="n">actualF</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="linenos">15</span> <span class="n">computed</span><span class="p">,</span> <span class="n">actual</span>    <span class="c1"># = 8.6662, 8.6666   # pretty close if you ask me...</span>
+</pre></div>
+</div>
+<p>You can find integral functions using the derivative formulas and some reverse engineering. To find an integral function of the function <span class="math notranslate nohighlight">\(f(x)\)</span>, we must find a function <span class="math notranslate nohighlight">\(F(x)\)</span> such that <span class="math notranslate nohighlight">\(F'(x)=f(x)\)</span>. Suppose you’re given a function <span class="math notranslate nohighlight">\(f(x)\)</span> and asked to find its integral function <span class="math notranslate nohighlight">\(F(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \int \! f(x)\: dx.\]</div>
+<p>This problem is equivalent to finding a function <span class="math notranslate nohighlight">\(F(x)\)</span> whose derivative is <span class="math notranslate nohighlight">\(f(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[F'(x) = f(x).\]</div>
+<p>For example, suppose you want to find the indefinite integral <span class="math notranslate nohighlight">\(\int \!x^2\:dx\)</span>. We can rephrase this problem as the search for some function <span class="math notranslate nohighlight">\(F(x)\)</span> such that</p>
+<div class="math notranslate nohighlight">
+\[F'(x) = x^2.\]</div>
+<p>Remembering the derivative formulas we saw above, you guess that <span class="math notranslate nohighlight">\(F(x)\)</span> must contain an <span class="math notranslate nohighlight">\(x^3\)</span> term. Taking the derivative of a cubic term results in a quadratic term. Therefore, the function you are looking for has the form <span class="math notranslate nohighlight">\(F(x)=cx^3\)</span>, for some constant <span class="math notranslate nohighlight">\(c\)</span>. Pick the constant <span class="math notranslate nohighlight">\(c\)</span> that makes this equation true:</p>
+<div class="math notranslate nohighlight">
+\[F'(x) = 3cx^2 = x^2.\]</div>
+<p>Solving <span class="math notranslate nohighlight">\(3c=1\)</span>, we find <span class="math notranslate nohighlight">\(c=\frac{1}{3}\)</span> and so the integral function is</p>
+<div class="math notranslate nohighlight">
+\[F(x) = \int x^2 \:dx = \frac{1}{3}x^3 + C.\]</div>
+<p>You can verify that <span class="math notranslate nohighlight">\(\frac{d}{dx}\left[\frac{1}{3}x^3 + C\right] = x^2\)</span>.</p>
+<p>You can also verify Integrals using maths. Here is a set of <a class="reference external" href="https://www.teachoo.com/5643/728/Integration-Formulas---Trig--Definite-Integrals-Properties-and-more/category/Miscellaneous/">formulas</a> for your reference</p>
+</section>
+<section id="applications-of-integration">
+<h3><a class="toc-backref" href="#id37">Applications of integration</a><a class="headerlink" href="#applications-of-integration" title="Permalink to this headline">#</a></h3>
+<p>Integral calculations have widespread applications to more areas of science than are practical to list here. Let’s explore a few examples related to probabilities.</p>
+<section id="computing-probabilities">
+<h4><a class="toc-backref" href="#id38">Computing probabilities</a><a class="headerlink" href="#computing-probabilities" title="Permalink to this headline">#</a></h4>
+<p>A continuous random variable <span class="math notranslate nohighlight">\(X\)</span> is described by its probability density function <span class="math notranslate nohighlight">\(p(x)\)</span>. A probability density function <span class="math notranslate nohighlight">\(p(x)\)</span> is a positive function for which the total area under the curve is <span class="math notranslate nohighlight">\(1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[      p(x) \geq 0, \forall x
+\qquad
+       \textrm{and}
+       \qquad
+       \int_{-\infty}^\infty p(x)\; dx = 1.\]</div>
+<p>The probability of observing a value of <span class="math notranslate nohighlight">\(X\)</span> between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is given by the integral</p>
+<div class="math notranslate nohighlight">
+\[      \textrm{Pr}(a \leq X \leq b)
+=
+      \int_a^b p(x)\; dx.\]</div>
+<p>Thus, the notion of integration is central to probability theory with continuous random variables.</p>
+<p>We also use integration to compute certain characteristic properties of the random variable. The <em>expected value</em> and the <em>variance</em> are two properties of any random variable <span class="math notranslate nohighlight">\(X\)</span> that capture important aspects of its behaviour.</p>
+</section>
+<section id="expected-value">
+<h4><a class="toc-backref" href="#id39">Expected value</a><a class="headerlink" href="#expected-value" title="Permalink to this headline">#</a></h4>
+<p>The <em>expected value</em> of the random variable <span class="math notranslate nohighlight">\(X\)</span> is computed using the formula</p>
+<div class="math notranslate nohighlight">
+\[\mu
+      % \equiv \mathbb{E}_X[X]
+      = \int_{-\infty}^\infty x\, p(x).\]</div>
+<p>The expected value is a single number that tells us what value of <span class="math notranslate nohighlight">\(X\)</span> we can expect to obtain on average from the random variable <span class="math notranslate nohighlight">\(X\)</span>. The expected value is also called the <em>average</em> or the <em>mean</em> of the random variable <span class="math notranslate nohighlight">\(X\)</span>.</p>
+</section>
+<section id="variance">
+<h4><a class="toc-backref" href="#id40">Variance</a><a class="headerlink" href="#variance" title="Permalink to this headline">#</a></h4>
+<p>The <em>variance</em> of the random variable <span class="math notranslate nohighlight">\(X\)</span> is defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[\sigma^2
+      % \equiv  \mathbb{E}_X\!\big[(X-\mu)^2\big]
+      = \int_{-\infty}^\infty (x-\mu)^2 \, p(x).\]</div>
+<p>The variance formula computes the expectation of the squared distance of the random variable <span class="math notranslate nohighlight">\(X\)</span> from its expected value. The variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>, also denoted <span class="math notranslate nohighlight">\(\textrm{var}(X)\)</span>, gives us an indication of how clustered or spread the values of <span class="math notranslate nohighlight">\(X\)</span> are. A small variance indicates the outcomes of <span class="math notranslate nohighlight">\(X\)</span> are tightly clustered near the expected value <span class="math notranslate nohighlight">\(\mu\)</span>, while a large variance indicates the outcomes of <span class="math notranslate nohighlight">\(X\)</span> are widely spread. The square root of the variance is called the <em>standard deviation</em> and is usually denoted <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
+<p>The expected value <span class="math notranslate nohighlight">\(\mu\)</span> and the variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> are two central concepts in probability theory and statistics because they allow us to characterize any random variable. The expected value is a measure of the <em>central tendency</em> of the random variable,  while the variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> measures its <em>dispersion</em>.
+Readers familiar with concepts from physics can think of the expected value as the <em>centre of mass</em> of the distribution, and the variance as the <em>moment of inertia</em> of the distribution.</p>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id9"><span class="brackets">1</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Derivative">https://en.wikipedia.org/wiki/Derivative</a></p>
+</dd>
+<dt class="label" id="id10"><span class="brackets"><a class="fn-backref" href="#id7">2</a></span></dt>
+<dd><p><a class="reference external" href="https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/directional-derivative-introduction">https://www.khanacademy.org/math/multivariable-calculus/multivariable-derivatives/partial-derivative-and-gradient-articles/a/directional-derivative-introduction</a></p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">3</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Partial_derivative">https://en.wikipedia.org/wiki/Partial_derivative</a></p>
+</dd>
+<dt class="label" id="id12"><span class="brackets">4</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Gradient">https://en.wikipedia.org/wiki/Gradient</a></p>
+</dd>
+<dt class="label" id="id13"><span class="brackets">5</span></dt>
+<dd><p><a class="reference external" href="https://betterexplained.com/articles/vector-calculus-understanding-the-gradient">https://betterexplained.com/articles/vector-calculus-understanding-the-gradient</a></p>
+</dd>
+<dt class="label" id="id14"><span class="brackets">6</span></dt>
+<dd><p><a class="reference external" href="https://www.mathsisfun.com/calculus/derivatives-introduction.html">https://www.mathsisfun.com/calculus/derivatives-introduction.html</a></p>
+</dd>
+<dt class="label" id="id15"><span class="brackets">7</span></dt>
+<dd><p><a class="reference external" href="http://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx">http://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx</a></p>
+</dd>
+<dt class="label" id="id16"><span class="brackets">8</span></dt>
+<dd><p><a class="reference external" href="https://www.khanacademy.org/math/calculus-home/taking-derivatives-calc/chain-rule-calc/v/chain-rule-introduction">https://www.khanacademy.org/math/calculus-home/taking-derivatives-calc/chain-rule-calc/v/chain-rule-introduction</a></p>
+</dd>
+<dt class="label" id="id17"><span class="brackets">9</span></dt>
+<dd><p><a class="reference external" href="http://tutorial.math.lamar.edu/Classes/CalcI/ChainRule.aspx">http://tutorial.math.lamar.edu/Classes/CalcI/ChainRule.aspx</a></p>
+</dd>
+<dt class="label" id="id18"><span class="brackets">10</span></dt>
+<dd><p><a class="reference external" href="https://youtu.be/pHMzNW8Agq4?t=1m5s">https://youtu.be/pHMzNW8Agq4?t=1m5s</a></p>
+</dd>
+<dt class="label" id="id19"><span class="brackets"><a class="fn-backref" href="#id6">11</a></span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Dot_product">https://en.wikipedia.org/wiki/Dot_product</a></p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="glossary.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Glossary</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="linear_algebra.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Linear Algebra</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

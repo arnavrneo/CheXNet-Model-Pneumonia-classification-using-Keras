@@ -1,0 +1,882 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Forwardpropagation &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Backpropagation" href="backpropagation.html" />
+    <link rel="prev" title="Concepts" href="nn_concepts.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_regression.html">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="calculus.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="layers.html">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimizers.html">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regularization.html">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architectures.html">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification_algos.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="libraries.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_content.html">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/forwardpropagation.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-network">
+   Simple Network
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     Steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code">
+     Code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#larger-network">
+   Larger Network
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#architecture">
+     Architecture
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weight-initialization">
+     Weight Initialization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bias-terms">
+     Bias Terms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-matrices">
+     Working with Matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dynamic-resizing">
+     Dynamic Resizing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#refactoring-our-code">
+     Refactoring Our Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#final-result">
+     Final Result
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Forwardpropagation</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-network">
+   Simple Network
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#steps">
+     Steps
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#code">
+     Code
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#larger-network">
+   Larger Network
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#architecture">
+     Architecture
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#weight-initialization">
+     Weight Initialization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bias-terms">
+     Bias Terms
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#working-with-matrices">
+     Working with Matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dynamic-resizing">
+     Dynamic Resizing
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#refactoring-our-code">
+     Refactoring Our Code
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#final-result">
+     Final Result
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="forwardpropagation">
+<span id="id1"></span><h1>Forwardpropagation<a class="headerlink" href="#forwardpropagation" title="Permalink to this headline">#</a></h1>
+<div class="contents local topic" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#simple-network" id="id4">Simple Network</a></p>
+<ul>
+<li><p><a class="reference internal" href="#steps" id="id5">Steps</a></p></li>
+<li><p><a class="reference internal" href="#code" id="id6">Code</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#larger-network" id="id7">Larger Network</a></p>
+<ul>
+<li><p><a class="reference internal" href="#architecture" id="id8">Architecture</a></p></li>
+<li><p><a class="reference internal" href="#weight-initialization" id="id9">Weight Initialization</a></p></li>
+<li><p><a class="reference internal" href="#bias-terms" id="id10">Bias Terms</a></p></li>
+<li><p><a class="reference internal" href="#working-with-matrices" id="id11">Working with Matrices</a></p></li>
+<li><p><a class="reference internal" href="#dynamic-resizing" id="id12">Dynamic Resizing</a></p></li>
+<li><p><a class="reference internal" href="#refactoring-our-code" id="id13">Refactoring Our Code</a></p></li>
+<li><p><a class="reference internal" href="#final-result" id="id14">Final Result</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="simple-network">
+<h2><a class="toc-backref" href="#id4">Simple Network</a><a class="headerlink" href="#simple-network" title="Permalink to this headline">#</a></h2>
+<img alt="_images/neural_network_simple.png" class="align-center" src="_images/neural_network_simple.png" />
+<p>Forward propagation is how neural networks make predictions. Input data is “forward propagated” through the network layer by layer to the final layer which outputs a prediction. For the toy neural network above, a single pass of forward propagation translates mathematically to:</p>
+<div class="math notranslate nohighlight">
+\[Prediction = A(\;A(\;X W_h\;)W_o\;)\]</div>
+<p>Where <span class="math notranslate nohighlight">\(A\)</span> is an activation function like <a class="reference internal" href="activation_functions.html#activation-relu"><span class="std std-ref">ReLU</span></a>, <span class="math notranslate nohighlight">\(X\)</span> is the input and <span class="math notranslate nohighlight">\(W_h\)</span> and <span class="math notranslate nohighlight">\(W_o\)</span> are weights.</p>
+<section id="steps">
+<h3><a class="toc-backref" href="#id5">Steps</a><a class="headerlink" href="#steps" title="Permalink to this headline">#</a></h3>
+<ol class="arabic simple">
+<li><p>Calculate the weighted input to the hidden layer by multiplying <span class="math notranslate nohighlight">\(X\)</span> by the hidden weight <span class="math notranslate nohighlight">\(W_h\)</span></p></li>
+<li><p>Apply the activation function and pass the result to the final layer</p></li>
+<li><p>Repeat step 2 except this time <span class="math notranslate nohighlight">\(X\)</span> is replaced by the hidden layer’s output, <span class="math notranslate nohighlight">\(H\)</span></p></li>
+</ol>
+</section>
+<section id="code">
+<h3><a class="toc-backref" href="#id6">Code</a><a class="headerlink" href="#code" title="Permalink to this headline">#</a></h3>
+<p>Let’s write a method feed_forward() to propagate input data through our simple network of 1 hidden layer. The output of this method represents our model’s prediction.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">relu</span><span class="p">(</span><span class="n">z</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="k">return</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="k">def</span> <span class="nf">feed_forward</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">Wh</span><span class="p">,</span> <span class="n">Wo</span><span class="p">):</span>
+<span class="linenos"> 5</span>    <span class="c1"># Hidden layer</span>
+<span class="linenos"> 6</span>    <span class="n">Zh</span> <span class="o">=</span> <span class="n">x</span> <span class="o">*</span> <span class="n">Wh</span>
+<span class="linenos"> 7</span>    <span class="n">H</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">Zh</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>    <span class="c1"># Output layer</span>
+<span class="linenos">10</span>    <span class="n">Zo</span> <span class="o">=</span> <span class="n">H</span> <span class="o">*</span> <span class="n">Wo</span>
+<span class="linenos">11</span>    <span class="n">output</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">Zo</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="k">return</span> <span class="n">output</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">x</span></code> is the input to the network, <code class="docutils literal notranslate"><span class="pre">Zo</span></code> and <code class="docutils literal notranslate"><span class="pre">Zh</span></code> are the weighted inputs and <code class="docutils literal notranslate"><span class="pre">Wo</span></code> and <code class="docutils literal notranslate"><span class="pre">Wh</span></code> are the weights.</p>
+</section>
+</section>
+<section id="larger-network">
+<h2><a class="toc-backref" href="#id7">Larger Network</a><a class="headerlink" href="#larger-network" title="Permalink to this headline">#</a></h2>
+<p>The simple network above is helpful for learning purposes, but in reality neural networks are much larger and more complex. Modern neural networks have many more hidden layers, more neurons per layer, more variables per input, more inputs per training set, and more output variables to predict. Here is a slightly larger network that will introduce us to matrices and the matrix operations used to train arbitrarily large neural networks.</p>
+<img alt="_images/neural_network_w_matrices.png" class="align-center" src="_images/neural_network_w_matrices.png" />
+<section id="architecture">
+<h3><a class="toc-backref" href="#id8">Architecture</a><a class="headerlink" href="#architecture" title="Permalink to this headline">#</a></h3>
+<p>To accomodate arbitrarily large inputs or outputs, we need to make our code more extensible by adding a few parameters to our network’s __init__ method: inputLayerSize, hiddenLayerSize, outputLayerSize. We’ll still limit ourselves to using one hidden layer, but now we can create layers of different sizes to respond to the different inputs or outputs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="n">INPUT_LAYER_SIZE</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">2</span><span class="n">HIDDEN_LAYER_SIZE</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">3</span><span class="n">OUTPUT_LAYER_SIZE</span> <span class="o">=</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</section>
+<section id="weight-initialization">
+<h3><a class="toc-backref" href="#id9">Weight Initialization</a><a class="headerlink" href="#weight-initialization" title="Permalink to this headline">#</a></h3>
+<p>Unlike last time where <code class="docutils literal notranslate"><span class="pre">Wh</span></code> and <code class="docutils literal notranslate"><span class="pre">Wo</span></code> were scalar numbers, our new weight variables will be numpy arrays. Each array will hold all the weights for its own layer — one weight for each synapse. Below we initialize each array with the numpy’s <code class="docutils literal notranslate"><span class="pre">np.random.randn(rows,</span> <span class="pre">cols)</span></code> method, which returns a matrix of random numbers drawn from a normal distribution with mean 0 and variance 1.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">init_weights</span><span class="p">():</span>
+<span class="linenos">2</span>    <span class="n">Wh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">INPUT_LAYER_SIZE</span><span class="p">,</span> <span class="n">HIDDEN_LAYER_SIZE</span><span class="p">)</span> <span class="o">*</span> \
+<span class="linenos">3</span>                <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">INPUT_LAYER_SIZE</span><span class="p">)</span>
+<span class="linenos">4</span>    <span class="n">Wo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">HIDDEN_LAYER_SIZE</span><span class="p">,</span> <span class="n">OUTPUT_LAYER_SIZE</span><span class="p">)</span> <span class="o">*</span> \
+<span class="linenos">5</span>                <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">HIDDEN_LAYER_SIZE</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Here’s an example calling <code class="docutils literal notranslate"><span class="pre">random.randn()</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="p">[[</span><span class="o">-</span><span class="mf">0.36094661</span> <span class="o">-</span><span class="mf">1.30447338</span><span class="p">]]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>As you’ll soon see, there are strict requirements on the dimensions of these weight matrices. The number of <em>rows</em> must equal the number of neurons in the previous layer. The number of <em>columns</em> must match the number of neurons in the next layer.</p>
+<p>A good explanation of random weight initalization can be found in the Stanford CS231 course notes <a class="footnote-reference brackets" href="#id3" id="id2">1</a> chapter on neural networks.</p>
+</section>
+<section id="bias-terms">
+<h3><a class="toc-backref" href="#id10">Bias Terms</a><a class="headerlink" href="#bias-terms" title="Permalink to this headline">#</a></h3>
+<p><a class="reference internal" href="nn_concepts.html#nn-bias"><span class="std std-ref">Bias</span></a> terms allow us to shift our neuron’s activation outputs left and right. This helps us model datasets that do not necessarily pass through the origin.</p>
+<p>Using the numpy method <code class="docutils literal notranslate"><span class="pre">np.full()</span></code> below, we create two 1-dimensional bias arrays filled with the default value <code class="docutils literal notranslate"><span class="pre">0.2</span></code>. The first argument to <code class="docutils literal notranslate"><span class="pre">np.full</span></code> is a tuple of array dimensions. The second is the default value for cells in the array.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">init_bias</span><span class="p">():</span>
+<span class="linenos">2</span>    <span class="n">Bh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">HIDDEN_LAYER_SIZE</span><span class="p">),</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="linenos">3</span>    <span class="n">Bo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">OUTPUT_LAYER_SIZE</span><span class="p">),</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="linenos">4</span>    <span class="k">return</span> <span class="n">Bh</span><span class="p">,</span> <span class="n">Bo</span>
+</pre></div>
+</div>
+</section>
+<section id="working-with-matrices">
+<h3><a class="toc-backref" href="#id11">Working with Matrices</a><a class="headerlink" href="#working-with-matrices" title="Permalink to this headline">#</a></h3>
+<p>To take advantage of fast linear algebra techniques and GPUs, we need to store our inputs, weights, and biases in matrices. Here is our neural network diagram again with its underlying matrix representation.</p>
+<img alt="_images/nn_with_matrices_displayed.png" class="align-center" src="_images/nn_with_matrices_displayed.png" />
+<p>What’s happening here? To better understand, let’s walk through each of the matrices in the diagram with an emphasis on their dimensions and why the dimensions are what they are. The matrix dimensions above flow naturally from the architecture of our network and the number of samples in our training set.</p>
+<p class="rubric">Matrix dimensions</p>
+<table class="table">
+<colgroup>
+<col style="width: 2%" />
+<col style="width: 5%" />
+<col style="width: 4%" />
+<col style="width: 89%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Var</strong></p></td>
+<td><p><strong>Name</strong></p></td>
+<td><p><strong>Dimensions</strong></p></td>
+<td><p><strong>Explanation</strong></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">X</span></code></p></td>
+<td><p>Input</p></td>
+<td><p>(3, 1)</p></td>
+<td><p>Includes 3 rows of training data, and each row has 1 attribute (height, price, etc.)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Wh</span></code></p></td>
+<td><p>Hidden weights</p></td>
+<td><p>(1, 2)</p></td>
+<td><p>These dimensions are based on number of rows equals the number of attributes for the observations in our training set. The number columns equals the number of neurons in the hidden layer. The dimensions of the weights matrix between two layers is determined by the sizes of the two layers it connects. There is one weight for every input-to-neuron connection between the layers.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Bh</span></code></p></td>
+<td><p>Hidden bias</p></td>
+<td><p>(1, 2)</p></td>
+<td><p>Each neuron in the hidden layer has is own bias constant. This bias matrix is added to the weighted input matrix before the hidden layer applies ReLU.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Zh</span></code></p></td>
+<td><p>Hidden weighted input</p></td>
+<td><p>(1, 2)</p></td>
+<td><p>Computed by taking the dot product of X and Wh. The dimensions (1,2) are required by the rules of matrix multiplication. Zh takes the rows of in the inputs matrix and the columns of weights matrix. We then add the hidden layer bias matrix Bh.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">H</span></code></p></td>
+<td><p>Hidden activations</p></td>
+<td><p>(3, 2)</p></td>
+<td><p>Computed by applying the Relu function to Zh. The dimensions are (3,2) — the number of rows matches the number of training samples and the number of columns equals the number of neurons. Each column holds all the activations for a specific neuron.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Wo</span></code></p></td>
+<td><p>Output weights</p></td>
+<td><p>(2, 2)</p></td>
+<td><p>The number of rows matches the number of hidden layer neurons and the number of columns equals the number of output layer neurons. There is one weight for every hidden-neuron-to-output-neuron connection between the layers.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">Bo</span></code></p></td>
+<td><p>Output bias</p></td>
+<td><p>(1, 2)</p></td>
+<td><p>There is one column for every neuron in the output layer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">Zo</span></code></p></td>
+<td><p>Output weighted input</p></td>
+<td><p>(3, 2)</p></td>
+<td><p>Computed by taking the dot product of H and Wo and then adding the output layer bias Bo. The dimensions are (3,2) representing the rows of in the hidden layer matrix and the columns of output layer weights matrix.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">O</span></code></p></td>
+<td><p>Output activations</p></td>
+<td><p>(3, 2)</p></td>
+<td><p>Each row represents a prediction for a single observation in our training set. Each column is a unique attribute we want to predict. Examples of two-column output predictions could be a company’s sales and units sold, or a person’s height and weight.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="dynamic-resizing">
+<h3><a class="toc-backref" href="#id12">Dynamic Resizing</a><a class="headerlink" href="#dynamic-resizing" title="Permalink to this headline">#</a></h3>
+<p>Before we continue I want to point out how the matrix dimensions change with changes to the network architecture or size of the training set. For example, let’s build a network with 2 input neurons, 3 hidden neurons, 2 output neurons, and 4 observations in our training set.</p>
+<img alt="_images/dynamic_resizing_neural_network_4_obs.png" class="align-center" src="_images/dynamic_resizing_neural_network_4_obs.png" />
+<p>Now let’s use same number of layers and neurons but reduce the number of observations in our dataset to <strong>1 instance</strong>:</p>
+<img alt="_images/dynamic_resizing_neural_network_1_obs.png" class="align-center" src="_images/dynamic_resizing_neural_network_1_obs.png" />
+<p>As you can see, the number of columns in all matrices remains the same. The only thing that changes is the number of rows the layer matrices, which fluctuate with the size of the training set. The dimensions of the weight matrices remain unchanged. This shows us we can use the same network, the same lines of code, to process any number of observations.</p>
+</section>
+<section id="refactoring-our-code">
+<h3><a class="toc-backref" href="#id13">Refactoring Our Code</a><a class="headerlink" href="#refactoring-our-code" title="Permalink to this headline">#</a></h3>
+<p>Here is our new feed forward code which accepts matrices instead of scalar inputs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">feed_forward</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 3</span><span class="sd">    X    - input matrix</span>
+<span class="linenos"> 4</span><span class="sd">    Zh   - hidden layer weighted input</span>
+<span class="linenos"> 5</span><span class="sd">    Zo   - output layer weighted input</span>
+<span class="linenos"> 6</span><span class="sd">    H    - hidden layer activation</span>
+<span class="linenos"> 7</span><span class="sd">    y    - output layer</span>
+<span class="linenos"> 8</span><span class="sd">    yHat - output layer predictions</span>
+<span class="linenos"> 9</span><span class="sd">    &#39;&#39;&#39;</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>    <span class="c1"># Hidden layer</span>
+<span class="linenos">12</span>    <span class="n">Zh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Wh</span><span class="p">)</span> <span class="o">+</span> <span class="n">Bh</span>
+<span class="linenos">13</span>    <span class="n">H</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">Zh</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span>    <span class="c1"># Output layer</span>
+<span class="linenos">16</span>    <span class="n">Zo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">Wo</span><span class="p">)</span> <span class="o">+</span> <span class="n">Bo</span>
+<span class="linenos">17</span>    <span class="n">yHat</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">Zo</span><span class="p">)</span>
+<span class="linenos">18</span>    <span class="k">return</span> <span class="n">yHat</span>
+</pre></div>
+</div>
+<p class="rubric">Weighted input</p>
+<p>The first change is to update our weighted input calculation to handle matrices. Using dot product, we multiply the input matrix by the weights connecting them to the neurons in the next layer. Next we add the bias vector using matrix addition.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Zh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Wh</span><span class="p">)</span> <span class="o">+</span> <span class="n">Bh</span>
+</pre></div>
+</div>
+<img alt="_images/neural_network_matrix_weighted_input.png" class="align-center" src="_images/neural_network_matrix_weighted_input.png" />
+<p>The first column in <code class="docutils literal notranslate"><span class="pre">Bh</span></code> is added to all the rows in the first column of resulting dot product of <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Wh</span></code>. The second value in <code class="docutils literal notranslate"><span class="pre">Bh</span></code> is added to all the elements in the second column. The result is a new matrix, <code class="docutils literal notranslate"><span class="pre">Zh</span></code> which has a column for every neuron in the hidden layer and a row for every observation in our dataset. Given all the layers in our network are <em>fully-connected</em>, there is one weight for every neuron-to-neuron connection between the layers.</p>
+<p>The same process is repeated for the output layer, except the input is now the hidden layer activation <code class="docutils literal notranslate"><span class="pre">H</span></code> and the weights <code class="docutils literal notranslate"><span class="pre">Wo</span></code>.</p>
+<p class="rubric">ReLU activation</p>
+<p>The second change is to refactor ReLU to use elementwise multiplication on matrices. It’s only a small change, but its necessary if we want to work with matrices. <code class="docutils literal notranslate"><span class="pre">np.maximum()</span></code> is actually extensible and can handle both scalar and array inputs.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">relu</span><span class="p">(</span><span class="n">Z</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In the hidden layer activation step, we apply the ReLU activation function <code class="docutils literal notranslate"><span class="pre">np.maximum(0,Z)</span></code> to every cell in the new matrix. The result is a matrix where all negative values have been replaced by 0. The same process is repeated for the output layer, except the input is <code class="docutils literal notranslate"><span class="pre">Zo</span></code>.</p>
+</section>
+<section id="final-result">
+<h3><a class="toc-backref" href="#id14">Final Result</a><a class="headerlink" href="#final-result" title="Permalink to this headline">#</a></h3>
+<p>Putting it all together we have the following code for forward propagation with matrices.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="n">INPUT_LAYER_SIZE</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos"> 2</span><span class="n">HIDDEN_LAYER_SIZE</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 3</span><span class="n">OUTPUT_LAYER_SIZE</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="k">def</span> <span class="nf">init_weights</span><span class="p">():</span>
+<span class="linenos"> 6</span>    <span class="n">Wh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">INPUT_LAYER_SIZE</span><span class="p">,</span> <span class="n">HIDDEN_LAYER_SIZE</span><span class="p">)</span> <span class="o">*</span> \
+<span class="linenos"> 7</span>                <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">INPUT_LAYER_SIZE</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="n">Wo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randn</span><span class="p">(</span><span class="n">HIDDEN_LAYER_SIZE</span><span class="p">,</span> <span class="n">OUTPUT_LAYER_SIZE</span><span class="p">)</span> <span class="o">*</span> \
+<span class="linenos"> 9</span>                <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.0</span><span class="o">/</span><span class="n">HIDDEN_LAYER_SIZE</span><span class="p">)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">def</span> <span class="nf">init_bias</span><span class="p">():</span>
+<span class="linenos">13</span>    <span class="n">Bh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">HIDDEN_LAYER_SIZE</span><span class="p">),</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="linenos">14</span>    <span class="n">Bo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">OUTPUT_LAYER_SIZE</span><span class="p">),</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="k">return</span> <span class="n">Bh</span><span class="p">,</span> <span class="n">Bo</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="k">def</span> <span class="nf">relu</span><span class="p">(</span><span class="n">Z</span><span class="p">):</span>
+<span class="linenos">18</span>    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">maximum</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Z</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span><span class="k">def</span> <span class="nf">relu_prime</span><span class="p">(</span><span class="n">Z</span><span class="p">):</span>
+<span class="linenos">21</span>    <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">22</span><span class="sd">    Z - weighted input matrix</span>
+<span class="linenos">23</span>
+<span class="linenos">24</span><span class="sd">    Returns gradient of Z where all</span>
+<span class="linenos">25</span><span class="sd">    negative values are set to 0 and</span>
+<span class="linenos">26</span><span class="sd">    all positive values set to 1</span>
+<span class="linenos">27</span><span class="sd">    &#39;&#39;&#39;</span>
+<span class="linenos">28</span>    <span class="n">Z</span><span class="p">[</span><span class="n">Z</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">29</span>    <span class="n">Z</span><span class="p">[</span><span class="n">Z</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="linenos">30</span>    <span class="k">return</span> <span class="n">Z</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span><span class="k">def</span> <span class="nf">cost</span><span class="p">(</span><span class="n">yHat</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos">33</span>    <span class="n">cost</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="n">yHat</span> <span class="o">-</span> <span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="mf">2.0</span>
+<span class="linenos">34</span>    <span class="k">return</span> <span class="n">cost</span>
+<span class="linenos">35</span>
+<span class="linenos">36</span><span class="k">def</span> <span class="nf">cost_prime</span><span class="p">(</span><span class="n">yHat</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+<span class="linenos">37</span>    <span class="k">return</span> <span class="n">yHat</span> <span class="o">-</span> <span class="n">y</span>
+<span class="linenos">38</span>
+<span class="linenos">39</span><span class="k">def</span> <span class="nf">feed_forward</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
+<span class="linenos">40</span>    <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">41</span><span class="sd">    X    - input matrix</span>
+<span class="linenos">42</span><span class="sd">    Zh   - hidden layer weighted input</span>
+<span class="linenos">43</span><span class="sd">    Zo   - output layer weighted input</span>
+<span class="linenos">44</span><span class="sd">    H    - hidden layer activation</span>
+<span class="linenos">45</span><span class="sd">    y    - output layer</span>
+<span class="linenos">46</span><span class="sd">    yHat - output layer predictions</span>
+<span class="linenos">47</span><span class="sd">    &#39;&#39;&#39;</span>
+<span class="linenos">48</span>
+<span class="linenos">49</span>    <span class="c1"># Hidden layer</span>
+<span class="linenos">50</span>    <span class="n">Zh</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Wh</span><span class="p">)</span> <span class="o">+</span> <span class="n">Bh</span>
+<span class="linenos">51</span>    <span class="n">H</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">Zh</span><span class="p">)</span>
+<span class="linenos">52</span>
+<span class="linenos">53</span>    <span class="c1"># Output layer</span>
+<span class="linenos">54</span>    <span class="n">Zo</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">H</span><span class="p">,</span> <span class="n">Wo</span><span class="p">)</span> <span class="o">+</span> <span class="n">Bo</span>
+<span class="linenos">55</span>    <span class="n">yHat</span> <span class="o">=</span> <span class="n">relu</span><span class="p">(</span><span class="n">Zo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id3"><span class="brackets"><a class="fn-backref" href="#id2">1</a></span></dt>
+<dd><p><a class="reference external" href="http://cs231n.github.io/neural-networks-2/#init">http://cs231n.github.io/neural-networks-2/#init</a></p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="nn_concepts.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Concepts</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="backpropagation.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Backpropagation</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>

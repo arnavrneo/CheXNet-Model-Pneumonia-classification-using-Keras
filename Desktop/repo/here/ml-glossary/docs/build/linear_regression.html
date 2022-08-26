@@ -1,0 +1,1190 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Linear Regression &#8212; 🏠 ML Glossary</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/theme_overrides.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Gradient Descent" href="gradient_descent.html" />
+    <link rel="prev" title="Machine Learning Glossary" href="index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"><br/>
+<a href="https://github.com/bfortuner/ml-glossary">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 496 512"><!-- Font Awesome Pro 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    Edit on GitHub
+</a></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      
+      
+      <h1 class="site-logo" id="site-title">🏠 ML Glossary</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Basics
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Linear Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="gradient_descent.html">
+   Gradient Descent
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="logistic_regression.html">
+   Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="glossary.html">
+   Glossary
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Math
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="calculus.html">
+   Calculus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="linear_algebra.html">
+   Linear Algebra
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="probability.html">
+   Probability (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="statistics.html">
+   Statistics (TODO)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="math_notation.html">
+   Notation
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Neural Networks
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="nn_concepts.html">
+   Concepts
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="forwardpropagation.html">
+   Forwardpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="backpropagation.html">
+   Backpropagation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="activation_functions.html">
+   Activation Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="layers.html">
+   Layers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="loss_functions.html">
+   Loss Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="optimizers.html">
+   Optimizers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regularization.html">
+   Regularization
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="architectures.html">
+   Architectures
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Algorithms (TODO)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="classification_algos.html">
+   Classification
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="clustering_algos.html">
+   Clustering
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="regression_algos.html">
+   Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="reinforcement_learning.html">
+   Reinforcement Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Resources
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="datasets.html">
+   Datasets
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="libraries.html">
+   Libraries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="papers.html">
+   Papers
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="other_content.html">
+   Other
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Contributing
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="contribute.html">
+   How to contribute
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            Theme by the <a href="https://ebp.jupyterbook.org">Executable Book Project</a>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/linear_regression.rst.txt"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.rst</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-regression">
+   Simple regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-predictions">
+     Making predictions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cost-function">
+     Cost function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-descent">
+     Gradient descent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training">
+     Training
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-evaluation">
+     Model evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multivariable-regression">
+   Multivariable regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#growing-complexity">
+     Growing complexity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normalization">
+     Normalization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-linear-regression-predict">
+     Making predictions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialize-weights">
+     Initialize weights
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Cost function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Gradient descent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simplifying-with-matrices">
+     Simplifying with matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bias-term">
+     Bias term
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Model evaluation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </nav>
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Linear Regression</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction">
+   Introduction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-regression">
+   Simple regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#making-predictions">
+     Making predictions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cost-function">
+     Cost function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gradient-descent">
+     Gradient descent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#training">
+     Training
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-evaluation">
+     Model evaluation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#summary">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multivariable-regression">
+   Multivariable regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#growing-complexity">
+     Growing complexity
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normalization">
+     Normalization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-linear-regression-predict">
+     Making predictions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#initialize-weights">
+     Initialize weights
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     Cost function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id4">
+     Gradient descent
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#simplifying-with-matrices">
+     Simplifying with matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bias-term">
+     Bias term
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id5">
+     Model evaluation
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <section id="linear-regression">
+<span id="id1"></span><h1>Linear Regression<a class="headerlink" href="#linear-regression" title="Permalink to this headline">#</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="contents local topic" id="contents">
+<p class="topic-title">Contents</p>
+<ul class="simple">
+<li><p><a class="reference internal" href="#introduction" id="id12">Introduction</a></p></li>
+<li><p><a class="reference internal" href="#simple-regression" id="id13">Simple regression</a></p>
+<ul>
+<li><p><a class="reference internal" href="#making-predictions" id="id14">Making predictions</a></p></li>
+<li><p><a class="reference internal" href="#cost-function" id="id15">Cost function</a></p></li>
+<li><p><a class="reference internal" href="#gradient-descent" id="id16">Gradient descent</a></p></li>
+<li><p><a class="reference internal" href="#training" id="id17">Training</a></p></li>
+<li><p><a class="reference internal" href="#model-evaluation" id="id18">Model evaluation</a></p></li>
+<li><p><a class="reference internal" href="#summary" id="id19">Summary</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#multivariable-regression" id="id20">Multivariable regression</a></p>
+<ul>
+<li><p><a class="reference internal" href="#growing-complexity" id="id21">Growing complexity</a></p></li>
+<li><p><a class="reference internal" href="#normalization" id="id22">Normalization</a></p></li>
+<li><p><a class="reference internal" href="#multiple-linear-regression-predict" id="id23">Making predictions</a></p></li>
+<li><p><a class="reference internal" href="#initialize-weights" id="id24">Initialize weights</a></p></li>
+<li><p><a class="reference internal" href="#id3" id="id25">Cost function</a></p></li>
+<li><p><a class="reference internal" href="#id4" id="id26">Gradient descent</a></p></li>
+<li><p><a class="reference internal" href="#simplifying-with-matrices" id="id27">Simplifying with matrices</a></p></li>
+<li><p><a class="reference internal" href="#bias-term" id="id28">Bias term</a></p></li>
+<li><p><a class="reference internal" href="#id5" id="id29">Model evaluation</a></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<section id="introduction">
+<h2><a class="toc-backref" href="#id12">Introduction</a><a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h2>
+<p>Linear Regression is a supervised machine learning algorithm where the predicted output is continuous and has a constant slope. It’s used to predict values within a continuous range, (e.g. sales, price) rather than trying to classify them into categories (e.g. cat, dog). There are two main types:</p>
+<p class="rubric">Simple regression</p>
+<p>Simple linear regression uses traditional slope-intercept form, where <span class="math notranslate nohighlight">\(m\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are the variables our algorithm will try to “learn” to produce the most accurate predictions. <span class="math notranslate nohighlight">\(x\)</span> represents our input data and <span class="math notranslate nohighlight">\(y\)</span> represents our prediction.</p>
+<div class="math notranslate nohighlight">
+\[y = mx + b\]</div>
+<p class="rubric">Multivariable regression</p>
+<p>A more complex, multi-variable linear equation might look like this, where <span class="math notranslate nohighlight">\(w\)</span> represents the coefficients, or weights, our model will try to learn.</p>
+<div class="math notranslate nohighlight">
+\[f(x,y,z) = w_1 x + w_2 y + w_3 z\]</div>
+<p>The variables <span class="math notranslate nohighlight">\(x, y, z\)</span> represent the attributes, or distinct pieces of information, we have about each observation. For sales predictions, these attributes might include a company’s advertising spend on radio, TV, and newspapers.</p>
+<div class="math notranslate nohighlight">
+\[Sales = w_1 Radio + w_2 TV + w_3 News\]</div>
+</section>
+<section id="simple-regression">
+<h2><a class="toc-backref" href="#id13">Simple regression</a><a class="headerlink" href="#simple-regression" title="Permalink to this headline">#</a></h2>
+<p>Let’s say we are given a <a class="reference external" href="http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv">dataset</a> with the following columns (features): how much a company spends on Radio advertising each year and its annual Sales in terms of units sold. We are trying to develop an equation that will let us to predict units sold based on how much a company spends on radio advertising. The rows (observations) represent companies.</p>
+<table class="table">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 38%" />
+<col style="width: 28%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>Company</strong></p></td>
+<td><p><strong>Radio ($)</strong></p></td>
+<td><p><strong>Sales</strong></p></td>
+</tr>
+<tr class="row-even"><td><p>Amazon</p></td>
+<td><p>37.8</p></td>
+<td><p>22.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Google</p></td>
+<td><p>39.3</p></td>
+<td><p>10.4</p></td>
+</tr>
+<tr class="row-even"><td><p>Facebook</p></td>
+<td><p>45.9</p></td>
+<td><p>18.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apple</p></td>
+<td><p>41.3</p></td>
+<td><p>18.5</p></td>
+</tr>
+</tbody>
+</table>
+<section id="making-predictions">
+<h3><a class="toc-backref" href="#id14">Making predictions</a><a class="headerlink" href="#making-predictions" title="Permalink to this headline">#</a></h3>
+<p>Our prediction function outputs an estimate of sales given a company’s radio advertising spend and our current values for <em>Weight</em> and <em>Bias</em>.</p>
+<div class="math notranslate nohighlight">
+\[Sales = Weight \cdot Radio + Bias\]</div>
+<dl class="simple">
+<dt>Weight</dt><dd><p>the coefficient for the Radio independent variable. In machine learning we call coefficients <em>weights</em>.</p>
+</dd>
+<dt>Radio</dt><dd><p>the independent variable. In machine learning we call these variables <em>features</em>.</p>
+</dd>
+<dt>Bias</dt><dd><p>the intercept where our line intercepts the y-axis. In machine learning we can call intercepts <em>bias</em>. Bias offsets all predictions that we make.</p>
+</dd>
+</dl>
+<p>Our algorithm will try to <em>learn</em> the correct values for Weight and Bias. By the end of our training, our equation will approximate the <em>line of best fit</em>.</p>
+<img alt="_images/linear_regression_line_intro.png" class="align-center" src="_images/linear_regression_line_intro.png" />
+<p class="rubric">Code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">predict_sales</span><span class="p">(</span><span class="n">radio</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">):</span>
+<span class="linenos">2</span>   <span class="k">return</span> <span class="n">weight</span><span class="o">*</span><span class="n">radio</span> <span class="o">+</span> <span class="n">bias</span>
+</pre></div>
+</div>
+</section>
+<section id="cost-function">
+<h3><a class="toc-backref" href="#id15">Cost function</a><a class="headerlink" href="#cost-function" title="Permalink to this headline">#</a></h3>
+<p>The prediction function is nice, but for our purposes we don’t really need it. What we need is a <a class="reference internal" href="loss_functions.html"><span class="doc">cost function</span></a> so we can start optimizing our weights.</p>
+<p>Let’s use <a class="reference internal" href="loss_functions.html#mse"><span class="std std-ref">MSE (L2)</span></a> as our cost function. MSE measures the average squared difference between an observation’s actual and predicted values. The output is a single number representing the cost, or score, associated with our current set of weights. Our goal is to minimize MSE to improve the accuracy of our model.</p>
+<p class="rubric">Math</p>
+<p>Given our simple linear equation <span class="math notranslate nohighlight">\(y = mx + b\)</span>, we can calculate MSE as:</p>
+<div class="math notranslate nohighlight">
+\[MSE =  \frac{1}{N} \sum_{i=1}^{n} (y_i - (m x_i + b))^2\]</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(N\)</span> is the total number of observations (data points)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\frac{1}{N} \sum_{i=1}^{n}\)</span> is the mean</p></li>
+<li><p><span class="math notranslate nohighlight">\(y_i\)</span> is the actual value of an observation and <span class="math notranslate nohighlight">\(m x_i + b\)</span> is our prediction</p></li>
+</ul>
+</div>
+<p class="rubric">Code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">def</span> <span class="nf">cost_function</span><span class="p">(</span><span class="n">radio</span><span class="p">,</span> <span class="n">sales</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">):</span>
+<span class="linenos">2</span>    <span class="n">companies</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">radio</span><span class="p">)</span>
+<span class="linenos">3</span>    <span class="n">total_error</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos">4</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">companies</span><span class="p">):</span>
+<span class="linenos">5</span>        <span class="n">total_error</span> <span class="o">+=</span> <span class="p">(</span><span class="n">sales</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">weight</span><span class="o">*</span><span class="n">radio</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">bias</span><span class="p">))</span><span class="o">**</span><span class="mi">2</span>
+<span class="linenos">6</span>    <span class="k">return</span> <span class="n">total_error</span> <span class="o">/</span> <span class="n">companies</span>
+</pre></div>
+</div>
+</section>
+<section id="gradient-descent">
+<h3><a class="toc-backref" href="#id16">Gradient descent</a><a class="headerlink" href="#gradient-descent" title="Permalink to this headline">#</a></h3>
+<p>To minimize MSE we use <a class="reference internal" href="gradient_descent.html"><span class="doc">Gradient Descent</span></a> to calculate the gradient of our cost function. Gradient descent consists of looking at the error that our weight currently gives us, using the derivative of the cost function to find the gradient (The slope of the cost function using our current weight), and then changing our weight to move in the direction opposite of the gradient. We need to move in the opposite direction of the gradient since the gradient points up the slope instead of down it, so we move in the opposite direction to try to decrease our error.</p>
+<p class="rubric">Math</p>
+<p>There are two <a class="reference internal" href="glossary.html#glossary-parameters"><span class="std std-ref">parameters</span></a> (coefficients) in our cost function we can control: weight <span class="math notranslate nohighlight">\(m\)</span> and bias <span class="math notranslate nohighlight">\(b\)</span>. Since we need to consider the impact each one has on the final prediction, we use partial derivatives. To find the partial derivatives, we use the <a class="reference internal" href="calculus.html#chain-rule"><span class="std std-ref">Chain rule</span></a>. We need the chain rule because <span class="math notranslate nohighlight">\((y - (mx + b))^2\)</span> is really 2 nested functions: the inner function <span class="math notranslate nohighlight">\(y - (mx + b)\)</span> and the outer function <span class="math notranslate nohighlight">\(x^2\)</span>.</p>
+<p>Returning to our cost function:</p>
+<div class="math notranslate nohighlight">
+\[f(m,b) =  \frac{1}{N} \sum_{i=1}^{n} (y_i - (mx_i + b))^2\]</div>
+<p>Using the following:</p>
+<div class="math notranslate nohighlight">
+\[(y_i - (mx_i + b))^2 = A(B(m,b))\]</div>
+<p>We can split the derivative into</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}A(x) = x^2\\\frac{df}{dx} = A'(x) = 2x\end{aligned}\end{align} \]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}B(m,b) = y_i - (mx_i + b) = y_i - mx_i - b\\\frac{dx}{dm} = B'(m) = 0 - x_i - 0 = -x_i\\\frac{dx}{db} = B'(b) = 0 - 0 - 1 = -1\end{aligned}\end{align} \]</div>
+<p>And then using the <a class="reference internal" href="calculus.html#chain-rule"><span class="std std-ref">Chain rule</span></a> which states:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\frac{df}{dm} = \frac{df}{dx} \frac{dx}{dm}\\\frac{df}{db} = \frac{df}{dx} \frac{dx}{db}\end{aligned}\end{align} \]</div>
+<p>We then plug in each of the parts to get the following derivatives</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\frac{df}{dm} = A'(B(m,f)) B'(m) = 2(y_i - (mx_i + b)) \cdot -x_i\\\frac{df}{db} = A'(B(m,f)) B'(b) = 2(y_i - (mx_i + b)) \cdot -1\end{aligned}\end{align} \]</div>
+<p>We can calculate the gradient of this cost function as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+f'(m,b) =
+  \begin{bmatrix}
+    \frac{df}{dm}\\
+    \frac{df}{db}\\
+  \end{bmatrix}
+&amp;=
+  \begin{bmatrix}
+    \frac{1}{N} \sum -x_i \cdot 2(y_i - (mx_i + b)) \\
+    \frac{1}{N} \sum -1 \cdot 2(y_i - (mx_i + b)) \\
+  \end{bmatrix}\\
+&amp;=
+  \begin{bmatrix}
+     \frac{1}{N} \sum -2x_i(y_i - (mx_i + b)) \\
+     \frac{1}{N} \sum -2(y_i - (mx_i + b)) \\
+  \end{bmatrix}
+\end{align}\end{split}\]</div>
+<p class="rubric">Code</p>
+<p>To solve for the gradient, we iterate through our data points using our new weight and bias values and take the average of the partial derivatives. The resulting gradient tells us the slope of our cost function at our current position (i.e. weight and bias) and the direction we should update to reduce our cost function (we move in the direction opposite the gradient). The size of our update is controlled by the <a class="reference internal" href="glossary.html#glossary-learning-rate"><span class="std std-ref">learning rate</span></a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">update_weights</span><span class="p">(</span><span class="n">radio</span><span class="p">,</span> <span class="n">sales</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">weight_deriv</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 3</span>    <span class="n">bias_deriv</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos"> 4</span>    <span class="n">companies</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">radio</span><span class="p">)</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">companies</span><span class="p">):</span>
+<span class="linenos"> 7</span>        <span class="c1"># Calculate partial derivatives</span>
+<span class="linenos"> 8</span>        <span class="c1"># -2x(y - (mx + b))</span>
+<span class="linenos"> 9</span>        <span class="n">weight_deriv</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">radio</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">sales</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">weight</span><span class="o">*</span><span class="n">radio</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">bias</span><span class="p">))</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>        <span class="c1"># -2(y - (mx + b))</span>
+<span class="linenos">12</span>        <span class="n">bias_deriv</span> <span class="o">+=</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="p">(</span><span class="n">sales</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="p">(</span><span class="n">weight</span><span class="o">*</span><span class="n">radio</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">bias</span><span class="p">))</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span>    <span class="c1"># We subtract because the derivatives point in direction of steepest ascent</span>
+<span class="linenos">15</span>    <span class="n">weight</span> <span class="o">-=</span> <span class="p">(</span><span class="n">weight_deriv</span> <span class="o">/</span> <span class="n">companies</span><span class="p">)</span> <span class="o">*</span> <span class="n">learning_rate</span>
+<span class="linenos">16</span>    <span class="n">bias</span> <span class="o">-=</span> <span class="p">(</span><span class="n">bias_deriv</span> <span class="o">/</span> <span class="n">companies</span><span class="p">)</span> <span class="o">*</span> <span class="n">learning_rate</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span>    <span class="k">return</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span>
+</pre></div>
+</div>
+</section>
+<section id="training">
+<span id="simple-linear-regression-training"></span><h3><a class="toc-backref" href="#id17">Training</a><a class="headerlink" href="#training" title="Permalink to this headline">#</a></h3>
+<p>Training a model is the process of iteratively improving your prediction equation by looping through the dataset multiple times, each time updating the weight and bias values in the direction indicated by the slope of the cost function (gradient). Training is complete when we reach an acceptable error threshold, or when subsequent training iterations fail to reduce our cost.</p>
+<p>Before training we need to initialize our weights (set default values), set our <a class="reference internal" href="glossary.html#glossary-hyperparameters"><span class="std std-ref">hyperparameters</span></a> (learning rate and number of iterations), and prepare to log our progress over each iteration.</p>
+<p class="rubric">Code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="n">radio</span><span class="p">,</span> <span class="n">sales</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">,</span> <span class="n">iters</span><span class="p">):</span>
+<span class="linenos"> 2</span>    <span class="n">cost_history</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">iters</span><span class="p">):</span>
+<span class="linenos"> 5</span>        <span class="n">weight</span><span class="p">,</span><span class="n">bias</span> <span class="o">=</span> <span class="n">update_weights</span><span class="p">(</span><span class="n">radio</span><span class="p">,</span> <span class="n">sales</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="n">learning_rate</span><span class="p">)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span>        <span class="c1">#Calculate cost for auditing purposes</span>
+<span class="linenos"> 8</span>        <span class="n">cost</span> <span class="o">=</span> <span class="n">cost_function</span><span class="p">(</span><span class="n">radio</span><span class="p">,</span> <span class="n">sales</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">)</span>
+<span class="linenos"> 9</span>        <span class="n">cost_history</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cost</span><span class="p">)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>       <span class="c1"># Log Progress</span>
+<span class="linenos">12</span>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">10</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">13</span>            <span class="nb">print</span> <span class="s2">&quot;iter=</span><span class="si">{:d}</span><span class="s2">    weight=</span><span class="si">{:.2f}</span><span class="s2">    bias=</span><span class="si">{:.4f}</span><span class="s2">    cost=</span><span class="si">{:.2}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="n">cost</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span>    <span class="k">return</span> <span class="n">weight</span><span class="p">,</span> <span class="n">bias</span><span class="p">,</span> <span class="n">cost_history</span>
+</pre></div>
+</div>
+</section>
+<section id="model-evaluation">
+<h3><a class="toc-backref" href="#id18">Model evaluation</a><a class="headerlink" href="#model-evaluation" title="Permalink to this headline">#</a></h3>
+<p>If our model is working, we should see our cost decrease after every iteration.</p>
+<p class="rubric">Logging</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">iter</span><span class="o">=</span><span class="mi">1</span>     <span class="n">weight</span><span class="o">=</span><span class="mf">.03</span>    <span class="n">bias</span><span class="o">=</span><span class="mf">.0014</span>    <span class="n">cost</span><span class="o">=</span><span class="mf">197.25</span>
+<span class="nb">iter</span><span class="o">=</span><span class="mi">10</span>    <span class="n">weight</span><span class="o">=</span><span class="mf">.28</span>    <span class="n">bias</span><span class="o">=</span><span class="mf">.0116</span>    <span class="n">cost</span><span class="o">=</span><span class="mf">74.65</span>
+<span class="nb">iter</span><span class="o">=</span><span class="mi">20</span>    <span class="n">weight</span><span class="o">=</span><span class="mf">.39</span>    <span class="n">bias</span><span class="o">=</span><span class="mf">.0177</span>    <span class="n">cost</span><span class="o">=</span><span class="mf">49.48</span>
+<span class="nb">iter</span><span class="o">=</span><span class="mi">30</span>    <span class="n">weight</span><span class="o">=</span><span class="mf">.44</span>    <span class="n">bias</span><span class="o">=</span><span class="mf">.0219</span>    <span class="n">cost</span><span class="o">=</span><span class="mf">44.31</span>
+<span class="nb">iter</span><span class="o">=</span><span class="mi">30</span>    <span class="n">weight</span><span class="o">=</span><span class="mf">.46</span>    <span class="n">bias</span><span class="o">=</span><span class="mf">.0249</span>    <span class="n">cost</span><span class="o">=</span><span class="mf">43.28</span>
+</pre></div>
+</div>
+<p class="rubric">Visualizing</p>
+<img alt="_images/linear_regression_line_1.png" class="align-center" src="_images/linear_regression_line_1.png" />
+<img alt="_images/linear_regression_line_2.png" class="align-center" src="_images/linear_regression_line_2.png" />
+<img alt="_images/linear_regression_line_3.png" class="align-center" src="_images/linear_regression_line_3.png" />
+<img alt="_images/linear_regression_line_4.png" class="align-center" src="_images/linear_regression_line_4.png" />
+<p class="rubric">Cost history</p>
+<img alt="_images/linear_regression_training_cost.png" class="align-center" src="_images/linear_regression_training_cost.png" />
+</section>
+<section id="summary">
+<h3><a class="toc-backref" href="#id19">Summary</a><a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h3>
+<p>By learning the best values for weight (.46) and bias (.25), we now have an equation that predicts future sales based on radio advertising investment.</p>
+<div class="math notranslate nohighlight">
+\[Sales = .46 Radio + .025\]</div>
+<p>How would our model perform in the real world? I’ll let you think about it :)</p>
+</section>
+</section>
+<section id="multivariable-regression">
+<h2><a class="toc-backref" href="#id20">Multivariable regression</a><a class="headerlink" href="#multivariable-regression" title="Permalink to this headline">#</a></h2>
+<p>Let’s say we are given <a class="reference external" href="http://www-bcf.usc.edu/~gareth/ISL/Advertising.csv">data</a> on TV, radio, and newspaper advertising spend for a list of companies, and our goal is to predict sales in terms of units sold.</p>
+<table class="table">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 19%" />
+<col style="width: 19%" />
+<col style="width: 16%" />
+<col style="width: 19%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Company</p></td>
+<td><p>TV</p></td>
+<td><p>Radio</p></td>
+<td><p>News</p></td>
+<td><p>Units</p></td>
+</tr>
+<tr class="row-even"><td><p>Amazon</p></td>
+<td><p>230.1</p></td>
+<td><p>37.8</p></td>
+<td><p>69.1</p></td>
+<td><p>22.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Google</p></td>
+<td><p>44.5</p></td>
+<td><p>39.3</p></td>
+<td><p>23.1</p></td>
+<td><p>10.4</p></td>
+</tr>
+<tr class="row-even"><td><p>Facebook</p></td>
+<td><p>17.2</p></td>
+<td><p>45.9</p></td>
+<td><p>34.7</p></td>
+<td><p>18.3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Apple</p></td>
+<td><p>151.5</p></td>
+<td><p>41.3</p></td>
+<td><p>13.2</p></td>
+<td><p>18.5</p></td>
+</tr>
+</tbody>
+</table>
+<section id="growing-complexity">
+<h3><a class="toc-backref" href="#id21">Growing complexity</a><a class="headerlink" href="#growing-complexity" title="Permalink to this headline">#</a></h3>
+<p>As the number of features grows, the complexity of our model increases and it becomes increasingly difficult to visualize, or even comprehend, our data.</p>
+<img alt="_images/linear_regression_3d_plane_mlr.png" class="align-center" src="_images/linear_regression_3d_plane_mlr.png" />
+<p>One solution is to break the data apart and compare 1-2 features at a time. In this example we explore how Radio and TV investment impacts Sales.</p>
+</section>
+<section id="normalization">
+<h3><a class="toc-backref" href="#id22">Normalization</a><a class="headerlink" href="#normalization" title="Permalink to this headline">#</a></h3>
+<p>As the number of features grows, calculating gradient takes longer to compute. We can speed this up by “normalizing” our input data to ensure all values are within the same range. This is especially important for datasets with high standard deviations or differences in the ranges of the attributes. Our goal now will be to normalize our features so they are all in the range -1 to 1.</p>
+<p class="rubric">Code</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">For</span> <span class="n">each</span> <span class="n">feature</span> <span class="n">column</span> <span class="p">{</span>
+    <span class="c1">#1 Subtract the mean of the column (mean normalization)</span>
+    <span class="c1">#2 Divide by the range of the column (feature scaling)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Our input is a 200 x 3 matrix containing TV, Radio, and Newspaper data. Our output is a normalized matrix of the same shape with all values between -1 and 1.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>  <span class="k">def</span> <span class="nf">normalize</span><span class="p">(</span><span class="n">features</span><span class="p">):</span>
+<span class="linenos"> 2</span>      <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 3</span><span class="sd">      features     -   (200, 3)</span>
+<span class="linenos"> 4</span><span class="sd">      features.T   -   (3, 200)</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="sd">      We transpose the input matrix, swapping</span>
+<span class="linenos"> 7</span><span class="sd">      cols and rows to make vector math easier</span>
+<span class="linenos"> 8</span><span class="sd">      &#39;&#39;&#39;</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>      <span class="k">for</span> <span class="n">feature</span> <span class="ow">in</span> <span class="n">features</span><span class="o">.</span><span class="n">T</span><span class="p">:</span>
+<span class="linenos">11</span>          <span class="n">fmean</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
+<span class="linenos">12</span>          <span class="n">frange</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">amax</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">amin</span><span class="p">(</span><span class="n">feature</span><span class="p">)</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span>          <span class="c1">#Vector Subtraction</span>
+<span class="linenos">15</span>          <span class="n">feature</span> <span class="o">-=</span> <span class="n">fmean</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>          <span class="c1">#Vector Division</span>
+<span class="linenos">18</span>          <span class="n">feature</span> <span class="o">/=</span> <span class="n">frange</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>      <span class="k">return</span> <span class="n">features</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Matrix math</strong>. Before we continue, it’s important to understand basic <a class="reference internal" href="linear_algebra.html"><span class="doc">Linear Algebra</span></a> concepts as well as numpy functions like <a class="reference external" href="https://docs.scipy.org/doc/numpy/reference/generated/numpy.dot.html">numpy.dot()</a>.</p>
+</div>
+</section>
+<section id="multiple-linear-regression-predict">
+<span id="id2"></span><h3><a class="toc-backref" href="#id23">Making predictions</a><a class="headerlink" href="#multiple-linear-regression-predict" title="Permalink to this headline">#</a></h3>
+<p>Our predict function outputs an estimate of sales given our current weights (coefficients) and a company’s TV, radio, and newspaper spend. Our model will try to identify weight values that most reduce our cost function.</p>
+<div class="math notranslate nohighlight">
+\[Sales = W_1 TV + W_2 Radio + W_3 Newspaper\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+<span class="linenos">2</span>   <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos">3</span><span class="sd">   features - (200, 3)</span>
+<span class="linenos">4</span><span class="sd">   weights - (3, 1)</span>
+<span class="linenos">5</span><span class="sd">   predictions - (200,1)</span>
+<span class="linenos">6</span><span class="sd">   &#39;&#39;&#39;</span>
+<span class="linenos">7</span>
+<span class="linenos">8</span>   <span class="n">predictions</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+<span class="linenos">9</span>   <span class="k">return</span> <span class="n">predictions</span>
+</pre></div>
+</div>
+</section>
+<section id="initialize-weights">
+<h3><a class="toc-backref" href="#id24">Initialize weights</a><a class="headerlink" href="#initialize-weights" title="Permalink to this headline">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="n">W1</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos">2</span> <span class="n">W2</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos">3</span> <span class="n">W3</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span> <span class="n">weights</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+<span class="linenos">6</span>     <span class="p">[</span><span class="n">W1</span><span class="p">],</span>
+<span class="linenos">7</span>     <span class="p">[</span><span class="n">W2</span><span class="p">],</span>
+<span class="linenos">8</span>     <span class="p">[</span><span class="n">W3</span><span class="p">]</span>
+<span class="linenos">9</span> <span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h3><a class="toc-backref" href="#id25">Cost function</a><a class="headerlink" href="#id3" title="Permalink to this headline">#</a></h3>
+<p>Now we need a cost function to audit how our model is performing. The math is the same, except we swap the <span class="math notranslate nohighlight">\(mx + b\)</span> expression for <span class="math notranslate nohighlight">\(W_1 x_1 + W_2 x_2 + W_3 x_3\)</span>. We also divide the expression by 2 to make derivative calculations simpler.</p>
+<div class="math notranslate nohighlight">
+\[MSE =  \frac{1}{2N} \sum_{i=1}^{n} (y_i - (W_1 x_1 + W_2 x_2 + W_3 x_3))^2\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="k">def</span> <span class="nf">cost_function</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">weights</span><span class="p">):</span>
+<span class="linenos"> 2</span>     <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 3</span><span class="sd">     features:(200,3)</span>
+<span class="linenos"> 4</span><span class="sd">     targets: (200,1)</span>
+<span class="linenos"> 5</span><span class="sd">     weights:(3,1)</span>
+<span class="linenos"> 6</span><span class="sd">     returns average squared error among predictions</span>
+<span class="linenos"> 7</span><span class="sd">     &#39;&#39;&#39;</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>     <span class="n">N</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">targets</span><span class="p">)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>     <span class="n">predictions</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>     <span class="c1"># Matrix math lets use do this without looping</span>
+<span class="linenos">14</span>     <span class="n">sq_error</span> <span class="o">=</span> <span class="p">(</span><span class="n">predictions</span> <span class="o">-</span> <span class="n">targets</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>     <span class="c1"># Return average squared error among predictions</span>
+<span class="linenos">17</span>     <span class="k">return</span> <span class="mf">1.0</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">N</span><span class="p">)</span> <span class="o">*</span> <span class="n">sq_error</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3><a class="toc-backref" href="#id26">Gradient descent</a><a class="headerlink" href="#id4" title="Permalink to this headline">#</a></h3>
+<p>Again using the <a class="reference internal" href="calculus.html#chain-rule"><span class="std std-ref">Chain rule</span></a> we can compute the gradient–a vector of partial derivatives describing the slope of the cost function for each weight.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+f'(W_1) = -x_1(y - (W_1 x_1 + W_2 x_2 + W_3 x_3)) \\
+f'(W_2) = -x_2(y - (W_1 x_1 + W_2 x_2 + W_3 x_3)) \\
+f'(W_3) = -x_3(y - (W_1 x_1 + W_2 x_2 + W_3 x_3))
+\end{align}\end{split}\]</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="k">def</span> <span class="nf">update_weights</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">lr</span><span class="p">):</span>
+<span class="linenos"> 2</span>     <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 3</span><span class="sd">     Features:(200, 3)</span>
+<span class="linenos"> 4</span><span class="sd">     Targets: (200, 1)</span>
+<span class="linenos"> 5</span><span class="sd">     Weights:(3, 1)</span>
+<span class="linenos"> 6</span><span class="sd">     &#39;&#39;&#39;</span>
+<span class="linenos"> 7</span>     <span class="n">predictions</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">features</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span>     <span class="c1">#Extract our features</span>
+<span class="linenos">10</span>     <span class="n">x1</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">11</span>     <span class="n">x2</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span>
+<span class="linenos">12</span>     <span class="n">x3</span> <span class="o">=</span> <span class="n">features</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span>     <span class="c1"># Use dot product to calculate the derivative for each weight</span>
+<span class="linenos">15</span>     <span class="n">d_w1</span> <span class="o">=</span> <span class="o">-</span><span class="n">x1</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">targets</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="linenos">16</span>     <span class="n">d_w2</span> <span class="o">=</span> <span class="o">-</span><span class="n">x2</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">targets</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="linenos">17</span>     <span class="n">d_w2</span> <span class="o">=</span> <span class="o">-</span><span class="n">x2</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">targets</span> <span class="o">-</span> <span class="n">predictions</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>     <span class="c1"># Multiply the mean derivative by the learning rate</span>
+<span class="linenos">20</span>     <span class="c1"># and subtract from our weights (remember gradient points in direction of steepest ASCENT)</span>
+<span class="linenos">21</span>     <span class="n">weights</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="p">(</span><span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w1</span><span class="p">))</span>
+<span class="linenos">22</span>     <span class="n">weights</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="p">(</span><span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w2</span><span class="p">))</span>
+<span class="linenos">23</span>     <span class="n">weights</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> <span class="o">-=</span> <span class="p">(</span><span class="n">lr</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">d_w3</span><span class="p">))</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>     <span class="k">return</span> <span class="n">weights</span>
+</pre></div>
+</div>
+<p>And that’s it! Multivariate linear regression.</p>
+</section>
+<section id="simplifying-with-matrices">
+<h3><a class="toc-backref" href="#id27">Simplifying with matrices</a><a class="headerlink" href="#simplifying-with-matrices" title="Permalink to this headline">#</a></h3>
+<p>The gradient descent code above has a lot of duplication. Can we improve it somehow? One way to refactor would be to loop through our features and weights–allowing our function to handle any number of features. However there is another even better technique: <em>vectorized gradient descent</em>.</p>
+<p class="rubric">Math</p>
+<p>We use the same formula as above, but instead of operating on a single feature at a time, we use matrix multiplication to operative on all features and weights simultaneously. We replace the <span class="math notranslate nohighlight">\(x_i\)</span> terms with a single feature matrix <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[gradient = -X(targets - predictions)\]</div>
+<p class="rubric">Code</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">]</span>
+    <span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">]</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="o">.</span>
+    <span class="p">[</span><span class="n">x1</span><span class="p">,</span> <span class="n">x2</span><span class="p">,</span> <span class="n">x3</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="n">targets</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="mi">1</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">2</span><span class="p">],</span>
+    <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span> <span class="k">def</span> <span class="nf">update_weights_vectorized</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">weights</span><span class="p">,</span> <span class="n">lr</span><span class="p">):</span>
+<span class="linenos"> 2</span>     <span class="sd">&#39;&#39;&#39;</span>
+<span class="linenos"> 3</span><span class="sd">     gradient = X.T * (predictions - targets) / N</span>
+<span class="linenos"> 4</span><span class="sd">     X: (200, 3)</span>
+<span class="linenos"> 5</span><span class="sd">     Targets: (200, 1)</span>
+<span class="linenos"> 6</span><span class="sd">     Weights: (3, 1)</span>
+<span class="linenos"> 7</span><span class="sd">     &#39;&#39;&#39;</span>
+<span class="linenos"> 8</span>     <span class="n">companies</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>     <span class="c1">#1 - Get Predictions</span>
+<span class="linenos">11</span>     <span class="n">predictions</span> <span class="o">=</span> <span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">weights</span><span class="p">)</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>     <span class="c1">#2 - Calculate error/loss</span>
+<span class="linenos">14</span>     <span class="n">error</span> <span class="o">=</span> <span class="n">targets</span> <span class="o">-</span> <span class="n">predictions</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>     <span class="c1">#3 Transpose features from (200, 3) to (3, 200)</span>
+<span class="linenos">17</span>     <span class="c1"># So we can multiply w the (200,1)  error matrix.</span>
+<span class="linenos">18</span>     <span class="c1"># Returns a (3,1) matrix holding 3 partial derivatives --</span>
+<span class="linenos">19</span>     <span class="c1"># one for each feature -- representing the aggregate</span>
+<span class="linenos">20</span>     <span class="c1"># slope of the cost function across all observations</span>
+<span class="linenos">21</span>     <span class="n">gradient</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="o">-</span><span class="n">X</span><span class="o">.</span><span class="n">T</span><span class="p">,</span>  <span class="n">error</span><span class="p">)</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>     <span class="c1">#4 Take the average error derivative for each feature</span>
+<span class="linenos">24</span>     <span class="n">gradient</span> <span class="o">/=</span> <span class="n">companies</span>
+<span class="linenos">25</span>
+<span class="linenos">26</span>     <span class="c1">#5 - Multiply the gradient by our learning rate</span>
+<span class="linenos">27</span>     <span class="n">gradient</span> <span class="o">*=</span> <span class="n">lr</span>
+<span class="linenos">28</span>
+<span class="linenos">29</span>     <span class="c1">#6 - Subtract from our weights to minimize cost</span>
+<span class="linenos">30</span>     <span class="n">weights</span> <span class="o">-=</span> <span class="n">gradient</span>
+<span class="linenos">31</span>
+<span class="linenos">32</span>     <span class="k">return</span> <span class="n">weights</span>
+</pre></div>
+</div>
+</section>
+<section id="bias-term">
+<h3><a class="toc-backref" href="#id28">Bias term</a><a class="headerlink" href="#bias-term" title="Permalink to this headline">#</a></h3>
+<p>Our train function is the same as for simple linear regression, however we’re going to make one final tweak before running: add a <a class="reference internal" href="glossary.html#glossary-bias-term"><span class="std std-ref">bias term</span></a> to our feature matrix.</p>
+<p>In our example, it’s very unlikely that sales would be zero if companies stopped advertising. Possible reasons for this might include past advertising, existing customer relationships, retail locations, and salespeople. A bias term will help us capture this base case.</p>
+<p class="rubric">Code</p>
+<p>Below we add a constant 1 to our features matrix. By setting this value to 1, it turns our bias term into a constant.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span> <span class="n">bias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">features</span><span class="p">),</span><span class="mi">1</span><span class="p">))</span>
+<span class="linenos">2</span> <span class="n">features</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">bias</span><span class="p">,</span> <span class="n">features</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3><a class="toc-backref" href="#id29">Model evaluation</a><a class="headerlink" href="#id5" title="Permalink to this headline">#</a></h3>
+<p>After training our model through 1000 iterations with a learning rate of .0005, we finally arrive at a set of weights we can use to make predictions:</p>
+<div class="math notranslate nohighlight">
+\[Sales = 4.7TV + 3.5Radio + .81Newspaper + 13.9\]</div>
+<p>Our MSE cost dropped from 110.86 to 6.25.</p>
+<img alt="_images/multiple_regression_error_history.png" class="align-center" src="_images/multiple_regression_error_history.png" />
+<p class="rubric">References</p>
+<dl class="footnote brackets">
+<dt class="label" id="id6"><span class="brackets">1</span></dt>
+<dd><p><a class="reference external" href="https://en.wikipedia.org/wiki/Linear_regression">https://en.wikipedia.org/wiki/Linear_regression</a></p>
+</dd>
+<dt class="label" id="id7"><span class="brackets">2</span></dt>
+<dd><p><a class="reference external" href="http://www.holehouse.org/mlclass/04_Linear_Regression_with_multiple_variables.html">http://www.holehouse.org/mlclass/04_Linear_Regression_with_multiple_variables.html</a></p>
+</dd>
+<dt class="label" id="id8"><span class="brackets">3</span></dt>
+<dd><p><a class="reference external" href="http://machinelearningmastery.com/simple-linear-regression-tutorial-for-machine-learning">http://machinelearningmastery.com/simple-linear-regression-tutorial-for-machine-learning</a></p>
+</dd>
+<dt class="label" id="id9"><span class="brackets">4</span></dt>
+<dd><p><a class="reference external" href="http://people.duke.edu/~rnau/regintro.htm">http://people.duke.edu/~rnau/regintro.htm</a></p>
+</dd>
+<dt class="label" id="id10"><span class="brackets">5</span></dt>
+<dd><p><a class="reference external" href="https://spin.atomicobject.com/2014/06/24/gradient-descent-linear-regression">https://spin.atomicobject.com/2014/06/24/gradient-descent-linear-regression</a></p>
+</dd>
+<dt class="label" id="id11"><span class="brackets">6</span></dt>
+<dd><p><a class="reference external" href="https://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms">https://www.analyticsvidhya.com/blog/2015/08/common-machine-learning-algorithms</a></p>
+</dd>
+</dl>
+</section>
+</section>
+</section>
+
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="index.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Machine Learning Glossary</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="gradient_descent.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Gradient Descent</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By Team<br/>
+  
+      &copy; Copyright 2017.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
